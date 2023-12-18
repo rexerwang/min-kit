@@ -1,0 +1,29 @@
+{
+  "name": "@miniapp/store",
+  "version": "0.1.0",
+  "description": "store kit of React miniapp based on Zustand",
+  "author": "rexerwang",
+  "license": "MIT",
+  "repository": "rexerwang/taro-miniapp",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "immer": "^10.0.3",
+    "zustand": "^4.4.7"
+  },
+  "peerDependencies": {
+    "@tarojs/taro": ">=3.6",
+    "react": ">=17"
+  }
+}

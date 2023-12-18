@@ -1,0 +1,11 @@
+.swc
+.config
+.cache
+.vscode
+.yarn
+
+dist
+coverage
+
+static
+index.html

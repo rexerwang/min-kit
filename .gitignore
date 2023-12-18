@@ -1,0 +1,14 @@
+dist
+deploy_versions
+.temp
+.rn_temp
+node_modules
+.DS_Store
+.swc
+coverage
+
+# private key
+.private.key.*
+
+# .local files
+*.local

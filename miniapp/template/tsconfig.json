@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.root.json",
+  "compilerOptions": {
+    "allowJs": true,
+    "rootDir": ".",
+    "baseUrl": ".",
+    "typeRoots": ["node_modules/immer/dist/index.d.ts"],
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["./src", "./types", "./config"]
+}

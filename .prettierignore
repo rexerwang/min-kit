@@ -1,0 +1,15 @@
+.swc
+.config
+.cache
+.vscode
+.yarn
+dist
+coverage
+project.config.json
+project.private.config.json
+static
+index.html
+
+pnpm-lock.yaml
+pnpm-workspace.yaml
+.yarnrc.yml
