@@ -1,9 +1,4 @@
 {
   "extends": "../../tsconfig.root.json",
-  "compilerOptions": {
-    "rootDir": ".",
-    "baseUrl": ".",
-    "preserveSymlinks": true
-  },
-  "include": ["src"]
+  "include": ["src", "types"]
 }

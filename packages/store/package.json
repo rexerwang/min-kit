@@ -5,6 +5,7 @@
   "author": "rexerwang",
   "license": "MIT",
   "repository": "rexerwang/taro-miniapp",
+  "type": "module",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",

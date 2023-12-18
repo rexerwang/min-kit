@@ -4,7 +4,6 @@
     "allowJs": true,
     "rootDir": ".",
     "baseUrl": ".",
-    "typeRoots": ["node_modules/immer/dist/index.d.ts"],
     "paths": {
       "@/*": ["src/*"]
     }

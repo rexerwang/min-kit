@@ -14,8 +14,7 @@ const initialState: IState = {
   lastSignedIn: undefined,
 }
 
-// TODO: fix typings
-const store = createPersistStore('appStore', initialState, (set: any) => ({
+const store = createPersistStore('appStore', initialState, (set) => ({
   lastSignIn(at: number, scene: number) {
     set((state) => {
       state.lastSignedIn = { at, scene }

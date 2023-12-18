@@ -1,5 +1,3 @@
-/// <reference types="immer" />
-
 export { combineStore } from './combineStore'
 export { createPersistStore } from './createPersistStore'
 export { createStore } from './createStore'
