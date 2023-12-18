@@ -24,6 +24,6 @@
   },
   "peerDependencies": {
     "@tarojs/taro": ">=3.6",
-    "react": ">=17"
+    "react": ">=18"
   }
 }
