@@ -1,0 +1,24 @@
+{
+  "name": "@miniapp/shared",
+  "version": "0.1.0",
+  "description": "utils & constants shared of @miniapp packages",
+  "author": "rexerwang",
+  "license": "MIT",
+  "repository": "rexerwang/taro-miniapp",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "query-string": "^8.1.0"
+  }
+}
