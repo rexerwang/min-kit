@@ -1,0 +1,10 @@
+.mini-navigation-bar {
+  position: relative;
+  box-sizing: border-box;
+  width: 100vw;
+
+  &-body {
+    margin-right: 16px;
+    margin-left: 16px;
+  }
+}

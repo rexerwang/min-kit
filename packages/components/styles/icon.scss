@@ -1,0 +1,11 @@
+.mini-icon-font {
+  &.iconfont {
+    font-family: iconfont !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  &--hover {
+    filter: brightness(0.9);
+  }
+}

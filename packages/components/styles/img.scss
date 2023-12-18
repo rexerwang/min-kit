@@ -1,0 +1,22 @@
+.mini-img {
+  &--load {
+    background-color: rgb(229 231 235 / 100%);
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  &--error {
+    position: relative;
+    background-color: rgb(229 231 235 / 100%);
+
+    &::after {
+      position: absolute;
+      top: calc(50% - 25px);
+      left: calc(50% - 25px);
+      width: 50px;
+      height: 50px;
+      content: '';
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAASFBMVEUAAAC+vr6/v7/AwMDAwMC/v7+/v7/AwMDAwMDAwMC/v7++vr7Dw8O/v7+/v7+/v7/AwMC/v7+/v7+/v7+/v7+/v7+/v7+/v78JO635AAAAF3RSTlMAgEBY6My/s5BqUjkX8ODUtZ+Yg3NjTAPbPPQAAABeSURBVBjTjc5ZDoAgDEXRVxAZnQf2v1ORCvin56fhhjTFD5QFYgBiJiRPDp2KPcwrWExRQLVAZ5e+hBqYwFLDIO+3H2tw2C2Ao4QND8NBU+IdJXNbqrGWO4hJHvh2AcMFCI1HG8nlAAAAAElFTkSuQmCC');
+      background-size: 100%;
+    }
+  }
+}
