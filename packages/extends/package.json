@@ -23,6 +23,7 @@
   },
   "peerDependencies": {
     "@tarojs/taro": ">=3.6",
+    "@tarojs/runtime": ">=3.6",
     "react": ">=17"
   }
 }
