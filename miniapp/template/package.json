@@ -38,6 +38,10 @@
   ],
   "dependencies": {
     "@babel/runtime": "^7.21.5",
+    "@miniapp/components": "workspace:*",
+    "@miniapp/extends": "workspace:*",
+    "@miniapp/hooks": "workspace:*",
+    "@miniapp/shared": "workspace:*",
     "@miniapp/store": "workspace:*",
     "@tarojs/components": "3.6.20",
     "@tarojs/helper": "3.6.20",

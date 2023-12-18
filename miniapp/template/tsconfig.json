@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.root.json",
   "compilerOptions": {
     "allowJs": true,
+    "strict": false,
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
