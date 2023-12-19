@@ -19,6 +19,6 @@
     "dist"
   ],
   "dependencies": {
-    "query-string": "^8.1.0"
+    "query-string": "^7.1.3"
   }
 }

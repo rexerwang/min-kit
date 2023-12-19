@@ -1,4 +1,4 @@
-import qs from 'query-string'
+import { stringify as _stringify } from 'query-string'
 
 import { isString } from './is'
 
@@ -93,7 +93,7 @@ function generate<T extends UTMObject>(utm: T, shorten = true) {
 }
 
 function stringify<T extends UTMObject>(utm: T, shorten = true) {
-  return qs.stringify(generate(utm, shorten as any))
+  return _stringify(generate(utm, shorten as any))
 }
 
 function from(source: UTMObject, target: Record<string, any>) {
