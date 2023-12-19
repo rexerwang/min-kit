@@ -23,12 +23,12 @@ const getButtonMessage = (id: string) => {
  *
  * ***仅在页面级组件中使用***
  *
- * 按需添加页面配置:
+ * 按需添加页面分享相关配置:
  * ```ts
- * definePageConfig({
+ * {
  *   enableShareAppMessage: true,
  *   enableShareTimeline: true,
- * })
+ * }
  * ```
  */
 export function useShareMessage(menu: IShareMenu = {}) {
@@ -52,7 +52,7 @@ export function useShareMessage(menu: IShareMenu = {}) {
   useMount(() => {
     const config = Current.page?.config
     if (config && !config.enableShareAppMessage) {
-      logger.error('#useShareMessage', `🚫 ${Current.router?.path} 未配置"enableShareAppMessage"，分享不可用‼`)
+      logger.error('#useShareMessage', `🚫 ${Current.router?.path} unset "enableShareAppMessage"`)
     }
   })
 }

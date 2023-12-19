@@ -1,6 +1,7 @@
 import { defineBuildConfig } from 'unbuild'
 
 export default defineBuildConfig({
+  clean: false,
   entries: [
     'src/index',
     {
@@ -12,5 +13,8 @@ export default defineBuildConfig({
   declaration: true,
   rollup: {
     emitCJS: true,
+    esbuild: {
+      jsx: 'automatic',
+    },
   },
 })
