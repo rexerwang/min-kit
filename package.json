@@ -8,6 +8,7 @@
   "repository": "rexerwang/taro-miniapp",
   "scripts": {
     "build": "unbuild",
+    "dev:taro": "pnpm --dir miniapp/template dev:weapp",
     "lint:eslint": "eslint --fix --ext .ts,tsx ./",
     "lint:style": "stylelint --fix \"{miniapp,packages}/**/*.{scss,css}\"",
     "format": "prettier --write .",

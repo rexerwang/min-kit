@@ -6,6 +6,9 @@
     "jest": true
   },
   "globals": {},
+  "parserOptions": {
+    "requireConfigFile": false
+  },
   "rules": {
     "@typescript-eslint/no-useless-constructor": "off",
     "react/react-in-jsx-scope": "off",
@@ -41,16 +44,5 @@
     "import/no-duplicates": "error",
     "import/no-commonjs": "off"
   },
-  "overrides": [
-    {
-      "files": ["app/*/config/**"],
-      "env": {
-        "node": true
-      },
-      "rules": {
-        "no-unused-vars": "off",
-        "no-console": "off"
-      }
-    }
-  ]
+  "overrides": []
 }
