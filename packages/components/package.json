@@ -10,6 +10,10 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
+    },
+    "./dist/styles/*.css": {
+      "import": "./dist/styles/*.css",
+      "require": "./dist/styles/*.css"
     }
   },
   "main": "./dist/index.cjs",
@@ -22,6 +26,7 @@
     "@miniapp/extends": "workspace:*",
     "@miniapp/hooks": "workspace:*",
     "@miniapp/shared": "workspace:*",
+    "@miniapp/store": "workspace:*",
     "clsx": "^2.0.0"
   },
   "peerDependencies": {
@@ -35,6 +40,14 @@
     "@tarojs/plugin-platform-weapp": ">=3.6",
     "@tarojs/react": ">=3.6",
     "@tarojs/taro": ">=3.6",
-    "react": ">=17"
+    "react": ">=17",
+    "react-dom": ">=17"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.32",
+    "postcss-cli": "^11.0.0",
+    "postcss-modules": "^6.0.0",
+    "postcss-rem-to-responsive-pixel": "^6.0.1",
+    "tailwindcss": "^3.3.7"
   }
 }

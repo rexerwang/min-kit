@@ -1,12 +1,10 @@
 .mini-img {
   &--load {
-    background-color: rgb(229 231 235 / 100%);
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    @apply bg-gray-200 animate-pulse;
   }
 
   &--error {
-    position: relative;
-    background-color: rgb(229 231 235 / 100%);
+    @apply relative bg-gray-200;
 
     &::after {
       position: absolute;

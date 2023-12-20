@@ -1,3 +1,4 @@
+export * from './debug'
 export * from './gesture'
 export * from './icon'
 export * from './img'

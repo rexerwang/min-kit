@@ -1,0 +1,395 @@
+$primary-color: #1890ff;
+$border-gray: 1px solid #f0f0f0;
+
+@mixin ellipsis($line: 2) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+}
+
+.mini-debugger {
+  .hidden {
+    display: none;
+  }
+
+  .movable-area {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 999999;
+    width: unset;
+    height: unset;
+    pointer-events: none;
+  }
+
+  .movable-view {
+    position: absolute;
+    width: 180px;
+    height: 64px;
+    font-size: 28px;
+    line-height: 64px;
+    color: #fff;
+    text-align: center;
+    pointer-events: auto;
+    background-color: #1aad19;
+    border-radius: 14px;
+    box-shadow: 0 8px 16px rgb(0 0 0 / 10%);
+  }
+}
+
+.mini-debug-panel {
+  .relative {
+    position: relative;
+  }
+
+  .ellipsis {
+    @include ellipsis;
+  }
+
+  .mask {
+    position: fixed;
+    inset: 0;
+    z-index: 999998;
+    background-color: rgba($color: #000, $alpha: 75%);
+  }
+
+  .container {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 999999;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+    border: $border-gray;
+    border-radius: 4px;
+  }
+
+  .tabs {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+    height: 100%;
+
+    .tabHeader {
+      display: flex;
+      align-items: center;
+      border-bottom: $border-gray;
+
+      .tab {
+        width: 200px;
+        height: 64px;
+        line-height: 60px;
+        text-align: center;
+
+        &.active {
+          color: $primary-color;
+          background-color: #fff;
+        }
+
+        &.capitalize {
+          text-transform: capitalize;
+        }
+      }
+    }
+
+    .tabBody {
+      flex: 1;
+      height: calc(100% - 65px);
+      font-size: 28px;
+      background-color: #fff;
+
+      text {
+        font-size: 24px;
+        word-break: break-all;
+        word-wrap: break-word;
+      }
+    }
+
+    &.min {
+      .tab {
+        height: 56px;
+        font-size: 28px;
+        line-height: 52px;
+        border-bottom: 1px solid transparent;
+
+        &.active {
+          border-bottom-color: $primary-color;
+        }
+      }
+
+      .tabBody {
+        height: calc(100% - 57px);
+      }
+    }
+  }
+
+  .panel {
+    display: flex;
+    flex-flow: column;
+
+    .main {
+      flex: 1;
+      min-height: calc(100% - 61px);
+      overflow: auto;
+    }
+
+    .footer {
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      border-top: $border-gray;
+
+      button {
+        width: 100%;
+        height: 60px;
+        padding: 0 20px;
+        font-size: 28px;
+        line-height: 60px;
+        color: $primary-color;
+        border: none;
+        border-radius: 0;
+
+        &:not(:last-child) {
+          border-right: $border-gray;
+        }
+
+        &[loading]::before {
+          border-color: $primary-color $primary-color $primary-color transparent;
+        }
+      }
+    }
+  }
+
+  .bold {
+    font-weight: 600;
+  }
+
+  .wrap {
+    @include ellipsis(4);
+
+    max-height: 164px;
+  }
+
+  .row {
+    position: relative;
+    display: flex;
+
+    &.error {
+      color: #fd181d;
+      background-color: #fee;
+      border-color: #fee;
+    }
+
+    &.selected {
+      font-weight: 500;
+    }
+  }
+
+  .col {
+    position: relative;
+    padding: 10px;
+    font-size: 24px;
+    word-break: break-all;
+    word-wrap: break-word;
+    border-bottom: $border-gray;
+
+    &:not(:first-child) {
+      border-left: $border-gray;
+    }
+  }
+
+  .section {
+    position: relative;
+    padding: 10px;
+
+    .title {
+      display: block;
+      font-weight: 600;
+      color: $primary-color;
+    }
+
+    .content {
+      display: block;
+      padding: 8px;
+      border: $border-gray;
+    }
+  }
+
+  .logModule {
+    .log {
+      padding: 10px;
+      font-size: 20px;
+      border-bottom: 1px solid #ddd;
+
+      &.info {
+        color: #5989f7;
+      }
+
+      &.warn {
+        color: #51350a;
+        background-color: #fffae2;
+        border-color: #fffae2;
+      }
+
+      &.error {
+        color: #fd181d;
+        background-color: #fee;
+        border-color: #fee;
+      }
+
+      text {
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+
+        &.b {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .basicModule,
+  .networkModule {
+    width: 100%;
+    height: 100%;
+  }
+
+  .basicModule {
+    .title {
+      text-transform: capitalize;
+    }
+  }
+
+  .networkModule {
+    font-size: 24px;
+
+    .col {
+      &:not(:first-child) {
+        flex-shrink: 0;
+        width: 100px;
+        text-align: center;
+      }
+
+      &:first-child {
+        flex-grow: 1;
+      }
+    }
+
+    .filterBox {
+      position: absolute;
+      right: 20px;
+      bottom: 80px;
+      left: 20px;
+      display: flex;
+      padding: 0 20px;
+      background-color: #f5f5f5;
+      border: 1px solid $primary-color;
+      border-radius: 28px;
+
+      input {
+        flex: 1;
+        height: 60px;
+        line-height: 60px;
+      }
+    }
+
+    .empty {
+      padding-top: 40%;
+      color: #424242;
+      text-align: center;
+    }
+
+    .clients {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .client {
+        padding: 0 10px;
+        margin-right: 8px;
+        color: $primary-color;
+        border: 1px solid $primary-color;
+        border-radius: 36px;
+      }
+    }
+  }
+
+  .appModule {
+    .route {
+      .title {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .field {
+        display: flex;
+
+        input {
+          flex: 1;
+        }
+      }
+    }
+
+    .storage {
+      .usage {
+        .col {
+          @include ellipsis;
+
+          flex: 1;
+          text-align: center;
+        }
+      }
+
+      .list {
+        .row {
+          .col {
+            &:first-child {
+              flex-shrink: 0;
+              width: 30%;
+            }
+
+            &:nth-child(2) {
+              flex-grow: 1;
+            }
+
+            &:nth-child(3) {
+              flex-shrink: 0;
+              width: 94px;
+            }
+          }
+
+          &:not(.expand) .col {
+            @include ellipsis;
+          }
+
+          &.expand {
+            font-weight: 600;
+          }
+        }
+      }
+
+      .operations {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 28px;
+        font-size: 26px;
+        font-weight: 400;
+
+        .delete {
+          color: #e64340;
+        }
+
+        .update {
+          color: #1aad19;
+        }
+      }
+    }
+  }
+}

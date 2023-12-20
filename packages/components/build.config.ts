@@ -1,7 +1,10 @@
+import { exec } from 'node:child_process'
+import { promisify } from 'node:util'
+
 import { defineBuildConfig } from 'unbuild'
 
 export default defineBuildConfig({
-  clean: false,
+  clean: false, // for hot-load
   entries: [
     'src/index',
     {
@@ -15,6 +18,11 @@ export default defineBuildConfig({
     emitCJS: true,
     esbuild: {
       jsx: 'automatic',
+    },
+  },
+  hooks: {
+    async 'mkdist:done'() {
+      await promisify(exec)('npx postcss dist/styles -d dist/styles')
     },
   },
 })
