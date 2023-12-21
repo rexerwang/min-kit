@@ -1,4 +1,4 @@
-import { offAppHide, onAppHide } from '@tarojs/taro'
+import Taro, { offAppHide, onAppHide } from '@tarojs/taro'
 
 import { createEventListener } from './createEventListener'
 
