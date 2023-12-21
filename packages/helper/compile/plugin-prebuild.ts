@@ -1,10 +1,11 @@
 import { resolve } from 'node:path'
 
 import { logger, writeJson } from './shared'
+import { IPluginOptions } from './types'
 
-import type { TaroPlugin } from './types'
+import type { IPluginContext } from '@tarojs/service'
 
-function PrebuildPlugin(ctx: TaroPlugin.IPluginContext, { config }: TaroPlugin.IPluginOptions<any[]>) {
+function PrebuildPlugin(ctx: IPluginContext, { config }: IPluginOptions<any[]>) {
   ctx.registerCommand({
     name: 'prebuild',
     async fn() {

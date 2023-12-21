@@ -1,4 +1,4 @@
-export function normalizeRoutePath<T extends object>(routeMap: T) {
+function normalizeRoutePath<T extends object>(routeMap: T) {
   return Object.entries(routeMap).reduce((map, [key, route]) => {
     if (!/^[A-Za-z0-9]+$/.test(key)) throw new Error(`Only letters or numbers are allowed: ${key}`)
 
@@ -21,4 +21,23 @@ export function normalizeRoutePath<T extends object>(routeMap: T) {
 
     return map
   }, {} as T)
+}
+
+/**
+ * 路由定义
+ *
+ * ```js
+ * defineRouteConfig({
+ *   // main package
+ *   Home: 'pages/index/index',
+ *
+ *   // pkg-abc subPackage
+ *   PkgAbc: {
+ *     Home: 'pages/index/index',
+ *   }
+ * })
+ * ```
+ */
+export function defineRouteConfig<T extends object>(Routes: T) {
+  return { Routes, Pages: normalizeRoutePath(Routes) }
 }

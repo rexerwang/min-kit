@@ -1,0 +1,7 @@
+{
+  "extends": "../../tsconfig.root.json",
+  "compilerOptions": {
+    "strict": false
+  },
+  "include": ["compile", "config", "runtime", "types"]
+}

@@ -17,11 +17,11 @@ export class WechatChain extends AbstractChain {
     }
   }
 
-  plugin(id: string) {
+  plugin(this: WechatChain, id: string) {
     const plugin = new PluginChain(id)
     if (this.enabled) this.plugins.push(plugin)
 
-    return this.assign(plugin)
+    return Object.assign(plugin, { end: () => this })
   }
 
   darkMode() {

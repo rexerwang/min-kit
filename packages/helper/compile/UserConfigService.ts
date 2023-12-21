@@ -1,8 +1,8 @@
 import { resolve } from 'node:path'
 
-import { logger } from '../shared'
+import { logger } from './shared'
 
-import type { AnyObject, UserConfig } from '../types'
+import type { AnyObject, UserConfig } from './types'
 
 export class UserConfigService {
   readonly MODE_CONFIG_PATH = 'config/mode'

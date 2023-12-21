@@ -16,14 +16,11 @@ export namespace TaroCLI {
     /** 启用analyzer */
     analyzer: boolean
     /** command */
-    _: string
+    command: string
   } & Record<string, string>
 }
 
-export namespace TaroPlugin {
-  export type IPluginContext = import('@tarojs/service/types').IPluginContext
-  export type IPluginOptions<T = any> = { config: T }
-}
+export type IPluginOptions<T = any> = { config: T }
 
 export namespace UserConfig {
   /** 目标环境 */
@@ -43,7 +40,7 @@ export namespace UserConfig {
 
   export interface ConfigExport {
     appid: string
-    defineConstants: { G: DefineConstants }
+    defineConstants: { G: string }
     project: AnyObject[]
     ci: CIOptions
   }

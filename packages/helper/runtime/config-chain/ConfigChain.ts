@@ -36,21 +36,15 @@ export default class ConfigChain extends AbstractChain {
     return this.window({ navigationStyle: 'custom' })
   }
 
-  subPackage(id: string) {
+  subPackage(this: ConfigChain, id: string) {
     const subPackage = new SubPackageChain(id)
     this.subPackages.push(subPackage)
 
-    return this.assign(subPackage)
-  }
-
-  tabBar(tabBar: Taro.TabBar) {
-    this.config.tabBar = tabBar
-
-    return this
+    return Object.assign(subPackage, { end: () => this })
   }
 
   /** 微信私有配置项 */
-  get wechat() {
-    return this.assign(this.wechatChain)
+  get wechat(): WechatChain & { end(): ConfigChain } {
+    return Object.assign(this.wechatChain, { end: () => this })
   }
 }

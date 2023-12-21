@@ -2,7 +2,7 @@ import { writeFile } from 'node:fs/promises'
 
 import { chalk, printLog, processTypeEnum } from '@tarojs/helper'
 
-import { TaroCLI } from '../types'
+import { TaroCLI } from './types'
 
 export const argv = ((args: TaroCLI.argv) => {
   switch (args.mode as string) {
@@ -17,7 +17,7 @@ export const argv = ((args: TaroCLI.argv) => {
   }
 
   args.analyzer = !!args.analyzer && !process.env.CI
-  args._ = args._?.at(0) ?? ''
+  args.command = args._?.at(0) ?? ''
 
   // set env
   process.env.TARO_MODE = args.mode
@@ -42,6 +42,6 @@ export const logger = {
     printLog(processTypeEnum.REMIND, message)
   },
   exec(message: string) {
-    printLog(processTypeEnum.START, chalk.green(argv._) + ' ' + message)
+    printLog(processTypeEnum.START, chalk.green(argv.command) + ' ' + message)
   },
 }
