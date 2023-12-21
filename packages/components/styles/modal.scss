@@ -78,7 +78,9 @@
 }
 
 .mini-confirm-modal {
-  @apply relative box-border w-[calc(100vw-theme(spacing.16))] mx-auto p-5 text-center bg-white rounded-3xl;
+  @apply relative box-border mx-auto p-5 text-center bg-white rounded-3xl;
+
+  width: calc(100vw - theme('spacing.16'));
 
   .title {
     @apply mt-2 text-lg font-normal leading-6 break-all;
@@ -89,11 +91,17 @@
   }
 
   .divider {
-    @apply h-[2px] w-[calc(100%+theme(spacing.10))] -mx-5 bg-gray-100 my-5;
+    @apply -mx-5 my-5 bg-gray-100;
+
+    width: calc(100% - theme('spacing.10'));
+    height: 2px;
   }
 
   .no-divider {
-    @apply h-[2px] w-[calc(100%+theme(spacing.10))] -mx-5 my-3;
+    @apply -mx-5 my-3;
+
+    width: calc(100% - theme('spacing.10'));
+    height: 2px;
   }
 
   .button {

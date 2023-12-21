@@ -1,10 +1,1 @@
-module.exports = {
-  plugins: {
-    tailwindcss: {},
-    'postcss-rem-to-responsive-pixel': {
-      rootValue: 32,
-      propList: ['*'],
-      transformUnit: 'rpx',
-    },
-  },
-}
+module.exports = require('@miniapp/helper/config').postcss({ tailwind: true })

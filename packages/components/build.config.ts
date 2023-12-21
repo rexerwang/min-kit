@@ -1,10 +1,10 @@
 import { exec } from 'node:child_process'
+import { resolve } from 'node:path'
 import { promisify } from 'node:util'
 
 import { defineBuildConfig } from 'unbuild'
 
 export default defineBuildConfig({
-  clean: false, // for hot-load
   entries: [
     'src/index',
     {
@@ -22,7 +22,8 @@ export default defineBuildConfig({
   },
   hooks: {
     async 'mkdist:done'() {
-      await promisify(exec)('npx postcss dist/styles -d dist/styles')
+      const input = resolve(__dirname, 'dist/styles')
+      await promisify(exec)(`pnpm postcss ${input} -d ${input}`)
     },
   },
 })
