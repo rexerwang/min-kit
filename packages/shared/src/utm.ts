@@ -1,6 +1,5 @@
-import { stringify as _stringify } from 'query-string'
-
 import { isString } from './is'
+import { qs } from './qs'
 
 /** @see https://en.wikipedia.org/wiki/UTM_parameters */
 export interface OriginUTM {
@@ -93,7 +92,7 @@ function generate<T extends UTMObject>(utm: T, shorten = true) {
 }
 
 function stringify<T extends UTMObject>(utm: T, shorten = true) {
-  return _stringify(generate(utm, shorten as any))
+  return qs.stringify(generate(utm, shorten as any))
 }
 
 function from(source: UTMObject, target: Record<string, any>) {

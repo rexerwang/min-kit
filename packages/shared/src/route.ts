@@ -1,10 +1,9 @@
-import { parseUrl, StringifyOptions, stringifyUrl } from 'query-string'
-
 import { isString } from './is'
+import { qs } from './qs'
 
 export namespace Route {
   export type Query = Record<string, any> | string | null | undefined
-  export type GenerateOptions = StringifyOptions
+  export type GenerateOptions = qs.StringifyOptions
 }
 
 export class Route {
@@ -20,7 +19,7 @@ export class Route {
 
     if (query) {
       if (isString(query)) return route + (route.includes('?') ? '&' : '?') + query
-      return stringifyUrl({ url: route, query }, options)
+      return qs.stringifyUrl({ url: route, query }, options)
     }
 
     return route
@@ -28,7 +27,7 @@ export class Route {
 
   /** parse route into path & query-string */
   static parse(route: string) {
-    const parsed = parseUrl(route)
+    const parsed = qs.parseUrl(route)
     return { path: Route.ensure(parsed.url), query: parsed.query }
   }
 
