@@ -1,4 +1,4 @@
-import { confirmModal, renderText } from '@miniapp/components'
+import { confirmModal, Icon, renderText } from '@miniapp/components'
 
 export interface IConfirmConfig {
   label: string
@@ -51,6 +51,24 @@ export const ConfirmConfigSet: { title: string; config: IConfirmConfig[] }[] = [
           footer: renderText('您所拔打的电话正在通话中，请稍后再拨\nThe subscriber you dialed is busy now.', {
             className: 'underline decoration-dotted',
           }),
+        },
+      },
+      {
+        label: 'icon by string',
+        props: {
+          icon: 'warn',
+          title: '对不起，您所拔打的电话\n正在通话中，请稍后再拨',
+          subtitle: 'Sorry! The subscriber you dialed\n is busy now, please redial later.',
+          footer: '您所拔打的电话正在通话中，请稍后再拨\nThe subscriber you dialed is busy now.',
+        },
+      },
+      {
+        label: 'icon by JSX',
+        props: {
+          icon: <Icon name='react' size={100} />,
+          title: '对不起，您所拔打的电话\n正在通话中，请稍后再拨',
+          subtitle: 'Sorry! The subscriber you dialed\n is busy now, please redial later.',
+          footer: '您所拔打的电话正在通话中，请稍后再拨\nThe subscriber you dialed is busy now.',
         },
       },
       {
