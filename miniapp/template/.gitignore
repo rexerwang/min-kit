@@ -10,3 +10,9 @@ node_modules/
 project.config.json
 project.tt.json
 project.private.config.json
+
+# private key
+.private.key.*
+
+# .local files
+*.local

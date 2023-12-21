@@ -1,15 +1,43 @@
-import './app.scss'
+import '@miniapp/components/dist/styles/index.css'
+import './assets/styles/index.scss'
+import './assets/polyfill'
+import './icons'
 
-import { useLaunch } from '@tarojs/taro'
+import { useDebug } from '@miniapp/components'
+import { go, logger } from '@miniapp/extends'
+import { useError, useLaunch, usePageNotFound, useUnhandledRejection } from '@tarojs/taro'
 
-import appStore from './store/app'
+import { Pages } from './app.route'
+import authStore from './shared/store/auth'
 
-function App({ children }: React.PropsWithChildren<any>) {
-  useLaunch((options) => {
-    appStore.apis.lastSignIn(Date.now(), options.scene)
+function App({ children }: React.PropsWithChildren) {
+  useDebug({
+    user: {
+      getToken: authStore.apis.getToken,
+      async getUserInfo(reLogin?: boolean) {
+        if (reLogin) await authStore.apis.login()
+      },
+    },
   })
 
-  // children 是将要会渲染的页面
+  useLaunch((opts) => {
+    logger.debug('#AppLaunch', opts)
+  })
+
+  usePageNotFound((res) => {
+    logger.error('#PageNotFound', res)
+
+    go.redirect(Pages.Home)
+  })
+
+  useUnhandledRejection(({ reason }) => {
+    logger.error('#UnhandledRejection', reason)
+  })
+
+  useError((error) => {
+    logger.error('#AppError', error)
+  })
+
   return children
 }
 

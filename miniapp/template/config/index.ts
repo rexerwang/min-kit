@@ -1,15 +1,15 @@
-import { defineConfig, type UserConfigExport } from '@tarojs/cli'
+import { defineUserConfig } from '@miniapp/helper/compile'
+import { type UserConfigExport } from '@tarojs/cli'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
-import { UnifiedWebpackPluginV5 } from 'weapp-tailwindcss/webpack'
 
 import devConfig from './dev'
 import prodConfig from './prod'
 
 // https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
-export default defineConfig(async (merge, { command, mode }) => {
+export default defineUserConfig((merge) => {
   const baseConfig: UserConfigExport = {
-    projectName: 'taro-miniapp',
-    date: '2023-12-17',
+    projectName: 'template',
+    date: '2023-12-21',
     designWidth: 750,
     deviceRatio: {
       640: 2.34 / 2,
@@ -28,7 +28,7 @@ export default defineConfig(async (merge, { command, mode }) => {
     framework: 'react',
     compiler: 'webpack5',
     cache: {
-      enable: false, // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
+      enable: true, // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
     },
     mini: {
       postcss: {
@@ -51,52 +51,12 @@ export default defineConfig(async (merge, { command, mode }) => {
         },
       },
       webpackChain(chain) {
-        chain.resolve
-          .plugin('tsconfig-paths')
-          .use(TsconfigPathsPlugin)
-          .end()
-          .end()
-          .plugin('weapp-tailwindcss')
-          .use(UnifiedWebpackPluginV5, [{ appType: 'taro' }])
-          .end()
-      },
-    },
-    h5: {
-      publicPath: '/',
-      staticDirectory: 'static',
-      output: {
-        filename: 'js/[name].[hash:8].js',
-        chunkFilename: 'js/[name].[chunkhash:8].js',
-      },
-      miniCssExtractPluginOption: {
-        ignoreOrder: true,
-        filename: 'css/[name].[hash].css',
-        chunkFilename: 'css/[name].[chunkhash].css',
-      },
-      postcss: {
-        autoprefixer: {
-          enable: true,
-          config: {},
-        },
-        cssModules: {
-          enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
-          config: {
-            namingPattern: 'module', // 转换模式，取值为 global/module
-            generateScopedName: '[name]__[local]___[hash:base64:5]',
-          },
-        },
-      },
-      webpackChain(chain) {
         chain.resolve.plugin('tsconfig-paths').use(TsconfigPathsPlugin)
       },
     },
-    rn: {
-      appName: 'taroDemo',
-      postcss: {
-        cssModules: {
-          enable: false, // 默认为 false，如需使用 css modules 功能，则设为 true
-        },
-      },
+    logger: {
+      quiet: !!process.env.CI,
+      stats: process.env.NODE_ENV === 'production',
     },
   }
   if (process.env.NODE_ENV === 'development') {

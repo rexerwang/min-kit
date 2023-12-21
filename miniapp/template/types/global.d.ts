@@ -25,3 +25,14 @@ declare namespace NodeJS {
     TARO_APP_ID: string
   }
 }
+
+declare type Mode = 'dev' | 'prod'
+
+declare type DefineConstants = {
+  // TODO: 定义注入常量类型
+
+  baseUrl: string
+}
+
+// 注入常量
+declare const G: DefineConstants
