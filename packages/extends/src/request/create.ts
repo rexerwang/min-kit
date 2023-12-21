@@ -1,5 +1,5 @@
 import { Request, RequestConfig } from './Request'
 
-export function create(config?: RequestConfig) {
+export function createRequest(config?: RequestConfig) {
   return new Request(config)
 }
