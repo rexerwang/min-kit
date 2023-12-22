@@ -5,7 +5,7 @@ import { Routes } from './app.route'
 import { NAME } from './shared/constants'
 
 export default configChain((chain, { mode }) => {
-  const isProd = mode === 'prod'
+  const isDev = mode === 'dev'
 
   chain
     .entryPagePath(Routes.Home)
@@ -19,5 +19,5 @@ export default configChain((chain, { mode }) => {
       navigationBarTextStyle: 'black',
       navigationBarTitleText: NAME,
     })
-    .wechat.debug(!isProd)
+    .wechat.debug(!isDev)
 })
