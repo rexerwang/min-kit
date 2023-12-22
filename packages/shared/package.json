@@ -18,6 +18,12 @@
   "files": [
     "dist"
   ],
+  "keywords": [
+    "min-kit",
+    "shared",
+    "miniapp",
+    "miniprogram"
+  ],
   "scripts": {
     "build": "unbuild"
   },

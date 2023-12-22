@@ -1,7 +1,7 @@
 {
   "name": "@min-kit/components",
   "version": "0.1.0",
-  "description": "miniapp React components",
+  "description": "React components for miniapp",
   "author": "rexerwang",
   "license": "MIT",
   "repository": "rexerwang/min-kit",
@@ -21,6 +21,14 @@
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "min-kit",
+    "components",
+    "react",
+    "taro",
+    "miniapp",
+    "miniprogram"
   ],
   "scripts": {
     "build": "unbuild"

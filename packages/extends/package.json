@@ -1,7 +1,7 @@
 {
   "name": "@min-kit/extends",
   "version": "0.1.0",
-  "description": "extends taro apis",
+  "description": "extends apis of Taro",
   "author": "rexerwang",
   "license": "MIT",
   "repository": "rexerwang/min-kit",
@@ -17,6 +17,14 @@
   "types": "./dist/index.d.ts",
   "files": [
     "dist"
+  ],
+  "keywords": [
+    "min-kit",
+    "extends",
+    "apis",
+    "taro",
+    "miniapp",
+    "miniprogram"
   ],
   "scripts": {
     "build": "unbuild"

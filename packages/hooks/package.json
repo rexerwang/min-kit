@@ -18,6 +18,13 @@
   "files": [
     "dist"
   ],
+  "keywords": [
+    "min-kit",
+    "react",
+    "hooks",
+    "miniapp",
+    "miniprogram"
+  ],
   "scripts": {
     "build": "unbuild"
   },
