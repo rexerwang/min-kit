@@ -1,6 +1,6 @@
-import { confirmModal } from '@miniapp/components'
-import { toast } from '@miniapp/extends'
-import { sleep } from '@miniapp/shared'
+import { confirmModal } from '@min-kit/components'
+import { toast } from '@min-kit/extends'
+import { sleep } from '@min-kit/shared'
 
 import type { IConfirmConfig } from './confirm.config'
 

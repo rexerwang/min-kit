@@ -1,6 +1,6 @@
-import { Modal, ShareButton } from '@miniapp/components'
-import { logger } from '@miniapp/extends'
-import { useCountdown } from '@miniapp/hooks'
+import { Modal, ShareButton } from '@min-kit/components'
+import { logger } from '@min-kit/extends'
+import { useCountdown } from '@min-kit/hooks'
 import { Button, Text, View } from '@tarojs/components'
 
 export default Modal.with<{}, void, void>('ShareModal', ({ onCancel }) => {

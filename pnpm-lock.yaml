@@ -95,22 +95,22 @@ importers:
       '@babel/runtime':
         specifier: ^7.21.5
         version: 7.23.6
-      '@miniapp/components':
+      '@min-kit/components':
         specifier: workspace:*
         version: link:../../packages/components
-      '@miniapp/extends':
+      '@min-kit/extends':
         specifier: workspace:*
         version: link:../../packages/extends
-      '@miniapp/helper':
+      '@min-kit/helper':
         specifier: workspace:*
         version: link:../../packages/helper
-      '@miniapp/hooks':
+      '@min-kit/hooks':
         specifier: workspace:*
         version: link:../../packages/hooks
-      '@miniapp/shared':
+      '@min-kit/shared':
         specifier: workspace:*
         version: link:../../packages/shared
-      '@miniapp/store':
+      '@min-kit/store':
         specifier: workspace:*
         version: link:../../packages/store
       '@tarojs/components':
@@ -228,16 +228,16 @@ importers:
 
   packages/components:
     dependencies:
-      '@miniapp/extends':
+      '@min-kit/extends':
         specifier: workspace:*
         version: link:../extends
-      '@miniapp/hooks':
+      '@min-kit/hooks':
         specifier: workspace:*
         version: link:../hooks
-      '@miniapp/shared':
+      '@min-kit/shared':
         specifier: workspace:*
         version: link:../shared
-      '@miniapp/store':
+      '@min-kit/store':
         specifier: workspace:*
         version: link:../store
       '@tarojs/components':
@@ -280,13 +280,13 @@ importers:
         specifier: '>=17'
         version: 18.2.0(react@18.2.0)
     devDependencies:
-      '@miniapp/helper':
+      '@min-kit/helper':
         specifier: workspace:*
         version: link:../helper
 
   packages/extends:
     dependencies:
-      '@miniapp/shared':
+      '@min-kit/shared':
         specifier: workspace:*
         version: link:../shared
       '@tarojs/runtime':
@@ -355,10 +355,10 @@ importers:
 
   packages/hooks:
     dependencies:
-      '@miniapp/extends':
+      '@min-kit/extends':
         specifier: workspace:*
         version: link:../extends
-      '@miniapp/shared':
+      '@min-kit/shared':
         specifier: workspace:*
         version: link:../shared
       '@tarojs/taro':

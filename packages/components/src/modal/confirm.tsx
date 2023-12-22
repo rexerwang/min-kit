@@ -1,4 +1,4 @@
-import { isString } from '@miniapp/shared'
+import { isString } from '@min-kit/shared'
 import { Button, View } from '@tarojs/components'
 import clsx from 'clsx'
 import { ReactNode } from 'react'

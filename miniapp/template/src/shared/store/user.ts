@@ -1,6 +1,6 @@
-import { logger, RequestError } from '@miniapp/extends'
-import { HttpStatus } from '@miniapp/shared'
-import { combineStore, createStore } from '@miniapp/store'
+import { logger, RequestError } from '@min-kit/extends'
+import { HttpStatus } from '@min-kit/shared'
+import { combineStore, createStore } from '@min-kit/store'
 
 import { getProfile } from '../service/user'
 

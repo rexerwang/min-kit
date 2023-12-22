@@ -1,4 +1,4 @@
-import { isEmpty, isString } from '@miniapp/shared'
+import { isEmpty, isString } from '@min-kit/shared'
 import { setClipboardData } from '@tarojs/taro'
 
 import { logger } from './logger'

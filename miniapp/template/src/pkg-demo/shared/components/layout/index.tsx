@@ -1,6 +1,6 @@
-import { Icon, type ReactProps } from '@miniapp/components'
-import { go, toast } from '@miniapp/extends'
-import { isString, Route } from '@miniapp/shared'
+import { Icon, type ReactProps } from '@min-kit/components'
+import { go, toast } from '@min-kit/extends'
+import { isString, Route } from '@min-kit/shared'
 import { Text, View } from '@tarojs/components'
 import { Current } from '@tarojs/taro'
 import { useMemo } from 'react'
@@ -37,10 +37,10 @@ export default function Layout({ title, children }: ReactProps<{ title?: string 
         <Icon name='react' size={120} onClick={() => go(Pages.PkgDemo.H5, { url: 'https://react.dev/' })} />
         <View className='flex-1 ml-4'>
           <View
-            className='block text-black text-lg font-semibold capitalize'
+            className='block text-black text-lg font-semibold'
             hoverClass='underline underline-offset-4'
-            onClick={() => go(Pages.PkgDemo.H5, { url: 'https://github.com/rexerwang/taro-miniapp' })}>
-            {NAME}
+            onClick={() => go(Pages.PkgDemo.H5, { url: 'https://github.com/rexerwang/min-kit' })}>
+            @min-kit/template
           </View>
           <Text className='block text-sm text-gray-400'>
             小程序模版项目 基于

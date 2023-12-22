@@ -1,5 +1,5 @@
-import { type Middleware } from '@miniapp/extends'
-import { HttpStatus, sleep } from '@miniapp/shared'
+import { type Middleware } from '@min-kit/extends'
+import { HttpStatus, sleep } from '@min-kit/shared'
 
 import authStore from '@/shared/store/auth'
 

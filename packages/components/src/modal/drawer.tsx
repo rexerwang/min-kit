@@ -1,5 +1,5 @@
-import { hasNavBar, hasTabBar, SystemInfo } from '@miniapp/extends'
-import { MIN_Z_DEPTH, px } from '@miniapp/shared'
+import { hasNavBar, hasTabBar, SystemInfo } from '@min-kit/extends'
+import { MIN_Z_DEPTH, px } from '@min-kit/shared'
 import { View } from '@tarojs/components'
 import clsx from 'clsx'
 import { type CSSProperties, useMemo } from 'react'

@@ -1,4 +1,4 @@
-import { createRequest, logger } from '@miniapp/extends'
+import { createRequest, logger } from '@min-kit/extends'
 
 const http = createRequest({ baseUrl: 'https://httpbin.org' }).use(async (ctx, next) => {
   logger.warn('#httpbin', `${ctx.request.method} ${ctx.request.url}`)

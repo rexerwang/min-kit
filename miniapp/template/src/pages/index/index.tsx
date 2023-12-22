@@ -1,4 +1,4 @@
-import { go, logger } from '@miniapp/extends'
+import { go, logger } from '@min-kit/extends'
 import { useLoad } from '@tarojs/taro'
 
 import { Pages } from '@/app.route'

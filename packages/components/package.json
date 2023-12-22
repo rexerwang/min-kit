@@ -1,10 +1,10 @@
 {
-  "name": "@miniapp/components",
+  "name": "@min-kit/components",
   "version": "0.1.0",
   "description": "miniapp React components",
   "author": "rexerwang",
   "license": "MIT",
-  "repository": "rexerwang/taro-miniapp",
+  "repository": "rexerwang/min-kit",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -26,10 +26,10 @@
     "build": "unbuild"
   },
   "dependencies": {
-    "@miniapp/extends": "workspace:*",
-    "@miniapp/hooks": "workspace:*",
-    "@miniapp/shared": "workspace:*",
-    "@miniapp/store": "workspace:*",
+    "@min-kit/extends": "workspace:*",
+    "@min-kit/hooks": "workspace:*",
+    "@min-kit/shared": "workspace:*",
+    "@min-kit/store": "workspace:*",
     "clsx": "^2.0.0"
   },
   "peerDependencies": {
@@ -47,6 +47,6 @@
     "react-dom": ">=17"
   },
   "devDependencies": {
-    "@miniapp/helper": "workspace:*"
+    "@min-kit/helper": "workspace:*"
   }
 }

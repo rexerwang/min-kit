@@ -1,5 +1,5 @@
-import { getRootElement, SystemInfo } from '@miniapp/extends'
-import { useAppRoute__unstable, useAppRouteDone__unstable, useMount } from '@miniapp/hooks'
+import { getRootElement, SystemInfo } from '@min-kit/extends'
+import { useAppRoute__unstable, useAppRouteDone__unstable, useMount } from '@min-kit/hooks'
 import { nextTick } from '@tarojs/taro'
 import { useRef } from 'react'
 

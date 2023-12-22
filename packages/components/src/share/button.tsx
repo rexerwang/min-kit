@@ -1,4 +1,4 @@
-import { useTaroId } from '@miniapp/hooks'
+import { useTaroId } from '@min-kit/hooks'
 import { Button, ButtonProps } from '@tarojs/components'
 import { useEffect } from 'react'
 

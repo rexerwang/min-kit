@@ -1,4 +1,4 @@
-import { attempt } from '@miniapp/shared'
+import { attempt } from '@min-kit/shared'
 
 export function prettyJSON(data?: any) {
   if (data == null || typeof data === 'string') return data

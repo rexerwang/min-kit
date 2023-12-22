@@ -1,4 +1,4 @@
-import { attempt, getTag } from '@miniapp/shared'
+import { attempt, getTag } from '@min-kit/shared'
 import { getStorageInfoSync, getStorageSync } from '@tarojs/taro'
 
 export enum StorageType {

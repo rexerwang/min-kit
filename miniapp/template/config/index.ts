@@ -1,4 +1,4 @@
-import { defineUserConfig } from '@miniapp/helper/compile'
+import { defineUserConfig } from '@min-kit/helper/compile'
 import { type UserConfigExport } from '@tarojs/cli'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 

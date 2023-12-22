@@ -1,10 +1,10 @@
 {
-  "name": "@miniapp/hooks",
+  "name": "@min-kit/hooks",
   "version": "0.1.0",
   "description": "React Hooks for miniapp",
   "author": "rexerwang",
   "license": "MIT",
-  "repository": "rexerwang/taro-miniapp",
+  "repository": "rexerwang/min-kit",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -22,8 +22,8 @@
     "build": "unbuild"
   },
   "dependencies": {
-    "@miniapp/extends": "workspace:*",
-    "@miniapp/shared": "workspace:*"
+    "@min-kit/extends": "workspace:*",
+    "@min-kit/shared": "workspace:*"
   },
   "peerDependencies": {
     "@tarojs/taro": ">=3.6",

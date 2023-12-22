@@ -1,4 +1,4 @@
-import { throttle } from '@miniapp/shared'
+import { throttle } from '@min-kit/shared'
 import { useMemo } from 'react'
 
 import { useUnmount } from './useUnmount'

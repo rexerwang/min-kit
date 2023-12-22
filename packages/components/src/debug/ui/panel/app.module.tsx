@@ -1,6 +1,6 @@
-import { copy, go, logger, toast } from '@miniapp/extends'
-import { useQuery } from '@miniapp/hooks'
-import { attempt, qs } from '@miniapp/shared'
+import { copy, go, logger, toast } from '@min-kit/extends'
+import { useQuery } from '@min-kit/hooks'
+import { attempt, qs } from '@min-kit/shared'
 import { Button, Input, ScrollView, Text, View } from '@tarojs/components'
 import {
   clearStorageSync,

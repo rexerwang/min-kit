@@ -1,4 +1,4 @@
-import { getZDepth } from '@miniapp/shared'
+import { getZDepth } from '@min-kit/shared'
 
 import { mountPortal } from '../portal'
 import { Drawer, DrawerProps } from './drawer'

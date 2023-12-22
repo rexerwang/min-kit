@@ -1,4 +1,4 @@
-import { logger, selectNodeContext } from '@miniapp/extends'
+import { logger, selectNodeContext } from '@min-kit/extends'
 import { useEffect, useRef } from 'react'
 
 import { useMemoizedFn } from './useMemoizedFn'

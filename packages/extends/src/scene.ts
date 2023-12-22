@@ -1,4 +1,4 @@
-import { attempt } from '@miniapp/shared'
+import { attempt } from '@min-kit/shared'
 import { getEnterOptionsSync } from '@tarojs/taro'
 
 /** @see https://developers.weixin.qq.com/miniprogram/dev/reference/scene-list.html */

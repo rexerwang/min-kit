@@ -1,4 +1,4 @@
-import { isString } from '@miniapp/shared'
+import { isString } from '@min-kit/shared'
 import { Image, ImageProps, View, ViewProps } from '@tarojs/components'
 import clsx from 'clsx'
 import { useMemo } from 'react'

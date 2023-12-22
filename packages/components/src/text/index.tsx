@@ -1,4 +1,4 @@
-import { isNumber, isString } from '@miniapp/shared'
+import { isNumber, isString } from '@min-kit/shared'
 import { Text, TextProps } from '@tarojs/components'
 
 export function renderText(text?: React.ReactNode, props: Omit<TextProps, 'children' | 'decode' | 'space'> = {}) {

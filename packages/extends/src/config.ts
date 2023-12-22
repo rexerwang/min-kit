@@ -1,4 +1,4 @@
-import { Route } from '@miniapp/shared'
+import { Route } from '@min-kit/shared'
 
 import Current from './current'
 

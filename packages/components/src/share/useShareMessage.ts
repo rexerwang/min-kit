@@ -1,5 +1,5 @@
-import { Current, document, logger } from '@miniapp/extends'
-import { useMount } from '@miniapp/hooks'
+import { Current, document, logger } from '@min-kit/extends'
+import { useMount } from '@min-kit/hooks'
 import { useShareAppMessage, useShareTimeline } from '@tarojs/taro'
 
 import Event from './event'

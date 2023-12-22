@@ -1,4 +1,4 @@
-import { logger } from '@miniapp/extends'
+import { logger } from '@min-kit/extends'
 import { eventCenter } from '@tarojs/taro'
 
 import { createEventListener } from './createEventListener'

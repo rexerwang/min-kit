@@ -1,4 +1,4 @@
-import { document, getRootElement, logger } from '@miniapp/extends'
+import { document, getRootElement, logger } from '@min-kit/extends'
 import { RootPortal, View } from '@tarojs/components'
 import { render, unmountComponentAtNode } from '@tarojs/react'
 import { canIUse } from '@tarojs/taro'

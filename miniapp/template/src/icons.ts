@@ -1,5 +1,5 @@
-import { Icon } from '@miniapp/components'
-import { logger } from '@miniapp/extends'
+import { Icon } from '@min-kit/components'
+import { logger } from '@min-kit/extends'
 
 const r = require.context('./assets/icons', false, /\.(svg|png|jpg)$/, 'sync')
 

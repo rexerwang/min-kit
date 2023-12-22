@@ -1,5 +1,5 @@
-import { configChain } from '@miniapp/helper/runtime'
-import { isString } from '@miniapp/shared'
+import { configChain } from '@min-kit/helper/runtime'
+import { isString } from '@min-kit/shared'
 
 import { Routes } from './app.route'
 import { NAME } from './shared/constants'

@@ -1,1 +1,1 @@
-export const NAME = 'miniapp template'
+export const NAME = 'min-kit'

@@ -1,4 +1,4 @@
-import { createRequest } from '@miniapp/extends'
+import { createRequest } from '@min-kit/extends'
 
 // Do not use `@shared/http` to avoid circular-dependency issue
 const http = createRequest({ baseUrl: G.baseUrl })

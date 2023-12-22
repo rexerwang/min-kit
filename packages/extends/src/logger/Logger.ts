@@ -1,5 +1,5 @@
 /* eslint no-console: 0 */
-import { attempt, isFunction, isString, Route } from '@miniapp/shared'
+import { attempt, isFunction, isString, Route } from '@min-kit/shared'
 import { canIUse, Current, getLogManager, getRealtimeLogManager, getSystemInfoSync } from '@tarojs/taro'
 
 import { RequestError } from '../request/RequestError'

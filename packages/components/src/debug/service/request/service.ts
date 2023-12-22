@@ -1,5 +1,5 @@
-import { logger } from '@miniapp/extends'
-import { isEmpty, qs } from '@miniapp/shared'
+import { logger } from '@min-kit/extends'
+import { isEmpty, qs } from '@min-kit/shared'
 
 import { RequestRecord, requestStore } from '../../store'
 import { getRequestProxy } from './proxy'

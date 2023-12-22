@@ -1,5 +1,5 @@
-import { logger } from '@miniapp/extends'
-import { combineStore, createPersistStore } from '@miniapp/store'
+import { logger } from '@min-kit/extends'
+import { combineStore, createPersistStore } from '@min-kit/store'
 import { checkSession, login } from '@tarojs/taro'
 
 import { signin } from '../service/auth'

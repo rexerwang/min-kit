@@ -1,4 +1,4 @@
-import { scene } from '@miniapp/extends'
+import { scene } from '@min-kit/extends'
 import { useState } from 'react'
 
 import { useAppShow } from './useAppShow'

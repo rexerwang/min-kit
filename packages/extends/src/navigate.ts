@@ -1,4 +1,4 @@
-import { Route } from '@miniapp/shared'
+import { Route } from '@min-kit/shared'
 import { navigateBack, navigateTo, navigateToMiniProgram, redirectTo, reLaunch, switchTab } from '@tarojs/taro'
 
 import { hasTabBar } from './config'

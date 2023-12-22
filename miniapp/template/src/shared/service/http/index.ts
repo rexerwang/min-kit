@@ -1,4 +1,4 @@
-import { createRequest } from '@miniapp/extends'
+import { createRequest } from '@min-kit/extends'
 
 import { authenticate, timestamp } from './middleware'
 

@@ -1,4 +1,4 @@
-import { UTM } from '@miniapp/shared'
+import { UTM } from '@min-kit/shared'
 import { useRouter as useTaroRouter } from '@tarojs/taro'
 import { useMemo } from 'react'
 

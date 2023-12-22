@@ -1,10 +1,10 @@
 {
-  "name": "@miniapp/store",
+  "name": "@min-kit/store",
   "version": "0.1.0",
   "description": "store kit of React miniapp based on Zustand",
   "author": "rexerwang",
   "license": "MIT",
-  "repository": "rexerwang/taro-miniapp",
+  "repository": "rexerwang/min-kit",
   "type": "module",
   "exports": {
     ".": {

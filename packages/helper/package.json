@@ -1,10 +1,10 @@
 {
-  "name": "@miniapp/helper",
+  "name": "@min-kit/helper",
   "version": "0.1.0",
   "description": "Taro plugin and config helper",
   "author": "rexerwang",
   "license": "MIT",
-  "repository": "rexerwang/taro-miniapp",
+  "repository": "rexerwang/min-kit",
   "exports": {
     "./compile": {
       "types": "./dist/compile/index.d.ts",

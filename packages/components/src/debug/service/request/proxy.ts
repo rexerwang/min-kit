@@ -1,4 +1,4 @@
-import { defineProperty } from '@miniapp/shared'
+import { defineProperty } from '@min-kit/shared'
 
 interface RequestProxy {
   request(...args: any[]): Promise<any>

@@ -1,5 +1,5 @@
-import { scene } from '@miniapp/extends'
-import { useAppScene, useAppShow, useMount } from '@miniapp/hooks'
+import { scene } from '@min-kit/extends'
+import { useAppScene, useAppShow, useMount } from '@min-kit/hooks'
 import { View } from '@tarojs/components'
 import { useDidShow } from '@tarojs/taro'
 import { useState } from 'react'

@@ -1,4 +1,4 @@
-import { confirmModal, Icon, renderText } from '@miniapp/components'
+import { confirmModal, Icon, renderText } from '@min-kit/components'
 
 export interface IConfirmConfig {
   label: string

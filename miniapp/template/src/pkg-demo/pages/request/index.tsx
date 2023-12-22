@@ -1,5 +1,5 @@
-import { go, toast } from '@miniapp/extends'
-import { useQuery } from '@miniapp/hooks'
+import { go, toast } from '@min-kit/extends'
+import { useQuery } from '@min-kit/hooks'
 import { Button, Text, View } from '@tarojs/components'
 import { useState } from 'react'
 

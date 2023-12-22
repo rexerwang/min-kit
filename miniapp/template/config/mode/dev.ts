@@ -1,4 +1,4 @@
-import type { UserConfig } from '@miniapp/helper/compile'
+import type { UserConfig } from '@min-kit/helper/compile'
 
 export default {
   appid: {

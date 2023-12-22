@@ -1,11 +1,11 @@
 {
-  "name": "taro-miniapp",
+  "name": "min-kit",
   "version": "0.1.0",
   "private": true,
   "description": "Toolkit of miniapp based on Tarojs/React",
   "author": "rexerwang",
   "license": "MIT",
-  "repository": "rexerwang/taro-miniapp",
+  "repository": "rexerwang/min-kit",
   "scripts": {
     "build": "pnpm -r run --sort --filter=./packages/* build",
     "lint:eslint": "eslint --fix --ext .ts,tsx ./",

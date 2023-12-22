@@ -1,6 +1,6 @@
-import { Icon, renderText } from '@miniapp/components'
-import { logger } from '@miniapp/extends'
-import { useRouterParams } from '@miniapp/hooks'
+import { Icon, renderText } from '@min-kit/components'
+import { logger } from '@min-kit/extends'
+import { useRouterParams } from '@min-kit/hooks'
 import { View, WebView } from '@tarojs/components'
 import { useEffect, useState } from 'react'
 

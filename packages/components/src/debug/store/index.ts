@@ -1,5 +1,5 @@
-import { SystemInfo } from '@miniapp/extends'
-import { createPersistStore } from '@miniapp/store'
+import { SystemInfo } from '@min-kit/extends'
+import { createPersistStore } from '@min-kit/store'
 import { useMemo } from 'react'
 
 import type { AnyObject } from '../../types'

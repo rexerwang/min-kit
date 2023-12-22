@@ -1,10 +1,10 @@
 {
-  "name": "@miniapp/extends",
+  "name": "@min-kit/extends",
   "version": "0.1.0",
   "description": "extends taro apis",
   "author": "rexerwang",
   "license": "MIT",
-  "repository": "rexerwang/taro-miniapp",
+  "repository": "rexerwang/min-kit",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -22,7 +22,7 @@
     "build": "unbuild"
   },
   "dependencies": {
-    "@miniapp/shared": "workspace:*"
+    "@min-kit/shared": "workspace:*"
   },
   "peerDependencies": {
     "@tarojs/taro": ">=3.6",

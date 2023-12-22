@@ -1,1 +1,1 @@
-module.exports = require('@miniapp/helper/config').postcss()
+module.exports = require('@min-kit/helper/config').postcss()

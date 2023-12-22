@@ -1,9 +1,9 @@
-import type { UserConfig } from '@miniapp/helper/compile'
+import type { UserConfig } from '@min-kit/helper/compile'
 
 /** 抖音小程序配置 */
 export default ((appid) => {
   const config = {
-    projectname: '@miniapp/template',
+    projectname: '@min-kit/template',
     appid,
     setting: {
       urlCheck: false,

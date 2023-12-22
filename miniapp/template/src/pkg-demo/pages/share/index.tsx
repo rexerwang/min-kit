@@ -1,6 +1,6 @@
-import { ShareButton, useShareMessage } from '@miniapp/components'
-import { toast } from '@miniapp/extends'
-import { Route, UTM } from '@miniapp/shared'
+import { ShareButton, useShareMessage } from '@min-kit/components'
+import { toast } from '@min-kit/extends'
+import { Route, UTM } from '@min-kit/shared'
 import { Button, View } from '@tarojs/components'
 
 import { Pages } from '@/app.route'

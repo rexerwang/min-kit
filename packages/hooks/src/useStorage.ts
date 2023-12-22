@@ -1,4 +1,4 @@
-import { getStorage, setStorage } from '@miniapp/extends'
+import { getStorage, setStorage } from '@min-kit/extends'
 import { Dispatch, SetStateAction, useEffect, useState } from 'react'
 
 import { useMemoizedFn } from './useMemoizedFn'

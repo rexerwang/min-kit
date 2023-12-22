@@ -1,10 +1,10 @@
-import '@miniapp/components/dist/styles/index.css'
+import '@min-kit/components/dist/styles/index.css'
 import './assets/styles/index.scss'
 import './assets/polyfill'
 import './icons'
 
-import { useDebug } from '@miniapp/components'
-import { go, logger } from '@miniapp/extends'
+import { useDebug } from '@min-kit/components'
+import { go, logger } from '@min-kit/extends'
 import { useError, useLaunch, usePageNotFound, useUnhandledRejection } from '@tarojs/taro'
 
 import { Pages } from './app.route'

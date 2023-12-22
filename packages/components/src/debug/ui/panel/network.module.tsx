@@ -1,4 +1,4 @@
-import { copy } from '@miniapp/extends'
+import { copy } from '@min-kit/extends'
 import { Block, Button, Input, ScrollView, Text, View } from '@tarojs/components'
 import clsx from 'clsx'
 import { useEffect, useState } from 'react'

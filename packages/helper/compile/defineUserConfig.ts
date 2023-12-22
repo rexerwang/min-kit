@@ -29,7 +29,7 @@ export function defineUserConfig(fn: UserConfigFn, options = defaultOptions) {
   const plugins: any[] = [
     options.ci && ['@tarojs/plugin-mini-ci', configService.ci],
     argv.command === 'prebuild' && [
-      require.resolve('@miniapp/helper/compile/plugin-prebuild'),
+      require.resolve('@min-kit/helper/compile/plugin-prebuild'),
       { config: configService.project },
     ],
   ].filter(Boolean)

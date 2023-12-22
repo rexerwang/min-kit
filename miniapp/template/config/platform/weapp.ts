@@ -1,12 +1,12 @@
-import type { UserConfig } from '@miniapp/helper/compile'
+import type { UserConfig } from '@min-kit/helper/compile'
 
 /** 微信小程序配置 */
 export default ((appid) => ({
   project: {
     output: 'project.config.json',
     miniprogramRoot: 'dist',
-    projectname: '@miniapp/template',
-    description: '@miniapp/template',
+    projectname: '@min-kit/template',
+    description: '@min-kit/template',
     appid,
     setting: {
       es6: true, // 预览时需要开启

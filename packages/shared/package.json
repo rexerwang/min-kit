@@ -1,10 +1,10 @@
 {
-  "name": "@miniapp/shared",
+  "name": "@min-kit/shared",
   "version": "0.1.0",
-  "description": "utils & constants shared of @miniapp packages",
+  "description": "utils & constants shared of @min-kit packages",
   "author": "rexerwang",
   "license": "MIT",
-  "repository": "rexerwang/taro-miniapp",
+  "repository": "rexerwang/min-kit",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",

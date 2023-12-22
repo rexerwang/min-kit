@@ -1,4 +1,4 @@
-import type { Middleware } from '@miniapp/extends'
+import type { Middleware } from '@min-kit/extends'
 
 export function timestamp(key = '_'): Middleware {
   return async (ctx, next) => {

@@ -1,4 +1,4 @@
-import { attempt } from '@miniapp/shared'
+import { attempt } from '@min-kit/shared'
 import {
   getStorage as getStorageApi,
   getStorageSync as getStorageSyncApi,
