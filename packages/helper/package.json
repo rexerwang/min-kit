@@ -31,6 +31,9 @@
     "dist",
     "types"
   ],
+  "scripts": {
+    "build": "unbuild"
+  },
   "peerDependencies": {
     "@tarojs/cli": ">=3.6",
     "@tarojs/helper": ">=3.6",

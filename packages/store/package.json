@@ -19,6 +19,9 @@
   "files": [
     "dist"
   ],
+  "scripts": {
+    "build": "unbuild"
+  },
   "dependencies": {
     "immer": "^10.0.3",
     "zustand": "^4.4.7"

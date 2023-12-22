@@ -18,6 +18,9 @@
   "files": [
     "dist"
   ],
+  "scripts": {
+    "build": "unbuild"
+  },
   "dependencies": {
     "@miniapp/extends": "workspace:*",
     "@miniapp/shared": "workspace:*"

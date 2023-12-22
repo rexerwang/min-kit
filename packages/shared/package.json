@@ -18,6 +18,9 @@
   "files": [
     "dist"
   ],
+  "scripts": {
+    "build": "unbuild"
+  },
   "dependencies": {
     "query-string": "^7.1.3"
   }
