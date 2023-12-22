@@ -6,7 +6,6 @@ import { Current } from '@tarojs/taro'
 import { useMemo } from 'react'
 
 import { Pages } from '@/app.route'
-import { NAME } from '@/shared/constants'
 
 export default function Layout({ title, children }: ReactProps<{ title?: string }>) {
   const routes = useMemo(() => {
