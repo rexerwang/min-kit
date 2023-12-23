@@ -1,1 +1,1 @@
-module.exports = require('@min-kit/helper/config').postcss({ tailwind: true })
+module.exports = require('@min-kit/helper/config').postcss({ tailwindcss: true })
