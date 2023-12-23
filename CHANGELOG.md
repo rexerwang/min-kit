@@ -1,3 +1,14 @@
+## [0.1.1](https://github.com/rexerwang/min-kit/compare/v0.1.0...v0.1.1) (2023-12-23)
+
+### Bug Fixes
+
+- **extends:** fix RewardedVideoAd.show & scene enum ([5e199a5](https://github.com/rexerwang/min-kit/commit/5e199a563c2e481303ac74e1e07a18a909c7b8f1))
+- **template:** fix tsconfig & lint errors ([d54b4c0](https://github.com/rexerwang/min-kit/commit/d54b4c0577fbb92313eba668983a6381053ea38d))
+
+### Features
+
+- **helper:** optimize config exports & add ConfigChain.tabBar ([00595be](https://github.com/rexerwang/min-kit/commit/00595bef2bff52cda6ec61d3b18693f189869172))
+
 # 0.1.0 (2023-12-22)
 
 ### Bug Fixes
