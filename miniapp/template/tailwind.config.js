@@ -1,1 +1,1 @@
-module.exports = require('@min-kit/helper/config').tailwind
+module.exports = require('@min-kit/helper/config').tailwind()
