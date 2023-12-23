@@ -1,8 +1,8 @@
 import { createRequest } from '@min-kit/extends'
 
-import { authenticate, timestamp } from './middleware'
+import { timestamp } from './middleware/timestamp'
 
-const http = createRequest({ baseUrl: G.baseUrl }).use(authenticate(3)).use(timestamp())
+const http = createRequest({ baseUrl: G.baseUrl }).use(timestamp())
 
 export default http
 

@@ -4,7 +4,7 @@ import { Route, UTM } from '@min-kit/shared'
 import { Button, View } from '@tarojs/components'
 
 import { Pages } from '@/app.route'
-import Layout from '@/pkg-demo/shared/components/layout'
+import Layout from '@/pkg-demo/components/layout'
 
 import shareModal from './components/share-modal'
 

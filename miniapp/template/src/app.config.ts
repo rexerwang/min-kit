@@ -2,7 +2,7 @@ import { configChain } from '@min-kit/helper/runtime'
 import { isString } from '@min-kit/shared'
 
 import { Routes } from './app.route'
-import { NAME } from './shared/constants'
+import { NAME } from './constants'
 
 export default configChain((chain, { mode }) => {
   const isDev = mode === 'dev'

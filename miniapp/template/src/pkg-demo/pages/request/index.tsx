@@ -4,8 +4,8 @@ import { Button, Text, View } from '@tarojs/components'
 import { useState } from 'react'
 
 import { Pages } from '@/app.route'
-import Layout from '@/pkg-demo/shared/components/layout'
-import httpbin from '@/shared/service/http/httpbin'
+import Layout from '@/pkg-demo/components/layout'
+import httpbin from '@/service/http/httpbin'
 
 export default function Index() {
   const [current, setCurrent] = useState(0)
@@ -50,5 +50,5 @@ export default function Index() {
 }
 
 definePageConfig({
-  navigationBarTitleText: 'request请求库',
+  navigationBarTitleText: 'request',
 })

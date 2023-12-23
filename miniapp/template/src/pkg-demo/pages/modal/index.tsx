@@ -1,7 +1,7 @@
 import { Button, View } from '@tarojs/components'
 import clsx from 'clsx'
 
-import Layout from '@/pkg-demo/shared/components/layout'
+import Layout from '@/pkg-demo/components/layout'
 
 import { ConfirmConfigSet, showConfirm } from './helper/confirm'
 

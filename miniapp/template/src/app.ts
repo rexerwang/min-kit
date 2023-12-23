@@ -8,17 +8,9 @@ import { go, logger } from '@min-kit/extends'
 import { useError, useLaunch, usePageNotFound, useUnhandledRejection } from '@tarojs/taro'
 
 import { Pages } from './app.route'
-import authStore from './shared/store/auth'
 
 function App({ children }: React.PropsWithChildren) {
-  useDebug({
-    user: {
-      getToken: authStore.apis.getToken,
-      async getUserInfo(reLogin?: boolean) {
-        if (reLogin) await authStore.apis.login()
-      },
-    },
-  })
+  useDebug()
 
   useLaunch((opts) => {
     logger.debug('#AppLaunch', opts)

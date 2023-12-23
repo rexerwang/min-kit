@@ -1,4 +1,4 @@
-import Layout from '@/pkg-demo/shared/components/layout'
+import Layout from '@/pkg-demo/components/layout'
 
 export default function Index() {
   return <Layout></Layout>
