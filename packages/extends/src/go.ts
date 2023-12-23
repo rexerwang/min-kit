@@ -4,13 +4,20 @@ import { navigateBack, navigateTo, navigateToMiniProgram, redirectTo, reLaunch, 
 import { hasTabBar } from './config'
 import { logger } from './logger'
 
-type GoToOptions = {
+type GoOptions = {
   redirect?: boolean
   reLaunch?: boolean
   generate?: Route.GenerateOptions
 }
+type GoFn = (path: string, query?: Route.Query, options?: GoOptions) => Promise<TaroGeneral.CallbackResult>
+interface Go extends GoFn {
+  redirect(path: string, query?: Route.Query, options?: Route.GenerateOptions): Promise<TaroGeneral.CallbackResult>
+  reLaunch(path: string, query?: Route.Query, options?: Route.GenerateOptions): Promise<TaroGeneral.CallbackResult>
+  back(fallbackPath?: string): Promise<TaroGeneral.CallbackResult>
+  miniProgram(option: Taro.navigateToMiniProgram.Option): Promise<TaroGeneral.CallbackResult>
+}
 
-export function go(path: string, query?: Route.Query, options: GoToOptions = {}) {
+export const go: Go = (path, query?, options = {}) => {
   const url = Route.generate(path, query, options.generate)
 
   if (options.reLaunch) return reLaunch({ url })
@@ -19,13 +26,11 @@ export function go(path: string, query?: Route.Query, options: GoToOptions = {})
   return navigateTo({ url })
 }
 
-go.redirect = (path: string, query?: Route.Query, options?: Route.GenerateOptions) =>
-  go(path, query, { redirect: true, generate: options })
+go.redirect = (path, query, options) => go(path, query, { redirect: true, generate: options })
 
-go.reLaunch = (path: string, query?: Route.Query, options?: Route.GenerateOptions) =>
-  go(path, query, { reLaunch: true, generate: options })
+go.reLaunch = (path, query, options) => go(path, query, { reLaunch: true, generate: options })
 
-go.back = (fallbackPath?: string) =>
+go.back = (fallbackPath) =>
   navigateBack().catch((e) => {
     if (e.errMsg?.includes('at first') && fallbackPath) {
       logger.warn('#go.back', 'fallback to ' + fallbackPath, 'when', e.errMsg)
@@ -34,7 +39,7 @@ go.back = (fallbackPath?: string) =>
     throw e
   })
 
-go.miniProgram = (option: Taro.navigateToMiniProgram.Option) => {
+go.miniProgram = (option) => {
   logger.debug('#go.miniProgram', option)
   return navigateToMiniProgram(option)
 }
