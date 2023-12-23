@@ -1,2 +1,2 @@
-export { default as postcss } from './postcss.config'
-export { default as tailwind } from './tailwind.config'
+export * from './postcss.config'
+export * from './tailwind.config'

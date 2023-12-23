@@ -43,6 +43,12 @@ export default class ConfigChain extends AbstractChain {
     return Object.assign(subPackage, { end: () => this })
   }
 
+  tabBar(tabBar: Taro.TabBar) {
+    this.config.tabBar = tabBar
+
+    return this
+  }
+
   /** 微信私有配置项 */
   get wechat(): WechatChain & { end(): ConfigChain } {
     return Object.assign(this.wechatChain, { end: () => this })

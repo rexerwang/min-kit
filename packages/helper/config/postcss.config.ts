@@ -1,26 +1,32 @@
-import { UserDefinedOptions } from 'postcss-rem-to-responsive-pixel'
-import { Config } from 'tailwindcss'
+import { tailwind } from './tailwind.config'
 
-import tailwindConfig from './tailwind.config'
+import type { AcceptedPlugin } from 'postcss'
+import type { UserDefinedOptions } from 'postcss-rem-to-responsive-pixel'
+import type { Config } from 'tailwindcss'
 
 interface PluginOpts {
-  tailwind?: Config | true
-  remToResponsivePixel?: UserDefinedOptions
+  autoprefixer?: boolean
+  tailwindcss?: Config | boolean
+  'postcss-rem-to-responsive-pixel'?: UserDefinedOptions | boolean
 }
 
-export default function postcss(configs?: PluginOpts) {
-  const tailwindOpts = configs?.tailwind === true ? tailwindConfig : configs?.tailwind
-  const remToResponsivePixelOpts = configs?.remToResponsivePixel ?? {
-    rootValue: 32,
-    propList: ['*'],
-    transformUnit: 'rpx',
+export function postcss(opts: PluginOpts = {}) {
+  const plugins: AcceptedPlugin[] = []
+
+  if (opts.autoprefixer !== false) {
+    plugins.push(require('autoprefixer'))
   }
 
-  return {
-    plugins: [
-      require('autoprefixer'),
-      require('tailwindcss')(tailwindOpts),
-      require('postcss-rem-to-responsive-pixel')(remToResponsivePixelOpts),
-    ],
+  if (opts.tailwindcss !== false) {
+    const option = opts.tailwindcss === true ? tailwind() : opts.tailwindcss
+    plugins.push(require('tailwindcss')(option))
   }
+
+  if (opts['postcss-rem-to-responsive-pixel'] !== false) {
+    let option = opts['postcss-rem-to-responsive-pixel']
+    if (!option || option === true) option = { rootValue: 32, propList: ['*'], transformUnit: 'rpx' }
+    plugins.push(require('postcss-rem-to-responsive-pixel')(option))
+  }
+
+  return { plugins }
 }

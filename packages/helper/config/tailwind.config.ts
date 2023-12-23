@@ -1,7 +1,8 @@
 import { Config } from 'tailwindcss'
 import plugin from 'tailwindcss/plugin'
+import merge from 'webpack-merge'
 
-export default {
+const baseConfig: Config = {
   content: ['./src/**/*.{ts,tsx}'],
   corePlugins: {
     preflight: false,
@@ -62,4 +63,8 @@ export default {
       },
     },
   },
-} as Config
+}
+
+export function tailwind(config: Partial<Config> = {}) {
+  return merge({}, baseConfig, config) as Config
+}
