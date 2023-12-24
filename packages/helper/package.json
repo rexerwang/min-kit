@@ -1,6 +1,6 @@
 {
   "name": "@min-kit/helper",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "plugin and config helper for Taro",
   "author": "rexerwang",
   "license": "MIT",

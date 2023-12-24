@@ -1,3 +1,14 @@
+## [0.1.2](https://github.com/rexerwang/min-kit/compare/v0.1.1...v0.1.2) (2023-12-24)
+
+### Bug Fixes
+
+- **extends:** fix `go` typings ([9d412a2](https://github.com/rexerwang/min-kit/commit/9d412a2438aab0a5474b80bd1a40ac5541310106))
+
+### Features
+
+- **template:** highlight code ([a35e78a](https://github.com/rexerwang/min-kit/commit/a35e78a2df7d6becdac84fc044434aec7e400384))
+- **template:** optimize dir structure ([9f46b10](https://github.com/rexerwang/min-kit/commit/9f46b102cb2e065ffad4fe0c5602a29b66a682e1))
+
 ## [0.1.1](https://github.com/rexerwang/min-kit/compare/v0.1.0...v0.1.1) (2023-12-23)
 
 ### Bug Fixes
