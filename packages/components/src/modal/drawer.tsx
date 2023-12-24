@@ -4,7 +4,7 @@ import { View } from '@tarojs/components'
 import clsx from 'clsx'
 import { type CSSProperties, useMemo } from 'react'
 
-export interface DrawerProps {
+export interface MinDrawerProps {
   className?: string
   /** 弹出位置 @default 'center' */
   position?: 'center' | 'top' | 'bottom'
@@ -22,14 +22,14 @@ export interface DrawerProps {
   /***
    * Y轴偏移量 相对`position`方向
    *
-   * 默认值见配置 {@link Drawer.defaults.offsetY}
+   * 默认值见配置 {@link MinDrawer.defaults.offsetY}
    */
   offsetY?: number
   /** 点击背景关闭事件 */
   onClose?(): void
 }
 
-export function Drawer({
+export function MinDrawer({
   className,
   position = 'center',
   backdropCloseable = false,
@@ -39,22 +39,22 @@ export function Drawer({
   offsetY,
   children,
   onClose,
-}: DrawerProps) {
+}: MinDrawerProps) {
   const style: CSSProperties = useMemo(() => {
     let _offsetY = 0 // offsetY !== undefined ? offsetY : position === 'center' ? -88 : position === 'top' ? 80 : 0
     switch (position) {
       case 'center':
-        _offsetY = offsetY ?? Drawer.defaults.offsetY.center
+        _offsetY = offsetY ?? MinDrawer.defaults.offsetY.center
         break
 
       case 'top':
         const safeAreaTop = hasNavBar() ? 0 : SystemInfo.menuButtonRect.bottom ?? 80
-        _offsetY = (offsetY ?? Drawer.defaults.offsetY.top) + safeAreaTop
+        _offsetY = (offsetY ?? MinDrawer.defaults.offsetY.top) + safeAreaTop
         break
 
       case 'bottom':
         const safeAreaBottom = hasTabBar() ? 0 : SystemInfo.screenHeight - SystemInfo.safeArea.bottom
-        _offsetY = (offsetY ?? Drawer.defaults.offsetY.bottom) + safeAreaBottom
+        _offsetY = (offsetY ?? MinDrawer.defaults.offsetY.bottom) + safeAreaBottom
         break
     }
 
@@ -69,10 +69,10 @@ export function Drawer({
   return (
     <View
       style={style}
-      className={clsx('mini-drawer', position, className)}
+      className={clsx('min-drawer', position, className)}
       onClick={backdropCloseable ? onClose : undefined}>
       <View
-        className='mini-drawer-body'
+        className='min-drawer-body'
         onClick={(e) => {
           e.stopPropagation()
           e.preventDefault()
@@ -83,7 +83,7 @@ export function Drawer({
   )
 }
 
-Drawer.defaults = {
+MinDrawer.defaults = {
   offsetY: {
     center: -96,
     top: 32,
@@ -91,4 +91,4 @@ Drawer.defaults = {
   },
 }
 
-Drawer.displayName = 'Drawer'
+MinDrawer.displayName = 'MinDrawer'

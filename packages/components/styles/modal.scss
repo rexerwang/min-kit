@@ -1,7 +1,7 @@
-.mini-drawer {
+.min-drawer {
   @apply fixed inset-0 box-border bg-black/50;
 
-  .mini-drawer-body {
+  .min-drawer-body {
     width: fit-content;
     height: fit-content;
   }
@@ -11,12 +11,12 @@
     align-items: center;
     justify-content: center;
 
-    .mini-drawer-body {
+    .min-drawer-body {
       margin-top: var(--offsetY);
       margin-left: var(--offsetX);
-      animation: MiniDrawerFadeIn var(--duration) cubic-bezier(0.39, 0.575, 0.565, 1) both;
+      animation: MinDrawerFadeIn var(--duration) cubic-bezier(0.39, 0.575, 0.565, 1) both;
 
-      @keyframes MiniDrawerFadeIn {
+      @keyframes MinDrawerFadeIn {
         from {
           opacity: 0;
         }
@@ -32,12 +32,12 @@
     display: flex;
     justify-content: center;
 
-    .mini-drawer-body {
+    .min-drawer-body {
       margin-top: var(--offsetY);
       margin-left: var(--offsetX);
-      animation: MiniDrawerSlideInTop var(--duration) cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      animation: MinDrawerSlideInTop var(--duration) cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 
-      @keyframes MiniDrawerSlideInTop {
+      @keyframes MinDrawerSlideInTop {
         0% {
           opacity: 0;
           transform: translateY(-1000px);
@@ -57,12 +57,12 @@
     align-items: center;
     justify-content: flex-end;
 
-    .mini-drawer-body {
+    .min-drawer-body {
       margin-bottom: var(--offsetY);
       margin-left: var(--offsetX);
-      animation: MiniDrawerSlideInBottom var(--duration) cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      animation: MinDrawerSlideInBottom var(--duration) cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 
-      @keyframes MiniDrawerSlideInBottom {
+      @keyframes MinDrawerSlideInBottom {
         0% {
           opacity: 0;
           transform: translateY(1000px);
@@ -77,7 +77,7 @@
   }
 }
 
-.mini-confirm-modal {
+.min-confirm-modal {
   @apply relative box-border mx-auto p-5 text-center bg-white rounded-3xl;
 
   width: calc(100vw - theme('spacing.16'));

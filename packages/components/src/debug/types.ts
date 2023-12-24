@@ -5,16 +5,6 @@ interface UserApis {
   getUserInfo(reLogin?: boolean): Promise<AnyObject | void>
 }
 
-export interface IBasicProps {
+export interface IUserOptions {
   user: UserApis
 }
-
-export interface IPanelProps extends IBasicProps {
-  onClose(): void
-}
-
-export interface IDebuggerProps extends IBasicProps {
-  onMove?(e: { x: number; y: number }): void
-}
-
-export interface IDebugOptions extends IBasicProps {}

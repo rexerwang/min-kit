@@ -1,13 +1,19 @@
 import { isNumber, isString } from '@min-kit/shared'
-import { Text, TextProps } from '@tarojs/components'
+import { Text, type TextProps } from '@tarojs/components'
 
-export function renderText(text?: React.ReactNode, props: Omit<TextProps, 'children' | 'decode' | 'space'> = {}) {
+export interface MinTextProps extends TextProps {}
+
+export function MinText({ decode = true, space = 'nbsp', children, ...props }: MinTextProps) {
+  return (
+    <Text {...props} decode={decode} space={space}>
+      {children}
+    </Text>
+  )
+}
+
+export function renderText(text?: React.ReactNode, props: Omit<MinTextProps, 'children'> = {}) {
   if (isString(text) || isNumber(text)) {
-    return (
-      <Text {...props} decode space='nbsp'>
-        {text}
-      </Text>
-    )
+    return <MinText {...props}>{text}</MinText>
   }
 
   return <>{text}</>

@@ -29,6 +29,6 @@ export function Gesture({ children, onSwipe }: GestureProps) {
   })
 }
 
-Gesture.displayName = 'MiniGesture'
+Gesture.displayName = 'MinGesture'
 
 export type { ISwipeEvent } from './gesture'

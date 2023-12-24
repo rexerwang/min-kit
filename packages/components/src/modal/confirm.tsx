@@ -3,7 +3,7 @@ import { Button, View } from '@tarojs/components'
 import clsx from 'clsx'
 import { ReactNode } from 'react'
 
-import { Icon } from '../icon'
+import { MinIcon } from '../icon'
 import { renderText } from '../text'
 import { Modal } from './modal'
 
@@ -40,8 +40,8 @@ export const confirmModal = Modal.with<IProps, void, 'cancel' | 'close'>(
     onOk,
     onCancel,
   }) => (
-    <View className={clsx('mini-confirm-modal', className)}>
-      {icon && (isString(icon) ? <Icon name={icon} size={120} className='icon' /> : icon)}
+    <View className={clsx('min-confirm-modal', className)}>
+      {icon && (isString(icon) ? <MinIcon name={icon} size={60} className='icon' /> : icon)}
       <View className='title'>{renderText(title, { userSelect })}</View>
       {!!subtitle && <View className='subtitle'>{renderText(subtitle, { userSelect })}</View>}
       {children}
@@ -71,7 +71,7 @@ export const confirmModal = Modal.with<IProps, void, 'cancel' | 'close'>(
       {!!footer && <View className='footer'>{renderText(footer, { userSelect })}</View>}
       {(closeable || (closeable === undefined && !cancelText)) && (
         <View className='close'>
-          <Icon name='close' size={50} onClick={() => onCancel?.('close')} />
+          <MinIcon name='close' size={24} onClick={() => onCancel?.('close')} />
         </View>
       )}
     </View>

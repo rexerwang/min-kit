@@ -9,11 +9,15 @@ import AppModule from './app.module'
 import BasicModule from './basic.module'
 import NetworkModule from './network.module'
 
-import type { IPanelProps } from '../../types'
+import type { IUserOptions } from '../../types'
+
+interface IProps extends IUserOptions {
+  onClose(): void
+}
 
 const tabs = ['请求', '状态', '应用']
 
-export default function Panel({ onClose, user }: IPanelProps) {
+export default function Panel({ onClose, user }: IProps) {
   const tab = uiStore.tab()
 
   const style = useMemo(() => {
@@ -37,7 +41,7 @@ export default function Panel({ onClose, user }: IPanelProps) {
   }, [tab, user])
 
   return (
-    <View className='mini-debug-panel'>
+    <View className='min-debug-panel'>
       <View className='mask' onClick={onClose}></View>
       <View className='container' style={style}>
         <View className='tabs'>

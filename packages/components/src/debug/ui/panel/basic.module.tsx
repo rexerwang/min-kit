@@ -1,16 +1,18 @@
 import { copy } from '@min-kit/extends'
-import { useQuery } from '@min-kit/hooks'
+import { useMount, useQuery } from '@min-kit/hooks'
 import { attempt } from '@min-kit/shared'
 import { Button, Text, View } from '@tarojs/components'
 import { getAccountInfoSync, getEnterOptionsSync, getSystemInfoSync } from '@tarojs/taro'
 import clsx from 'clsx'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 import { prettyJSON } from '../../helper'
 
-import type { IBasicProps } from '../../types'
+import type { IUserOptions } from '../../types'
 
-export default function BasicModule({ user }: IBasicProps) {
+interface IProps extends IUserOptions {}
+
+export default function BasicModule({ user }: IProps) {
   const [state, setState] = useState<Record<string, string>>({})
 
   const Query = useQuery(async (reLogin?: boolean) => {
@@ -23,9 +25,9 @@ export default function BasicModule({ user }: IBasicProps) {
     setState({ token, userInfo, enterOptions, systemInfo, accountInfo })
   })
 
-  useEffect(() => {
+  useMount(() => {
     Query.query()
-  }, [])
+  })
 
   return (
     <View className={clsx('basicModule', 'panel')}>

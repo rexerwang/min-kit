@@ -1,7 +1,7 @@
 import { getZDepth } from '@min-kit/shared'
 
 import { mountPortal } from '../portal'
-import { Drawer, DrawerProps } from './drawer'
+import { MinDrawer, MinDrawerProps } from './drawer'
 
 export type ModalProps<Props = {}, TOk = any, TCancel = any> = {
   className?: string
@@ -19,7 +19,7 @@ export interface ModalTask<TOk = any, TCancel = any> extends Promise<ModalResult
 }
 
 type ContainerProps = Pick<
-  DrawerProps,
+  MinDrawerProps,
   'position' | 'backdropCloseable' | 'zIndex' | 'duration' | 'offsetX' | 'offsetY'
 > & {
   /** Specify className of the container (Drawer) */
@@ -62,7 +62,7 @@ function withOpen<
       try {
         unmount = mountPortal(
           () => (
-            <Drawer
+            <MinDrawer
               onClose={() => contentProps.onCancel?.('backdrop')}
               position={position}
               backdropCloseable={backdropCloseable}
@@ -72,7 +72,7 @@ function withOpen<
               offsetY={offsetY}
               className={containerClass}>
               <Component {...(contentProps as TModalProps)} />
-            </Drawer>
+            </MinDrawer>
           ),
           {},
           displayName,
@@ -94,4 +94,4 @@ function withOpen<
   }
 }
 
-export const Modal = Object.assign(Drawer, { with: withOpen })
+export const Modal = Object.assign(MinDrawer, { with: withOpen })

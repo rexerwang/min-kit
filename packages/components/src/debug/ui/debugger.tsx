@@ -4,12 +4,16 @@ import { MovableArea, MovableView, View } from '@tarojs/components'
 import clsx from 'clsx'
 import { useMemo, useState } from 'react'
 
-import { uiStore } from '../../store'
-import Panel from '../panel'
+import { uiStore } from '../store'
+import Panel from './panel'
 
-import type { IDebuggerProps } from '../../types'
+import type { IUserOptions } from '../types'
 
-export default function Debugger({ onMove, user }: IDebuggerProps) {
+export interface MinDebuggerProps extends IUserOptions {
+  onMove?(e: { x: number; y: number }): void
+}
+
+export function MinDebugger({ onMove, user }: MinDebuggerProps) {
   const [visible, setVisible] = useState(false)
   const { x, y } = uiStore.position()
 
@@ -20,7 +24,7 @@ export default function Debugger({ onMove, user }: IDebuggerProps) {
   }, [])
 
   return (
-    <View className='mini-debugger'>
+    <View className='min-debugger'>
       <View className={clsx(!visible && 'hidden')}>
         <Panel onClose={() => setVisible(false)} user={user} />
       </View>
@@ -40,4 +44,4 @@ export default function Debugger({ onMove, user }: IDebuggerProps) {
   )
 }
 
-Debugger.displayName = 'MiniDebugger'
+MinDebugger.displayName = 'MinDebugger'

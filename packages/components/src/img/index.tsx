@@ -3,7 +3,7 @@ import { previewImage } from '@tarojs/taro'
 import clsx from 'clsx'
 import { useState } from 'react'
 
-export interface ImgProps extends Omit<ImageProps, 'preview'> {
+export interface MinImageProps extends Omit<ImageProps, 'preview'> {
   /**
    * - `true`: enable preview
    * - `string[]`: preview multiple images
@@ -12,7 +12,7 @@ export interface ImgProps extends Omit<ImageProps, 'preview'> {
 }
 
 /**
- * enhance image component
+ * Enhanced Image component
  *
  * Features:
  * - enable `lazyLoad` as default
@@ -22,7 +22,7 @@ export interface ImgProps extends Omit<ImageProps, 'preview'> {
  *
  * @see https://developers.weixin.qq.com/miniprogram/dev/component/image.html
  */
-export function Img({ preview, ...props }: ImgProps) {
+export function MinImage({ preview, ...props }: MinImageProps) {
   const [loaded, setLoaded] = useState<boolean>()
   const onLoad = (e: any) => {
     props.onLoad?.(e)
@@ -46,7 +46,7 @@ export function Img({ preview, ...props }: ImgProps) {
   return (
     <Image
       {...props}
-      className={clsx(loaded === undefined && 'mini-img--load', loaded === false && 'mini-img--error', props.className)}
+      className={clsx(loaded === undefined && 'min-img--load', loaded === false && 'min-img--error', props.className)}
       lazyLoad={props.lazyLoad !== false}
       onLoad={onLoad}
       onError={onError}
@@ -55,4 +55,4 @@ export function Img({ preview, ...props }: ImgProps) {
   )
 }
 
-Img.displayName = 'MiniImg'
+MinImage.displayName = 'MinImg'

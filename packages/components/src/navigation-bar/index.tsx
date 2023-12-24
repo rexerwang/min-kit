@@ -3,21 +3,21 @@ import { px } from '@min-kit/shared'
 import { View } from '@tarojs/components'
 import clsx from 'clsx'
 
-import { ReactProps } from '../types'
+import type { ReactProps } from '../types'
 
 const paddingTop = SystemInfo.menuButtonRect.top ?? SystemInfo.statusBarHeight,
   marginBottom = 10,
   width = SystemInfo.menuButtonRect.left,
   height = SystemInfo.menuButtonRect.height
 
-export interface NavigationBarProps extends ReactProps {
+export interface MinNavigationBarProps extends ReactProps {
   title?: React.ReactNode
 }
 
-export function NavigationBar({ className, children, title }: NavigationBarProps) {
+export function MinNavigationBar({ className, children, title }: MinNavigationBarProps) {
   return (
-    <View className={clsx('mini-navigation-bar ', className)} style={px.of({ paddingTop })}>
-      <View className='mini-navigation-bar-body' style={px.of({ width, height, marginBottom })}>
+    <View className={clsx('min-navigation-bar', className)} style={px.of({ paddingTop })}>
+      <View className='min-navigation-bar-body' style={px.of({ width, height, marginBottom })}>
         {title}
       </View>
       {children}
@@ -25,8 +25,8 @@ export function NavigationBar({ className, children, title }: NavigationBarProps
   )
 }
 
-NavigationBar.displayName = 'MiniNavigationBar'
-NavigationBar.rect = {
+MinNavigationBar.displayName = 'MinNavigationBar'
+MinNavigationBar.rect = {
   height,
   width,
   top: paddingTop,
