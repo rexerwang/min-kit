@@ -7,7 +7,10 @@
   "license": "MIT",
   "repository": "rexerwang/min-kit",
   "scripts": {
-    "build": "pnpm -r run --sort --filter=./packages/* build",
+    "build": "pnpm -r --sort --filter=./packages/* run build",
+    "dev": "pnpm build --no-clean",
+    "dev:template": "pnpm --dir=miniapp/template run dev:weapp",
+    "lint:tsc": "pnpm -r exec tsc --noEmit",
     "lint:eslint": "eslint --fix --ext .ts,tsx ./",
     "lint:style": "stylelint --fix \"{miniapp,packages}/**/*.{scss,css}\"",
     "format": "prettier --write .",
