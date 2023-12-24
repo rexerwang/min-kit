@@ -1,4 +1,4 @@
-import { confirmModal, Icon, renderText } from '@min-kit/components'
+import { confirmModal, MinIcon, renderText } from '@min-kit/components'
 
 export interface IConfirmConfig {
   label: string
@@ -65,7 +65,7 @@ export const ConfirmConfigSet: { title: string; config: IConfirmConfig[] }[] = [
       {
         label: 'icon by JSX',
         props: {
-          icon: <Icon name='react' size={100} />,
+          icon: <MinIcon name='react' size={100} />,
           title: '对不起，您所拔打的电话\n正在通话中，请稍后再拨',
           subtitle: 'Sorry! The subscriber you dialed\n is busy now, please redial later.',
           footer: '您所拔打的电话正在通话中，请稍后再拨\nThe subscriber you dialed is busy now.',

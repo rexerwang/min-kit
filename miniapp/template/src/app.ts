@@ -3,14 +3,14 @@ import './assets/styles/index.scss'
 import './assets/polyfill'
 import './icons'
 
-import { useDebug } from '@min-kit/components'
+import { useMinDebugger } from '@min-kit/components'
 import { go, logger } from '@min-kit/extends'
 import { useError, useLaunch, usePageNotFound, useUnhandledRejection } from '@tarojs/taro'
 
 import { Pages } from './app.route'
 
 function App({ children }: React.PropsWithChildren) {
-  useDebug()
+  useMinDebugger()
 
   useLaunch((opts) => {
     logger.debug('#AppLaunch', opts)

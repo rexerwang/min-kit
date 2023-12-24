@@ -1,4 +1,4 @@
-import { Icon, type ReactProps } from '@min-kit/components'
+import { MinIcon, type ReactProps } from '@min-kit/components'
 import { go, toast } from '@min-kit/extends'
 import { isString, Route } from '@min-kit/shared'
 import { Text, View } from '@tarojs/components'
@@ -33,7 +33,7 @@ export default function Layout({ title, children }: ReactProps<{ title?: string 
   return (
     <View className='relative w-screen box-border'>
       <View className='flex-center-y px-4 py-2 bg-white'>
-        <Icon name='react' size={120} onClick={() => go(Pages.PkgDemo.H5, { url: 'https://react.dev/' })} />
+        <MinIcon name='react' size={60} onClick={() => go(Pages.PkgDemo.H5, { url: 'https://react.dev/' })} />
         <View className='flex-1 ml-4'>
           <View
             className='block text-black text-lg font-semibold'

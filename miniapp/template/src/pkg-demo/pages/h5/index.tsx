@@ -1,4 +1,4 @@
-import { Icon, renderText } from '@min-kit/components'
+import { MinIcon, renderText } from '@min-kit/components'
 import { logger } from '@min-kit/extends'
 import { useRouterParams } from '@min-kit/hooks'
 import { View, WebView } from '@tarojs/components'
@@ -22,7 +22,7 @@ export default function Index() {
     return (
       <View className='box-border relative h-screen w-screen bg-neutral-50'>
         <View className='pt-10 text-center'>
-          <Icon className='grayscale opacity-50' name='error' size={120} />
+          <MinIcon className='grayscale opacity-50' name='error' size={60} />
           <View className='px-6 text-2xs text-gray-400 font-thin'>{renderText(error, { userSelect: true })}</View>
         </View>
       </View>
