@@ -4,8 +4,11 @@ import { Button, Text, View } from '@tarojs/components'
 import { useState } from 'react'
 
 import { Pages } from '@/app.route'
+import Code from '@/components/code'
 import Layout from '@/pkg-demo/components/layout'
 import httpbin from '@/service/http/httpbin'
+
+import { REQUEST_USAGE_SNIPPET } from '../../constants'
 
 export default function Index() {
   const [current, setCurrent] = useState(0)
@@ -21,31 +24,35 @@ export default function Index() {
   })
 
   return (
-    <Layout title='request'>
-      <View className='mb-4'>
-        <View className='text-gray-500'>支持中间件实现请求前置和后置拦截</View>
-        <View className='text-gray-500'>
-          echo-server by{' '}
-          <Text
-            className='underline underline-offset-4'
-            onClick={() => go(Pages.PkgDemo.H5, { url: 'https://httpbin.org' })}>
-            httpbin.org
-          </Text>
+    <>
+      <Layout title='request'>
+        <View className='mb-4'>
+          <View className='text-gray-500'>支持中间件实现请求前置和后置拦截</View>
+          <View className='text-gray-500'>
+            echo-server by{' '}
+            <Text
+              className='underline underline-offset-4'
+              onClick={() => go(Pages.PkgDemo.H5, { url: 'https://httpbin.org' })}>
+              httpbin.org
+            </Text>
+          </View>
+          <View className='grid grid-cols-2 gap-2'>
+            {[200, 400, 401, 500, 502].map((status) => (
+              <Button
+                key={status}
+                className='btn mt-2 px-4 py-2.5 text-left font-semibold leading-none text-black bg-white rounded-full'
+                hoverClass='shadow'
+                loading={current === status}
+                onClick={() => Query.query(status)}>
+                echo {status}
+              </Button>
+            ))}
+          </View>
         </View>
-        <View className='grid grid-cols-2 gap-2'>
-          {[200, 400, 401, 500, 502].map((status) => (
-            <Button
-              key={status}
-              className='btn mt-2 px-4 py-2.5 text-left font-semibold leading-none text-black bg-white rounded-full'
-              hoverClass='shadow'
-              loading={current === status}
-              onClick={() => Query.query(status)}>
-              echo {status}
-            </Button>
-          ))}
-        </View>
-      </View>
-    </Layout>
+      </Layout>
+
+      <Code.Layout className='mt-2' code={REQUEST_USAGE_SNIPPET} />
+    </>
   )
 }
 
