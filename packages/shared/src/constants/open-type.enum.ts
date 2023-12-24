@@ -1,5 +1,5 @@
 /** `wx.onAppRoute.CallbackResult.openType` enum */
-export const enum OpenType {
+export enum OpenType {
   AppLaunch = 'appLaunch',
   AutoReLaunch = 'autoReLaunch',
   NavigateTo = 'navigateTo',
