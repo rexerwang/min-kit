@@ -5,12 +5,12 @@ import { useMemo } from 'react'
 
 export interface MinIconProps extends Omit<ImageProps, 'src' | 'mode'> {
   name: string
-  /** `size` or `[width, height]` */
+  /** `size` or `[width, height]` @default 16 */
   size?: number | number[]
   style?: React.CSSProperties
 }
 
-export function MinIcon({ name, size = 36, ...props }: MinIconProps) {
+export function MinIcon({ name, size = 16, ...props }: MinIconProps) {
   const style = useMemo(() => {
     let width: number
     let height: number
