@@ -1,4 +1,4 @@
-export const REQUEST_USAGE_SNIPPET = `import { createRequest, RequestError } from '@min-kit/extends'
+export const UsageSnippet = `import { createRequest, RequestError } from '@min-kit/extends'
 import { HttpStatus } from '@min-kit/shared'
 
 const http = createRequest({ baseUrl: 'https://httpbin.org' }).use(async (ctx, next) => {

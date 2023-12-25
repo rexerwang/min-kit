@@ -1,8 +1,9 @@
 import 'highlight.js/styles/github-dark.min.css'
 import './index.scss'
 
+import { Modal } from '@min-kit/components'
 import { copy } from '@min-kit/extends'
-import { View } from '@tarojs/components'
+import { Text, View } from '@tarojs/components'
 import Taro from '@tarojs/taro'
 import clsx from 'clsx'
 import hljs from 'highlight.js/lib/core'
@@ -14,11 +15,12 @@ import type { Text as ParsedText } from '@tarojs/runtime/dist/dom-external/inner
 
 hljs.registerLanguage('typescript', typescript)
 
-export function highlight(code: string) {
-  const html = hljs.highlight(code, { language: 'typescript' }).value
+export function highlight(code: string, language = 'typescript') {
+  const html = hljs.highlight(code, { language }).value
   return html.replace(/\n/g, '<span>\n</span>')
 }
 
+// set Taro transformText
 // @ts-ignore
 Taro.options.html.transformText = (taroText: TaroText, text: ParsedText) => {
   const content = text?.content ?? ''
@@ -33,34 +35,50 @@ Taro.options.html.transformText = (taroText: TaroText, text: ParsedText) => {
   return taroText
 }
 
-interface IProps {
+export interface MinCodeProps {
   children: string
   className?: string
+  lang?: string
+  raw?: boolean
 }
 
-export default function Code({ children, className }: IProps) {
-  const html = useMemo(() => highlight(children), [children])
+export default function MinCode({ children, className, lang, raw }: MinCodeProps) {
+  const html = useMemo(() => (raw ? children : highlight(children, lang)), [children, lang, raw])
 
   return (
-    <View
+    <Text
       className={clsx('code hljs', className)}
       dangerouslySetInnerHTML={{ __html: html }}
-      onClick={() => copy(children)}
+      decode
+      space='nbsp'
+      userSelect
     />
   )
 }
 
-interface ILayoutProps {
+MinCode.popup = Modal.with<{
   className?: string
   title?: string
   code: string
-}
-
-Code.Layout = ({ className, title = 'example', code }: ILayoutProps) => {
-  return (
-    <View className={clsx('code-layout', className)}>
-      <View className='code-layout-title'>{title}</View>
-      <Code>{code}</Code>
+  lang?: string
+}>(
+  'MinCodePopup',
+  ({ onOk, title = 'example', lang = 'ts', code }) => (
+    <View className='min-code-popup'>
+      <View className='min-code-popup-header'>
+        <View className='name'>{title}</View>
+        <View className='ops'>
+          <View className='op lang'>.{lang}</View>
+          <View className='op' hoverClass='hover' onClick={() => copy(code)}>
+            复制
+          </View>
+          <View className='op' hoverClass='hover' onClick={onOk}>
+            关闭
+          </View>
+        </View>
+      </View>
+      <MinCode className='min-code-popup-body'>{code}</MinCode>
     </View>
-  )
-}
+  ),
+  { offsetY: 0 },
+)

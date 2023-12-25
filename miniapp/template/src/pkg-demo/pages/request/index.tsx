@@ -1,14 +1,15 @@
 import { go, toast } from '@min-kit/extends'
 import { useQuery } from '@min-kit/hooks'
 import { Button, Text, View } from '@tarojs/components'
+import clsx from 'clsx'
 import { useState } from 'react'
 
 import { Pages } from '@/app.route'
-import Code from '@/components/code'
+import MinCode from '@/components/code'
 import Layout from '@/pkg-demo/components/layout'
 import httpbin from '@/service/http/httpbin'
 
-import { REQUEST_USAGE_SNIPPET } from '../../constants'
+import { UsageSnippet } from './demos'
 
 export default function Index() {
   const [current, setCurrent] = useState(0)
@@ -36,22 +37,30 @@ export default function Index() {
               httpbin.org
             </Text>
           </View>
-          <View className='grid grid-cols-2 gap-2'>
+          <View className='mt-2 grid grid-cols-2 gap-4'>
             {[200, 400, 401, 500, 502].map((status) => (
               <Button
                 key={status}
-                className='btn mt-2 px-4 py-2.5 text-left font-semibold leading-none text-black bg-white rounded-full'
-                hoverClass='shadow'
-                loading={current === status}
+                className={clsx(
+                  'btn px-2.5 py-1.5 flex-center text-xs text-black bg-white border border-solid border-black rounded-lg',
+                  current === status && 'bg-orange-400',
+                )}
+                hoverClass='brightness-90'
                 onClick={() => Query.query(status)}>
                 echo {status}
               </Button>
             ))}
           </View>
+
+          <View className='mt-4 font-semibold'>example</View>
+          <Button
+            className='btn mt-2 m px-2.5 py-1.5 flex-center text-xs text-black bg-white border border-solid border-black rounded-lg'
+            hoverClass='brightness-90'
+            onClick={() => MinCode.popup({ code: UsageSnippet })}>
+            show code
+          </Button>
         </View>
       </Layout>
-
-      <Code.Layout className='mt-2' code={REQUEST_USAGE_SNIPPET} />
     </>
   )
 }

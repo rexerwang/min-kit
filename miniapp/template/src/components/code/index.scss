@@ -4,15 +4,53 @@
 }
 
 .code {
-  @apply p-2 whitespace-pre overflow-auto;
+  @apply block p-2 whitespace-pre overflow-scroll;
 
   font-family: 'Source Code Pro', monospace;
+}
 
-  &-layout {
-    @apply text-xs leading-5;
+.min-code-popup {
+  $dark: #0d1117;
 
-    &-title {
-      @apply w-fit mx-2 px-3 pt-1.5 font-semibold text-sm text-white bg-[#0d1117] rounded-t-md;
+  @apply box-border flex flex-col w-screen h-screen text-sm;
+
+  background-color: $dark;
+
+  &-header {
+    @apply flex-shrink-0 flex-center-y justify-between p-2 font-semibold text-white border-b-2 border-gray-600 border-solid;
+
+    .ops {
+      @apply flex-center font-normal text-2xs;
+
+      .op {
+        @apply px-2 py-1 bg-slate-800;
+
+        &:first-child {
+          @apply rounded-l;
+        }
+
+        &:last-child {
+          @apply rounded-r;
+        }
+
+        &:not(:last-child) {
+          @apply border-r border-solid;
+
+          border-color: $dark;
+        }
+
+        &.lang {
+          @apply bg-indigo-800;
+        }
+
+        &.hover {
+          @apply brightness-125;
+        }
+      }
     }
+  }
+
+  &-body {
+    @apply flex-1 text-sm;
   }
 }
