@@ -1,29 +1,15 @@
 import { isString } from '@min-kit/shared'
 import { Button, View } from '@tarojs/components'
 import clsx from 'clsx'
-import { ReactNode } from 'react'
 
 import { MinIcon } from '../icon'
 import { renderText } from '../text'
-import { Modal } from './modal'
+import { withOpen } from './with'
 
-interface IProps {
-  icon?: ReactNode
-  title?: ReactNode
-  subtitle?: ReactNode
-  okText: ReactNode
-  cancelText?: ReactNode
-  buttonInline?: boolean
-  footer?: ReactNode
-  /** @default true */
-  divider?: boolean
-  /** @default true when unset `cancelText` either */
-  closeable?: boolean
-  userSelect?: boolean
-}
+import type { IModal } from './types'
 
-export const confirmModal = Modal.with<IProps, void, 'cancel' | 'close'>(
-  'ConfirmModal',
+export default withOpen<IModal.ConfirmProps, void, 'cancel' | 'close'>(
+  'ModalConfirm',
   ({
     icon,
     subtitle,

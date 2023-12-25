@@ -4,32 +4,9 @@ import { View } from '@tarojs/components'
 import clsx from 'clsx'
 import { type CSSProperties, useMemo } from 'react'
 
-export interface MinDrawerProps {
-  className?: string
-  /** 弹出位置 @default 'center' */
-  position?: 'center' | 'top' | 'bottom'
-  zIndex?: number
-  /** 动画时长，单位毫秒  @default 300 */
-  duration?: number
-  children?: React.ReactNode
-  /** 点击背景关闭 @default false */
-  backdropCloseable?: boolean
-  /**
-   * X轴偏移量 相对`position`方向
-   * @default 0
-   */
-  offsetX?: number
-  /***
-   * Y轴偏移量 相对`position`方向
-   *
-   * 默认值见配置 {@link MinDrawer.defaults.offsetY}
-   */
-  offsetY?: number
-  /** 点击背景关闭事件 */
-  onClose?(): void
-}
+import type { IModal } from './types'
 
-export function MinDrawer({
+export default function Drawer({
   className,
   position = 'center',
   backdropCloseable = false,
@@ -39,22 +16,22 @@ export function MinDrawer({
   offsetY,
   children,
   onClose,
-}: MinDrawerProps) {
+}: IModal.DrawerProps) {
   const style: CSSProperties = useMemo(() => {
     let _offsetY = 0 // offsetY !== undefined ? offsetY : position === 'center' ? -88 : position === 'top' ? 80 : 0
     switch (position) {
       case 'center':
-        _offsetY = offsetY ?? MinDrawer.defaults.offsetY.center
+        _offsetY = offsetY ?? Drawer.defaults.offsetY.center
         break
 
       case 'top':
         const safeAreaTop = hasNavBar() ? 0 : SystemInfo.menuButtonRect.bottom ?? 80
-        _offsetY = (offsetY ?? MinDrawer.defaults.offsetY.top) + safeAreaTop
+        _offsetY = (offsetY ?? Drawer.defaults.offsetY.top) + safeAreaTop
         break
 
       case 'bottom':
         const safeAreaBottom = hasTabBar() ? 0 : SystemInfo.screenHeight - SystemInfo.safeArea.bottom
-        _offsetY = (offsetY ?? MinDrawer.defaults.offsetY.bottom) + safeAreaBottom
+        _offsetY = (offsetY ?? Drawer.defaults.offsetY.bottom) + safeAreaBottom
         break
     }
 
@@ -83,7 +60,7 @@ export function MinDrawer({
   )
 }
 
-MinDrawer.defaults = {
+Drawer.defaults = {
   offsetY: {
     center: -96,
     top: 32,
@@ -91,4 +68,4 @@ MinDrawer.defaults = {
   },
 }
 
-MinDrawer.displayName = 'MinDrawer'
+Drawer.displayName = 'ModalDrawer'
