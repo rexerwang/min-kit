@@ -1,3 +1,13 @@
+## [0.3.1](https://github.com/rexerwang/min-kit/compare/v0.3.0...v0.3.1) (2023-12-25)
+
+### Bug Fixes
+
+- **components:** fix navigation-bar style ([40e9466](https://github.com/rexerwang/min-kit/commit/40e9466894610667de991f998da4471f78bea02a))
+
+### Features
+
+- **template:** add NavigationBar example ([d72209d](https://github.com/rexerwang/min-kit/commit/d72209dd8466e74f898cab4905b288718e240b4d))
+
 # [0.3.0](https://github.com/rexerwang/min-kit/compare/v0.2.0...v0.3.0) (2023-12-25)
 
 ### Bug Fixes
