@@ -1,10 +1,7 @@
 .min-navigation-bar {
-  position: relative;
-  box-sizing: border-box;
-  width: 100vw;
+  @apply relative box-border w-screen;
 
   &-body {
-    margin-right: 16px;
-    margin-left: 16px;
+    @apply px-2 flex-center-y;
   }
 }
