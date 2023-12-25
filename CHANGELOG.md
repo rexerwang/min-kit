@@ -1,3 +1,18 @@
+# [0.3.0](https://github.com/rexerwang/min-kit/compare/v0.2.0...v0.3.0) (2023-12-25)
+
+### Bug Fixes
+
+- **components:** fix modal style ([3df5865](https://github.com/rexerwang/min-kit/commit/3df586560e04eb774f76e397a3994c0142f21004))
+- **extends:** fix `go` typings ([25d9db6](https://github.com/rexerwang/min-kit/commit/25d9db62e38a08b6343184bfb6554cb46b2297f8))
+- **shared:** fix export const enum ([256a856](https://github.com/rexerwang/min-kit/commit/256a856952af48e0b0c7b10c2faca7847dd9a0cc))
+- **template:** layout ([ed55cf6](https://github.com/rexerwang/min-kit/commit/ed55cf659ea7128ca96127dbd4d43be301788060))
+
+### Features
+
+- **components:** optimize `Modal` module & add `Modal.confirm` to replace `confirmModal` exports ([8d98828](https://github.com/rexerwang/min-kit/commit/8d988284172ab94e3f100691bab8d21670e24e94))
+- **extends:** add `requestSubscription` for `requestSubscribeMessage` api wrapper ([79df64b](https://github.com/rexerwang/min-kit/commit/79df64b139222f116943f95c7833aa21fab8ba85))
+- **template:** add usage examples of modal & request ([fbe0e9f](https://github.com/rexerwang/min-kit/commit/fbe0e9fd83209da3112e690c7dc3870781252f08))
+
 # 0.2.0 (2023-12-24)
 
 ### Bug Fixes
