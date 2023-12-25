@@ -47,7 +47,7 @@ export default function MinCode({ children, className, lang, raw }: MinCodeProps
 
   return (
     <Text
-      className={clsx('code hljs', className)}
+      className={clsx('min-code hljs', className)}
       dangerouslySetInnerHTML={{ __html: html }}
       decode
       space='nbsp'
@@ -56,29 +56,43 @@ export default function MinCode({ children, className, lang, raw }: MinCodeProps
   )
 }
 
-MinCode.popup = Modal.with<{
-  className?: string
+export interface MinCodeLayoutProps extends MinCodeProps {
+  codeClass?: string
   title?: string
-  code: string
-  lang?: string
-}>(
-  'MinCodePopup',
-  ({ onOk, title = 'example', lang = 'ts', code }) => (
-    <View className='min-code-popup'>
-      <View className='min-code-popup-header'>
+  operator?: React.ReactNode
+}
+
+MinCode.Layout = ({ title = 'example', className, codeClass, lang = 'ts', operator, ...props }: MinCodeLayoutProps) => {
+  return (
+    <View className={clsx('min-code-layout', className)}>
+      <View className='min-code-layout-header'>
         <View className='name'>{title}</View>
         <View className='ops'>
           <View className='op lang'>.{lang}</View>
-          <View className='op' hoverClass='hover' onClick={() => copy(code)}>
+          <View className='op' hoverClass='hover' onClick={() => copy(props.children)}>
             复制
           </View>
-          <View className='op' hoverClass='hover' onClick={onOk}>
-            关闭
-          </View>
+          {operator}
         </View>
       </View>
-      <MinCode className='min-code-popup-body'>{code}</MinCode>
+      <MinCode className={clsx('min-code-layout-body', codeClass)} {...props} />
     </View>
+  )
+}
+
+MinCode.popup = Modal.with<Omit<MinCodeLayoutProps, 'children'> & { code: string }>(
+  'MinCodeLayout',
+  ({ onOk, className, code, ...props }) => (
+    <MinCode.Layout
+      {...props}
+      className={clsx('w-screen h-screen', className)}
+      operator={
+        <View className='op' hoverClass='hover' onClick={onOk}>
+          关闭
+        </View>
+      }>
+      {code}
+    </MinCode.Layout>
   ),
   { offsetY: 0 },
 )

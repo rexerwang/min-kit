@@ -11,6 +11,7 @@ const { Pages, Routes } = defineRouteConfig({
     Request: 'pages/request/index',
     Share: 'pages/share/index',
     Scene: 'pages/scene/index',
+    CustomNav: 'pages/custom-nav/index',
   },
 })
 

@@ -3,54 +3,53 @@
   src: url('https://cdn.jsdelivr.net/npm/source-code-pro@2.38.0/TTF/SourceCodePro-Regular.ttf') format('truetype');
 }
 
-.code {
+.min-code {
   @apply block p-2 whitespace-pre overflow-scroll;
 
   font-family: 'Source Code Pro', monospace;
-}
 
-.min-code-popup {
-  $dark: #0d1117;
+  &-layout {
+    $dark: #0d1117;
+    @apply box-border flex flex-col text-sm;
 
-  @apply box-border flex flex-col w-screen h-screen text-sm;
+    background-color: $dark;
 
-  background-color: $dark;
+    &-header {
+      @apply flex-shrink-0 flex-center-y justify-between p-2 font-semibold text-white border-b-2 border-gray-600 border-solid;
 
-  &-header {
-    @apply flex-shrink-0 flex-center-y justify-between p-2 font-semibold text-white border-b-2 border-gray-600 border-solid;
+      .ops {
+        @apply flex-center font-normal text-2xs;
 
-    .ops {
-      @apply flex-center font-normal text-2xs;
+        .op {
+          @apply px-2 py-1 bg-slate-800;
 
-      .op {
-        @apply px-2 py-1 bg-slate-800;
+          &:first-child {
+            @apply rounded-l;
+          }
 
-        &:first-child {
-          @apply rounded-l;
-        }
+          &:last-child {
+            @apply rounded-r;
+          }
 
-        &:last-child {
-          @apply rounded-r;
-        }
+          &:not(:last-child) {
+            @apply border-r border-solid;
 
-        &:not(:last-child) {
-          @apply border-r border-solid;
+            border-color: $dark;
+          }
 
-          border-color: $dark;
-        }
+          &.lang {
+            @apply bg-indigo-800;
+          }
 
-        &.lang {
-          @apply bg-indigo-800;
-        }
-
-        &.hover {
-          @apply brightness-125;
+          &.hover {
+            @apply brightness-125;
+          }
         }
       }
     }
-  }
 
-  &-body {
-    @apply flex-1 text-sm;
+    &-body {
+      @apply flex-1 text-sm;
+    }
   }
 }
