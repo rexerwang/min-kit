@@ -9,12 +9,13 @@ type GoOptions = {
   reLaunch?: boolean
   generate?: Route.GenerateOptions
 }
-type GoFn = (path: string, query?: Route.Query, options?: GoOptions) => Promise<TaroGeneral.CallbackResult>
+type GoRes = Promise<TaroGeneral.CallbackResult>
+type GoFn = (path: string, query?: Route.Query, options?: GoOptions) => GoRes
 interface Go extends GoFn {
-  redirect(path: string, query?: Route.Query, options?: Route.GenerateOptions): Promise<TaroGeneral.CallbackResult>
-  reLaunch(path: string, query?: Route.Query, options?: Route.GenerateOptions): Promise<TaroGeneral.CallbackResult>
-  back(fallbackPath?: string): Promise<TaroGeneral.CallbackResult>
-  miniProgram(option: Taro.navigateToMiniProgram.Option): Promise<TaroGeneral.CallbackResult>
+  redirect(path: string, query?: Route.Query, options?: GoOptions['generate']): GoRes
+  reLaunch(path: string, query?: Route.Query, options?: GoOptions['generate']): GoRes
+  back(fallbackPath?: string): GoRes
+  miniProgram(option: Taro.navigateToMiniProgram.Option): GoRes
 }
 
 export const go: Go = (path, query?, options = {}) => {
