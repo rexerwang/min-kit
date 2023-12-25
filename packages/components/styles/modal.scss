@@ -93,14 +93,14 @@
   .divider {
     @apply -mx-5 my-5 bg-gray-100;
 
-    width: calc(100% - theme('spacing.10'));
+    width: calc(100% + theme('spacing.10'));
     height: 2px;
   }
 
   .no-divider {
     @apply -mx-5 my-3;
 
-    width: calc(100% - theme('spacing.10'));
+    width: calc(100% + theme('spacing.10'));
     height: 2px;
   }
 
