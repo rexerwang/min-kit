@@ -178,7 +178,7 @@ importers:
         specifier: 3.6.21
         version: 3.6.21(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/plugin-mini-ci':
-        specifier: ^3.6.21
+        specifier: 3.6.21
         version: 3.6.21(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/taro-loader':
         specifier: 3.6.21

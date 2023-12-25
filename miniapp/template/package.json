@@ -70,7 +70,7 @@
     "@babel/core": "^7.8.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
     "@tarojs/cli": "3.6.21",
-    "@tarojs/plugin-mini-ci": "^3.6.21",
+    "@tarojs/plugin-mini-ci": "3.6.21",
     "@tarojs/taro-loader": "3.6.21",
     "@tarojs/test-utils-react": "^0.1.1",
     "@tarojs/webpack5-runner": "3.6.21",
