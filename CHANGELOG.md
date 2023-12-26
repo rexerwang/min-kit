@@ -1,3 +1,15 @@
+## [0.3.2](https://github.com/rexerwang/min-kit/compare/v0.3.1...v0.3.2) (2023-12-26)
+
+### Bug Fixes
+
+- **components:** fix exports name of components & styles ([2c1f8c1](https://github.com/rexerwang/min-kit/commit/2c1f8c15f6ad80382e0674e69af2ed2a17feebe3))
+- **shared:** fix `Route.includes` ([4a1923d](https://github.com/rexerwang/min-kit/commit/4a1923d24a0f980cc1cc6043661fb2899accfa9d))
+
+### Features
+
+- **extends:** optimize Logger reporter ([3085076](https://github.com/rexerwang/min-kit/commit/308507634696683e89c4be0b14647b5aaed64226))
+- **template:** add demos group by subPackage ([b4ff5f6](https://github.com/rexerwang/min-kit/commit/b4ff5f677abfd188ae96566c9af74904c110cb2b))
+
 ## [0.3.1](https://github.com/rexerwang/min-kit/compare/v0.3.0...v0.3.1) (2023-12-25)
 
 ### Bug Fixes
