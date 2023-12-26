@@ -46,7 +46,11 @@ export function MinImage({ preview, ...props }: MinImageProps) {
   return (
     <Image
       {...props}
-      className={clsx(loaded === undefined && 'min-img--load', loaded === false && 'min-img--error', props.className)}
+      className={clsx(
+        loaded === undefined && 'min-image--load',
+        loaded === false && 'min-image--error',
+        props.className,
+      )}
       lazyLoad={props.lazyLoad !== false}
       onLoad={onLoad}
       onError={onError}
@@ -55,4 +59,4 @@ export function MinImage({ preview, ...props }: MinImageProps) {
   )
 }
 
-MinImage.displayName = 'MinImg'
+MinImage.displayName = 'MinImage'
