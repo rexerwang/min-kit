@@ -19,7 +19,7 @@ function App({ children }: React.PropsWithChildren) {
   usePageNotFound((res) => {
     logger.error('#PageNotFound', res)
 
-    go.redirect(Pages.Home)
+    go.redirect(Pages.Index)
   })
 
   useUnhandledRejection(({ reason }) => {

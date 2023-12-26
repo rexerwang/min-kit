@@ -4,7 +4,7 @@ import { View } from '@tarojs/components'
 import { useDidShow } from '@tarojs/taro'
 import { useState } from 'react'
 
-import Layout from '@/pkg-demo/components/layout'
+import Layout from '@/components/layout'
 
 export default function Index() {
   const scene0 = useAppScene()

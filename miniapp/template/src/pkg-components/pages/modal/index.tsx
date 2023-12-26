@@ -2,7 +2,7 @@ import { MinText } from '@min-kit/components'
 import { Button, View } from '@tarojs/components'
 
 import MinCode from '@/components/code'
-import Layout from '@/pkg-demo/components/layout'
+import Layout from '@/components/layout'
 
 import demos from './demos'
 

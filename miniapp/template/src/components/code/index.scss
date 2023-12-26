@@ -1,3 +1,5 @@
+@import 'highlight.js/scss/github-dark';
+
 @font-face {
   font-family: 'Source Code Pro';
   src: url('https://cdn.jsdelivr.net/npm/source-code-pro@2.38.0/TTF/SourceCodePro-Regular.ttf') format('truetype');
@@ -8,8 +10,13 @@
 
   font-family: 'Source Code Pro', monospace;
 
+  &.wrap {
+    @apply break-all whitespace-normal;
+  }
+
   &-layout {
     $dark: #0d1117;
+
     @apply box-border flex flex-col text-sm;
 
     background-color: $dark;
@@ -37,8 +44,12 @@
             border-color: $dark;
           }
 
-          &.lang {
+          &.active {
             @apply bg-indigo-800;
+          }
+
+          &.light {
+            @apply bg-teal-700;
           }
 
           &.hover {

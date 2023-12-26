@@ -1,17 +1,22 @@
 import { defineRouteConfig } from '@min-kit/helper/runtime'
 
 const { Pages, Routes } = defineRouteConfig({
-  Home: 'pages/index/index',
+  Index: 'pages/index/index',
+  H5: 'pages/h5/index',
 
-  PkgDemo: {
-    Home: 'pages/index/index',
-    H5: 'pages/h5/index',
+  PkgComponents: {
+    Index: 'pages/index/index',
     Modal: 'pages/modal/index',
-    Toast: 'pages/toast/index',
-    Request: 'pages/request/index',
     Share: 'pages/share/index',
+    NavigationBar: 'pages/navigation-bar/index',
+  },
+
+  PkgExtends: {
+    Index: 'pages/index/index',
+    Request: 'pages/request/index',
+    Logger: 'pages/logger/index',
+    Toast: 'pages/toast/index',
     Scene: 'pages/scene/index',
-    CustomNav: 'pages/custom-nav/index',
   },
 })
 

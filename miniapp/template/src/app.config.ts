@@ -8,10 +8,13 @@ export default configChain((chain, { mode }) => {
   const isDev = mode === 'dev'
 
   chain
-    .entryPagePath(Routes.Home)
+    .entryPagePath(Routes.Index)
     .pages(Object.values(Routes).filter(isString))
-    .subPackage('pkg-demo')
-    .pages(Object.values(Routes.PkgDemo))
+    .subPackage('pkg-components')
+    .pages(Object.values(Routes.PkgComponents))
+    .end()
+    .subPackage('pkg-extends')
+    .pages(Object.values(Routes.PkgExtends))
     .end()
     .window({
       backgroundTextStyle: 'light',

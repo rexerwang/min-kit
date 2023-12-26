@@ -6,7 +6,7 @@ import { useState } from 'react'
 
 import { Pages } from '@/app.route'
 import MinCode from '@/components/code'
-import Layout from '@/pkg-demo/components/layout'
+import Layout from '@/components/layout'
 import httpbin from '@/service/http/httpbin'
 
 import { UsageSnippet } from './demos'
@@ -31,9 +31,7 @@ export default function Index() {
           <View className='text-gray-500'>支持中间件实现请求前置和后置拦截</View>
           <View className='text-gray-500'>
             echo-server by{' '}
-            <Text
-              className='underline underline-offset-4'
-              onClick={() => go(Pages.PkgDemo.H5, { url: 'https://httpbin.org' })}>
+            <Text className='underline underline-offset-4' onClick={() => go(Pages.H5, { url: 'https://httpbin.org' })}>
               httpbin.org
             </Text>
           </View>
@@ -51,8 +49,10 @@ export default function Index() {
               </Button>
             ))}
           </View>
+        </View>
 
-          <View className='mt-4 font-semibold'>example</View>
+        <View>
+          <View className='font-semibold'>example</View>
           <Button
             className='btn mt-2 m px-2.5 py-1.5 flex-center text-xs text-black bg-white border border-solid border-black rounded-lg'
             hoverClass='brightness-90'

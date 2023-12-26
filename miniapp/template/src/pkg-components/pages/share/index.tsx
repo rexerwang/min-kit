@@ -4,7 +4,7 @@ import { Route, UTM } from '@min-kit/shared'
 import { Button, View } from '@tarojs/components'
 
 import { Pages } from '@/app.route'
-import Layout from '@/pkg-demo/components/layout'
+import Layout from '@/components/layout'
 
 import shareModal from './components/share-modal'
 
@@ -21,7 +21,7 @@ export default function Index() {
             hoverClass='shadow'
             message={{
               title: '来自 ShareButton 分享',
-              path: Route.generate(Pages.Home, UTM.generate(UTM.Sources.shareFriends)),
+              path: Route.generate(Pages.Index, UTM.generate(UTM.Sources.shareFriends)),
             }}
             onShare={() => toast('完成分享')}>
             ShareButton 分享

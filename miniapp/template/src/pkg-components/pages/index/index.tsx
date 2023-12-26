@@ -4,4 +4,6 @@ export default function Index() {
   return <Layout />
 }
 
-definePageConfig({})
+definePageConfig({
+  navigationBarTitleText: 'components',
+})

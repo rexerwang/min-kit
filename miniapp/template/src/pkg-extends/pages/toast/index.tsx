@@ -2,7 +2,7 @@ import { toast } from '@min-kit/extends'
 import { sleep } from '@min-kit/shared'
 import { Button, View } from '@tarojs/components'
 
-import Layout from '@/pkg-demo/components/layout'
+import Layout from '@/components/layout'
 
 export default function Index() {
   return (
