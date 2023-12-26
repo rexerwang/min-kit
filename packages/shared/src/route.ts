@@ -40,11 +40,26 @@ export class Route {
     return Route.extract(route1) === Route.extract(route2)
   }
 
-  static includes(route: string, subRoute: string) {
+  /**
+   * determine nested route
+   *
+   * - ❌ be equals
+   * - ✅ `pages/a/index` -> `pages/a/b/index`
+   * - ✅ `pages/a/b` -> `pages/a/b/c/index`
+   *
+   * when NOT strict:
+   * - ✅ `pages/index/index` -> `pages/a/index`
+   * - ✅ `pages/index/index` -> `pages/a/b/c`
+   */
+  static includes(route: string, subRoute: string, strict?: boolean) {
+    if (this.equals(route, subRoute)) return false
+
     const extract = (path: string) => {
       const _path = Route.extract(path)
       return _path.endsWith('/') ? _path : _path + '/'
     }
-    return extract(subRoute).includes(extract(route))
+
+    const parent = strict ? extract(route).replace(/index\/$/, '') : extract(route).replace(/index\//g, '')
+    return extract(subRoute).includes(parent)
   }
 }
