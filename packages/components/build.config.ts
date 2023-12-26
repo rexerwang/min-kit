@@ -4,8 +4,10 @@ import { promisify } from 'node:util'
 
 import { defineBuildConfig } from 'unbuild'
 
+const isProd = !process.argv.includes('--dev')
+
 export default defineBuildConfig({
-  clean: !process.argv.includes('--no-clean'),
+  clean: isProd,
   entries: [
     'src/index',
     {
@@ -19,6 +21,7 @@ export default defineBuildConfig({
     emitCJS: true,
     esbuild: {
       jsx: 'automatic',
+      minify: isProd,
     },
   },
   hooks: {

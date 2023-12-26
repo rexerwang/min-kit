@@ -1,5 +1,10 @@
 import { defineBuildConfig } from 'unbuild'
 
+const isProd = !process.argv.includes('--dev')
+
 export default defineBuildConfig({
-  clean: !process.argv.includes('--no-clean'),
+  clean: isProd,
+  rollup: {
+    esbuild: { minify: isProd },
+  },
 })

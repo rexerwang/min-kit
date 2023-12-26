@@ -8,7 +8,7 @@
   "repository": "rexerwang/min-kit",
   "scripts": {
     "build": "pnpm -r --sort --filter=./packages/* run build",
-    "dev": "pnpm build --no-clean",
+    "dev": "pnpm build --dev",
     "dev:template": "pnpm --dir=miniapp/template run dev:weapp",
     "lint:tsc": "pnpm -r exec tsc --noEmit",
     "lint:eslint": "eslint --fix --ext .ts,tsx ./",
