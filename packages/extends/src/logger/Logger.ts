@@ -6,16 +6,38 @@ import { RequestError } from '../request/RequestError'
 
 export type LogLevel = 'error' | 'warn' | 'info' | 'debug'
 
-interface IOption {
-  /** enable record logs by {@link Taro.LogManager}. @supported weapp */
-  record?: boolean
-  /** enable report logs by {@link Taro.RealtimeLogManager} & custom reporter. @supported weapp */
-  report?: boolean
-  /** custom reporter */
-  reporter?(level: LogLevel, message: any): any
-  /** show timestamp */
+export interface IOption {
+  reporter?: {
+    /**
+     * realtime reporter by {@link Taro.RealtimeLogManager}.
+     *
+     * @default true
+     * @notice disabled in Devtools
+     * @supported weapp
+     * @see https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/RealtimeLogManager.html
+     */
+    realtime?: boolean
+    /**
+     * feedback reporter by {@link Taro.LogManager}
+     * @default false
+     * @notice disabled in Devtools
+     * @supported weapp
+     * @see https://developers.weixin.qq.com/miniprogram/dev/api/base/debug/LogManager.html
+     */
+    feedback?: boolean
+    /**
+     * custom reporter
+     */
+    custom?(level: LogLevel, message: any): any
+  }
+
+  /**
+   * show timestamp
+   * @default true
+   * @notice disabled in Devtools
+   */
   timestamp?: boolean
-  /** append meta info */
+  /** append meta info when report */
   meta?: boolean
 }
 
@@ -23,103 +45,105 @@ const isDevtools = attempt(getSystemInfoSync)?.platform === 'devtools'
 
 export default class Logger {
   private name: string
-  private logManager: Taro.LogManager | undefined
-  private realtimeLogManager: Taro.RealtimeLogManager | undefined
-  private option: IOption
+  private option: IOption = {
+    reporter: {
+      realtime: true,
+      feedback: true,
+    },
+    timestamp: true,
+    meta: true,
+  }
+
+  private feedbackReporter: Taro.LogManager | undefined
+  private realtimeReporter: Taro.RealtimeLogManager | undefined
 
   constructor(name: string, option = {} as IOption) {
     this.name = name
-    this.option = Object.assign(
-      {
-        record: !isDevtools && canIUse('getLogManager'),
-        report: !isDevtools && canIUse('getRealtimeLogManager'),
-        timestamp: !isDevtools,
-        meta: true,
-      },
-      option,
-    )
+    this.setOption(option)
+  }
 
-    if (this.option.record) {
+  setOption(option: IOption) {
+    this.option = Object.assign(this.option, option, {
+      reporter: { ...this.option.reporter, ...option.reporter },
+    })
+
+    // disable in Devtools
+    if (isDevtools) {
+      this.option.reporter!.realtime = false
+      this.option.reporter!.feedback = false
+      this.option.timestamp = false
+    }
+
+    if (canIUse('getRealtimeLogManager') && this.option.reporter?.realtime) {
       attempt(() => {
-        this.logManager = getLogManager()
+        this.realtimeReporter ||= getRealtimeLogManager()
+        this.realtimeReporter.setFilterMsg(this.name)
       })
     }
 
-    if (this.option.record) {
+    if (canIUse('getLogManager') && this.option.reporter?.feedback) {
       attempt(() => {
-        this.realtimeLogManager = getRealtimeLogManager()
-        this.realtimeLogManager.setFilterMsg(this.name)
+        this.feedbackReporter ||= getLogManager()
       })
     }
 
     this.debug('#Logger', this.option)
   }
 
-  private meta() {
-    return {
+  private report(level: LogLevel, msgs: any[], filters: any[]) {
+    const reporter = this.option.reporter ?? {}
+
+    const meta = () => ({
       route: Current.router ? Route.generate(Current.router.path, Current.router.params) : undefined,
       timestamp: Date.now(),
-    }
-  }
+    })
 
-  private reporter(level: LogLevel, msgs: any[], filters: any[]) {
-    const reporter = {
-      /**
-       * report log by {@link Taro.RealtimeLogManager}
-       */
-      report: () => {
-        if (level !== 'debug') {
-          if (this.realtimeLogManager) {
-            attempt(() => {
-              Current.page && this.realtimeLogManager!.in(Current.page)
-              filters.forEach((i) => this.realtimeLogManager!.addFilterMsg(i))
-              this.option.meta && msgs.push('meta:', this.meta())
-              this.realtimeLogManager![level](...msgs)
-            })
-          }
+    const report = () => {
+      if (level === 'debug') return
 
-          if (isFunction(this.option.reporter)) {
-            attempt(() => {
-              this.option.reporter!(level, {
-                filters,
-                message: msgs,
-                meta: this.meta(),
-              })
-            })
-          }
-        }
-
-        return reporter
-      },
-
-      /**
-       * record log by {@link Taro.LogManager}
-       */
-      record: () => {
+      if (reporter.feedback)
         attempt(() => {
-          if (this.logManager) {
-            this.option.meta && msgs.push('meta:', this.meta())
+          if (this.realtimeReporter) {
+            Current.page && this.realtimeReporter.in(Current.page)
+            filters.forEach((i) => this.realtimeReporter!.addFilterMsg(i))
+            this.option.meta && msgs.push('meta:', meta())
+            this.realtimeReporter![level](...msgs)
+          }
+        })
+
+      if (reporter.feedback) {
+        attempt(() => {
+          if (this.feedbackReporter) {
+            this.option.meta && msgs.push('meta:', meta())
             switch (level) {
               case 'error':
-                this.logManager.warn({ level, filters }, ...msgs)
+                this.feedbackReporter.warn({ level, filters }, ...msgs)
                 break
 
               case 'warn':
-                this.logManager.warn({ level, filters }, ...msgs)
+                this.feedbackReporter.warn({ level, filters }, ...msgs)
                 break
 
               case 'info':
-                this.logManager.info({ level, filters }, ...msgs)
+                this.feedbackReporter.info({ level, filters }, ...msgs)
                 break
             }
           }
         })
+      }
 
-        return reporter
-      },
+      if (isFunction(reporter.custom)) {
+        attempt(() => {
+          reporter.custom!(level, {
+            filters,
+            message: msgs,
+            meta: meta(),
+          })
+        })
+      }
     }
 
-    return reporter
+    return { report }
   }
 
   private output(level: LogLevel, msgs: any[]) {
@@ -160,37 +184,36 @@ export default class Logger {
 
     this.output(level, outputs)
 
-    return this.reporter(level, reports, filters)
+    return this.report(level, reports, filters)
   }
 
   /**
-   * **Attention: it will report and record logs at the same time**
-   * - report log by {@link Taro.RealtimeLogManager}
-   * - record log by {@link Taro.LogManager}
+   * output & report error message.
+   * add filters by hashtags in message ('#filter')
    *
+   * @notice it will report log by reporters at the same time if enabled
    * @usage
    * ```ts
-   * // report by `RealtimeLogManager` and record by `LogManager` at the same time
-   * // add filters for `RealtimeLogManager.addFilter` with hashtags ('#')
    * logger.error('#filter1', '#filter2', new Error('something wrong'))
    * logger.error('#LogCode', 'something', { payload: 1 }, new Error('something wrong'))
    * ```
    */
   error(...msgs: any[]) {
-    this.logging('error', msgs).record().report()
+    this.logging('error', msgs).report()
   }
 
   /**
+   * output warn message.
+   * add filters by hashtags in message ('#filter')
+   *
+   * @notice report by `logger.warn(...).report()`
    * @usage
    * ```ts
    * logger.warn('warning', { payload: 1 })
    *
-   * // report by `RealtimeLogManager`
-   * // add filters for `RealtimeLogManager.addFilter` with hashtags ('#')
+   * // report log
    * logger.warn('#filter', 'warning').report()
    *
-   * // record by `LogManager`
-   * logger.warn('#filter', 'warning').record()
    * ```
    */
   warn(...msgs: any[]) {
@@ -198,16 +221,16 @@ export default class Logger {
   }
 
   /**
+   * output info message.
+   * add filters by hashtags in message ('#filter')
+   *
+   * @notice report by `logger.info(...).report()`
    * @usage
    * ```ts
-   * logger.info('something', { payload: 1 })
+   * logger.info('info', { payload: 1 })
    *
-   * // report by `RealtimeLogManager`
-   * // add filters for `RealtimeLogManager.addFilter` with hashtags ('#')
-   * logger.info('#filter', 'something').report()
-   *
-   * // record by `LogManager`
-   * logger.info('#filter', 'something').record()
+   * // report log
+   * logger.info('#filter', 'info').report()
    * ```
    */
   info(...msgs: any[]) {

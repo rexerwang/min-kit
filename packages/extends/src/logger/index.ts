@@ -1,7 +1,7 @@
-import Logger from './Logger'
+import Logger, { IOption } from './Logger'
 
-export function getLogger(name: string) {
-  return new Logger(name)
+export function getLogger(name: string, option?: IOption) {
+  return new Logger(name, option)
 }
 
 export const logger = getLogger('👽')
