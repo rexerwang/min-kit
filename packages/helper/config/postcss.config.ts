@@ -10,6 +10,9 @@ interface PluginOpts {
   'postcss-rem-to-responsive-pixel'?: UserDefinedOptions | boolean
 }
 
+/**
+ * setup postcss for miniapp
+ */
 export function postcss(opts: PluginOpts = {}) {
   const plugins: AcceptedPlugin[] = []
 
@@ -18,7 +21,7 @@ export function postcss(opts: PluginOpts = {}) {
   }
 
   if (opts.tailwindcss !== false) {
-    const option = opts.tailwindcss === true ? tailwind() : opts.tailwindcss
+    const option = opts.tailwindcss === true ? tailwind : opts.tailwindcss
     plugins.push(require('tailwindcss')(option))
   }
 

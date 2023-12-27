@@ -1,8 +1,10 @@
 import { Config } from 'tailwindcss'
 import plugin from 'tailwindcss/plugin'
-import merge from 'webpack-merge'
 
-const baseConfig: Config = {
+/**
+ * tailwind preset for miniapp
+ */
+export const tailwind: Config = {
   content: ['./src/**/*.{ts,tsx}'],
   corePlugins: {
     preflight: false,
@@ -63,8 +65,4 @@ const baseConfig: Config = {
       },
     },
   },
-}
-
-export function tailwind(config: Partial<Config> = {}) {
-  return merge({}, baseConfig, config) as Config
 }
