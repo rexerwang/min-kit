@@ -45,3 +45,8 @@ export const logger = {
     printLog(processTypeEnum.START, chalk.green(argv.command) + ' ' + message)
   },
 }
+
+export function requires(path: string) {
+  const m = require(path)
+  return m.default ?? m
+}

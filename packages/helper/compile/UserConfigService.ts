@@ -1,6 +1,6 @@
 import { resolve } from 'node:path'
 
-import { logger } from './shared'
+import { logger, requires } from './shared'
 
 import type { AnyObject, UserConfig } from './types'
 
@@ -28,7 +28,7 @@ export class UserConfigService {
   }
 
   private loadModeConfig() {
-    const config: UserConfig.ModeConfig = require(resolve(this.MODE_CONFIG_PATH, this.mode)).default
+    const config: UserConfig.ModeConfig = requires(resolve(this.MODE_CONFIG_PATH, this.mode))
 
     const appid = config.appid[this.platform]
     if (!appid) throw new Error(`Cannot find appid of ${this.platform} in ${this.mode}`)
@@ -37,7 +37,7 @@ export class UserConfigService {
   }
 
   private loadPlatformConfig(appid: string) {
-    const configFn: UserConfig.PlatformConfigFn = require(resolve(this.PLATFORM_CONFIG_PATH, this.platform)).default
+    const configFn: UserConfig.PlatformConfigFn = requires(resolve(this.PLATFORM_CONFIG_PATH, this.platform))
     return configFn(appid, this.mode)
   }
 
