@@ -74,7 +74,7 @@ const requestOpenSetting = async (tmplIds: string[], confirm: IOptions['confirm'
 }
 
 export async function requestSubscription(tmplIds: string[], opts?: Partial<IOptions>) {
-  const options: IOptions = Object.assign({}, defaultOptions, opts)
+  const options: IOptions = { ...defaultOptions, ...opts }
 
   try {
     const rejects = filterResult(tmplIds, (await requestSubscribeMessage({ tmplIds })) as Record<string, string>)
