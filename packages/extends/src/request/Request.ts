@@ -3,6 +3,7 @@ import { request as requestTaroApi } from '@tarojs/taro'
 import { AbortControllerImpl } from './AbortControllerImpl'
 import { compose } from './compose'
 import { RequestError } from './RequestError'
+import { cloneObj, joinUrl } from './utils'
 
 type AnyObject = TaroGeneral.IAnyObject
 type Method = keyof Taro.request.Method
@@ -72,26 +73,19 @@ export class Request {
     return this
   }
 
-  private joinUrl(url: string, baseUrl?: string) {
-    if (!baseUrl || url.indexOf('://') > -1) return url
-
-    return baseUrl.replace(/\/+$/, '') + '/' + url.replace(/^\/+/, '')
-  }
-
   private createRequest(config: IRequest) {
     const request: IContext['request'] = Object.assign({ header: {}, method: 'GET' }, this.config, config)
 
-    request.url = this.joinUrl(request.url, request.baseUrl)
+    request.url = joinUrl(request.url, request.baseUrl)
 
     return request
   }
 
   private createContext<T>(config: IRequest) {
-    const request = this.createRequest(config)
-    const doRequest = this.request.bind(this)
+    const root = this
 
     const ctx: IContext<T> = {
-      request,
+      request: this.createRequest(config),
       ok: false,
       statusCode: -1,
       data: undefined as unknown as T,
@@ -118,17 +112,19 @@ export class Request {
         this.request.abort.abort()
       },
       throw(e) {
-        if (e instanceof RequestError) throw e
-        throw new RequestError(e, this)
+        const error = e instanceof RequestError ? e : new RequestError(e, this)
+        console.error(error) // output error directly
+        throw error
       },
       async replay() {
         if (this.statusCode === -1) this.throw('Cannot replay request before next().')
 
-        // count replay #
         this.request.replayed = (this.request.replayed ?? 0) + 1
 
-        const context = await doRequest(this.request)
-        Object.assign(this, context)
+        // fixed: clone the request object to avoid its properties (header, data..)
+        // may be converted to `readonly` in somehow by the native api.
+        const newCtx = await root.request(cloneObj(this.request))
+        Object.assign(this, newCtx)
       },
     }
 
@@ -160,14 +156,6 @@ export class Request {
     }
 
     return context
-  }
-
-  fork(config?: RequestConfig) {
-    const instance = new Request(config ?? this.config)
-    this.middlewares.forEach((middleware) => {
-      instance.use(middleware)
-    })
-    return instance
   }
 
   get<T = any>(url: string, data?: any, option?: AliasOption) {
