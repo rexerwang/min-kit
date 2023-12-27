@@ -10,35 +10,16 @@ cmd() {
   $*
 }
 
-cmd pnpm build
-
-cmd cd miniapp/template
-
-name=$(node -p 'require("./package.json").name')
-version=$(node -p 'require("./package.json").version')
+dir=./miniapp/template
+name=$(node -p "require(\"$dir/package.json\").name")
+version=$(node -p "require(\"$dir/package.json\").version")
 
 export CI_MINI_VERSION="$name@$version"
 export CI_MINI_DESC="Release $name v$version"
 export CI_MINI_ROBOT=2
 
-cmd pnpm clean
-cmd pnpm taro prebuild --type $type --mode=$mode
-cmd pnpm taro build --type $type --mode=$mode
-
-# temporarily fix the compilation issue: "Template `tmpl_0_66` not found"
-if [ ! "$(grep "tmpl_0_66" dist/base.wxml)" ]; then
-  echo "append tmpl_0_66 in dist/base.wxml"
-  cat >>dist/base.wxml <<EOF
-
-<template name="tmpl_0_66">
-  <web-view src="{{i.p0}}" bindmessage="eh" bindload="eh" binderror="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid||i.sid}}" data-sid="{{i.sid}}">
-    <block wx:for="{{i.cn}}" wx:key="sid">
-      <template is="{{xs.a(c, item.nn, l)}}" data="{{i:item,c:c+1,l:xs.f(l,item.nn)}}" />
-    </block>
-  </web-view>
-</template>
-EOF
-fi
-
-cmd pnpm taro upload --type $type --mode=$mode
-cd -
+cmd pnpm --dir $dir run clean
+cmd pnpm --dir $dir exec taro prebuild --type $type --mode=$mode
+cmd pnpm --dir $dir exec taro build --type $type --mode=$mode
+cmd "$(dirname $0)/patch-template"
+cmd pnpm --dir $dir exec taro upload --type $type --mode=$mode
