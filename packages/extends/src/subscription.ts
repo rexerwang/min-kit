@@ -73,7 +73,7 @@ const requestOpenSetting = async (tmplIds: string[], confirm: IOptions['confirm'
   return false
 }
 
-export async function requestSubscription(tmplIds: string[], opts: Partial<IOptions>) {
+export async function requestSubscription(tmplIds: string[], opts?: Partial<IOptions>) {
   const options: IOptions = Object.assign({}, defaultOptions, opts)
 
   try {
