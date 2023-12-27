@@ -1,37 +1,43 @@
 ## [0.3.3](https://github.com/rexerwang/min-kit/compare/v0.3.2...v0.3.3) (2023-12-27)
 
+### Features
+
+- **helper:** use presets in tailwind.config ([894a433](https://github.com/rexerwang/min-kit/commit/894a4334e45d317be69ee890e0346921a975fab1))
+
 ### Bug Fixes
 
 - **extends:** fix request `ctx.replay` ([0448c96](https://github.com/rexerwang/min-kit/commit/0448c9646a7209553aaac5ab1d5b5a898b85437b))
 - **helper:** fix UserConfigService require in cjs module ([2e8afd1](https://github.com/rexerwang/min-kit/commit/2e8afd1ec06d935f7920524189267ef153e245ca))
 
-### Features
-
-- **helper:** use presets in tailwind.config ([894a433](https://github.com/rexerwang/min-kit/commit/894a4334e45d317be69ee890e0346921a975fab1))
-
 ## [0.3.2](https://github.com/rexerwang/min-kit/compare/v0.3.1...v0.3.2) (2023-12-26)
-
-### Bug Fixes
-
-- **components:** fix exports name of components & styles ([2c1f8c1](https://github.com/rexerwang/min-kit/commit/2c1f8c15f6ad80382e0674e69af2ed2a17feebe3))
-- **shared:** fix `Route.includes` ([4a1923d](https://github.com/rexerwang/min-kit/commit/4a1923d24a0f980cc1cc6043661fb2899accfa9d))
 
 ### Features
 
 - **extends:** optimize Logger reporter ([3085076](https://github.com/rexerwang/min-kit/commit/308507634696683e89c4be0b14647b5aaed64226))
 - **template:** add demos group by subPackage ([b4ff5f6](https://github.com/rexerwang/min-kit/commit/b4ff5f677abfd188ae96566c9af74904c110cb2b))
 
-## [0.3.1](https://github.com/rexerwang/min-kit/compare/v0.3.0...v0.3.1) (2023-12-25)
-
 ### Bug Fixes
 
-- **components:** fix navigation-bar style ([40e9466](https://github.com/rexerwang/min-kit/commit/40e9466894610667de991f998da4471f78bea02a))
+- **components:** fix exports name of components & styles ([2c1f8c1](https://github.com/rexerwang/min-kit/commit/2c1f8c15f6ad80382e0674e69af2ed2a17feebe3))
+- **shared:** fix `Route.includes` ([4a1923d](https://github.com/rexerwang/min-kit/commit/4a1923d24a0f980cc1cc6043661fb2899accfa9d))
+
+## [0.3.1](https://github.com/rexerwang/min-kit/compare/v0.3.0...v0.3.1) (2023-12-25)
 
 ### Features
 
 - **template:** add NavigationBar example ([d72209d](https://github.com/rexerwang/min-kit/commit/d72209dd8466e74f898cab4905b288718e240b4d))
 
-# [0.3.0](https://github.com/rexerwang/min-kit/compare/v0.2.0...v0.3.0) (2023-12-25)
+### Bug Fixes
+
+- **components:** fix navigation-bar style ([40e9466](https://github.com/rexerwang/min-kit/commit/40e9466894610667de991f998da4471f78bea02a))
+
+## [0.3.0](https://github.com/rexerwang/min-kit/compare/v0.2.0...v0.3.0) (2023-12-25)
+
+### Features
+
+- **components:** optimize `Modal` module & add `Modal.confirm` to replace `confirmModal` exports ([8d98828](https://github.com/rexerwang/min-kit/commit/8d988284172ab94e3f100691bab8d21670e24e94))
+- **extends:** add `requestSubscription` for `requestSubscribeMessage` api wrapper ([79df64b](https://github.com/rexerwang/min-kit/commit/79df64b139222f116943f95c7833aa21fab8ba85))
+- **template:** add usage examples of modal & request ([fbe0e9f](https://github.com/rexerwang/min-kit/commit/fbe0e9fd83209da3112e690c7dc3870781252f08))
 
 ### Bug Fixes
 
@@ -40,24 +46,7 @@
 - **shared:** fix export const enum ([256a856](https://github.com/rexerwang/min-kit/commit/256a856952af48e0b0c7b10c2faca7847dd9a0cc))
 - **template:** layout ([ed55cf6](https://github.com/rexerwang/min-kit/commit/ed55cf659ea7128ca96127dbd4d43be301788060))
 
-### Features
-
-- **components:** optimize `Modal` module & add `Modal.confirm` to replace `confirmModal` exports ([8d98828](https://github.com/rexerwang/min-kit/commit/8d988284172ab94e3f100691bab8d21670e24e94))
-- **extends:** add `requestSubscription` for `requestSubscribeMessage` api wrapper ([79df64b](https://github.com/rexerwang/min-kit/commit/79df64b139222f116943f95c7833aa21fab8ba85))
-- **template:** add usage examples of modal & request ([fbe0e9f](https://github.com/rexerwang/min-kit/commit/fbe0e9fd83209da3112e690c7dc3870781252f08))
-
-# [0.2.0](https://github.com/rexerwang/min-kit/compare/c1d7a4ef6ff6b367235f35da42348b483e6821a2...v0.2.0) (2023-12-24)
-
-### Bug Fixes
-
-- **components:** add taro platform deps & fix jsx transform ([93de33a](https://github.com/rexerwang/min-kit/commit/93de33aa801e6efc6a309a83252659c0318224c0))
-- **components:** fix build config & fix style & type error ([38b4c0d](https://github.com/rexerwang/min-kit/commit/38b4c0da507e3a95d746bec37bb6b7844ae5787d))
-- **extends:** fix `go` typings ([2cc91e1](https://github.com/rexerwang/min-kit/commit/2cc91e128ac3edba432a947bb7771302694e9725))
-- **extends:** fix RewardedVideoAd.show & scene enum ([41ab1a8](https://github.com/rexerwang/min-kit/commit/41ab1a8ea67c7495d03f9d3a545779b6e4f7cb76))
-- **hooks:** fix typings of Taro import ([786b252](https://github.com/rexerwang/min-kit/commit/786b25272f14f90d2d86cb17769b89a1745c416f))
-- **shared:** downgrade query-string v7 ([77d335b](https://github.com/rexerwang/min-kit/commit/77d335b5639419bdd1f9e9f288e0af96e72f0962))
-- **store:** fix zustand middleware typings with declare shims ([2dd8373](https://github.com/rexerwang/min-kit/commit/2dd837380c94adde6b23c98b8f6329fb7f5299ae))
-- **template:** fix tsconfig & lint errors ([b3c01c5](https://github.com/rexerwang/min-kit/commit/b3c01c57be3298006a2de2b542a1896b98ef0a05))
+## [0.2.0](https://github.com/rexerwang/min-kit/compare/c1d7a4ef6ff6b367235f35da42348b483e6821a2...v0.2.0) (2023-12-24)
 
 ### Features
 
@@ -81,3 +70,14 @@
 - **template:** highlight code ([a25b943](https://github.com/rexerwang/min-kit/commit/a25b943eb57532fa21f55120d9e6dda6b4fa5907))
 - **template:** modal examples ([6162b23](https://github.com/rexerwang/min-kit/commit/6162b2330c02df9542b62d3b9cb2e5a74c067a97))
 - **template:** optimize dir structure ([b6455cd](https://github.com/rexerwang/min-kit/commit/b6455cda2906d38167f3489a82583b2f0315da6d))
+
+### Bug Fixes
+
+- **components:** add taro platform deps & fix jsx transform ([93de33a](https://github.com/rexerwang/min-kit/commit/93de33aa801e6efc6a309a83252659c0318224c0))
+- **components:** fix build config & fix style & type error ([38b4c0d](https://github.com/rexerwang/min-kit/commit/38b4c0da507e3a95d746bec37bb6b7844ae5787d))
+- **extends:** fix `go` typings ([2cc91e1](https://github.com/rexerwang/min-kit/commit/2cc91e128ac3edba432a947bb7771302694e9725))
+- **extends:** fix RewardedVideoAd.show & scene enum ([41ab1a8](https://github.com/rexerwang/min-kit/commit/41ab1a8ea67c7495d03f9d3a545779b6e4f7cb76))
+- **hooks:** fix typings of Taro import ([786b252](https://github.com/rexerwang/min-kit/commit/786b25272f14f90d2d86cb17769b89a1745c416f))
+- **shared:** downgrade query-string v7 ([77d335b](https://github.com/rexerwang/min-kit/commit/77d335b5639419bdd1f9e9f288e0af96e72f0962))
+- **store:** fix zustand middleware typings with declare shims ([2dd8373](https://github.com/rexerwang/min-kit/commit/2dd837380c94adde6b23c98b8f6329fb7f5299ae))
+- **template:** fix tsconfig & lint errors ([b3c01c5](https://github.com/rexerwang/min-kit/commit/b3c01c57be3298006a2de2b542a1896b98ef0a05))
