@@ -9,6 +9,7 @@ const { Pages, Routes } = defineRouteConfig({
     Modal: 'pages/modal/index',
     Share: 'pages/share/index',
     NavigationBar: 'pages/navigation-bar/index',
+    Debugger: 'pages/debugger/index',
   },
 
   PkgExtends: {

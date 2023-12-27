@@ -1,7 +1,7 @@
 import '@min-kit/components/dist/styles/index.css'
 import './assets/styles/index.scss'
 import './assets/polyfill'
-import './icons'
+import './icons.config'
 
 import { useMinDebugger } from '@min-kit/components'
 import { go, logger } from '@min-kit/extends'

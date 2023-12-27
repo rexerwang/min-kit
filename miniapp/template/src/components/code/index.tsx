@@ -41,7 +41,6 @@ export interface MinCodeLayoutProps extends MinCodeProps {
 }
 
 function Layout({ title = 'example', className, codeClass, lang = 'ts', operator, ...props }: MinCodeLayoutProps) {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [wrap, toggleWrap] = useToggle(false)
 
   return (

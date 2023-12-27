@@ -26,8 +26,8 @@ const getButtonMessage = (id: string) => {
  * 按需添加页面分享相关配置:
  * ```ts
  * {
- *   enableShareAppMessage: true,
- *   enableShareTimeline: true,
+ * enableShareAppMessage: true, // 启用分享给好友
+ * enableShareTimeline: true, // 启用分享到朋友圈
  * }
  * ```
  */

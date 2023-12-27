@@ -39,6 +39,11 @@ export default function Layout({ title, children }: ReactProps<{ title?: string 
     return () => (current ? toast('当前页') : go(path))
   }
 
+  const includes = (pkg: string) => {
+    const pkgPath = `/pkg-${pkg}`
+    return !Route.equals(`${pkgPath}/index/index`, routePath) && Route.includes(pkgPath, routePath)
+  }
+
   return (
     <View className='relative w-screen box-border'>
       <View className='flex-center-y px-4 py-2 bg-white'>
@@ -63,7 +68,12 @@ export default function Layout({ title, children }: ReactProps<{ title?: string 
 
       {children ? (
         <View className='mx-2 p-2 text-sm bg-neutral-100 rounded-lg'>
-          <View className='p-1 font-semibold'>{title}</View>
+          <View className='p-1 flex-center-y justify-between'>
+            <View className='font-semibold'>{title}</View>
+            <View className='text-2xs text-gray-500 italic underline underline-offset-2'>
+              {includes('components') && <Text onClick={() => go(Pages.PkgComponents.Index)}>引入组件样式</Text>}
+            </View>
+          </View>
           <View className='p-2'>{children}</View>
         </View>
       ) : (
