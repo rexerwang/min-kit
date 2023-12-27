@@ -1,3 +1,14 @@
+## [0.3.3](https://github.com/rexerwang/min-kit/compare/v0.3.2...v0.3.3) (2023-12-27)
+
+### Bug Fixes
+
+- **extends:** fix request `ctx.replay` ([0448c96](https://github.com/rexerwang/min-kit/commit/0448c9646a7209553aaac5ab1d5b5a898b85437b))
+- **helper:** fix UserConfigService require in cjs module ([2e8afd1](https://github.com/rexerwang/min-kit/commit/2e8afd1ec06d935f7920524189267ef153e245ca))
+
+### Features
+
+- **helper:** use presets in tailwind.config ([894a433](https://github.com/rexerwang/min-kit/commit/894a4334e45d317be69ee890e0346921a975fab1))
+
 ## [0.3.2](https://github.com/rexerwang/min-kit/compare/v0.3.1...v0.3.2) (2023-12-26)
 
 ### Bug Fixes
