@@ -1,4 +1,4 @@
-export * from './debug'
+export * from './debugger'
 export * from './gesture'
 export * from './icon'
 export * from './image'

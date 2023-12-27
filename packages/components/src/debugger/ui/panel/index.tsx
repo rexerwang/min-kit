@@ -9,9 +9,9 @@ import AppModule from './app.module'
 import BasicModule from './basic.module'
 import NetworkModule from './network.module'
 
-import type { IUserOptions } from '../../types'
+import type { IStatusOptions } from '../../types'
 
-interface IProps extends IUserOptions {
+interface IProps extends IStatusOptions {
   onClose(): void
 }
 

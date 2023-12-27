@@ -7,13 +7,18 @@ import { useMemo, useState } from 'react'
 import { uiStore } from '../store'
 import Panel from './panel'
 
-import type { IUserOptions } from '../types'
+import type { IStatusOptions } from '../types'
 
-export interface MinDebuggerProps extends IUserOptions {
+export interface MinDebuggerProps extends Partial<IStatusOptions> {
   onMove?(e: { x: number; y: number }): void
 }
 
-export function MinDebugger({ onMove, user }: MinDebuggerProps) {
+const defaultUserApi: IStatusOptions['user'] = {
+  getToken: () => '',
+  getUserInfo: () => Promise.resolve(),
+}
+
+export function MinDebugger({ onMove, user = defaultUserApi }: MinDebuggerProps) {
   const [visible, setVisible] = useState(false)
   const { x, y } = uiStore.position()
 

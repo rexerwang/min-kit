@@ -8,9 +8,9 @@ import { useState } from 'react'
 
 import { prettyJSON } from '../../helper'
 
-import type { IUserOptions } from '../../types'
+import type { IStatusOptions } from '../../types'
 
-interface IProps extends IUserOptions {}
+interface IProps extends IStatusOptions {}
 
 export default function BasicModule({ user }: IProps) {
   const [state, setState] = useState<Record<string, string>>({})
@@ -30,10 +30,10 @@ export default function BasicModule({ user }: IProps) {
   })
 
   return (
-    <View className={clsx('basicModule', 'panel')}>
+    <View className='basicModule panel'>
       <View className='main'>
         {Object.entries(state).map(([key, value]) => (
-          <View key={key} className='section'>
+          <View key={key} className={clsx('section', !value && 'hidden')}>
             <Text className='title'>{key}</Text>
             <Text className='content' decode space='nbsp' onClick={() => copy(value)}>
               {value}

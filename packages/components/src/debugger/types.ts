@@ -5,6 +5,6 @@ interface UserApis {
   getUserInfo(reLogin?: boolean): Promise<AnyObject | void>
 }
 
-export interface IUserOptions {
+export interface IStatusOptions {
   user: UserApis
 }

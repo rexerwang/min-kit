@@ -6,24 +6,17 @@ import { useRef } from 'react'
 import { mountPortal } from '../..'
 import { RequestService } from '../service/request.service'
 import { uiStore } from '../store'
-import { IUserOptions } from '../types'
+import { IStatusOptions } from '../types'
 import { MinDebugger } from '../ui/debugger'
 
-export interface MinDebugOptions extends IUserOptions {}
-
-const defaultOptions: MinDebugOptions = {
-  user: {
-    getToken: () => '',
-    getUserInfo: () => Promise.resolve(),
-  },
-}
+export interface MinDebugOptions extends Partial<IStatusOptions> {}
 
 /**
  * use {@link MinDebugger} in hooks way.
  *
  * Only need to import once in the miniapp entry `app.ts`, it can be applied to all pages.
  */
-export function useMinDebugger(options = defaultOptions) {
+export function useMinDebugger(options: MinDebugOptions = {}) {
   const exists = useRef(new Set<string>())
   const position = useRef(uiStore.position())
 
