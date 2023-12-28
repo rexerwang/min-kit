@@ -1,3 +1,25 @@
+## [0.4.0](https://github.com/rexerwang/min-kit/compare/v0.3.3...v0.4.0) (2023-12-28)
+
+### ⚠ BREAKING CHANGES
+
+- **hooks:** drop `useScanLaunchTime`
+
+### Features
+
+- **components/debugger:** set debugger initial position to top-left ([8c64c39](https://github.com/rexerwang/min-kit/commit/8c64c398e62e475afbafcff531c89dbff2c668a1))
+- **hooks:** add `useDidScan` for callback when launched by scanning qrcode ([5f8bcbc](https://github.com/rexerwang/min-kit/commit/5f8bcbc2d2760a78fa48167cc0d407bf05b5e650))
+- **template:** component examples (`icon` `image` `debugger` ) ([098f1cc](https://github.com/rexerwang/min-kit/commit/098f1cc15ac0dd99e95475dca296be38a9c2b832))
+- **template:** add `debugger` example & optimize layout ([bb9f2e0](https://github.com/rexerwang/min-kit/commit/bb9f2e0b803f11cd79abd7d51baf9a2a96e6aa7d))
+- **template:** code styles ([1ebbc35](https://github.com/rexerwang/min-kit/commit/1ebbc3527cfbf04ceb76b9534fad911ee38a8780))
+- **template:** component examples of `icon` ([6bd7118](https://github.com/rexerwang/min-kit/commit/6bd711814c3b7e3ed3077d2c5b74c91c72155f28))
+
+### Bug Fixes
+
+- **components/debugger:** fix options & filename ([b72a63e](https://github.com/rexerwang/min-kit/commit/b72a63e89be810a9a8bd0ecd1eb2d130f106dc77))
+- **components/icon:** fix `MinIconFontProps` typings ([658b313](https://github.com/rexerwang/min-kit/commit/658b313c3d08dfaddb1e34c26e49ff6661b28c9a))
+- **extends:** fix `requestSubscription` optional parameters ([52355e5](https://github.com/rexerwang/min-kit/commit/52355e515a9119e1f6bd4d5bbbed57f4a60b4502))
+- **extends:** fix requestSubscription opts param ([19f6044](https://github.com/rexerwang/min-kit/commit/19f604435dbb40d67daf1a6e8c167cca8d8d1026))
+
 ## [0.3.3](https://github.com/rexerwang/min-kit/compare/v0.3.2...v0.3.3) (2023-12-27)
 
 ### Features
