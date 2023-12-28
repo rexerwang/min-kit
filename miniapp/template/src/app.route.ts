@@ -9,6 +9,8 @@ const { Pages, Routes } = defineRouteConfig({
     Modal: 'pages/modal/index',
     Share: 'pages/share/index',
     NavigationBar: 'pages/navigation-bar/index',
+    Image: 'pages/image/index',
+    Icon: 'pages/icon/index',
     Debugger: 'pages/debugger/index',
   },
 

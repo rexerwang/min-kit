@@ -11,16 +11,14 @@ export default function Index() {
   return (
     <>
       <Layout title='MinDebugger'>
-        <View className='absolute -top-5 right-2 font-light text-2xs text-gray-500'>* 本页面仅作示例开启入口</View>
         <View className='mb-4'>
-          <View className='text-gray-500 break-all'>
+          <View className='text-gray-500'>
             <MinText>{`MinDebugger是一个增强调试面板，包含以下功能：
   - 请求: 网络请求监控
   - 状态: 用户和小程序状态
   - 应用: 页面栈信息、本地缓存管理、订阅消息授权
 
-在 \`app.ts\` 中调用 \`useMinDebugger\` 即可作用于所有页面。
-在开启小程序「开发调试」模式后就会显示「debugger」入口（类似vConsole）。
+仅需在 \`app.ts\` 中调用 \`useMinDebugger\` 一次即可。在开启小程序「开发调试」模式后就会显示「debugger」入口（类似vConsole）。
 `}</MinText>
           </View>
         </View>
@@ -35,6 +33,8 @@ export default function Index() {
           </Button>
         </View>
       </Layout>
+
+      <View className='m-2 text-2xs text-gray-500'>* 本页面已开启入口，点击「debugger」按钮即可打开调试面板</View>
 
       {!SystemInfo.enableDebug && <MinDebugger />}
     </>
