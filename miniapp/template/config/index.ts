@@ -5,7 +5,6 @@ import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 import devConfig from './dev'
 import prodConfig from './prod'
 
-// https://taro-docs.jd.com/docs/next/config#defineconfig-辅助函数
 export default defineUserConfig((merge) => {
   const baseConfig: UserConfigExport = {
     projectName: 'template',

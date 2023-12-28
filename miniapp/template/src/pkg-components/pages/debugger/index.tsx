@@ -18,7 +18,7 @@ export default function Index() {
   - 状态: 用户和小程序状态
   - 应用: 页面栈信息、本地缓存管理、订阅消息授权
 
-仅需在 \`app.ts\` 中调用 \`useMinDebugger\` 一次即可。在开启小程序「开发调试」模式后就会显示「debugger」入口（类似vConsole）。
+仅需在 \`app.ts\` 中调用Hook \`MinDebugger.use\` 一次即可。在开启小程序「开发调试」模式后就会显示「debugger」入口（类似vConsole）。
 `}</MinText>
           </View>
         </View>
