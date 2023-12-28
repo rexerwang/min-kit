@@ -93,7 +93,6 @@ It will integrate the following plugins as default:
   import { isString } from '@min-kit/shared'
 
   import { Routes } from './app.route'
-  import { NAME } from './shared/constants'
 
   export default configChain((chain, { mode }) => {
     const isDev = mode === 'dev'
