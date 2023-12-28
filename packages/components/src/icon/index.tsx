@@ -31,7 +31,7 @@ export function MinIcon({ name, size = 16, ...props }: MinIconProps) {
 
 MinIcon.displayName = 'MinIcon'
 
-interface MinIconFontProps extends ViewProps {
+interface MinIconFontProps extends Omit<ViewProps, 'children'> {
   name: string
 }
 
