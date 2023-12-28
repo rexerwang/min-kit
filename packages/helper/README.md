@@ -47,11 +47,13 @@ export default defineUserConfig(
 It will integrate the following plugins as default:
 
 - `tailwindcss` by [weapp-tailwindcss](https://github.com/sonofmagic/weapp-tailwindcss)  
-  with config extends:
+   with config extends:
 
   ```js
   // tailwind.config.js
-  module.exports = require('@min-kit/helper/config').tailwind
+  module.exports = {
+    presets: [require('@min-kit/helper/config').tailwind],
+  }
 
   // postcss.config.js
   module.exports = require('@min-kit/helper/config').postcss()
@@ -112,3 +114,5 @@ It will integrate the following plugins as default:
       .wechat.debug(isDev)
   })
   ```
+
+go [here](https://github.com/rexerwang/min-kit/tree/main/miniapp/template) for more usage examples.
