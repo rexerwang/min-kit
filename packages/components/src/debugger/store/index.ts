@@ -1,4 +1,3 @@
-import { SystemInfo } from '@min-kit/extends'
 import { createPersistStore } from '@min-kit/store'
 import { useMemo } from 'react'
 
@@ -37,15 +36,15 @@ interface IState {
 
 const initialState: IState = {
   position: {
-    x: SystemInfo.screenWidth,
-    y: SystemInfo.screenHeight,
+    x: 0,
+    y: 0,
   },
   tab: 0,
 
   requestRecords: [],
 }
 
-const MAX_SIZE = 1000
+const MAX_RECORD_SIZE = 1000
 
 const store = createPersistStore(
   'debugger',
@@ -59,10 +58,10 @@ const store = createPersistStore(
     },
     insertRequest(record: RequestRecord) {
       set((state) => {
-        state.requestRecords.push(record)
-        if (state.requestRecords.length === MAX_SIZE) {
+        if (state.requestRecords.length === MAX_RECORD_SIZE) {
           state.requestRecords.shift()
         }
+        state.requestRecords.push(record)
       })
     },
     updateRequest(payload: Partial<RequestRecord>) {
