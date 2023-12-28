@@ -47,7 +47,7 @@ const initialState: IState = {
 const MAX_RECORD_SIZE = 1000
 
 const store = createPersistStore(
-  'debugger',
+  '~MinDebugger',
   initialState,
   (set) => ({
     setPosition(position: IState['position']) {

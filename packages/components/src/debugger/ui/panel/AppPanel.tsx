@@ -11,7 +11,6 @@ import {
   setStorageSync,
   showModal,
 } from '@tarojs/taro'
-import clsx from 'clsx'
 import { useEffect, useState } from 'react'
 
 import { IStorageData, IStorageInfo, StorageService, StorageType } from '../../service/storage.service'
@@ -30,7 +29,7 @@ enum AppTab {
 
 const Tabs = [AppTab.Router, AppTab.Storage, AppTab.Subscribe]
 
-export default function AppModule() {
+export default function AppPanel() {
   const [tab, setTab] = useState(AppTab.Router)
 
   const [pageStack, setPageStack] = useState<IPageStack>()
@@ -134,28 +133,28 @@ export default function AppModule() {
   }, [tab])
 
   return (
-    <View className={clsx('appModule', 'tabs', 'min')}>
+    <View className='AppPanel tabs min'>
       <View className='tabHeader'>
         {Tabs.map((i) => (
-          <View className={clsx('tab', i === tab && 'active')} key={i} onClick={() => setTab(i)}>
+          <View className={i === tab ? 'tab active' : 'tab'} key={i} onClick={() => setTab(i)}>
             {i}
           </View>
         ))}
       </View>
-      <View className={clsx('tabBody', 'panel')}>
+      <View className='tabBody panel'>
         <>
           {tab === AppTab.Router && (
-            <View className={clsx('main', 'route')}>
+            <View className='main route'>
               <View className='section'>
                 <View className='title' onClick={() => setStackVisible((v) => !v)}>
                   <View>页面栈</View>
                   <View>{pageStack?.length}</View>
                 </View>
-                <View className={clsx('content', 'wrap')} onClick={() => copy(pageStack?.current)}>
+                <View className='content wrap' onClick={() => copy(pageStack?.current)}>
                   {pageStack?.current}
                 </View>
                 {stackVisible && (
-                  <View className={clsx('content')} onClick={() => copy(pageStack?.stack.join('\n'))}>
+                  <View className='content' onClick={() => copy(pageStack?.stack.join('\n'))}>
                     <Text decode space='nbsp'>
                       {pageStack?.stack.map((v, i) => `${i + 1}. ${v}`).join('\n')}
                     </Text>
@@ -164,7 +163,7 @@ export default function AppModule() {
               </View>
               <View className='section'>
                 <View className='title'>跳转页面</View>
-                <View className={clsx('content', 'field')}>
+                <View className='content field'>
                   <Input placeholder='请输入跳转页面路径' value={path} onInput={(e) => setPath(e.detail.value)} />
                   <Button type='warn' size='mini' plain onClick={() => path && go(path)}>
                     跳转
@@ -176,10 +175,10 @@ export default function AppModule() {
 
           {tab === AppTab.Storage && (
             <>
-              <ScrollView className={clsx('main', 'storage')} scrollY>
-                <View className={clsx('section', 'usage')}>
+              <ScrollView className='main storage' scrollY>
+                <View className='section usage'>
                   <View className='content'>
-                    <View className={clsx('row', 'bold')}>
+                    <View className='row bold'>
                       <View className='col'>总空间</View>
                       <View className='col'>已用空间</View>
                       <View className='col'>可用空间</View>
@@ -195,16 +194,16 @@ export default function AppModule() {
                   </View>
                 </View>
 
-                <View className={clsx('section', 'list')}>
+                <View className='section list'>
                   <View className='content'>
-                    <View className={clsx('row', 'bold')}>
+                    <View className='row bold'>
                       <View className='col'>Key</View>
                       <View className='col'>Value</View>
                       <View className='col'>Type</View>
                     </View>
                     {storage?.data.map((d) => (
                       <View
-                        className={clsx('row', selectedKey === d.key && 'expand')}
+                        className={selectedKey === d.key ? 'row expand' : 'row'}
                         key={d.key}
                         onClick={(e) => {
                           if (d.key === selectedKey && e.target.dataset.editable) {
@@ -233,11 +232,7 @@ export default function AppModule() {
                   添加
                 </Button>
                 {selectedKey ? (
-                  <Button
-                    plain
-                    onClick={() => {
-                      removeStorageData(selectedKey)
-                    }}>
+                  <Button plain onClick={() => removeStorageData(selectedKey)}>
                     移除
                   </Button>
                 ) : (
@@ -247,8 +242,7 @@ export default function AppModule() {
                       attempt(clearStorageSync)
                       getStorage()
                     }}>
-                    清空
-                    {storage?.data.length ? `(${storage?.data.length})` : ''}
+                    清空{storage?.data.length ? `(${storage?.data.length})` : ''}
                   </Button>
                 )}
               </View>
@@ -256,10 +250,10 @@ export default function AppModule() {
           )}
 
           {tab === AppTab.Subscribe && (
-            <View className={clsx('main', 'subscribe')}>
+            <View className='main subscribe'>
               <View className='section'>
                 <View className='title'>订阅消息模板ID</View>
-                <View className={clsx('content', 'field')}>
+                <View className='content field'>
                   <Input
                     placeholder='多个逗号分隔，最多3个'
                     value={subscribeIds}

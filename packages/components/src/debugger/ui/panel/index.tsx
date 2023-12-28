@@ -5,19 +5,17 @@ import clsx from 'clsx'
 import { useMemo } from 'react'
 
 import { uiStore } from '../../store'
-import AppModule from './app.module'
-import BasicModule from './basic.module'
-import NetworkModule from './network.module'
+import AppPanel from './AppPanel'
+import NetworkPanel from './NetworkPanel'
+import StatusPanel from './StatusPanel'
 
-import type { IStatusOptions } from '../../types'
-
-interface IProps extends IStatusOptions {
+interface IProps {
   onClose(): void
 }
 
-const tabs = ['请求', '状态', '应用']
+const tabs = ['请求', '应用', '状态']
 
-export default function Panel({ onClose, user }: IProps) {
+export default function Panel({ onClose }: IProps) {
   const tab = uiStore.tab()
 
   const style = useMemo(() => {
@@ -30,15 +28,13 @@ export default function Panel({ onClose, user }: IProps) {
   const tabBody = useMemo(() => {
     switch (tab) {
       case 0:
-        return <NetworkModule />
-
+        return <NetworkPanel />
       case 1:
-        return <BasicModule user={user} />
-
+        return <AppPanel />
       case 2:
-        return <AppModule />
+        return <StatusPanel />
     }
-  }, [tab, user])
+  }, [tab])
 
   return (
     <View className='min-debug-panel'>

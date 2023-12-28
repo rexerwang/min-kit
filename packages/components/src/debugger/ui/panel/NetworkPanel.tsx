@@ -10,7 +10,7 @@ const onCopy = (data: any) => () => {
   data && copy(data)
 }
 
-export default function NetworkModule() {
+export default function NetworkPanel() {
   const [selected, select] = useState('')
   const [filtering, setFiltering] = useState(false)
   const [filterText, setFilterText] = useState('')
@@ -33,7 +33,7 @@ export default function NetworkModule() {
   }, [filtering])
 
   return (
-    <View className={clsx('networkModule', 'panel')}>
+    <View className='NetworkPanel panel'>
       <ScrollView className='main' scrollY>
         {records.map((record) => (
           <Block key={record.reqId}>

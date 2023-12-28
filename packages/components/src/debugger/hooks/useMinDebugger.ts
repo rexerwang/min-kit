@@ -3,20 +3,19 @@ import { useAppRoute__unstable, useAppRouteDone__unstable, useMount } from '@min
 import { nextTick } from '@tarojs/taro'
 import { useRef } from 'react'
 
-import { mountPortal } from '../..'
+import { mountPortal } from '../../portal'
 import { RequestService } from '../service/request.service'
 import { uiStore } from '../store'
-import { IStatusOptions } from '../types'
-import { MinDebugger } from '../ui/debugger'
+import Debugger from '../ui/debugger'
 
-export interface MinDebugOptions extends Partial<IStatusOptions> {}
+import type { MinDebuggerOptions } from '../types'
 
 /**
- * use {@link MinDebugger} in hooks way.
+ * use MinDebugger in hooks way.
  *
  * Only need to import once in the miniapp entry `app.ts`, it can be applied to all pages.
  */
-export function useMinDebugger(options: MinDebugOptions = {}) {
+export function useMinDebugger(options?: MinDebuggerOptions) {
   const exists = useRef(new Set<string>())
   const position = useRef(uiStore.position())
 
@@ -39,9 +38,9 @@ export function useMinDebugger(options: MinDebugOptions = {}) {
     const uid = getRootElement()?.uid
     if (uid && !exists.current.has(uid)) {
       nextTick(() => {
-        mountPortal(MinDebugger, {
+        mountPortal(Debugger, {
           onMove: (e) => (position.current = e),
-          user: options.user,
+          options,
         })
         exists.current.add(uid)
       })
