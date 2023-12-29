@@ -1,0 +1,48 @@
+name: 'ci'
+
+on:
+  push:
+    branches:
+      - main
+
+permissions: {}
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+      - name: Setup node 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'pnpm'
+      - run: pnpm install
+      - name: Run lint
+        run: |
+          pnpm exec eslint packages miniapp --ext .ts,tsx
+          pnpm exec stylelint "{miniapp,packages}/**/*.{scss,css}"
+          pnpm exec prettier --check .
+
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+      - name: Setup node 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'pnpm'
+      - run: pnpm install
+      - name: Run build
+        run: pnpm build
+      - name: Run unit tests
+        run: pnpm test
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
