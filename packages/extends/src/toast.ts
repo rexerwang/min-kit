@@ -4,9 +4,9 @@ import { logger } from './logger'
 
 type ToastOption = Partial<Pick<Taro.showToast.Option, 'duration' | 'icon' | 'image' | 'mask'>>
 
-type ToastFunction = (title: string, option?: ToastOption) => Promise<void>
+interface Toast {
+  (title: string, option?: ToastOption): Promise<void>
 
-interface Toast extends ToastFunction {
   /**
    * Toast 成功提示
    *

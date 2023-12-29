@@ -10,8 +10,8 @@ type GoOptions = {
   generate?: Route.GenerateOptions
 }
 type GoRes = Promise<TaroGeneral.CallbackResult>
-type GoFn = (path: string, query?: Route.Query, options?: GoOptions) => GoRes
-interface Go extends GoFn {
+interface Go {
+  (path: string, query?: Route.Query, options?: GoOptions): GoRes
   redirect(path: string, query?: Route.Query, options?: GoOptions['generate']): GoRes
   reLaunch(path: string, query?: Route.Query, options?: GoOptions['generate']): GoRes
   back(fallbackPath?: string): GoRes
