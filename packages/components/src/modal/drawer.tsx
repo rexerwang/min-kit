@@ -18,7 +18,7 @@ export default function Drawer({
   onClose,
 }: IModal.DrawerProps) {
   const style: CSSProperties = useMemo(() => {
-    let _offsetY = 0 // offsetY !== undefined ? offsetY : position === 'center' ? -88 : position === 'top' ? 80 : 0
+    let _offsetY = 0
     switch (position) {
       case 'center':
         _offsetY = offsetY ?? Drawer.defaults.offsetY.center

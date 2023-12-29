@@ -32,7 +32,7 @@ export namespace IModal {
     /***
      * Y轴偏移量 相对`position`方向
      *
-     * 默认值见配置 {@link MinDrawer.defaults.offsetY}
+     * 默认值见配置 {@link Modal.defaults.offsetY}
      */
     offsetY?: number
     /** 点击背景关闭事件 */
