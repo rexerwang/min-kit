@@ -5,7 +5,7 @@ import { Button, View } from '@tarojs/components'
 import MinCode from '@/components/code'
 import Layout from '@/components/layout'
 
-import { UsageSnippet } from './demos'
+import { BasicUsageSnippet, OptionsUsageSnippet } from './demos'
 
 export default function Index() {
   return (
@@ -25,12 +25,20 @@ export default function Index() {
 
         <View className='mb-4'>
           <View className='font-semibold'>example</View>
-          <Button
-            className='btn mt-2 m px-2.5 py-1.5 flex-center text-xs text-black bg-white border border-solid border-black rounded-lg'
-            hoverClass='brightness-90'
-            onClick={() => MinCode.popup({ code: UsageSnippet })}>
-            show code
-          </Button>
+          <View className='grid grid-cols-2 gap-4'>
+            <Button
+              className='btn mt-2 m px-2.5 py-1.5 flex-center text-xs text-black bg-white border border-solid border-black rounded-lg'
+              hoverClass='brightness-90'
+              onClick={() => MinCode.popup({ code: BasicUsageSnippet })}>
+              基础用法
+            </Button>
+            <Button
+              className='btn mt-2 m px-2.5 py-1.5 flex-center text-xs text-black bg-white border border-solid border-black rounded-lg'
+              hoverClass='brightness-90'
+              onClick={() => MinCode.popup({ code: OptionsUsageSnippet })}>
+              自定义
+            </Button>
+          </View>
         </View>
       </Layout>
 
