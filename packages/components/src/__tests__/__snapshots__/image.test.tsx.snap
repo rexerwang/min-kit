@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MinImage /> should render <MinImage /> toMatchSnapshot 1`] = `
+<DocumentFragment>
+  <taro-image-core
+    class="min-image--load image"
+    lazy-load="true"
+    src="./test.jpg"
+  />
+</DocumentFragment>
+`;

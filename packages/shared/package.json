@@ -25,9 +25,13 @@
     "miniprogram"
   ],
   "scripts": {
-    "build": "unbuild"
+    "build": "unbuild",
+    "test": "jest"
   },
   "dependencies": {
     "query-string": "^7.1.3"
+  },
+  "devDependencies": {
+    "@min-kit/jest": "workspace:*"
   }
 }

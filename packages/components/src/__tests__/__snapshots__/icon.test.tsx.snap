@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MinIcon /> should render <MinIcon /> toMatchSnapshot 1`] = `
+<DocumentFragment>
+  <taro-image-core
+    class="test"
+    src="/test.jpg"
+    style="width: 16px; height: 16px;"
+  />
+</DocumentFragment>
+`;
+
+exports[`<MinIcon /> should render <MinIcon.Font /> toMatchSnapshot 1`] = `
+<DocumentFragment>
+  <taro-view-core
+    class="min-icon-font iconfont icon-test test"
+  >
+    <!---->
+  </taro-view-core>
+</DocumentFragment>
+`;

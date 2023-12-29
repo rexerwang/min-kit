@@ -32,7 +32,8 @@
     "miniprogram"
   ],
   "scripts": {
-    "build": "unbuild"
+    "build": "unbuild",
+    "test": "jest"
   },
   "dependencies": {
     "@min-kit/extends": "workspace:*",
@@ -56,6 +57,7 @@
     "react-dom": ">=17"
   },
   "devDependencies": {
-    "@min-kit/helper": "workspace:*"
+    "@min-kit/helper": "workspace:*",
+    "@min-kit/jest": "workspace:^"
   }
 }
