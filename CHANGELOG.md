@@ -1,3 +1,21 @@
+## [0.5.0](https://github.com/rexerwang/min-kit/compare/v0.4.0...v0.5.0) (2023-12-29)
+
+### ⚠ BREAKING CHANGES
+
+- **components/share:** typings `IMinShare` namespace
+- **components/debugger:** optimize the customize of MinDebugger & export `MinDebugger.use` instead of `useMinDebugger`
+- **store:** export zustand`useShallow` instead of `shallow`
+
+### Features
+
+- **components/debugger:** optimize the customize of MinDebugger & export `MinDebugger.use` instead of `useMinDebugger` ([cd312f4](https://github.com/rexerwang/min-kit/commit/cd312f41812c38dde928c1ab23da6e7729a02be3))
+- **store:** export zustand`useShallow` instead of `shallow` ([66e65ae](https://github.com/rexerwang/min-kit/commit/66e65ae7c81e7a2bb7e245184ccae50bc929442d))
+- **template:** component examples of MinDebugger ([a95afd4](https://github.com/rexerwang/min-kit/commit/a95afd49ebf6e7f873e4f702c68d4294af05df68))
+
+### Code Refactoring
+
+- **components/share:** optimize share typings ([6e6b299](https://github.com/rexerwang/min-kit/commit/6e6b2990dd6a98ff58a72123ac669faa54fb28fe))
+
 ## [0.4.0](https://github.com/rexerwang/min-kit/compare/v0.3.3...v0.4.0) (2023-12-28)
 
 ### ⚠ BREAKING CHANGES
