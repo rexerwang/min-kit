@@ -4,7 +4,8 @@ import { canIUse, Current, getLogManager, getRealtimeLogManager, getSystemInfoSy
 
 import { RequestError } from '../request/RequestError'
 
-export type LogLevel = 'error' | 'warn' | 'info' | 'debug'
+type LogLevel = 'error' | 'warn' | 'info' | 'debug'
+type Meta = { route?: string; timestamp: number }
 
 export interface IOption {
   reporter?: {
@@ -28,7 +29,7 @@ export interface IOption {
     /**
      * custom reporter
      */
-    custom?(level: LogLevel, message: any): any
+    custom?(log: { level: LogLevel; filters: string[]; msgs: any[]; meta: Meta }): any
   }
 
   /**
@@ -93,7 +94,7 @@ export default class Logger {
   private report(level: LogLevel, msgs: any[], filters: any[]) {
     const reporter = this.option.reporter ?? {}
 
-    const meta = () => ({
+    const meta = (): Meta => ({
       route: Current.router ? Route.generate(Current.router.path, Current.router.params) : undefined,
       timestamp: Date.now(),
     })
@@ -134,11 +135,7 @@ export default class Logger {
 
       if (isFunction(reporter.custom)) {
         attempt(() => {
-          reporter.custom!(level, {
-            filters,
-            message: msgs,
-            meta: meta(),
-          })
+          reporter.custom!({ level, filters, msgs, meta: meta() })
         })
       }
     }
