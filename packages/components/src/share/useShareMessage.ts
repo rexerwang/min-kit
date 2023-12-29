@@ -4,9 +4,9 @@ import { useShareAppMessage, useShareTimeline } from '@tarojs/taro'
 
 import Event from './event'
 
-import type { IShareMenu, IShareProps } from './types'
+import type { IMinShare } from './types'
 
-const defaultMessage = {}
+const defaultMessage: IMinShare.Message = {}
 
 const getButtonMessage = (id: string) => {
   if (!id) return
@@ -14,7 +14,7 @@ const getButtonMessage = (id: string) => {
   const button = document.getElementById(id)
   if (button?.props && button.props.openType === 'share') {
     Event.trigger(id)
-    return (button.props as IShareProps).message
+    return (button.props as IMinShare.ShareButtonProps).message
   }
 }
 
@@ -31,7 +31,7 @@ const getButtonMessage = (id: string) => {
  * }
  * ```
  */
-export function useShareMessage(menu: IShareMenu = {}) {
+export function useShareMessage(menu: IMinShare.ShareMenu = {}) {
   useShareAppMessage(({ from, target }) => {
     switch (from) {
       case 'button':

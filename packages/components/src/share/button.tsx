@@ -1,18 +1,12 @@
 import { useTaroId } from '@min-kit/hooks'
-import { Button, ButtonProps } from '@tarojs/components'
+import { Button } from '@tarojs/components'
 import { useEffect } from 'react'
 
 import Event from './event'
 
-import type { IShareProps } from './types'
+import type { IMinShare } from './types'
 
-export interface ShareButtonProps extends Omit<ButtonProps, 'openType' | 'id'>, IShareProps {
-  /** 触发分享（结果未知） */
-  onShare?(): void
-}
-
-/** 分享按钮 */
-export function ShareButton({ onShare, ...props }: ShareButtonProps) {
+export function ShareButton({ onShare, ...props }: IMinShare.ShareButtonProps) {
   const id = useTaroId()
 
   useEffect(() => {

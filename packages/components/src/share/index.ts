@@ -1,3 +1,3 @@
 export * from './button'
-export * from './types'
+export type { IMinShare } from './types'
 export * from './useShareMessage'
