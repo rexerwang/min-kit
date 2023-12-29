@@ -1,4 +1,4 @@
-# min-kit
+# min-kit · [![ci](https://github.com/rexerwang/min-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/rexerwang/min-kit/actions/workflows/ci.yml) [![codecov](https://codecov.io/gh/rexerwang/min-kit/graph/badge.svg?token=GA6N52QSGY)](https://codecov.io/gh/rexerwang/min-kit)
 
 Toolkit for miniapp based on Tarojs/React
 
