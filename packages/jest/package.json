@@ -10,9 +10,6 @@
     ".": "./utils.ts",
     "./config": "./config.js"
   },
-  "scripts": {
-    "build": "unbuild"
-  },
   "peerDependencies": {
     "@tarojs/plugin-platform-h5": ">=3.6"
   },
