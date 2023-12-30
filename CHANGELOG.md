@@ -1,3 +1,13 @@
+## [0.5.1](https://github.com/rexerwang/min-kit/compare/v0.5.0...v0.5.1) (2023-12-30)
+
+### ⚠ BREAKING CHANGES
+
+- **extends/logger:** optimize options `reporter.custom`
+
+### Features
+
+- **extends/logger:** optimize options `reporter.custom` ([c7408c1](https://github.com/rexerwang/min-kit/commit/c7408c1035c9f1204b546073dc24c62f40953328))
+
 ## [0.5.0](https://github.com/rexerwang/min-kit/compare/v0.4.0...v0.5.0) (2023-12-29)
 
 ### ⚠ BREAKING CHANGES
