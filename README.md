@@ -40,7 +40,7 @@ yarn add @min-kit/components @min-kit/extends @min-kit/hooks @min-kit/store @min
 yarn add -D @min-kit/helper
 ```
 
-## template
+## examples
 
-[miniapp/template](./miniapp/template) is a template project for miniapp based on `@min-kit` + `Taro` + `React` + `Typescript`,
+[@min-kit/example](./packages/example) is a example project for miniapp based on `@min-kit` + `Taro` + `React` + `Typescript`,
 which includes usage examples of the `@min-kit/*`.

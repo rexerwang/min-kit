@@ -3,7 +3,7 @@ import type { UserConfig } from '@min-kit/helper/compile'
 /** 抖音小程序配置 */
 export default ((appid) => {
   const config = {
-    projectname: '@min-kit/template',
+    projectname: '@min-kit/example',
     appid,
     setting: {
       urlCheck: false,

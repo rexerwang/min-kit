@@ -75,4 +75,4 @@ import '@min-kit/components/styles/min-navigation-bar.scss'
 import '@min-kit/components/styles/modal.scss'
 ```
 
-go [here](https://github.com/rexerwang/min-kit/tree/main/miniapp/template/src/pkg-components/pages) for more usage examples.
+go [here](https://github.com/rexerwang/min-kit/tree/main/packages/example/src/pkg-components/pages) for more usage examples.

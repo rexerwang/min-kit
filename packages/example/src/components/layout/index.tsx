@@ -53,7 +53,7 @@ export default function Layout({ title, children }: ReactProps<{ title?: string 
             className='block text-black text-lg font-semibold'
             hoverClass='underline underline-offset-4'
             onClick={() => go(Pages.H5, { url: 'https://github.com/rexerwang/min-kit' })}>
-            @min-kit/template
+            @min-kit/example
           </View>
           <Text className='block text-sm text-gray-400'>
             小程序模版项目 基于

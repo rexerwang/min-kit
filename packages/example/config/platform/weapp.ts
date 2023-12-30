@@ -5,8 +5,8 @@ export default ((appid) => ({
   project: {
     output: 'project.config.json',
     miniprogramRoot: 'dist',
-    projectname: '@min-kit/template',
-    description: '@min-kit/template',
+    projectname: '@min-kit/example',
+    description: '@min-kit/example',
     appid,
     setting: {
       es6: true, // 预览时需要开启

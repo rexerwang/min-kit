@@ -1,5 +1,5 @@
 {
-  "name": "@min-kit/template",
+  "name": "@min-kit/example",
   "version": "0.5.1",
   "private": true,
   "description": "miniapp project template of based on React and Tarojs",

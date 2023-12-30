@@ -8,8 +8,8 @@ plugin and config helper for Taro
 
 Fist, add `config/mode` & `config/platform` configs. For example:
 
-- [miniapp/template/config/mode](https://github.com/rexerwang/min-kit/tree/main/miniapp/template/config/mode)
-- [miniapp/template/config/platform](https://github.com/rexerwang/min-kit/tree/main/miniapp/template/config/platform)
+- [packages/example/config/mode](https://github.com/rexerwang/min-kit/tree/main/packages/example/config/mode)
+- [packages/example/config/platform](https://github.com/rexerwang/min-kit/tree/main/packages/example/config/platform)
 
 Then, replace `defineConfig` with `defineUserConfig` in `config/index.ts`:
 
@@ -114,4 +114,4 @@ It will integrate the following plugins as default:
   })
   ```
 
-go [here](https://github.com/rexerwang/min-kit/tree/main/miniapp/template) for more usage examples.
+go [here](https://github.com/rexerwang/min-kit/tree/main/packages/example) for more usage examples.

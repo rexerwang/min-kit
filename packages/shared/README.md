@@ -2,4 +2,4 @@
 
 utils & constants shared of `@min-kit` packages
 
-go [here](https://github.com/rexerwang/min-kit/tree/main/miniapp/template) for more usage examples.
+go [here](https://github.com/rexerwang/min-kit/tree/main/packages/example) for more usage examples.

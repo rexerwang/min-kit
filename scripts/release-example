@@ -10,7 +10,7 @@ cmd() {
   $*
 }
 
-dir=./miniapp/template
+dir=./packages/example
 name=$(node -p "require(\"$dir/package.json\").name")
 version=$(node -p "require(\"$dir/package.json\").version")
 
