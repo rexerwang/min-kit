@@ -12,7 +12,7 @@
     "dev:example": "pnpm --dir=packages/example run dev:weapp",
     "test": "pnpm -r test -- --coverage",
     "lint:tsc": "pnpm -r exec tsc --noEmit",
-    "lint:eslint": "eslint --fix --ext .ts,tsx ./",
+    "lint:eslint": "eslint packages/ --fix --ext .ts,tsx",
     "lint:style": "stylelint --fix \"packages/**/*.{scss,css}\"",
     "format": "prettier --write .",
     "postinstall": "husky install"
