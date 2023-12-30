@@ -3,7 +3,10 @@ name: 'ci'
 on:
   push:
     branches:
-      - main
+      - '**'
+  pull_request:
+    branches:
+      - '**'
 
 permissions: {}
 
@@ -22,8 +25,8 @@ jobs:
       - run: pnpm install
       - name: Run lint
         run: |
-          pnpm exec eslint packages miniapp --ext .ts,tsx
-          pnpm exec stylelint "{miniapp,packages}/**/*.{scss,css}"
+          pnpm exec eslint packages/ --ext .ts,tsx
+          pnpm exec stylelint "packages/**/*.{scss,css}"
           pnpm exec prettier --check .
 
   unit-test:
