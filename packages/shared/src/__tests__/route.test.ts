@@ -27,9 +27,11 @@ describe('route helper specs', () => {
   })
 
   it('Route.includes', () => {
-    expect(Route.includes('a/b?c=c', '/a/b/c?a=123')).toBeTruthy()
-    expect(Route.includes('/a/b/?c=c', 'a/b/c?a=123')).toBeTruthy()
-    expect(Route.includes('/a/c/?c=c', 'a/b/c?a=123')).toBeFalsy()
-    expect(Route.includes('a/ab?c=c', '/a/abc/d?a=123')).toBeFalsy()
+    expect(Route.includes('pages/a/index', 'pages/a/index')).toBeFalsy()
+    expect(Route.includes('pages/a/index', 'pages/a/b/index')).toBeTruthy()
+    expect(Route.includes('pages/a/b/index', 'pages/a/b/c/index')).toBeTruthy()
+    expect(Route.includes('pages/index/index', 'pages/a/b/c/index')).toBeTruthy()
+
+    expect(Route.includes('pages/index/index', 'pages/a/b/c/index', true)).toBeFalsy()
   })
 })
