@@ -10,6 +10,16 @@ exports[`<MinIcon /> should render <MinIcon /> toMatchSnapshot 1`] = `
 </DocumentFragment>
 `;
 
+exports[`<MinIcon /> should render <MinIcon /> toMatchSnapshot 2`] = `
+<DocumentFragment>
+  <taro-image-core
+    class=""
+    src="/test.jpg"
+    style="width: 20px; height: 40px;"
+  />
+</DocumentFragment>
+`;
+
 exports[`<MinIcon /> should render <MinIcon.Font /> toMatchSnapshot 1`] = `
 <DocumentFragment>
   <taro-view-core

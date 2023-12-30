@@ -13,7 +13,7 @@
   "peerDependencies": {
     "@tarojs/plugin-platform-h5": ">=3.6"
   },
-  "devDependencies": {
+  "dependencies": {
     "@tarojs/test-utils-react": "^0.1.1",
     "@testing-library/react": "^14.1.2",
     "jest-environment-jsdom": "^29.5.0"

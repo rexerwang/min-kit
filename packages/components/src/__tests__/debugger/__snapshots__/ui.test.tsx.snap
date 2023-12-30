@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`debugger.ui should render <Debugger /> toMatchSnapshot 1`] = `
+<DocumentFragment>
+  <taro-view-core
+    class="min-debugger"
+  >
+    <!---->
+    <taro-view-core
+      class="hidden"
+    >
+      <!---->
+      <taro-view-core
+        class="min-debug-panel"
+      >
+        <!---->
+        <taro-view-core
+          class="mask"
+        >
+          <!---->
+        </taro-view-core>
+        <taro-view-core
+          class="container"
+          style="top: 100px; bottom: 0px;"
+        >
+          <!---->
+          <taro-view-core
+            class="tabs"
+          >
+            <!---->
+            <taro-view-core
+              class="tabHeader"
+            >
+              <!---->
+              <taro-view-core
+                class="tab active"
+              >
+                <!---->
+                请求
+              </taro-view-core>
+              <taro-view-core
+                class="tab"
+              >
+                <!---->
+                应用
+              </taro-view-core>
+              <taro-view-core
+                class="tab"
+              >
+                <!---->
+                状态
+              </taro-view-core>
+            </taro-view-core>
+            <taro-view-core
+              class="tabBody"
+            >
+              <!---->
+              <taro-view-core
+                class="NetworkPanel panel"
+              >
+                <!---->
+                <taro-scroll-view-core
+                  class="main"
+                  scroll-y="true"
+                >
+                  <!---->
+                  <taro-view-core
+                    class="empty"
+                  >
+                    <!---->
+                    Recording network activity...
+                  </taro-view-core>
+                </taro-scroll-view-core>
+                <taro-view-core
+                  class="footer"
+                >
+                  <!---->
+                  <taro-button-core
+                    class=""
+                    plain="true"
+                  >
+                    <!---->
+                    筛选
+                  </taro-button-core>
+                  <taro-button-core
+                    class=""
+                    plain="true"
+                  >
+                    <!---->
+                    清空
+                  </taro-button-core>
+                </taro-view-core>
+              </taro-view-core>
+            </taro-view-core>
+          </taro-view-core>
+        </taro-view-core>
+      </taro-view-core>
+    </taro-view-core>
+    <taro-movable-area-core
+      class="movable-area"
+      style="top: 0px; bottom: 0px;"
+    >
+      <taro-movable-view-core
+        animation="false"
+        class="movable-view"
+        direction="all"
+        x="0"
+        y="0"
+      >
+        debugger
+      </taro-movable-view-core>
+    </taro-movable-area-core>
+  </taro-view-core>
+</DocumentFragment>
+`;
