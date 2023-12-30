@@ -11,14 +11,14 @@ export default class SubPackageChain extends AbstractChain {
     this.subPackage = { root: name, name, pages: [], plugins: {} }
   }
 
-  get() {
+  get(): Taro.SubPackage | undefined {
     if (this.subPackage.pages.length) {
       if (this.platform === 'weapp') this.subPackage.plugins = PluginChain.gets(this.plugins)
       return this.subPackage
     }
   }
 
-  static gets(subPackages: SubPackageChain[]) {
+  static gets(subPackages: SubPackageChain[]): Taro.SubPackage[] {
     return subPackages.map((subPackage) => subPackage.get()).filter(Boolean) as Taro.SubPackage[]
   }
 

@@ -1,13 +1,13 @@
 import AbstractChain from './AbstractChain'
 import SubPackageChain from './SubPackageChain'
-import { WechatChain } from './WechatChain'
+import { WeChatChain } from './WeChatChain'
 
 export default class ConfigChain extends AbstractChain {
   private config: Taro.Config = {}
   private subPackages: SubPackageChain[] = []
-  private wechatChain = new WechatChain(this.config)
+  private wechatChain = new WeChatChain(this.config)
 
-  get() {
+  get(): Taro.Config {
     if (!this.config.pages?.length) throw new Error('请调用`.pages()`设置`pages`项')
 
     this.wechatChain.get()
@@ -50,7 +50,7 @@ export default class ConfigChain extends AbstractChain {
   }
 
   /** 微信私有配置项 */
-  get wechat(): WechatChain & { end(): ConfigChain } {
+  get wechat(): WeChatChain & { end(): ConfigChain } {
     return Object.assign(this.wechatChain, { end: () => this })
   }
 }

@@ -17,7 +17,7 @@ export default class PluginChain extends AbstractChain {
     return this.plugin
   }
 
-  static gets(plugins: PluginChain[]) {
+  static gets(plugins: PluginChain[]): Taro.Plugins {
     return plugins
       .map((plugin) => plugin.get())
       .reduce((map, { id, ...plugin }) => {
