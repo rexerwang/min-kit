@@ -39,8 +39,8 @@ importers:
         specifier: ^9.1.0
         version: 9.1.0(eslint@8.56.0)
       eslint-config-taro:
-        specifier: 3.6.20
-        version: 3.6.20(@babel/core@7.23.6)(eslint@8.56.0)(typescript@5.3.3)
+        specifier: 3.6.22
+        version: 3.6.22(@babel/core@7.23.6)(eslint@8.56.0)(typescript@5.3.3)
       eslint-plugin-import:
         specifier: ^2.29.1
         version: 2.29.1(@typescript-eslint/parser@6.15.0)(eslint@8.56.0)
@@ -3957,13 +3957,13 @@ packages:
       '@jimp/custom': 0.22.10
       '@jimp/utils': 0.22.10
 
-  /@jimp/plugin-blit@0.9.8(@jimp/custom@0.22.10):
+  /@jimp/plugin-blit@0.9.8(@jimp/custom@0.9.8):
     resolution: {integrity: sha512-6xTDomxJybhBcby1IUVaPydZFhxf+V0DRgfDlVK81kR9kSCoshJpzWqDuWrMqjNEPspPE7jRQwHMs0FdU7mVwQ==}
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
       '@babel/runtime': 7.23.6
-      '@jimp/custom': 0.22.10
+      '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
 
@@ -3975,13 +3975,13 @@ packages:
       '@jimp/custom': 0.22.10
       '@jimp/utils': 0.22.10
 
-  /@jimp/plugin-blur@0.9.8(@jimp/custom@0.22.10):
+  /@jimp/plugin-blur@0.9.8(@jimp/custom@0.9.8):
     resolution: {integrity: sha512-dqbxuNFBRbmt35iIRacdgma7nlXklmPThsKcGWNTDmqb/hniK5IC+0xSPzBV4qMI2fLGP39LWHqqDZ0xDz14dA==}
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
       '@babel/runtime': 7.23.6
-      '@jimp/custom': 0.22.10
+      '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
 
@@ -4012,13 +4012,13 @@ packages:
       '@jimp/utils': 0.22.10
       tinycolor2: 1.6.0
 
-  /@jimp/plugin-color@0.9.8(@jimp/custom@0.22.10):
+  /@jimp/plugin-color@0.9.8(@jimp/custom@0.9.8):
     resolution: {integrity: sha512-SDHxOQsJHpt75hk6+sSlCPc2B3UJlXosFW+iLZ11xX1Qr0IdDtbfYlIoPmjKQFIDUNzqLSue/z7sKQ1OMZr/QA==}
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
       '@babel/runtime': 7.23.6
-      '@jimp/custom': 0.22.10
+      '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
       tinycolor2: 1.6.0
@@ -4047,9 +4047,9 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.6
       '@jimp/custom': 0.9.8
-      '@jimp/plugin-blit': 0.9.8(@jimp/custom@0.22.10)
-      '@jimp/plugin-resize': 0.9.8(@jimp/custom@0.22.10)
-      '@jimp/plugin-scale': 0.9.8(@jimp/custom@0.22.10)(@jimp/plugin-resize@0.9.8)
+      '@jimp/plugin-blit': 0.9.8(@jimp/custom@0.9.8)
+      '@jimp/plugin-resize': 0.9.8(@jimp/custom@0.9.8)
+      '@jimp/plugin-scale': 0.9.8(@jimp/custom@0.9.8)(@jimp/plugin-resize@0.9.8)
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
 
@@ -4077,9 +4077,9 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.6
       '@jimp/custom': 0.9.8
-      '@jimp/plugin-crop': 0.9.8(@jimp/custom@0.22.10)
-      '@jimp/plugin-resize': 0.9.8(@jimp/custom@0.22.10)
-      '@jimp/plugin-scale': 0.9.8(@jimp/custom@0.22.10)(@jimp/plugin-resize@0.9.8)
+      '@jimp/plugin-crop': 0.9.8(@jimp/custom@0.9.8)
+      '@jimp/plugin-resize': 0.9.8(@jimp/custom@0.9.8)
+      '@jimp/plugin-scale': 0.9.8(@jimp/custom@0.9.8)(@jimp/plugin-resize@0.9.8)
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
 
@@ -4091,13 +4091,13 @@ packages:
       '@jimp/custom': 0.22.10
       '@jimp/utils': 0.22.10
 
-  /@jimp/plugin-crop@0.9.8(@jimp/custom@0.22.10):
+  /@jimp/plugin-crop@0.9.8(@jimp/custom@0.9.8):
     resolution: {integrity: sha512-Nv/6AIp4aJmbSIH2uiIqm+kSoShKM8eaX2fyrUTj811kio0hwD3f/vIxrWebvAqwDZjAFIAmMufFoFCVg6caoQ==}
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
       '@babel/runtime': 7.23.6
-      '@jimp/custom': 0.22.10
+      '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
 
@@ -4173,7 +4173,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.6
       '@jimp/custom': 0.9.8
-      '@jimp/plugin-rotate': 0.9.8(@jimp/custom@0.22.10)(@jimp/plugin-blit@0.9.8)(@jimp/plugin-crop@0.9.8)(@jimp/plugin-resize@0.9.8)
+      '@jimp/plugin-rotate': 0.9.8(@jimp/custom@0.9.8)(@jimp/plugin-blit@0.9.8)(@jimp/plugin-crop@0.9.8)(@jimp/plugin-resize@0.9.8)
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
 
@@ -4268,7 +4268,7 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.6
       '@jimp/custom': 0.9.8
-      '@jimp/plugin-blit': 0.9.8(@jimp/custom@0.22.10)
+      '@jimp/plugin-blit': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
       load-bmfont: 1.4.1
@@ -4281,13 +4281,13 @@ packages:
       '@jimp/custom': 0.22.10
       '@jimp/utils': 0.22.10
 
-  /@jimp/plugin-resize@0.9.8(@jimp/custom@0.22.10):
+  /@jimp/plugin-resize@0.9.8(@jimp/custom@0.9.8):
     resolution: {integrity: sha512-L80NZ+HKsiKFyeDc6AfneC4+5XACrdL2vnyAVfAAsb3pmamgT/jDInWvvGhyI0Y76vx2w6XikplzEznW/QQvWg==}
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
       '@babel/runtime': 7.23.6
-      '@jimp/custom': 0.22.10
+      '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
 
@@ -4305,7 +4305,7 @@ packages:
       '@jimp/plugin-resize': 0.22.10(@jimp/custom@0.22.10)
       '@jimp/utils': 0.22.10
 
-  /@jimp/plugin-rotate@0.9.8(@jimp/custom@0.22.10)(@jimp/plugin-blit@0.9.8)(@jimp/plugin-crop@0.9.8)(@jimp/plugin-resize@0.9.8):
+  /@jimp/plugin-rotate@0.9.8(@jimp/custom@0.9.8)(@jimp/plugin-blit@0.9.8)(@jimp/plugin-crop@0.9.8)(@jimp/plugin-resize@0.9.8):
     resolution: {integrity: sha512-bpqzQheISYnBXKyU1lIj46uR7mRs0UhgEREWK70HnvFJSlRshdcoNMIrKamyrJeFdJrkYPSfR/a6D0d5zsWf1Q==}
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
@@ -4314,10 +4314,10 @@ packages:
       '@jimp/plugin-resize': '>=0.3.5'
     dependencies:
       '@babel/runtime': 7.23.6
-      '@jimp/custom': 0.22.10
-      '@jimp/plugin-blit': 0.9.8(@jimp/custom@0.22.10)
-      '@jimp/plugin-crop': 0.9.8(@jimp/custom@0.22.10)
-      '@jimp/plugin-resize': 0.9.8(@jimp/custom@0.22.10)
+      '@jimp/custom': 0.9.8
+      '@jimp/plugin-blit': 0.9.8(@jimp/custom@0.9.8)
+      '@jimp/plugin-crop': 0.9.8(@jimp/custom@0.9.8)
+      '@jimp/plugin-resize': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
 
@@ -4331,15 +4331,15 @@ packages:
       '@jimp/plugin-resize': 0.22.10(@jimp/custom@0.22.10)
       '@jimp/utils': 0.22.10
 
-  /@jimp/plugin-scale@0.9.8(@jimp/custom@0.22.10)(@jimp/plugin-resize@0.9.8):
+  /@jimp/plugin-scale@0.9.8(@jimp/custom@0.9.8)(@jimp/plugin-resize@0.9.8):
     resolution: {integrity: sha512-QU3ZS4Lre8nN66U9dKCOC4FNfaOh/QJFYUmQPKpPS924oYbtnm4OlmsdfpK2hVMSVVyVOis8M+xpA1rDBnIp7w==}
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
       '@jimp/plugin-resize': '>=0.3.5'
     dependencies:
       '@babel/runtime': 7.23.6
-      '@jimp/custom': 0.22.10
-      '@jimp/plugin-resize': 0.9.8(@jimp/custom@0.22.10)
+      '@jimp/custom': 0.9.8
+      '@jimp/plugin-resize': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
 
@@ -4364,8 +4364,8 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.6
       '@jimp/custom': 0.9.8
-      '@jimp/plugin-blur': 0.9.8(@jimp/custom@0.22.10)
-      '@jimp/plugin-resize': 0.9.8(@jimp/custom@0.22.10)
+      '@jimp/plugin-blur': 0.9.8(@jimp/custom@0.9.8)
+      '@jimp/plugin-resize': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
 
@@ -4390,8 +4390,8 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.6
       '@jimp/custom': 0.9.8
-      '@jimp/plugin-color': 0.9.8(@jimp/custom@0.22.10)
-      '@jimp/plugin-resize': 0.9.8(@jimp/custom@0.22.10)
+      '@jimp/plugin-color': 0.9.8(@jimp/custom@0.9.8)
+      '@jimp/plugin-resize': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
 
@@ -4431,13 +4431,13 @@ packages:
     dependencies:
       '@babel/runtime': 7.23.6
       '@jimp/custom': 0.9.8
-      '@jimp/plugin-blit': 0.9.8(@jimp/custom@0.22.10)
-      '@jimp/plugin-blur': 0.9.8(@jimp/custom@0.22.10)
+      '@jimp/plugin-blit': 0.9.8(@jimp/custom@0.9.8)
+      '@jimp/plugin-blur': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/plugin-circle': 0.9.8(@jimp/custom@0.9.8)
-      '@jimp/plugin-color': 0.9.8(@jimp/custom@0.22.10)
+      '@jimp/plugin-color': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/plugin-contain': 0.9.8(@jimp/custom@0.9.8)(@jimp/plugin-blit@0.9.8)(@jimp/plugin-resize@0.9.8)(@jimp/plugin-scale@0.9.8)
       '@jimp/plugin-cover': 0.9.8(@jimp/custom@0.9.8)(@jimp/plugin-crop@0.9.8)(@jimp/plugin-resize@0.9.8)(@jimp/plugin-scale@0.9.8)
-      '@jimp/plugin-crop': 0.9.8(@jimp/custom@0.22.10)
+      '@jimp/plugin-crop': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/plugin-displace': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/plugin-dither': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/plugin-fisheye': 0.9.8(@jimp/custom@0.9.8)
@@ -4447,9 +4447,9 @@ packages:
       '@jimp/plugin-mask': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/plugin-normalize': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/plugin-print': 0.9.8(@jimp/custom@0.9.8)(@jimp/plugin-blit@0.9.8)
-      '@jimp/plugin-resize': 0.9.8(@jimp/custom@0.22.10)
-      '@jimp/plugin-rotate': 0.9.8(@jimp/custom@0.22.10)(@jimp/plugin-blit@0.9.8)(@jimp/plugin-crop@0.9.8)(@jimp/plugin-resize@0.9.8)
-      '@jimp/plugin-scale': 0.9.8(@jimp/custom@0.22.10)(@jimp/plugin-resize@0.9.8)
+      '@jimp/plugin-resize': 0.9.8(@jimp/custom@0.9.8)
+      '@jimp/plugin-rotate': 0.9.8(@jimp/custom@0.9.8)(@jimp/plugin-blit@0.9.8)(@jimp/plugin-crop@0.9.8)(@jimp/plugin-resize@0.9.8)
+      '@jimp/plugin-scale': 0.9.8(@jimp/custom@0.9.8)(@jimp/plugin-resize@0.9.8)
       '@jimp/plugin-shadow': 0.9.8(@jimp/custom@0.9.8)(@jimp/plugin-blur@0.9.8)(@jimp/plugin-resize@0.9.8)
       '@jimp/plugin-threshold': 0.9.8(@jimp/custom@0.9.8)(@jimp/plugin-color@0.9.8)(@jimp/plugin-resize@0.9.8)
       core-js: 3.34.0
@@ -10774,8 +10774,8 @@ packages:
       eslint: 8.56.0
     dev: true
 
-  /eslint-config-taro@3.6.20(@babel/core@7.23.6)(eslint@8.56.0)(typescript@5.3.3):
-    resolution: {integrity: sha512-etIepI/1mYTWDEDuyiZxGfXkGw3QWr/Obse3cRjHyEzJ6mRBHvyGWGsf7xInvq/a2RcmGuRhdIRTvPjd+KbYUg==}
+  /eslint-config-taro@3.6.22(@babel/core@7.23.6)(eslint@8.56.0)(typescript@5.3.3):
+    resolution: {integrity: sha512-mXVlJFlZvDD7/VZ8fIz5dtgkazex3eRpF5BySf+pgJxnQuvDJHQfIHQ0T/gbfthbm/zmTgME7IXoA1VD7rHB3g==}
     peerDependencies:
       eslint: '*'
     dependencies:
