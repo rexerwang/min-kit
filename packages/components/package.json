@@ -40,7 +40,7 @@
     "@min-kit/hooks": "workspace:*",
     "@min-kit/shared": "workspace:*",
     "@min-kit/store": "workspace:*",
-    "clsx": "^2.0.0"
+    "clsx": "^2.1.0"
   },
   "peerDependencies": {
     "@tarojs/components": ">=3.6",
