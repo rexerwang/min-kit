@@ -15,7 +15,7 @@ describe('debugger/hooks', () => {
     jest.doMock('@min-kit/hooks', () => ({
       useAppRoute__unstable: (cb) => cb(),
       useAppRouteDone__unstable: (cb) => cb(),
-      useMount: jest.fn(),
+      useMount: (cb) => cb(),
     }))
   })
 
@@ -25,8 +25,7 @@ describe('debugger/hooks', () => {
       SystemInfo: { enableDebug: true },
     }))
 
-    // @ts-ignore
-    const { useMinDebugger } = await import('../../debugger/hooks/useMinDebugger')
+    const { useMinDebugger } = await import('../../debugger/hooks/useMinDebugger.ts')
     renderHook(() => useMinDebugger({}))
     expect(portalSpy).toHaveBeenCalledWith(
       debuggerSpy,
@@ -43,8 +42,7 @@ describe('debugger/hooks', () => {
       SystemInfo: { enableDebug: false },
     }))
 
-    // @ts-ignore
-    const { useMinDebugger } = await import('../../debugger/hooks/useMinDebugger')
+    const { useMinDebugger } = await import('../../debugger/hooks/useMinDebugger.ts')
     renderHook(() => useMinDebugger({}))
     expect(portalSpy).not.toHaveBeenCalled()
   })

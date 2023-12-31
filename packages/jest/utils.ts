@@ -1,3 +1,5 @@
+import '@testing-library/jest-dom'
+
 import TestUtils from '@tarojs/test-utils-react'
 
 export const createTaroTestUtils = () => {

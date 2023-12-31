@@ -12,8 +12,7 @@ describe('<MinImage />', () => {
   })
 
   it('should styling with load status', async () => {
-    // @ts-ignore
-    const { MinImage } = await import('../image')
+    const { MinImage } = await import('../image/index.tsx')
     await taro.mount(MinImage, { props: { className: 'image', src: './test.jpg', preview: true } })
 
     const el: HTMLElement = await taro.queries.waitForQuerySelector('.image')
@@ -38,8 +37,7 @@ describe('<MinImage />', () => {
     const onLoad = jest.fn()
     const previewImageSpy = jest.spyOn(Taro, 'previewImage')
 
-    // @ts-ignore
-    const { MinImage } = await import('../image')
+    const { MinImage } = await import('../image/index.tsx')
 
     await taro.mount(MinImage, { props: { className: 'image', src: './test.jpg', preview: true, onClick, onLoad } })
     const el = await taro.queries.waitForQuerySelector('.image')
@@ -64,8 +62,7 @@ describe('<MinImage />', () => {
     const onLoad = jest.fn()
     const previewImageSpy = jest.spyOn(Taro, 'previewImage')
 
-    // @ts-ignore
-    const { MinImage } = await import('../image')
+    const { MinImage } = await import('../image/index.tsx')
 
     await taro.mount(MinImage, {
       props: { className: 'image', src: './test.jpg', preview: ['./test.jpg', './test2.jpg'], onClick, onLoad },
