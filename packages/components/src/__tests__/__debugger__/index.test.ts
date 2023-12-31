@@ -1,9 +1,5 @@
 import { spyOnConsole } from '@min-kit/jest'
 
-jest.mock('@tarojs/taro', () => ({
-  canIUse: jest.fn(),
-}))
-
 describe('debugger/index', () => {
   beforeAll(() => {
     spyOnConsole()

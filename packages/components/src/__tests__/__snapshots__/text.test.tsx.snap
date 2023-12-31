@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MinText /> should render <MinText /> toMatchSnapshot 1`] = `
+<DocumentFragment>
+  <taro-text-core
+    class="test"
+    decode="true"
+    space="nbsp"
+  >
+    <!---->
+    text
+  </taro-text-core>
+</DocumentFragment>
+`;
+
+exports[`<MinText /> should renderText JSX toMatchSnapshot 1`] = `
+<DocumentFragment>
+  <div>
+    text
+  </div>
+</DocumentFragment>
+`;
+
+exports[`<MinText /> should renderText string toMatchSnapshot 1`] = `
+<DocumentFragment>
+  <taro-text-core
+    class=""
+    decode="true"
+    space="nbsp"
+    user-select="true"
+  >
+    <!---->
+    text
+  </taro-text-core>
+</DocumentFragment>
+`;

@@ -1,12 +1,8 @@
 import { createTaroTestUtils, render } from '@min-kit/jest'
+import Taro from '@tarojs/taro'
 
 describe('<MinImage />', () => {
   const taro = createTaroTestUtils()
-
-  const previewImageStub = jest.fn()
-  jest.doMock('@tarojs/taro', () => ({
-    previewImage: previewImageStub,
-  }))
 
   it('should render <MinImage /> toMatchSnapshot', async () => {
     // @ts-ignore
@@ -40,6 +36,7 @@ describe('<MinImage />', () => {
   it('should previewImage by click after loaded when given `preview` = true', async () => {
     const onClick = jest.fn()
     const onLoad = jest.fn()
+    const previewImageSpy = jest.spyOn(Taro, 'previewImage')
 
     // @ts-ignore
     const { MinImage } = await import('../image')
@@ -57,7 +54,7 @@ describe('<MinImage />', () => {
     })
 
     expect(onClick).toHaveBeenCalled()
-    expect(previewImageStub).toHaveBeenCalledWith({ urls: ['./test.jpg'] })
+    expect(previewImageSpy).toHaveBeenCalledWith({ urls: ['./test.jpg'] })
 
     taro.unmount()
   })
@@ -65,6 +62,7 @@ describe('<MinImage />', () => {
   it('should previewImage by click after loaded when given `preview` = string[]', async () => {
     const onClick = jest.fn()
     const onLoad = jest.fn()
+    const previewImageSpy = jest.spyOn(Taro, 'previewImage')
 
     // @ts-ignore
     const { MinImage } = await import('../image')
@@ -84,6 +82,6 @@ describe('<MinImage />', () => {
     })
 
     expect(onClick).toHaveBeenCalled()
-    expect(previewImageStub).toHaveBeenCalledWith({ current: './test.jpg', urls: ['./test.jpg', './test2.jpg'] })
+    expect(previewImageSpy).toHaveBeenCalledWith({ current: './test.jpg', urls: ['./test.jpg', './test2.jpg'] })
   })
 })

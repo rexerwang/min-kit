@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<MinNavigationBar /> should render <MinNavigationBar /> toMatchSnapshot 1`] = `
+<DocumentFragment>
+  <taro-view-core
+    class="min-navigation-bar nav"
+    style="padding-top: 48px;"
+  >
+    <!---->
+    <taro-view-core
+      class="min-navigation-bar-body"
+      style="width: 281px; height: 32px; margin-bottom: 10px;"
+    >
+      <!---->
+      min-kit
+    </taro-view-core>
+    <taro-view-core
+      class=""
+    >
+      <!---->
+      MinNavigationBar
+    </taro-view-core>
+  </taro-view-core>
+</DocumentFragment>
+`;

@@ -21,7 +21,7 @@ exports[`debugger.ui should render <Debugger /> toMatchSnapshot 1`] = `
         </taro-view-core>
         <taro-view-core
           class="container"
-          style="top: 100px; bottom: 0px;"
+          style="top: 80px; bottom: 34px;"
         >
           <!---->
           <taro-view-core
@@ -98,7 +98,7 @@ exports[`debugger.ui should render <Debugger /> toMatchSnapshot 1`] = `
     </taro-view-core>
     <taro-movable-area-core
       class="movable-area"
-      style="top: 0px; bottom: 0px;"
+      style="top: 0px; bottom: 34px;"
     >
       <taro-movable-view-core
         animation="false"
