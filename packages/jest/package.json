@@ -14,8 +14,8 @@
     "@tarojs/plugin-platform-h5": ">=3.6"
   },
   "dependencies": {
+    "@happy-dom/jest-environment": "^12.10.3",
     "@tarojs/test-utils-react": "^0.1.1",
-    "@testing-library/react": "^14.1.2",
-    "jest-environment-jsdom": "^29.5.0"
+    "@testing-library/react": "^14.1.2"
   }
 }
