@@ -1,4 +1,4 @@
-const defineJestConfig = require('@tarojs/test-utils-react/dist/jest.js').default
+const defineJestConfig = require('./config/taro-jest/index').default
 
 module.exports = defineJestConfig({
   globals: require('./config/globals'),
@@ -9,3 +9,5 @@ module.exports = defineJestConfig({
   coverageReporters: ['clover', 'json', 'lcov', 'text-summary'],
   passWithNoTests: true,
 })
+
+// console.debug('jest.config', module.exports)
