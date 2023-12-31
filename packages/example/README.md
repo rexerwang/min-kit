@@ -14,6 +14,6 @@ which includes usage examples of the `@min-kit/*`.
    cd min-kit
    pnpm i
    pnpm dev
-   pnpm run dev:template
+   pnpm run dev:example
    ```
 3. import `packages/example` folder in Devtools
