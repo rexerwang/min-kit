@@ -1,0 +1,387 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`modal Modal.confirm render toMatchSnapshot should render Modal.confirm toMatchSnapshot 1`] = `
+<page>
+  <root-portal
+    class="portal"
+  >
+    <taro-view-core
+      class="min-drawer center"
+      style="z-index: 1008; --duration: 300ms; --offsetX: 0px; --offsetY: -96px;"
+    >
+      <!---->
+      <taro-view-core
+        class="min-drawer-body"
+      >
+        <!---->
+        <taro-view-core
+          class="min-confirm-modal"
+        >
+          <!---->
+          <taro-image-core
+            class="icon"
+            style="width: 60px; height: 60px;"
+          />
+          <taro-view-core
+            class="title"
+          >
+            <!---->
+            <taro-text-core
+              class=""
+              decode="true"
+              space="nbsp"
+            >
+              <!---->
+              Modal.confirm
+            </taro-text-core>
+          </taro-view-core>
+          <taro-view-core
+            class="subtitle"
+          >
+            <!---->
+            <taro-text-core
+              class=""
+              decode="true"
+              space="nbsp"
+            >
+              <!---->
+              confirm subtitle
+            </taro-text-core>
+          </taro-view-core>
+          <taro-view-core
+            class="divider"
+          >
+            <!---->
+          </taro-view-core>
+          <taro-view-core
+            class="buttons"
+          >
+            <!---->
+            <taro-button-core
+              class="button ok"
+            >
+              <!---->
+              ok
+            </taro-button-core>
+          </taro-view-core>
+          <taro-view-core
+            class="footer"
+          >
+            <!---->
+            <taro-text-core
+              class=""
+              decode="true"
+              space="nbsp"
+            >
+              <!---->
+              confirm footer
+            </taro-text-core>
+          </taro-view-core>
+          <taro-view-core
+            class="close"
+          >
+            <!---->
+            <taro-image-core
+              class=""
+              style="width: 24px; height: 24px;"
+            />
+          </taro-view-core>
+        </taro-view-core>
+      </taro-view-core>
+    </taro-view-core>
+  </root-portal>
+</page>
+`;
+
+exports[`modal Modal.confirm render toMatchSnapshot should render Modal.confirm with buttons inline layout 1`] = `
+<page>
+  <root-portal
+    class="portal"
+  >
+    <taro-view-core
+      class="min-drawer center"
+      style="z-index: 1010; --duration: 300ms; --offsetX: 0px; --offsetY: -96px;"
+    >
+      <!---->
+      <taro-view-core
+        class="min-drawer-body"
+      >
+        <!---->
+        <taro-view-core
+          class="min-confirm-modal"
+        >
+          <!---->
+          <taro-image-core
+            class="icon"
+            style="width: 60px; height: 60px;"
+          />
+          <taro-view-core
+            class="title"
+          >
+            <!---->
+            <taro-text-core
+              class=""
+              decode="true"
+              space="nbsp"
+            >
+              <!---->
+              Modal.confirm
+            </taro-text-core>
+          </taro-view-core>
+          <taro-view-core
+            class="subtitle"
+          >
+            <!---->
+            <taro-text-core
+              class=""
+              decode="true"
+              space="nbsp"
+            >
+              <!---->
+              confirm subtitle
+            </taro-text-core>
+          </taro-view-core>
+          <taro-view-core
+            class="divider"
+          >
+            <!---->
+          </taro-view-core>
+          <taro-view-core
+            class="buttons--inline"
+          >
+            <!---->
+            <taro-button-core
+              class="button cancel"
+            >
+              <!---->
+              cancel
+            </taro-button-core>
+            <taro-button-core
+              class="button ok"
+            >
+              <!---->
+              ok
+            </taro-button-core>
+          </taro-view-core>
+          <taro-view-core
+            class="footer"
+          >
+            <!---->
+            <taro-text-core
+              class=""
+              decode="true"
+              space="nbsp"
+            >
+              <!---->
+              confirm footer
+            </taro-text-core>
+          </taro-view-core>
+        </taro-view-core>
+      </taro-view-core>
+    </taro-view-core>
+  </root-portal>
+</page>
+`;
+
+exports[`modal Modal.confirm render toMatchSnapshot should render Modal.confirm with cancel button 1`] = `
+<page>
+  <root-portal
+    class="portal"
+  >
+    <taro-view-core
+      class="min-drawer center"
+      style="z-index: 1009; --duration: 300ms; --offsetX: 0px; --offsetY: -96px;"
+    >
+      <!---->
+      <taro-view-core
+        class="min-drawer-body"
+      >
+        <!---->
+        <taro-view-core
+          class="min-confirm-modal"
+        >
+          <!---->
+          <taro-image-core
+            class="icon"
+            style="width: 60px; height: 60px;"
+          />
+          <taro-view-core
+            class="title"
+          >
+            <!---->
+            <taro-text-core
+              class=""
+              decode="true"
+              space="nbsp"
+            >
+              <!---->
+              Modal.confirm
+            </taro-text-core>
+          </taro-view-core>
+          <taro-view-core
+            class="subtitle"
+          >
+            <!---->
+            <taro-text-core
+              class=""
+              decode="true"
+              space="nbsp"
+            >
+              <!---->
+              confirm subtitle
+            </taro-text-core>
+          </taro-view-core>
+          <taro-view-core
+            class="divider"
+          >
+            <!---->
+          </taro-view-core>
+          <taro-view-core
+            class="buttons"
+          >
+            <!---->
+            <taro-button-core
+              class="button ok"
+            >
+              <!---->
+              ok
+            </taro-button-core>
+            <taro-button-core
+              class="button cancel"
+            >
+              <!---->
+              cancel
+            </taro-button-core>
+          </taro-view-core>
+          <taro-view-core
+            class="footer"
+          >
+            <!---->
+            <taro-text-core
+              class=""
+              decode="true"
+              space="nbsp"
+            >
+              <!---->
+              confirm footer
+            </taro-text-core>
+          </taro-view-core>
+        </taro-view-core>
+      </taro-view-core>
+    </taro-view-core>
+  </root-portal>
+</page>
+`;
+
+exports[`modal Modal.confirm render toMatchSnapshot should render Modal.confirm with custom icon & no-divider 1`] = `
+<page>
+  <root-portal
+    class="portal"
+  >
+    <taro-view-core
+      class="min-drawer center"
+      style="z-index: 1011; --duration: 300ms; --offsetX: 0px; --offsetY: -96px;"
+    >
+      <!---->
+      <taro-view-core
+        class="min-drawer-body"
+      >
+        <!---->
+        <taro-view-core
+          class="min-confirm-modal"
+        >
+          <!---->
+          <taro-view-core
+            class="custom-icon"
+          >
+            <!---->
+            icon
+          </taro-view-core>
+          <taro-view-core
+            class="title"
+          >
+            <!---->
+            <taro-text-core
+              class=""
+              decode="true"
+              space="nbsp"
+            >
+              <!---->
+              Modal.confirm
+            </taro-text-core>
+          </taro-view-core>
+          <taro-view-core
+            class="no-divider"
+          >
+            <!---->
+          </taro-view-core>
+          <taro-view-core
+            class="buttons"
+          >
+            <!---->
+            <taro-button-core
+              class="button ok"
+            >
+              <!---->
+              ok
+            </taro-button-core>
+          </taro-view-core>
+          <taro-view-core
+            class="close"
+          >
+            <!---->
+            <taro-image-core
+              class=""
+              style="width: 24px; height: 24px;"
+            />
+          </taro-view-core>
+        </taro-view-core>
+      </taro-view-core>
+    </taro-view-core>
+  </root-portal>
+</page>
+`;
+
+exports[`modal Modal.with should render modal toMatchSnapshot 1`] = `
+<page>
+  <root-portal
+    class="portal"
+  >
+    <taro-view-core
+      class="min-drawer center"
+      style="z-index: 999; --duration: 300ms; --offsetX: 0px; --offsetY: -96px;"
+    >
+      <!---->
+      <taro-view-core
+        class="min-drawer-body"
+      >
+        <!---->
+        <taro-view-core
+          class=""
+          data-testid="test"
+        >
+          <!---->
+          <taro-view-core
+            class=""
+          >
+            <!---->
+            content
+          </taro-view-core>
+          <taro-view-core
+            class=""
+          >
+            <!---->
+            ok
+          </taro-view-core>
+          <taro-view-core
+            class=""
+          >
+            <!---->
+            cancel
+          </taro-view-core>
+        </taro-view-core>
+      </taro-view-core>
+    </taro-view-core>
+  </root-portal>
+</page>
+`;

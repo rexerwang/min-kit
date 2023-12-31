@@ -1,4 +1,5 @@
-exports.supports = ['root-portal']
+/** canIUse */
+exports.supports = []
 
 exports.SystemInfo = {
   batteryLevel: 76,

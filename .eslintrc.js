@@ -37,7 +37,7 @@ module.exports = {
         ],
       },
     ],
-    'simple-import-sort/exports': 'error',
+    'simple-import-sort/exports': 'warn',
     // conflict with `simple-import-sort/imports`
     'import/first': 'off',
     'import/newline-after-import': 'error',
