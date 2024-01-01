@@ -7,7 +7,7 @@ module.exports = {
   },
   globals: {},
   parserOptions: {
-    requireConfigFile: false,
+    requireConfigFile: false, // ignore require .babelrc
   },
   rules: {
     '@typescript-eslint/no-useless-constructor': 'off',
