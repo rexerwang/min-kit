@@ -6,6 +6,9 @@
   "license": "MIT",
   "repository": "rexerwang/min-kit",
   "exports": {
+    ".": {
+      "types": "./dist/taro-env.d.ts"
+    },
     "./compile": {
       "types": "./dist/compile/index.d.ts",
       "import": "./dist/compile/index.mjs",
@@ -27,6 +30,7 @@
       "require": "./dist/config/index.cjs"
     }
   },
+  "types": "./dist/taro-env.d.ts",
   "files": [
     "dist",
     "types"
