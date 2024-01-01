@@ -102,31 +102,34 @@ export class Logger {
     const report = () => {
       if (level === 'debug') return
 
-      if (reporter.realtime)
+      if (reporter.realtime) {
         attempt(() => {
           if (this.realtimeReporter) {
+            const messages = [...msgs]
             Current.page && this.realtimeReporter.in(Current.page)
             filters.forEach((i) => this.realtimeReporter!.addFilterMsg(i))
-            this.option.meta && msgs.push('meta:', meta())
-            this.realtimeReporter![level](...msgs)
+            this.option.meta && messages.push('meta:', meta())
+            this.realtimeReporter![level](...messages)
           }
         })
+      }
 
       if (reporter.feedback) {
         attempt(() => {
           if (this.feedbackReporter) {
-            this.option.meta && msgs.push('meta:', meta())
+            const messages = [...msgs]
+            this.option.meta && messages.push('meta:', meta())
             switch (level) {
               case 'error':
-                this.feedbackReporter.warn({ level, filters }, ...msgs)
+                this.feedbackReporter.warn({ level, filters }, ...messages)
                 break
 
               case 'warn':
-                this.feedbackReporter.warn({ level, filters }, ...msgs)
+                this.feedbackReporter.warn({ level, filters }, ...messages)
                 break
 
               case 'info':
-                this.feedbackReporter.info({ level, filters }, ...msgs)
+                this.feedbackReporter.info({ level, filters }, ...messages)
                 break
             }
           }

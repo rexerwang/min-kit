@@ -84,16 +84,30 @@ describe('Logger', () => {
       },
     })
 
-    const reporter = logger[level]('#tag', 'message', { level })
+    logger[level]('#tag', 'message', { level })?.report()
+
     expect(consoleSpy[level]).toHaveBeenCalledWith(TIME, NAME, '[tag]', 'message', { level })
 
-    reporter?.report()
-    // if (level === 'debug') {
-    //   expect(customStub).not.toHaveBeenCalled()
-    // }
+    if (level === 'debug') {
+      expect(customStub).not.toHaveBeenCalled()
+    } else {
+      const meta = expect.any(Object)
 
-    // const realtime = realtimeLogManagerStub[level]
-    // if (realtime) expect(realtime).toHaveBeenCalled()
+      const realtime = realtimeLogManagerStub[level]
+      if (realtime) expect(realtime).toHaveBeenCalledWith('tag', 'message', { level }, 'meta:', meta)
+
+      const feedback = logManagerStub[level]
+      if (feedback) {
+        expect(feedback).toHaveBeenCalledWith({ filters: ['tag'], level }, 'tag', 'message', { level }, 'meta:', meta)
+      }
+
+      expect(customStub).toHaveBeenCalledWith({
+        level,
+        filters: ['tag'],
+        msgs: ['tag', 'message', { level }],
+        meta,
+      })
+    }
   })
 
   it('should output with formatted RequestError message', async () => {

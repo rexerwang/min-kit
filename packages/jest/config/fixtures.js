@@ -56,6 +56,6 @@ exports.AccountInfo = { miniProgram: { appId: '', envVersion: '', version: '' } 
 
 exports.Current = {
   app: {},
-  router: {},
-  page: {},
+  router: null,
+  page: null,
 }
