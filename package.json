@@ -30,6 +30,9 @@
       "prettier --write"
     ]
   },
+  "changelogithub": {
+    "contributors": false
+  },
   "engines": {
     "node": ">=18"
   },
