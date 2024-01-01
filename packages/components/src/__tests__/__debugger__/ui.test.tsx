@@ -2,7 +2,7 @@ import { createTaroTestUtils, render, spyOnConsole } from '@min-kit/jest'
 
 import Debugger from '../../debugger/ui/debugger'
 
-describe('debugger.ui', () => {
+describe('debugger/ui', () => {
   const taro = createTaroTestUtils()
 
   beforeAll(() => {

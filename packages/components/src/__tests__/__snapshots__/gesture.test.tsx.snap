@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Gesture /> should render <Gesture /> toMatchSnapshot 1`] = `
+<DocumentFragment>
+  <taro-view-core
+    class=""
+  >
+    <!---->
+    GestureTarget
+  </taro-view-core>
+</DocumentFragment>
+`;

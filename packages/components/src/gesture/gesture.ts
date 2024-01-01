@@ -19,7 +19,7 @@ export function wrapTouch(handler: (data: ITouchData, evt: ITouchEvent) => void)
     const { touches, changedTouches } = evt
     const data = (touches?.length ? touches : changedTouches)?.at(0)
     if (data) {
-      handler({ x: data.pageX, y: data.pageY, t: Date.now() }, evt)
+      handler({ x: data.pageX, y: data.pageY, t: evt.timeStamp }, evt)
     }
   }
 }

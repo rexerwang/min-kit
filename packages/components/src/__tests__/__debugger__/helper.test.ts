@@ -1,6 +1,6 @@
 import { prettyJSON, timing } from '../../debugger/helper'
 
-describe('debugger.helper', () => {
+describe('debugger/helper', () => {
   it('prettyJSON', () => {
     expect(prettyJSON(null)).toBeNull()
     expect(prettyJSON('null')).toBe('null')

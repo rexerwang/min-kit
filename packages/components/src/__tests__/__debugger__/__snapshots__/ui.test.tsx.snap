@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`debugger.ui should render <Debugger /> toMatchSnapshot 1`] = `
+exports[`debugger/ui should render <Debugger /> toMatchSnapshot 1`] = `
 <DocumentFragment>
   <taro-view-core
     class="min-debugger"

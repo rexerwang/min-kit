@@ -5,8 +5,7 @@ describe('<MinImage />', () => {
   const taro = createTaroTestUtils()
 
   it('should render <MinImage /> toMatchSnapshot', async () => {
-    // @ts-ignore
-    const { MinImage } = await import('../image')
+    const { MinImage } = await import('../image/index.tsx')
     const { asFragment } = render(<MinImage className='image' src='./test.jpg' />)
     expect(asFragment()).toMatchSnapshot()
   })

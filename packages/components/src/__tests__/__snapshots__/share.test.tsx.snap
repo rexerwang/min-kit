@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`share should render <ShareButton /> toMatchSnapshot 1`] = `
+<DocumentFragment>
+  <taro-button-core
+    class=""
+    id="taro:r0:"
+    open-type="share"
+  >
+    <!---->
+    share
+  </taro-button-core>
+</DocumentFragment>
+`;
