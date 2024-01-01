@@ -5,13 +5,13 @@ describe('<MinImage />', () => {
   const taro = createTaroTestUtils()
 
   it('should render <MinImage /> toMatchSnapshot', async () => {
-    const { MinImage } = await import('../image/index.tsx')
+    const { MinImage } = await import('../image/index')
     const { asFragment } = render(<MinImage className='image' src='./test.jpg' />)
     expect(asFragment()).toMatchSnapshot()
   })
 
   it('should styling with load status', async () => {
-    const { MinImage } = await import('../image/index.tsx')
+    const { MinImage } = await import('../image/index')
     await taro.mount(MinImage, { props: { className: 'image', src: './test.jpg', preview: true } })
 
     const el: HTMLElement = await taro.queries.waitForQuerySelector('.image')
@@ -36,7 +36,7 @@ describe('<MinImage />', () => {
     const onLoad = jest.fn()
     const previewImageSpy = jest.spyOn(Taro, 'previewImage')
 
-    const { MinImage } = await import('../image/index.tsx')
+    const { MinImage } = await import('../image/index')
 
     await taro.mount(MinImage, { props: { className: 'image', src: './test.jpg', preview: true, onClick, onLoad } })
     const el = await taro.queries.waitForQuerySelector('.image')
@@ -61,7 +61,7 @@ describe('<MinImage />', () => {
     const onLoad = jest.fn()
     const previewImageSpy = jest.spyOn(Taro, 'previewImage')
 
-    const { MinImage } = await import('../image/index.tsx')
+    const { MinImage } = await import('../image/index')
 
     await taro.mount(MinImage, {
       props: { className: 'image', src: './test.jpg', preview: ['./test.jpg', './test2.jpg'], onClick, onLoad },

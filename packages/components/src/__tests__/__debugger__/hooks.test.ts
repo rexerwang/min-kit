@@ -25,7 +25,7 @@ describe('debugger/hooks', () => {
       SystemInfo: { enableDebug: true },
     }))
 
-    const { useMinDebugger } = await import('../../debugger/hooks/useMinDebugger.ts')
+    const { useMinDebugger } = await import('../../debugger/hooks/useMinDebugger')
     renderHook(() => useMinDebugger({}))
     expect(portalSpy).toHaveBeenCalledWith(
       debuggerSpy,
@@ -42,7 +42,7 @@ describe('debugger/hooks', () => {
       SystemInfo: { enableDebug: false },
     }))
 
-    const { useMinDebugger } = await import('../../debugger/hooks/useMinDebugger.ts')
+    const { useMinDebugger } = await import('../../debugger/hooks/useMinDebugger')
     renderHook(() => useMinDebugger({}))
     expect(portalSpy).not.toHaveBeenCalled()
   })

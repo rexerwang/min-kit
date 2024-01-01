@@ -22,7 +22,7 @@ describe('unmount portal', () => {
   it('should mount & unmount portal both in React & DOM', async () => {
     document.body.appendChild(page)
 
-    const { mountPortal } = await import('../../portal/index.tsx')
+    const { mountPortal } = await import('../../portal/index')
 
     const onUnmountStub = jest.fn()
     const unmount = mountPortal(CompStub, { onUnmount: onUnmountStub })

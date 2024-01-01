@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 // Polyfill `promise.finally` on iOS
 if (typeof Promise.prototype.finally !== 'function') {
   Promise.prototype.finally = function (onfinally) {

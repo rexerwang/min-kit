@@ -38,7 +38,7 @@ describe('Logger', () => {
   })
 
   it('should instance with default option', async () => {
-    const { getLogger } = await import('../logger/index.ts')
+    const { getLogger } = await import('../logger/index')
     getLogger(NAME)
     expect(consoleSpy.debug).toHaveBeenCalledWith(TIME, NAME, '[Logger]', {
       reporter: { feedback: true, realtime: true },
@@ -51,7 +51,7 @@ describe('Logger', () => {
     getSystemInfoSyncSpy.mockImplementation(jest.fn().mockReturnValue({ platform: 'devtools' }))
 
     await jest.isolateModulesAsync(async () => {
-      const { getLogger } = await import('../logger/index.ts')
+      const { getLogger } = await import('../logger/index')
       getLogger(NAME)
       expect(consoleSpy.debug).toHaveBeenCalledWith(NAME, '[Logger]', {
         reporter: { feedback: false, realtime: false },
@@ -62,7 +62,7 @@ describe('Logger', () => {
   })
 
   it('should update options via `setOption`', async () => {
-    const { getLogger } = await import('../logger/index.ts')
+    const { getLogger } = await import('../logger/index')
     const logger = getLogger(NAME)
     logger.setOption({ timestamp: false, meta: false, reporter: { feedback: false, realtime: false } })
     expect(consoleSpy.debug).toHaveBeenCalledWith(NAME, '[Logger]', {
@@ -73,7 +73,7 @@ describe('Logger', () => {
   })
 
   it.each(['debug', 'info', 'warn', 'error'])('should output %s formatted message & report', async (level) => {
-    const { getLogger } = await import('../logger/index.ts')
+    const { getLogger } = await import('../logger/index')
 
     const customStub = jest.fn()
     const logger = getLogger(NAME, {
@@ -97,8 +97,8 @@ describe('Logger', () => {
   })
 
   it('should output with formatted RequestError message', async () => {
-    const { getLogger } = await import('../logger/index.ts')
-    const { RequestError } = await import('../request/RequestError.ts')
+    const { getLogger } = await import('../logger/index')
+    const { RequestError } = await import('../request/RequestError')
     const error = new RequestError(new Error('test'), { request: {} } as any)
     getLogger(NAME).error(error)
 
@@ -107,8 +107,8 @@ describe('Logger', () => {
   })
 
   it('should index exports correctly', async () => {
-    const { logger } = await import('../logger/index.ts')
-    const { Logger } = await import('../logger/Logger.ts')
+    const { logger } = await import('../logger/index')
+    const { Logger } = await import('../logger/Logger')
 
     expect(logger).toBeInstanceOf(Logger)
   })

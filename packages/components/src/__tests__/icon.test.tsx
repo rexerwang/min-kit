@@ -24,7 +24,7 @@ describe('<MinIcon />', () => {
     await taro.mount(MinIcon.Font, { props: { name: 'test', onClick } })
 
     await taro.act(() => {
-      taro.fireEvent.click(taro.queries.querySelector('.min-icon-font'))
+      taro.fireEvent.click(taro.queries.querySelector('.min-icon-font')!)
     })
     expect(onClick).toHaveBeenCalled()
   })

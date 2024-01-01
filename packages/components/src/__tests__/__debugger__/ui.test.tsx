@@ -18,7 +18,7 @@ describe('debugger/ui', () => {
     await taro.mount(Debugger)
 
     await taro.act(() => {
-      taro.fireEvent.click(taro.queries.querySelector('.movable-view'))
+      taro.fireEvent.click(taro.queries.querySelector('.movable-view')!)
     })
 
     expect(taro.queries.querySelector('.movable-view.hidden')).not.toBeNull()

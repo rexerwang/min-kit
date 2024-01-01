@@ -3,7 +3,7 @@ import Taro from '@tarojs/taro'
 
 describe('share', () => {
   it('should render <ShareButton /> toMatchSnapshot', async () => {
-    const { ShareButton } = await import('../share/index.ts')
+    const { ShareButton } = await import('../share/index')
     expect(render(<ShareButton>share</ShareButton>).asFragment()).toMatchSnapshot()
   })
 
@@ -11,7 +11,7 @@ describe('share', () => {
     jest.spyOn(Taro, 'useShareTimeline').mockImplementation(jest.fn())
     const useShareAppMessageSpy = jest.spyOn(Taro, 'useShareAppMessage').mockImplementation(jest.fn())
 
-    const { useShareMessage, ShareButton } = await import('../index.ts')
+    const { useShareMessage, ShareButton } = await import('../index')
 
     const Index = () => {
       useShareMessage()
@@ -34,7 +34,7 @@ describe('share', () => {
       message = cb({ from: 'menu' })
     })
 
-    const { useShareMessage } = await import('../index.ts')
+    const { useShareMessage } = await import('../index')
 
     renderHook(() => useShareMessage({ message: { title: 'test' } }))
 
@@ -48,7 +48,7 @@ describe('share', () => {
       message = cb()
     })
 
-    const { useShareMessage } = await import('../index.ts')
+    const { useShareMessage } = await import('../index')
 
     renderHook(() => useShareMessage({ timeline: { title: 'test' } }))
 

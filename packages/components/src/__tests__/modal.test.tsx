@@ -2,9 +2,9 @@ import { act, fireEvent, render, screen } from '@min-kit/jest'
 import { View } from '@tarojs/components'
 import { createPortal } from 'react-dom'
 
-import * as portals from '../portal/index.tsx'
+import * as portals from '../portal/index'
 
-import type { IModal } from '../modal/types.ts'
+import type { IModal } from '../modal/types'
 
 const ModalStub = (props: IModal.Props) => (
   <View data-testid='test'>
@@ -41,14 +41,14 @@ describe('modal', () => {
 
   describe('Modal.with', () => {
     it('should render modal toMatchSnapshot', async () => {
-      const { Modal } = await import('../modal/index.ts')
+      const { Modal } = await import('../modal/index')
       const modal = Modal.with('ModalStub', ModalStub)()
       expect(root).toMatchSnapshot()
       modal.unmount()
     })
 
     it('should close modal with `ok = true` when ok button clicked', async () => {
-      const { Modal } = await import('../modal/index.ts')
+      const { Modal } = await import('../modal/index')
       const modal = Modal.with('ModalStub', ModalStub)()
 
       act(() => {
@@ -59,7 +59,7 @@ describe('modal', () => {
     })
 
     it('should close modal with `ok = false` when cancel button clicked', async () => {
-      const { Modal } = await import('../modal/index.ts')
+      const { Modal } = await import('../modal/index')
       const modal = Modal.with('ModalStub', ModalStub)()
 
       act(() => {
@@ -70,7 +70,7 @@ describe('modal', () => {
     })
 
     it('should close modal with `ok = false` when backdrop clicked', async () => {
-      const { Modal } = await import('../modal/index.ts')
+      const { Modal } = await import('../modal/index')
       const modal = Modal.with('ModalStub', ModalStub)({ backdropCloseable: true })
 
       act(() => {
@@ -81,7 +81,7 @@ describe('modal', () => {
     })
 
     it('should close modal with `ok = false` when unmount', async () => {
-      const { Modal } = await import('../modal/index.ts')
+      const { Modal } = await import('../modal/index')
       const modal = Modal.with('ModalStub', ModalStub)({ backdropCloseable: true })
 
       act(() => {
@@ -92,7 +92,7 @@ describe('modal', () => {
     })
 
     it('should return false when unmount duplicated', async () => {
-      const { Modal } = await import('../modal/index.ts')
+      const { Modal } = await import('../modal/index')
       const modal = Modal.with('ModalStub', ModalStub)({ backdropCloseable: true })
 
       act(() => {
@@ -107,12 +107,12 @@ describe('modal', () => {
         throw new Error('')
       })
 
-      const { Modal } = await import('../modal/index.ts')
+      const { Modal } = await import('../modal/index')
       await expect(Modal.with('ModalStub', ModalStub)()).rejects.toThrow()
     })
 
     it('should render modal with top position', async () => {
-      const { Modal } = await import('../modal/index.ts')
+      const { Modal } = await import('../modal/index')
       const modal = Modal.with(
         'ModalStub',
         ModalStub,
@@ -126,7 +126,7 @@ describe('modal', () => {
     })
 
     it('should render modal with bottom position', async () => {
-      const { Modal } = await import('../modal/index.ts')
+      const { Modal } = await import('../modal/index')
       const modal = Modal.with(
         'ModalStub',
         ModalStub,
@@ -142,7 +142,7 @@ describe('modal', () => {
 
   describe('Modal.confirm render toMatchSnapshot', () => {
     it('should render Modal.confirm toMatchSnapshot', async () => {
-      const { Modal } = await import('../modal/index.ts')
+      const { Modal } = await import('../modal/index')
 
       const confirm = Modal.confirm({
         icon: 'icon',
@@ -157,7 +157,7 @@ describe('modal', () => {
     })
 
     it('should render Modal.confirm with cancel button', async () => {
-      const { Modal } = await import('../modal/index.ts')
+      const { Modal } = await import('../modal/index')
 
       const confirm = Modal.confirm({
         icon: 'icon',
@@ -173,7 +173,7 @@ describe('modal', () => {
     })
 
     it('should render Modal.confirm with buttons inline layout', async () => {
-      const { Modal } = await import('../modal/index.ts')
+      const { Modal } = await import('../modal/index')
 
       const confirm = Modal.confirm({
         icon: 'icon',
@@ -190,7 +190,7 @@ describe('modal', () => {
     })
 
     it('should render Modal.confirm with custom icon & no-divider', async () => {
-      const { Modal } = await import('../modal/index.ts')
+      const { Modal } = await import('../modal/index')
 
       const confirm = Modal.confirm({
         icon: <View className='custom-icon'>icon</View>,
@@ -206,7 +206,7 @@ describe('modal', () => {
 
   describe('Modal.confirm with events', () => {
     it('should close confirm with `ok = true` when ok button clicked', async () => {
-      const { Modal } = await import('../modal/index.ts')
+      const { Modal } = await import('../modal/index')
 
       const confirm = Modal.confirm({
         title: 'Modal.confirm',
@@ -221,7 +221,7 @@ describe('modal', () => {
     })
 
     it('should close confirm with `ok = true` when ok button clicked with inline layout', async () => {
-      const { Modal } = await import('../modal/index.ts')
+      const { Modal } = await import('../modal/index')
 
       const confirm = Modal.confirm({
         title: 'Modal.confirm',
@@ -238,7 +238,7 @@ describe('modal', () => {
     })
 
     it('should close confirm with `ok = false` when cancel button clicked', async () => {
-      const { Modal } = await import('../modal/index.ts')
+      const { Modal } = await import('../modal/index')
 
       const confirm = Modal.confirm({
         title: 'Modal.confirm',
@@ -254,7 +254,7 @@ describe('modal', () => {
     })
 
     it('should close confirm with `ok = false` when ok button clicked with inline layout', async () => {
-      const { Modal } = await import('../modal/index.ts')
+      const { Modal } = await import('../modal/index')
 
       const confirm = Modal.confirm({
         title: 'Modal.confirm',
@@ -271,7 +271,7 @@ describe('modal', () => {
     })
 
     it('should close confirm with `ok = false` when close icon clicked', async () => {
-      const { Modal } = await import('../modal/index.ts')
+      const { Modal } = await import('../modal/index')
 
       const confirm = Modal.confirm({
         title: 'Modal.confirm',
