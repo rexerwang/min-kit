@@ -3,7 +3,7 @@ import { spyOnConsole } from '@min-kit/jest'
 import { attempt } from '../attempt'
 
 describe('attempt', () => {
-  const [errorSpy] = spyOnConsole(['error'])
+  const { error: errorSpy } = spyOnConsole({ error: true })
   const error = new Error()
 
   it('attempt', () => {
