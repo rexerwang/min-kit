@@ -5,3 +5,4 @@ export function getLogger(name: string, option?: LoggerOption) {
 }
 
 export const logger = getLogger('👽')
+export type { LoggerOption } from './Logger'
