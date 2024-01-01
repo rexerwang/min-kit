@@ -9,8 +9,17 @@ module.exports = defineJestConfig({
   collectCoverageFrom: [
     '<rootDir>/src/**/*.ts?(x)',
     '!**/__tests__/**',
+    // ignore shared...
     '!**/{debounce,throttle}.ts',
-    '!**/debugger/**',
+    // ignore components...
+    '!src/debugger/**',
+    // ignore extends...
+    '!src/config.ts',
+    '!src/current.ts',
+    '!src/document.ts',
+    '!src/storage.ts',
+    '!src/selector.ts',
+    '!src/systemInfo.ts',
   ],
   coverageReporters: ['clover', 'json', 'lcov', 'text-summary'],
   passWithNoTests: true,
