@@ -10,7 +10,8 @@ npm version $v
 version=$(node -p 'require("./package.json").version')
 pnpm --parallel -r exec npm version $version
 
-pnpm exec conventional-changelog -p conventionalcommits -t v -i CHANGELOG.md -s
+# Use `changelogithub`
+# pnpm exec conventional-changelog -p conventionalcommits -t v -i CHANGELOG.md -s
 
 git add .
 git commit -m "chore(release): v$version"
