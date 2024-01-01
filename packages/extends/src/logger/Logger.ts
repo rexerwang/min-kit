@@ -7,7 +7,7 @@ import { RequestError } from '../request/RequestError'
 type LogLevel = 'error' | 'warn' | 'info' | 'debug'
 type Meta = { route?: string; timestamp: number }
 
-export interface IOption {
+export interface LoggerOption {
   reporter?: {
     /**
      * realtime reporter by {@link Taro.RealtimeLogManager}.
@@ -44,9 +44,9 @@ export interface IOption {
 
 const isDevtools = attempt(getSystemInfoSync)?.platform === 'devtools'
 
-export default class Logger {
+export class Logger {
   private name: string
-  private option: IOption = {
+  private option: LoggerOption = {
     reporter: {
       realtime: true,
       feedback: true,
@@ -58,12 +58,12 @@ export default class Logger {
   private feedbackReporter: Taro.LogManager | undefined
   private realtimeReporter: Taro.RealtimeLogManager | undefined
 
-  constructor(name: string, option = {} as IOption) {
+  constructor(name: string, option = {} as LoggerOption) {
     this.name = name
     this.setOption(option)
   }
 
-  setOption(option: IOption) {
+  setOption(option: LoggerOption) {
     this.option = Object.assign(this.option, option, {
       reporter: { ...this.option.reporter, ...option.reporter },
     })
@@ -102,7 +102,7 @@ export default class Logger {
     const report = () => {
       if (level === 'debug') return
 
-      if (reporter.feedback)
+      if (reporter.realtime)
         attempt(() => {
           if (this.realtimeReporter) {
             Current.page && this.realtimeReporter.in(Current.page)

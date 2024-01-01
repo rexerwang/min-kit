@@ -2,6 +2,7 @@ const defineJestConfig = require('./config/taro-jest/index').default
 
 module.exports = defineJestConfig({
   globals: require('./config/globals'),
+  globalSetup: require.resolve('./config/globalSetup.js'),
   setupFilesAfterEnv: [require.resolve('./config/setupAfterEnv.js')],
   testEnvironment: '@happy-dom/jest-environment', // 'jsdom'
   testMatch: ['<rootDir>/src/__tests__/**/*.test.ts?(x)'],
