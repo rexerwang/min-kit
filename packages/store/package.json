@@ -1,6 +1,6 @@
 {
   "name": "@min-kit/store",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "React store kit of based on Zustand for miniapp",
   "author": "rexerwang",
   "license": "MIT",

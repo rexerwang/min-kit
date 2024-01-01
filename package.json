@@ -1,6 +1,6 @@
 {
   "name": "min-kit",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "private": true,
   "description": "Toolkit of miniapp based on Tarojs/React",
   "author": "rexerwang",
