@@ -27,7 +27,8 @@
     "miniprogram"
   ],
   "scripts": {
-    "build": "unbuild"
+    "build": "unbuild",
+    "test": "jest"
   },
   "dependencies": {
     "immer": "^10.0.3",
@@ -36,5 +37,8 @@
   "peerDependencies": {
     "@tarojs/taro": ">=3.6",
     "react": ">=17"
+  },
+  "devDependencies": {
+    "@min-kit/jest": "workspace:*"
   }
 }
