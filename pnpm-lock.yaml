@@ -365,6 +365,10 @@ importers:
       react:
         specifier: '>=18'
         version: 18.2.0
+    devDependencies:
+      '@min-kit/jest':
+        specifier: workspace:*
+        version: link:../jest
 
   packages/jest:
     devDependencies:

@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef } from 'react'
 
 import { useMemoizedFn } from './useMemoizedFn'
 
-const useInterval = (fn: () => void, ms: number) => {
+export function useInterval(fn: () => void, ms: number) {
   const timerCallback = useMemoizedFn(fn)
   const timerRef = useRef<NodeJS.Timeout | null>(null)
 
@@ -19,5 +19,3 @@ const useInterval = (fn: () => void, ms: number) => {
 
   return clear
 }
-
-export default useInterval

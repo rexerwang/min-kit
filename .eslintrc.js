@@ -12,6 +12,7 @@ module.exports = {
   rules: {
     '@typescript-eslint/no-useless-constructor': 'off',
     'react/react-in-jsx-scope': 'off',
+    'react-hooks/exhaustive-deps': 'off',
     'no-console': ['error', { allow: ['warn', 'error'] }],
     'simple-import-sort/imports': [
       'error',

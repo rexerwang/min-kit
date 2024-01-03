@@ -1,3 +1,4 @@
+require('./globals')
 require('@testing-library/jest-dom')
 
 const { default: actualApis } = require('@tarojs/taro')
