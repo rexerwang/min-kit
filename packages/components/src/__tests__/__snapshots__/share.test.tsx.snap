@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`share should render <ShareButton /> toMatchSnapshot 1`] = `
+exports[`share should shareAppMessage via ShareButton 1`] = `
 <DocumentFragment>
   <taro-button-core
     class=""
@@ -8,7 +8,7 @@ exports[`share should render <ShareButton /> toMatchSnapshot 1`] = `
     open-type="share"
   >
     <!---->
-    share
+    ShareButton
   </taro-button-core>
 </DocumentFragment>
 `;

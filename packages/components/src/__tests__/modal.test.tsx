@@ -1,4 +1,4 @@
-import { act, fireEvent, render, screen } from '@min-kit/jest'
+import { act, fireEvent, render, screen, spyOnConsole } from '@min-kit/jest'
 import { View } from '@tarojs/components'
 import { createPortal } from 'react-dom'
 
@@ -15,6 +15,8 @@ const ModalStub = (props: IModal.Props) => (
 )
 
 describe('modal', () => {
+  spyOnConsole() // disable console
+
   const root = document.createElement('page')
 
   let spy: jest.SpyInstance
