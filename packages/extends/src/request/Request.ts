@@ -3,7 +3,7 @@ import { request as requestTaroApi } from '@tarojs/taro'
 import { AbortControllerImpl } from './AbortControllerImpl'
 import { compose } from './compose'
 import { RequestError } from './RequestError'
-import { cloneObj, joinUrl } from './utils'
+import { cloneObj, joinUrl, omit } from './utils'
 
 type AnyObject = TaroGeneral.IAnyObject
 type Method = keyof Taro.request.Method
@@ -134,7 +134,7 @@ export class Request {
   private async invoke(ctx: IContext) {
     if (ctx.request.abort?.signal.aborted) ctx.throw('request aborted')
 
-    const requestTask = requestTaroApi(ctx.request)
+    const requestTask = requestTaroApi(omit(ctx.request, ['abort', 'baseUrl', 'replayed']))
     ctx.request.abort?.on(() => requestTask.abort())
 
     const response = await requestTask
