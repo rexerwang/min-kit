@@ -4,7 +4,7 @@
 [![](https://img.shields.io/codecov/c/github/rexerwang/min-kit?style=for-the-badge)](https://codecov.io/gh/rexerwang/min-kit)
 [![](https://img.shields.io/github/repo-size/rexerwang/min-kit?style=for-the-badge)](https://github.com/rexerwang/min-kit)
 [![](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://github.com/rexerwang/min-kit)
-[![](https://img.shields.io/badge/React-Tarojs-007ACC?style=for-the-badge&logo=react&logoColor=61DAFB&labelColor=20232A)](https://github.dev/NervJS/taro)
+[![](https://img.shields.io/badge/React-Tarojs-007ACC?style=for-the-badge&logo=react&logoColor=61DAFB&labelColor=20232A)](https://github.com/NervJS/taro)
 
 Toolkit for miniapp based on Tarojs/React
 
