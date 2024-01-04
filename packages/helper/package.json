@@ -44,7 +44,8 @@
     "miniprogram"
   ],
   "scripts": {
-    "build": "unbuild"
+    "build": "unbuild",
+    "test": "jest"
   },
   "peerDependencies": {
     "@tarojs/cli": ">=3.6",
@@ -66,5 +67,8 @@
     "weapp-tailwindcss": "^3.0.4",
     "webpack-bundle-analyzer": "^4.10.1",
     "webpack-merge": "^5.10.0"
+  },
+  "devDependencies": {
+    "@min-kit/jest": "workspace:*"
   }
 }

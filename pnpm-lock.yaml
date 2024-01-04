@@ -350,6 +350,10 @@ importers:
       webpack-merge:
         specifier: ^5.10.0
         version: 5.10.0
+    devDependencies:
+      '@min-kit/jest':
+        specifier: workspace:*
+        version: link:../jest
 
   packages/hooks:
     dependencies:
