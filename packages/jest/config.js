@@ -1,5 +1,10 @@
+/**
+ * @typedef {import('jest').Config Config}
+ */
+
 const defineJestConfig = require('./config/taro-jest/index').default
 
+/** @type {Config} */
 const baseConfig = defineJestConfig({
   globalSetup: require.resolve('./config/globalSetup.js'),
   setupFilesAfterEnv: [require.resolve('./config/setupAfterEnv.js')],
@@ -12,11 +17,24 @@ const baseConfig = defineJestConfig({
 
 /**
  * defineJestConfig
- * @param {Partial<import('jest').Config>} [config]
+ * @param {Partial<Config>} [config]
+ * @returns {Config}
  */
-module.exports = (config = {}) => ({
-  ...baseConfig,
-  ...config,
-  setupFilesAfterEnv: baseConfig.setupFilesAfterEnv.concat(config.setupFilesAfterEnv ?? []),
-  collectCoverageFrom: baseConfig.collectCoverageFrom.concat(config.collectCoverageFrom ?? []),
-})
+module.exports = (config = {}) => {
+  let { setupFilesAfterEnv, collectCoverageFrom, ...configs } = baseConfig
+
+  if (Array.isArray(config.setupFilesAfterEnv)) {
+    setupFilesAfterEnv = setupFilesAfterEnv.concat(config.setupFilesAfterEnv)
+  }
+
+  if (Array.isArray(config.collectCoverageFrom)) {
+    collectCoverageFrom = [collectCoverageFrom[0], ...config.collectCoverageFrom, collectCoverageFrom[1]]
+  }
+
+  return {
+    ...configs,
+    ...config,
+    setupFilesAfterEnv,
+    collectCoverageFrom,
+  }
+}
