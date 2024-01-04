@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`configChain should set app.config when given \`TARO_ENV\` is weapp 1`] = `
+{
+  "componentFramework": "glass-easel",
+  "darkmode": true,
+  "debug": false,
+  "entryPagePath": "pages/index/index",
+  "lazyCodeLoading": "requiredComponents",
+  "pages": [
+    "pages/index/index",
+    "pages/order/index",
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "get location desc",
+    },
+  },
+  "plugins": {
+    "plugin-id": {
+      "provider": "plugin-provider",
+      "version": "1.0.0",
+    },
+  },
+  "renderer": "skyline",
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true,
+    },
+  },
+  "requiredBackgroundModes": [
+    "location",
+  ],
+  "requiredPrivateInfos": [
+    "getLocation",
+  ],
+  "subPackages": [
+    {
+      "name": "pkg-abc",
+      "pages": [
+        "pages/index/index",
+      ],
+      "plugins": {
+        "plugin-id": {
+          "provider": "plugin-provider",
+          "version": "1.0.0",
+        },
+      },
+      "root": "pkg-abc",
+    },
+  ],
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "color": "#000",
+    "list": [
+      {
+        "iconPath": "home.png",
+        "pagePath": "pages/index/index",
+        "selectedIconPath": "home.active.png",
+        "text": "Home",
+      },
+      {
+        "iconPath": "order.png",
+        "pagePath": "pages/order/index",
+        "selectedIconPath": "order.active.png",
+        "text": "Order",
+      },
+    ],
+    "selectedColor": "#000",
+  },
+  "window": {
+    "navigationBarTitleText": "min-kit",
+    "navigationStyle": "custom",
+  },
+}
+`;

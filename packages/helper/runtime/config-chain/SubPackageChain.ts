@@ -3,7 +3,6 @@ import PluginChain from './PluginChain'
 
 export default class SubPackageChain extends AbstractChain {
   private subPackage: Taro.SubPackage
-  private condition = true
   private plugins: PluginChain[] = []
 
   constructor(name: string) {
@@ -22,23 +21,19 @@ export default class SubPackageChain extends AbstractChain {
     return subPackages.map((subPackage) => subPackage.get()).filter(Boolean) as Taro.SubPackage[]
   }
 
-  when(condition: boolean) {
-    this.condition = condition
-    return this
-  }
-
   pages(pages: string[]) {
-    if (this.condition) {
-      this.subPackage.pages = pages
-    }
-
+    this.subPackage.pages = pages
     return this
   }
 
-  plugin(id: string): PluginChain & { end: () => SubPackageChain } {
-    const plugin = new PluginChain(id)
+  /**
+   * add plugin into subPackage
+   * @supported weapp
+   */
+  plugin(...args: ConstructorParameters<typeof PluginChain>) {
+    const plugin = new PluginChain(...args)
     this.plugins.push(plugin)
 
-    return Object.assign(plugin, { end: () => this })
+    return this
   }
 }

@@ -8,7 +8,7 @@ export default class ConfigChain extends AbstractChain {
   private wechatChain = new WeChatChain(this.config)
 
   get(): Taro.Config {
-    if (!this.config.pages?.length) throw new Error('请调用`.pages()`设置`pages`项')
+    if (!this.config.pages?.length) throw new Error('Please set pages via `chain.pages()`')
 
     this.wechatChain.get()
     this.config.subPackages = SubPackageChain.gets(this.subPackages)
@@ -32,25 +32,20 @@ export default class ConfigChain extends AbstractChain {
     return this
   }
 
-  customNavigationStyle() {
-    return this.window({ navigationStyle: 'custom' })
-  }
-
-  subPackage(this: ConfigChain, id: string) {
-    const subPackage = new SubPackageChain(id)
-    this.subPackages.push(subPackage)
-
-    return Object.assign(subPackage, { end: () => this })
-  }
-
   tabBar(tabBar: Taro.TabBar) {
     this.config.tabBar = tabBar
-
     return this
   }
 
+  subPackage(id: string) {
+    const subPackage = new SubPackageChain(id)
+    this.subPackages.push(subPackage)
+
+    return this.chain(subPackage)
+  }
+
   /** 微信私有配置项 */
-  get wechat(): WeChatChain & { end(): ConfigChain } {
-    return Object.assign(this.wechatChain, { end: () => this })
+  get wechat() {
+    return this.chain(this.wechatChain)
   }
 }

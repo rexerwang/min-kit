@@ -4,16 +4,13 @@ type Plugin = { id: string; version: string; provider: string }
 
 export default class PluginChain extends AbstractChain {
   private plugin: Plugin
-  private condition = true
 
-  constructor(id: string) {
+  constructor(id: string, plugin: Omit<Plugin, 'id'>) {
     super()
-    this.plugin = { id } as Plugin
+    this.plugin = { id, ...plugin } as Plugin
   }
 
   get() {
-    if (!this.plugin.provider) throw new Error('请调用`.provide()`设置`plugin.provider`项')
-    if (!this.plugin.version) throw new Error('请调用`.version()`设置`plugin.version`项')
     return this.plugin
   }
 
@@ -24,26 +21,5 @@ export default class PluginChain extends AbstractChain {
         map[id] = plugin
         return map
       }, {} as Taro.Plugins)
-  }
-
-  when(condition: boolean) {
-    this.condition = condition
-    return this
-  }
-
-  provide(provider: string) {
-    if (this.condition) {
-      this.plugin.provider = provider
-    }
-
-    return this
-  }
-
-  version(version: string) {
-    if (this.condition) {
-      this.plugin.version = version
-    }
-
-    return this
   }
 }

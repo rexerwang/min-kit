@@ -1,3 +1,4 @@
 module.exports = require('@min-kit/jest/config')({
-  testMatch: ['<rootDir>/**/__tests__/**/*.test.ts?(x)'],
+  testMatch: ['<rootDir>/runtime/__tests__/**/*.test.ts?(x)'],
+  collectCoverageFrom: ['runtime/**'],
 })
