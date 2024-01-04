@@ -1,7 +1,7 @@
 {
   "name": "@min-kit/shared",
   "version": "0.5.3",
-  "description": "utils & constants shared of @min-kit packages",
+  "description": "Utils & constants shared of @min-kit packages",
   "author": "rexerwang",
   "license": "MIT",
   "repository": "rexerwang/min-kit",

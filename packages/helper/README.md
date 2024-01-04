@@ -9,14 +9,14 @@ Plugins & configs of Tarojs for miniapp
 
 ## Features
 
-### Enhance compilation:
+### 🚀 Enhance compilation
 
-Fist, add `config/mode` & `config/platform` configs. For example:
+1️⃣ First, add `config/mode` & `config/platform` configs. For example:
 
 - [packages/example/config/mode](https://github.com/rexerwang/min-kit/tree/main/packages/example/config/mode)
 - [packages/example/config/platform](https://github.com/rexerwang/min-kit/tree/main/packages/example/config/platform)
 
-Then, replace `defineConfig` with `defineUserConfig` in `config/index.ts`:
+2️⃣ Then, replace `defineConfig` with `defineUserConfig` in `config/index.ts`:
 
 ```ts
 // config/index.ts
@@ -26,33 +26,24 @@ import { defineUserConfig } from '@min-kit/helper/compile'
 import devConfig from './dev'
 import prodConfig from './prod'
 
-export default defineUserConfig(
-  (merge, { command, mode }) => {
-    const baseConfig = {
-      // your configs
-    }
+export default defineUserConfig((merge, { command, mode }) => {
+  const baseConfig = {
+    // your configs
+  }
 
-    if (process.env.NODE_ENV === 'development') {
-      // 本地开发构建配置（不混淆压缩）
-      return merge({}, baseConfig, devConfig)
-    }
-    // 生产构建配置（默认开启压缩混淆等）
-    return merge({}, baseConfig, prodConfig)
-  },
-  // the default options:
-  {
-    tailwindcss: true,
-    imageMinimizer: true,
-    analyzer: true,
-    ci: true,
-  },
-)
+  if (process.env.NODE_ENV === 'development') {
+    return merge({}, baseConfig, devConfig)
+  }
+
+  return merge({}, baseConfig, prodConfig)
+})
 ```
 
-It will integrate the following plugins as default:
+✅ It will integrate the following plugins as default:
 
-- `tailwindcss` by [weapp-tailwindcss](https://github.com/sonofmagic/weapp-tailwindcss)  
-   with config extends:
+- `tailwindcss` by [weapp-tailwindcss](https://github.com/sonofmagic/weapp-tailwindcss)
+
+  - with config extends:
 
   ```js
   // tailwind.config.js
@@ -64,59 +55,82 @@ It will integrate the following plugins as default:
   module.exports = require('@min-kit/helper/config').postcss()
   ```
 
-- image minimizer by [image-minimizer-webpack-plugin](https://github.com/webpack-contrib/image-minimizer-webpack-plugin) with `svgo` & `sharp`
-- bundle analyzer by [webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)  
-  enable by `taro build --analyzer`
-- `ci` by [@tarojs/plugin-mini-ci](https://www.npmjs.com/package/@tarojs/plugin-mini-ci). (need install if it enabled)
+- `image-minimizer` by [image-minimizer-webpack-plugin](https://www.npmjs.com/package/image-minimizer-webpack-plugin)
+  - optimize with [svgo](https://www.npmjs.com/package/svgo)
+  - optimize with [sharp](https://www.npmjs.com/package/sharp)
+- `bundle-analyzer` by [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer)
+  - with command to enable:
+    ```sh
+    pnpm taro build --analyzer
+    ```
+- `ci` by [@tarojs/plugin-mini-ci](https://www.npmjs.com/package/@tarojs/plugin-mini-ci)
+  - install if enabled:
+    ```sh
+    pnpm add -D @tarojs/plugin-mini-ci
+    ```
 
-### Enhance app configs:
+### 🚀 Enhance configs
 
-- define app route
+#### ✅ define app.route by `defineRouteConfig`
 
-  ```ts
-  // src/app.route.ts
+```ts
+// src/app.route.ts
 
-  import { defineRouteConfig } from '@min-kit/helper/runtime'
+import { defineRouteConfig } from '@min-kit/helper/runtime'
 
-  const { Pages, Routes } = defineRouteConfig({
+const { Pages, Routes } = defineRouteConfig({
+  Home: 'pages/index/index',
+
+  PkgDemo: {
     Home: 'pages/index/index',
+  },
+})
 
-    PkgDemo: {
-      Home: 'pages/index/index',
-    },
-  })
+export { Pages, Routes }
+```
 
-  export { Pages, Routes }
-  ```
+#### ✅ define app.config by `configChain`
 
-- define app config
+```ts
+// src/app.config.ts
 
-  ```ts
-  // src/app.config.ts
+import { configChain } from '@min-kit/helper/runtime'
+import { isString } from '@min-kit/shared'
 
-  import { configChain } from '@min-kit/helper/runtime'
-  import { isString } from '@min-kit/shared'
+import { Routes } from './app.route'
 
-  import { Routes } from './app.route'
+export default configChain((chain, { mode }) => {
+  const isDev = mode === 'dev'
 
-  export default configChain((chain, { mode }) => {
-    const isDev = mode === 'dev'
+  chain
+    .entryPagePath(Routes.Home)
+    .pages(Object.values(Routes).filter(isString))
+    .subPackage('pkg-demo')
+    .when(isDev)
+    .pages(Object.values(Routes.PkgDemo))
+    .end()
+    .window({
+      backgroundTextStyle: 'light',
+      navigationBarBackgroundColor: '#fff',
+      navigationBarTextStyle: 'black',
+      navigationBarTitleText: 'WeChat',
+    })
+    .wechat.debug(isDev)
+})
+```
 
-    chain
-      .entryPagePath(Routes.Home)
-      .pages(Object.values(Routes).filter(isString))
-      .subPackage('pkg-demo')
-      .when(isDev)
-      .pages(Object.values(Routes.PkgDemo))
-      .end()
-      .window({
-        backgroundTextStyle: 'light',
-        navigationBarBackgroundColor: '#fff',
-        navigationBarTextStyle: 'black',
-        navigationBarTitleText: 'WeChat',
-      })
-      .wechat.debug(isDev)
-  })
-  ```
+### 🚀 Taro shims in `d.ts`
 
-go [here](https://github.com/rexerwang/min-kit/tree/main/packages/example) for more usage examples.
+```ts
+// types/global.d.ts
+
+/// <reference types="@min-kit/helper" />
+
+// declare your build mode. its related to `config/mode` 👆
+declare type Mode = 'dev' | 'prod'
+
+// declare your defined constants. its related to `config/mode` 👆
+declare type DefineConstants = {}
+```
+
+More usage examples 👉 https://github.com/rexerwang/min-kit/tree/main/packages/example

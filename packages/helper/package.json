@@ -1,7 +1,7 @@
 {
   "name": "@min-kit/helper",
   "version": "0.5.3",
-  "description": "plugin and config helper for Taro",
+  "description": "Plugins & configs of Tarojs for miniapp",
   "author": "rexerwang",
   "license": "MIT",
   "repository": "rexerwang/min-kit",

@@ -1,7 +1,7 @@
 {
   "name": "@min-kit/extends",
   "version": "0.5.3",
-  "description": "extends apis of Taro",
+  "description": "Tarojs apis extends for miniapp",
   "author": "rexerwang",
   "license": "MIT",
   "repository": "rexerwang/min-kit",
