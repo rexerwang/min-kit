@@ -1,23 +1,27 @@
-# min-kit · [![ci](https://github.com/rexerwang/min-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/rexerwang/min-kit/actions/workflows/ci.yml) [![codecov](https://codecov.io/gh/rexerwang/min-kit/graph/badge.svg?token=GA6N52QSGY)](https://codecov.io/gh/rexerwang/min-kit)
+# min-kit
+
+[![](https://img.shields.io/github/actions/workflow/status/rexerwang/min-kit/ci.yml?style=for-the-badge)](https://github.com/rexerwang/min-kit/actions/workflows/ci.yml)
+[![](https://img.shields.io/codecov/c/github/rexerwang/min-kit?style=for-the-badge)](https://codecov.io/gh/rexerwang/min-kit)
+[![](https://img.shields.io/github/repo-size/rexerwang/min-kit?style=for-the-badge)](https://github.com/rexerwang/min-kit)
+[![](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://github.com/rexerwang/min-kit)
+[![](https://img.shields.io/badge/React-Tarojs-007ACC?style=for-the-badge&logo=react&logoColor=61DAFB&labelColor=20232A)](https://github.dev/NervJS/taro)
 
 Toolkit for miniapp based on Tarojs/React
 
-## packages
+## Packages
 
-List of all packages:
+List of all public packages in monorepo:
 
-| package                                                | npm                                                                                           | desc                                                                              |
-| :----------------------------------------------------- | :-------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------- |
-| [@min-kit/components](./packages/components/README.md) | [![](https://img.shields.io/npm/v/%40min-kit/components)](https://npm.im/@min-kit/components) | React components for miniapp                                                      |
-| [@min-kit/extends](./packages/extends/README.md)       | [![](https://img.shields.io/npm/v/%40min-kit/extends)](https://npm.im/@min-kit/extends)       | extends apis of Taro                                                              |
-| [@min-kit/hooks](./packages/hooks/README.md)           | [![](https://img.shields.io/npm/v/%40min-kit/hooks)](https://npm.im/@min-kit/hooks)           | React Hooks for miniapp                                                           |
-| [@min-kit/store](./packages/store/README.md)           | [![](https://img.shields.io/npm/v/%40min-kit/store)](https://npm.im/@min-kit/store)           | React store kit based on [Zustand](https://github.com/pmndrs/zustand) for miniapp |
-| [@min-kit/shared](./packages/shared/README.md)         | [![](https://img.shields.io/npm/v/%40min-kit/shared)](https://npm.im/@min-kit/shared)         | utils & constants shared of @min-kit packages                                     |
-| [@min-kit/helper](./packages/helper/README.md)         | [![](https://img.shields.io/npm/v/%40min-kit/helper)](https://npm.im/@min-kit/helper)         | plugin and config helper for Taro                                                 |
+| package                                      | npm                                                                                                               | desc                                                                              |
+| :------------------------------------------- | :---------------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------- |
+| [@min-kit/components](./packages/components) | [![](https://img.shields.io/npm/v/%40min-kit/components?style=for-the-badge)](https://npm.im/@min-kit/components) | React components for miniapp                                                      |
+| [@min-kit/extends](./packages/extends)       | [![](https://img.shields.io/npm/v/%40min-kit/extends?style=for-the-badge)](https://npm.im/@min-kit/extends)       | Tarojs apis extends for miniapp                                                   |
+| [@min-kit/hooks](./packages/hooks)           | [![](https://img.shields.io/npm/v/%40min-kit/hooks?style=for-the-badge)](https://npm.im/@min-kit/hooks)           | React Hooks for miniapp                                                           |
+| [@min-kit/store](./packages/store)           | [![](https://img.shields.io/npm/v/%40min-kit/store?style=for-the-badge)](https://npm.im/@min-kit/store)           | React store kit based on [Zustand](https://github.com/pmndrs/zustand) for miniapp |
+| [@min-kit/shared](./packages/shared)         | [![](https://img.shields.io/npm/v/%40min-kit/shared?style=for-the-badge)](https://npm.im/@min-kit/shared)         | Utils & constants shared of @min-kit packages                                     |
+| [@min-kit/helper](./packages/helper)         | [![](https://img.shields.io/npm/v/%40min-kit/helper?style=for-the-badge)](https://npm.im/@min-kit/helper)         | Plugins & configs of Tarojs for miniapp                                           |
 
-See more details [here](./packages).
-
-### install
+### Install
 
 Using npm:
 
@@ -40,7 +44,7 @@ yarn add @min-kit/components @min-kit/extends @min-kit/hooks @min-kit/store @min
 yarn add -D @min-kit/helper
 ```
 
-## examples
+### Examples
 
 [@min-kit/example](./packages/example) is a example project for miniapp based on `@min-kit` + `Taro` + `React` + `Typescript`,
 which includes usage examples of the `@min-kit/*`.
