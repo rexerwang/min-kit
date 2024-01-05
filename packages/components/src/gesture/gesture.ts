@@ -1,4 +1,4 @@
-import { ITouchEvent, TouchEventFunction } from '@tarojs/components'
+import type { ITouchEvent, TouchEventFunction } from '@tarojs/components'
 
 export type SwipeDirection = 'left' | 'right' | 'up' | 'down'
 

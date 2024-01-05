@@ -54,3 +54,5 @@ export default function Panel({ onClose }: IProps) {
     </View>
   )
 }
+
+Panel.displayName = 'MinDebuggerPanel'

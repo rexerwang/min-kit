@@ -47,3 +47,5 @@ export default function StatusPanel() {
     </View>
   )
 }
+
+StatusPanel.displayName = 'MinDebuggerStatusPanel'

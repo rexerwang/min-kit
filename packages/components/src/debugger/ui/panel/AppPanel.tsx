@@ -295,3 +295,5 @@ export default function AppPanel() {
     </View>
   )
 }
+
+AppPanel.displayName = 'MinDebuggerAppPanel'

@@ -2,7 +2,7 @@ import { hasNavBar, hasTabBar, SystemInfo } from '@min-kit/extends'
 import { MIN_Z_DEPTH, px } from '@min-kit/shared'
 import { View } from '@tarojs/components'
 import clsx from 'clsx'
-import { type CSSProperties, useMemo } from 'react'
+import { useMemo } from 'react'
 
 import type { IModal } from './types'
 
@@ -17,7 +17,7 @@ export default function Drawer({
   children,
   onClose,
 }: IModal.DrawerProps) {
-  const style: CSSProperties = useMemo(() => {
+  const style: React.CSSProperties = useMemo(() => {
     let _offsetY = 0
     switch (position) {
       case 'center':
@@ -68,4 +68,4 @@ Drawer.defaults = {
   },
 }
 
-Drawer.displayName = 'ModalDrawer'
+Drawer.displayName = 'MinDrawer'

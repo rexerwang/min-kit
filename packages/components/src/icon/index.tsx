@@ -1,5 +1,5 @@
 import { isString, px } from '@min-kit/shared'
-import { Image, ImageProps, View, ViewProps } from '@tarojs/components'
+import { Image, type ImageProps, View, type ViewProps } from '@tarojs/components'
 import clsx from 'clsx'
 import { useMemo } from 'react'
 

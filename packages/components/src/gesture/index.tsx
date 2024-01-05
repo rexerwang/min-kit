@@ -1,6 +1,6 @@
 import { cloneElement, useRef } from 'react'
 
-import { ISwipeEvent, ITouchData, swipe, wrapTouch } from './gesture'
+import { type ISwipeEvent, type ITouchData, swipe, wrapTouch } from './gesture'
 
 type EventHandler<T> = (e: T) => void
 

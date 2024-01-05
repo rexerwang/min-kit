@@ -146,3 +146,5 @@ export default function NetworkPanel() {
     </View>
   )
 }
+
+NetworkPanel.displayName = 'MinDebuggerNetworkPanel'

@@ -9,7 +9,7 @@ import { withOpen } from './with'
 import type { IModal } from './types'
 
 export default withOpen<IModal.ConfirmProps, void, 'cancel' | 'close'>(
-  'ModalConfirm',
+  'MinConfirm',
   ({
     icon,
     subtitle,
