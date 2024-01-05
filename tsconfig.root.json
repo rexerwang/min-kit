@@ -1,23 +1,19 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "target": "ES2017",
-    "module": "ESNext",
-    "removeComments": false,
-    "moduleResolution": "Bundler",
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "target": "es2017",
+    "module": "esnext",
+    "moduleResolution": "bundler",
     "strict": true,
     "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "useUnknownInCatchVariables": false,
     "skipLibCheck": true,
-    "sourceMap": true,
+    "experimentalDecorators": true,
     "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "declaration": true,
     "jsx": "react-jsx",
+    "declaration": true,
     "outDir": ".temp"
   }
 }

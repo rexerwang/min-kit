@@ -7,6 +7,5 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["./src", "./types", "./config"],
-  "compileOnSave": false
+  "include": ["./src", "./types", "./config"]
 }
