@@ -4,9 +4,7 @@ import { isString } from '@min-kit/shared'
 import NAME from './app.name'
 import { Routes } from './app.route'
 
-export default configChain((chain, { mode }) => {
-  const isDev = mode === 'dev'
-
+export default configChain((chain) => {
   chain
     .entryPagePath(Routes.Index)
     .pages(Object.values(Routes).filter(isString))
@@ -25,5 +23,4 @@ export default configChain((chain, { mode }) => {
       navigationBarTextStyle: 'black',
       navigationBarTitleText: NAME,
     })
-    .wechat.debug(isDev)
 })
