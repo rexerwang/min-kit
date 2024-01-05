@@ -21,6 +21,10 @@ const { Pages, Routes } = defineRouteConfig({
     Toast: 'pages/toast/index',
     Scene: 'pages/scene/index',
   },
+
+  PkgStore: {
+    Index: 'pages/index/index',
+  },
 })
 
 export { Pages, Routes }

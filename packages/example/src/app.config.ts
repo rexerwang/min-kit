@@ -16,6 +16,9 @@ export default configChain((chain, { mode }) => {
     .subPackage('pkg-extends')
     .pages(Object.values(Routes.PkgExtends))
     .end()
+    .subPackage('pkg-store')
+    .pages(Object.values(Routes.PkgStore))
+    .end()
     .window({
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',

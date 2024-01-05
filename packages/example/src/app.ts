@@ -1,6 +1,5 @@
 import '@min-kit/components/dist/styles/index.css'
 import './assets/styles/index.scss'
-import './assets/polyfill'
 import './icons.config'
 
 import { MinDebugger } from '@min-kit/components'
