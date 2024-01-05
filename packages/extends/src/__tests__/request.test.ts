@@ -28,7 +28,7 @@ describe('request', () => {
   })
 
   it.each(['get', 'delete', 'head', 'options', 'post', 'put', 'patch'])(
-    'should request.%s succeed when given statusCode = 200',
+    'should request.%s successfully when given statusCode = 200',
     async (method) => {
       const { createRequest } = await import('../request')
       const http = createRequest({ baseUrl })
@@ -47,7 +47,7 @@ describe('request', () => {
   )
 
   it.each(['get', 'delete', 'head', 'options', 'post', 'put', 'patch'])(
-    'should request.%s succeed when given statusCode = 500',
+    'should request.%s failed when given statusCode = 500',
     async (method) => {
       spyOnConsole('error')
 
@@ -60,7 +60,7 @@ describe('request', () => {
     },
   )
 
-  it('should execute middlewares succeed', async () => {
+  it('should execute middlewares successfully', async () => {
     const { createRequest } = await import('../request')
     const http = createRequest({ baseUrl })
 
@@ -102,7 +102,7 @@ describe('request', () => {
     expect(requestSpy).toHaveBeenCalledTimes(res.request.replayed! + 1)
   })
 
-  it('should abort request in middleware', async () => {
+  it('should abort request did work in middleware', async () => {
     const { createRequest, AbortControllerImpl } = await import('../request')
 
     const http = createRequest({ baseUrl })
@@ -118,12 +118,12 @@ describe('request', () => {
   })
 
   it.each([
-    'call abort() before next()',
-    'call replay() before next()',
+    'call ctx.abort() before next()',
+    'call ctx.replay() before next()',
     'call next() duplicated',
-    'call set() after next()',
-    'call abort() after next()',
-  ])('should throw error when given invalid middleware usage: %p', async (type) => {
+    'call ctx.set() after next()',
+    'call ctx.abort() after next()',
+  ])('should throw error when %p in middleware', async (type) => {
     const { createRequest } = await import('../request')
     const http = createRequest({ baseUrl })
 

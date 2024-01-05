@@ -21,7 +21,7 @@ describe('subscription', () => {
     toastSpy.mockClear()
   })
 
-  it('should request subscriptions succeed when given templates have accepted all', async () => {
+  it('should request subscriptions successfully when given templates have accepted all', async () => {
     requestSubscribeMessageSpy.mockImplementation(jest.fn().mockResolvedValue({ ['xxx']: 'accept' }))
     const { requestSubscription } = await import('../subscription')
 
@@ -60,7 +60,7 @@ describe('subscription', () => {
     expect(toastSpy).toHaveBeenCalledWith('未授权订阅消息')
   })
 
-  it('should request subscriptions succeed when double confirm accepted', async () => {
+  it('should request subscriptions successfully when double confirm accepted', async () => {
     requestSubscribeMessageSpy.mockImplementation(jest.fn().mockResolvedValue({ ['xxx']: 'reject' }))
     getSettingSpy.mockImplementation(
       jest.fn().mockResolvedValue({ subscriptionsSetting: { itemSettings: { ['xxx']: 'reject' } } }),

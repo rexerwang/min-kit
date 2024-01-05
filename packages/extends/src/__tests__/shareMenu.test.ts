@@ -5,7 +5,7 @@ import { logger } from '../logger'
 describe('shareMenu', () => {
   jest.spyOn(logger, 'error').mockImplementation(jest.fn())
 
-  it('should showShareMenu correctly', async () => {
+  it('should showShareMenu did work', async () => {
     const showShareMenuSpy = jest.spyOn(Taro, 'showShareMenu').mockImplementation(jest.fn().mockResolvedValue({}))
 
     const { showShareMenu } = await import('../shareMenu')
@@ -14,13 +14,13 @@ describe('shareMenu', () => {
     expect(showShareMenuSpy).toHaveBeenCalledWith({ showShareItems: ['shareAppMessage', 'shareTimeline'] })
   })
 
-  it('should not throw an exception when called showShareMenu failed', async () => {
-    jest.spyOn(Taro, 'showShareMenu').mockImplementation(jest.fn().mockRejectedValue('failed'))
+  it('should not throw when called showShareMenu with exception', async () => {
+    jest.spyOn(Taro, 'showShareMenu').mockImplementation(jest.fn().mockRejectedValue(new Error('failed')))
     const { showShareMenu } = await import('../shareMenu')
     expect(showShareMenu).not.toThrow()
   })
 
-  it('should hideShareMenu correctly', async () => {
+  it('should hideShareMenu did work', async () => {
     const hideShareMenuSpy = jest.spyOn(Taro, 'hideShareMenu').mockImplementation(jest.fn().mockResolvedValue({}))
 
     const { hideShareMenu } = await import('../shareMenu')

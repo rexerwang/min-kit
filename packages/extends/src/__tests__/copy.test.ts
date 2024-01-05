@@ -26,7 +26,7 @@ describe('copy', () => {
     expect(setClipboardDataSpy).toHaveBeenLastCalledWith({ data: '{"test":"test"}' })
   })
 
-  it('should copy failed when given api thrown', async () => {
+  it('should copy failed when given api with exception', async () => {
     setClipboardDataSpy.mockImplementation(jest.fn().mockRejectedValue(new Error('copy')))
     const { copy } = await import('../copy')
     await expect(copy('test')).resolves.toBeFalsy()

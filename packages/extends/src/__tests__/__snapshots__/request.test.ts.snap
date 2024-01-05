@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`request should throw error when given invalid middleware usage: "call abort() after next()" 1`] = `"Cannot abort request after next()."`;
+exports[`request should throw error when "call ctx.abort() after next()" in middleware 1`] = `"Cannot abort request after next()."`;
 
-exports[`request should throw error when given invalid middleware usage: "call abort() before next()" 1`] = `"request aborted"`;
+exports[`request should throw error when "call ctx.abort() before next()" in middleware 1`] = `"request aborted"`;
 
-exports[`request should throw error when given invalid middleware usage: "call next() duplicated" 1`] = `"next() called multiple times"`;
+exports[`request should throw error when "call ctx.replay() before next()" in middleware 1`] = `"Cannot replay request before next()."`;
 
-exports[`request should throw error when given invalid middleware usage: "call replay() before next()" 1`] = `"Cannot replay request before next()."`;
+exports[`request should throw error when "call ctx.set() after next()" in middleware 1`] = `"Cannot set request headers after next()."`;
 
-exports[`request should throw error when given invalid middleware usage: "call set() after next()" 1`] = `"Cannot set request headers after next()."`;
+exports[`request should throw error when "call next() duplicated" in middleware 1`] = `"next() called multiple times"`;

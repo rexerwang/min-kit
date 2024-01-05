@@ -35,7 +35,7 @@ describe('createRewardedVideoAd', () => {
     expect(onCloseStub).toHaveBeenCalledWith(expect.any(Function))
   })
 
-  it('should invoke events of RewardedVideoAd', async () => {
+  it('should delegate events of RewardedVideoAd', async () => {
     createRewardedVideoAdSpy.mockImplementation(
       jest.fn().mockReturnValue({
         onError: (cb) => cb(),
@@ -84,7 +84,7 @@ describe('createRewardedVideoAd', () => {
     })
   })
 
-  it('should just return result = true when load failed', async () => {
+  it('should just return result = true when ad load failed', async () => {
     const loadStub = jest.fn().mockRejectedValue('load failed'),
       showStub = jest.fn().mockRejectedValue('show failed')
 

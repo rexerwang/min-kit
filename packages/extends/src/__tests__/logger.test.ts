@@ -37,7 +37,7 @@ describe('Logger', () => {
     getSystemInfoSyncSpy.mockReset()
   })
 
-  it('should instance with default option', async () => {
+  it('should create instance with default option', async () => {
     const { getLogger } = await import('../logger/index')
     getLogger(NAME)
     expect(consoleSpy.debug).toHaveBeenCalledWith(TIME, NAME, '[Logger]', {
@@ -47,7 +47,7 @@ describe('Logger', () => {
     })
   })
 
-  it('should instance with default option when given platform is Devtools', async () => {
+  it('should create instance with default option when given platform is Devtools', async () => {
     getSystemInfoSyncSpy.mockImplementation(jest.fn().mockReturnValue({ platform: 'devtools' }))
 
     await jest.isolateModulesAsync(async () => {
@@ -61,7 +61,7 @@ describe('Logger', () => {
     })
   })
 
-  it('should update options via `setOption`', async () => {
+  it('should logger.setOption did work', async () => {
     const { getLogger } = await import('../logger/index')
     const logger = getLogger(NAME)
     logger.setOption({ timestamp: false, meta: false, reporter: { feedback: false, realtime: false } })
@@ -110,7 +110,7 @@ describe('Logger', () => {
     }
   })
 
-  it('should output with formatted RequestError message', async () => {
+  it('should output formatted RequestError message', async () => {
     const { getLogger } = await import('../logger/index')
     const { RequestError } = await import('../request/RequestError')
     const error = new RequestError(new Error('test'), { request: {} } as any)
@@ -120,7 +120,7 @@ describe('Logger', () => {
     expect(consoleSpy.error).toHaveBeenCalledWith(TIME, NAME, normalized, 'request:', error.normalize().request)
   })
 
-  it('should index exports correctly', async () => {
+  it('logger exports', async () => {
     const { logger } = await import('../logger/index')
     const { Logger } = await import('../logger/Logger')
 

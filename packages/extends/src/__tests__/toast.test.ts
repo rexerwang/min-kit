@@ -23,7 +23,7 @@ describe('toast', () => {
     expect(showToastSpy).toHaveBeenCalledWith({ title: 'message', icon: 'none', duration: 1500 })
   })
 
-  it('should warn error when given showToast has failed', async () => {
+  it('should warn message when given showToast has failed', async () => {
     showToastSpy.mockImplementation(jest.fn().mockRejectedValue('error'))
     const warnSpy = jest.spyOn(logger, 'warn').mockImplementation(jest.fn())
     const { toast } = await import('../toast')
@@ -32,21 +32,21 @@ describe('toast', () => {
     expect(warnSpy).toHaveBeenCalledWith('#toast', 'error')
   })
 
-  it('should showToast success message via toast.success', async () => {
+  it('should showToast success message via `toast.success`', async () => {
     const { toast } = await import('../toast')
     await toast.success()
 
     expect(showToastSpy).toHaveBeenCalledWith({ title: '操作成功', icon: 'success', duration: 1500 })
   })
 
-  it('should showToast error message via toast.success', async () => {
+  it('should showToast error message via `toast.error`', async () => {
     const { toast } = await import('../toast')
     await toast.error()
 
     expect(showToastSpy).toHaveBeenCalledWith({ title: '操作失败', icon: 'error', duration: 1500 })
   })
 
-  it('should showLoading via toast.loading', async () => {
+  it('should showLoading via `toast.loading`', async () => {
     const { toast } = await import('../toast')
     await toast.loading()
     expect(showLoadingSpy).toHaveBeenCalledWith({ title: '加载中...', mask: true })
