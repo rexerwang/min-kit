@@ -211,8 +211,8 @@ importers:
         specifier: 3.6.21
         version: 3.6.21
       '@tarojs/shared':
-        specifier: 3.6.21
-        version: 3.6.21
+        specifier: 3.6.22
+        version: 3.6.22
       '@tarojs/taro':
         specifier: 3.6.21
         version: 3.6.21(@types/react@18.2.45)(postcss@8.4.32)
@@ -381,7 +381,7 @@ importers:
         version: 12.10.3
       '@tarojs/test-utils-react':
         specifier: ^0.1.1
-        version: 0.1.1(@babel/core@7.23.6)(@tarojs/components@3.6.21)(@tarojs/helper@3.6.21)(@tarojs/plugin-framework-react@3.6.21)(@tarojs/plugin-platform-h5@3.6.21)(@tarojs/react@3.6.21)(@tarojs/runtime@3.6.21)(@tarojs/shared@3.6.21)(react-dom@18.2.0)(react@18.2.0)
+        version: 0.1.1(@babel/core@7.23.6)(@tarojs/components@3.6.21)(@tarojs/helper@3.6.21)(@tarojs/plugin-framework-react@3.6.21)(@tarojs/plugin-platform-h5@3.6.21)(@tarojs/react@3.6.21)(@tarojs/runtime@3.6.21)(@tarojs/shared@3.6.22)(react-dom@18.2.0)(react@18.2.0)
       '@testing-library/jest-dom':
         specifier: ^6.1.6
         version: 6.1.6(@types/jest@29.5.11)(jest@29.7.0)
@@ -5825,6 +5825,9 @@ packages:
   /@tarojs/shared@3.6.21:
     resolution: {integrity: sha512-pPr77YJ43t0SaoO/tGmFUgrOniiNcbbrhtBqGW8GEvC5fgjXyPyX2+Yt9+0Az3afDLXbIDolqWVnYy+F/gitwQ==}
 
+  /@tarojs/shared@3.6.22:
+    resolution: {integrity: sha512-a6diONs9jVK2BQpu03AO+oa+VWdv54eBoQFMtWTQKP3s6rT0IvRkxIcNbIwOlcyy6MPbLzERt32DIKbm9/IHwg==}
+
   /@tarojs/taro-h5@3.6.20(@types/react@18.2.45)(postcss@8.4.32)(react@18.2.0):
     resolution: {integrity: sha512-L1UVwGur81qCBa1TLu1dqffcB7OEybiFy1m7A8kq7DlSS2/sbt5jlXaF9HSs6jZFQvyuH705lpaypqoZ2pIz3w==}
     dependencies:
@@ -5954,7 +5957,7 @@ packages:
       - supports-color
     dev: true
 
-  /@tarojs/test-utils-react@0.1.1(@babel/core@7.23.6)(@tarojs/components@3.6.21)(@tarojs/helper@3.6.21)(@tarojs/plugin-framework-react@3.6.21)(@tarojs/plugin-platform-h5@3.6.21)(@tarojs/react@3.6.21)(@tarojs/runtime@3.6.21)(@tarojs/shared@3.6.21)(react-dom@18.2.0)(react@18.2.0):
+  /@tarojs/test-utils-react@0.1.1(@babel/core@7.23.6)(@tarojs/components@3.6.21)(@tarojs/helper@3.6.21)(@tarojs/plugin-framework-react@3.6.21)(@tarojs/plugin-platform-h5@3.6.21)(@tarojs/react@3.6.21)(@tarojs/runtime@3.6.21)(@tarojs/shared@3.6.22)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-8F+jqQCe3P37FqWl/Fmy5elH/1LsfSQsZMLWp5II27EdjBUfmXr95EjZ4DJjPJkbfuM4Z9LefjXVk3nghRRdqg==}
     peerDependencies:
       '@tarojs/components': ^3.6.0
@@ -5974,7 +5977,7 @@ packages:
       '@tarojs/plugin-platform-h5': 3.6.21(@types/react@18.2.45)(postcss@8.4.32)
       '@tarojs/react': 3.6.21(react@18.2.0)
       '@tarojs/runtime': 3.6.21
-      '@tarojs/shared': 3.6.21
+      '@tarojs/shared': 3.6.22
       '@tarojs/test-utils-dom': 0.1.1(@babel/core@7.23.6)
       '@tarojs/test-utils-shared': 0.1.1(@babel/core@7.23.6)
       babel-jest: 29.7.0(@babel/core@7.23.6)

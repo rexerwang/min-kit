@@ -57,7 +57,7 @@
     "@tarojs/plugin-platform-weapp": "3.6.21",
     "@tarojs/react": "3.6.21",
     "@tarojs/runtime": "3.6.21",
-    "@tarojs/shared": "3.6.21",
+    "@tarojs/shared": "3.6.22",
     "@tarojs/taro": "3.6.21",
     "clsx": "^2.1.0",
     "highlight.js": "^11.9.0",
