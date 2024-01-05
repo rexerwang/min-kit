@@ -22,16 +22,16 @@ logger.setOption({
 })
 
 /**
- * create Logger instance with customizing the option
+ * create Logger instance with customizing option
  */
 const userLogger = getLogger('user', {
   reporter: {
     realtime: false,
     feedback: false,
     // custom reporter
-    async custom(level, message) {
-      // do upload logs in your api
-      await http.post('/logs', { level, message })
+    async custom(log) {
+      // do upload logs
+      await http.post('/logs', log)
     },
   },
 })
