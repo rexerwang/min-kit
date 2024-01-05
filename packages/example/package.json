@@ -48,7 +48,7 @@
     "@min-kit/store": "workspace:*",
     "@tarojs/components": "3.6.21",
     "@tarojs/helper": "3.6.21",
-    "@tarojs/plugin-framework-react": "3.6.21",
+    "@tarojs/plugin-framework-react": "3.6.22",
     "@tarojs/plugin-platform-alipay": "3.6.21",
     "@tarojs/plugin-platform-jd": "3.6.21",
     "@tarojs/plugin-platform-qq": "3.6.21",
