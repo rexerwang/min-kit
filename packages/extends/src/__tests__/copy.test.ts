@@ -3,11 +3,11 @@ import Taro from '@tarojs/taro'
 
 describe('copy', () => {
   const setClipboardDataSpy = jest.spyOn(Taro, 'setClipboardData')
-  const consoleSpy = spyOnConsole({ error: true })
+  const errorSpy = spyOnConsole('error')
 
   afterEach(() => {
     setClipboardDataSpy.mockClear()
-    consoleSpy.error.mockClear()
+    errorSpy.mockClear()
   })
 
   it('should not copy when given empty input', async () => {
@@ -30,6 +30,6 @@ describe('copy', () => {
     setClipboardDataSpy.mockImplementation(jest.fn().mockRejectedValue(new Error('copy')))
     const { copy } = await import('../copy')
     await expect(copy('test')).resolves.toBeFalsy()
-    expect(consoleSpy.error).toHaveBeenCalled()
+    expect(errorSpy).toHaveBeenCalled()
   })
 })

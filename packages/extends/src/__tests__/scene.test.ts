@@ -29,7 +29,7 @@ describe('scene', () => {
   })
 
   it('should get scene 0 when failed', async () => {
-    spyOnConsole({ error: true }) // disable console.error
+    spyOnConsole('error') // disable console.error
     getEnterOptionsSyncSpy.mockImplementation(() => {
       throw new Error('test')
     })

@@ -49,7 +49,7 @@ describe('request', () => {
   it.each(['get', 'delete', 'head', 'options', 'post', 'put', 'patch'])(
     'should request.%s succeed when given statusCode = 500',
     async (method) => {
-      spyOnConsole({ error: true })
+      spyOnConsole('error')
 
       const { createRequest } = await import('../request')
       const http = createRequest({ baseUrl })
