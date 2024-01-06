@@ -3,26 +3,27 @@ import merge from 'webpack-merge'
 import { argv } from './shared'
 import { UserConfigService } from './UserConfigService'
 
-import type { ConfigEnv } from '@tarojs/cli'
+import type { UserConfigFn } from '@tarojs/cli'
 import type { IProjectConfig } from '@tarojs/taro/types/compile'
 
-type UserConfigFn = (mergeFn: typeof merge, env: ConfigEnv) => IProjectConfig
+type ConfigFn = (...args: Parameters<UserConfigFn>) => IProjectConfig
 
-type Options = {
+type IOptions = {
+  /** @default true */
   ci?: boolean
+  /** @default true */
   tailwindcss?: boolean
+  /** @default true */
   imageMinimizer?: boolean
-  analyzer?: boolean
 }
 
-const defaultOptions: Options = {
+const defaultOptions: IOptions = {
   ci: true,
   tailwindcss: true,
   imageMinimizer: true,
-  analyzer: true,
 }
 
-export function defineUserConfig(fn: UserConfigFn, options = defaultOptions) {
+function defineUserConfig(fn: ConfigFn, options = defaultOptions) {
   const configService = new UserConfigService(argv.mode, process.env.TARO_ENV)
   configService.start()
 
@@ -34,7 +35,7 @@ export function defineUserConfig(fn: UserConfigFn, options = defaultOptions) {
     ],
   ].filter(Boolean)
 
-  const baseConfig = fn(merge, {
+  const baseConfig = fn(merge as any, {
     command: argv.command,
     mode: argv.mode,
   }) as IProjectConfig
@@ -50,7 +51,7 @@ export function defineUserConfig(fn: UserConfigFn, options = defaultOptions) {
             const { UnifiedWebpackPluginV5 } = require('weapp-tailwindcss/webpack')
             config.plugin('weapp-tailwindcss').use(UnifiedWebpackPluginV5, [{ appType: 'taro' }])
           })
-          .when(!!options.analyzer && argv.analyzer, (config) => {
+          .when(argv.command === 'build' && !argv.watch && argv.analyzer, (config) => {
             const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
             config.plugin('analyzer').use(BundleAnalyzerPlugin)
           })
@@ -101,3 +102,5 @@ export function defineUserConfig(fn: UserConfigFn, options = defaultOptions) {
 
   return merge({}, baseConfig, userConfig)
 }
+
+export { defineUserConfig, type IProjectConfig }

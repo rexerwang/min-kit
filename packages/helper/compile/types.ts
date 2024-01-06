@@ -13,6 +13,8 @@ export namespace TaroCLI {
   export type argv = {
     /** 目标环境 */
     mode: Mode
+    /** Watch mode */
+    watch?: boolean
     /** 启用analyzer */
     analyzer: boolean
     /** command */
@@ -33,7 +35,7 @@ export namespace UserConfig {
 
   export interface PlatformConfig {
     project: AnyObject[] | AnyObject
-    ci: WeappConfig | TTConfig | AlipayConfig | JdConfig | SwanConfig
+    ci?: WeappConfig | TTConfig | AlipayConfig | JdConfig | SwanConfig
   }
 
   export type PlatformConfigFn = (appid: string, mode: Mode) => PlatformConfig
