@@ -65,7 +65,7 @@
     "react-dom": "^18.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.8.0",
+    "@babel/core": "^7.23.7",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
     "@tarojs/cli": "3.6.22",
     "@tarojs/plugin-mini-ci": "3.6.22",
