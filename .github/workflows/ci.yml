@@ -62,3 +62,26 @@ jobs:
         uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+  build-example:
+    strategy:
+      matrix:
+        platform: [weapp, alipay, tt]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+
+      - name: Setup node 18
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'pnpm'
+
+      - run: pnpm install
+
+      - run: pnpm build
+
+      - run: pnpm --dir packages/example run build:${{ matrix.platform }}
