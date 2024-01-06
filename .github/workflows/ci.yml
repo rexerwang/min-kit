@@ -3,7 +3,13 @@ name: 'ci'
 on:
   push:
     branches:
-      - '**'
+      - main
+    paths-ignore:
+      - '**/README.md'
+
+  pull_request:
+    branches:
+      - main
 
 permissions: {}
 
@@ -12,36 +18,46 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Install pnpm
         uses: pnpm/action-setup@v2
+
       - name: Setup node 18
         uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: 'pnpm'
+
       - run: pnpm install
+
       - name: Run lint
         run: |
           pnpm exec eslint packages/ --ext .ts,tsx
           pnpm exec stylelint "packages/**/*.{scss,css}"
           pnpm exec prettier --check .
 
-  unit-test:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Install pnpm
         uses: pnpm/action-setup@v2
+
       - name: Setup node 18
         uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: 'pnpm'
+
       - run: pnpm install
+
       - name: Run build
         run: pnpm build --dev
+
       - name: Run unit tests
         run: pnpm test
+
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         env:
