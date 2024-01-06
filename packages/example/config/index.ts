@@ -1,12 +1,11 @@
-import { defineUserConfig } from '@min-kit/helper/compile'
-import { type UserConfigExport } from '@tarojs/cli'
+import { defineUserConfig, type IProjectConfig } from '@min-kit/helper/compile'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 
 import devConfig from './dev'
 import prodConfig from './prod'
 
 export default defineUserConfig((merge) => {
-  const baseConfig: UserConfigExport = {
+  const baseConfig: IProjectConfig = {
     projectName: 'template',
     date: '2023-12-21',
     designWidth: 750,
