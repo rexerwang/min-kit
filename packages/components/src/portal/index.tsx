@@ -1,11 +1,7 @@
 import { document, getRootElement, logger } from '@min-kit/extends'
-import { RootPortal, View } from '@tarojs/components'
 import { render, unmountComponentAtNode } from '@tarojs/react'
-import { canIUse } from '@tarojs/taro'
 
-import type { FC } from 'react'
-
-const Portal = canIUse('root-portal') ? RootPortal : View
+import RootPortal from './RootPortal'
 
 let n = 0
 
@@ -14,7 +10,7 @@ let n = 0
  * @returns unmount
  * @throws if not found page instance
  */
-export function mountPortal<T extends object>(Component: FC<T>, props: T = {} as T, displayName?: string) {
+export function mountPortal<T extends object>(Component: React.FC<T>, props: T = {} as T, displayName?: string) {
   const meta = {
     n: ++n,
     name: displayName ?? Component.displayName ?? Component.name,
@@ -32,9 +28,9 @@ export function mountPortal<T extends object>(Component: FC<T>, props: T = {} as
   const el = document.createElement('block')
 
   render(
-    <Portal id={'portal-' + n} className='portal'>
+    <RootPortal id={'portal-' + n} className='portal'>
       <Component {...props} />
-    </Portal>,
+    </RootPortal>,
     el,
   )
 
