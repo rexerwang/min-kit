@@ -10,12 +10,20 @@ updates:
         patterns:
           - '@tarojs*'
           - 'eslint-config-taro'
+          - 'babel-preset-taro'
+          - 'babel-plugin-transform-taroapi'
+          - 'postcss-html-transform'
+          - 'postcss-plugin-constparse'
+          - 'postcss-pxtransform'
       typescript-eslint:
         patterns:
           - '@typescript-eslint*'
       commitlint:
         patterns:
           - '@commitlint*'
+    ignore:
+      - dependency-name: '@types/node'
+        versions: ['>= 18.0.0']
 
   - package-ecosystem: 'github-actions'
     directory: '/'
