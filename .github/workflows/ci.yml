@@ -52,8 +52,11 @@ jobs:
 
       - run: pnpm install
 
-      - name: Run build
+      - name: Check build
         run: pnpm build --dev
+
+      - name: Check types (packages/example)
+        run: pnpm --dir=packages/example exec tsc --noEmit
 
       - name: Run unit tests
         run: pnpm test
