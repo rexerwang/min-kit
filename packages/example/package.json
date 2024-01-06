@@ -71,7 +71,7 @@
     "@tarojs/plugin-mini-ci": "3.6.21",
     "@tarojs/taro-loader": "3.6.21",
     "@tarojs/webpack5-runner": "3.6.21",
-    "@types/node": "^18.15.11",
+    "@types/node": "^20.10.6",
     "@types/react": "^18.0.0",
     "@types/webpack-env": "^1.13.6",
     "babel-preset-taro": "3.6.21",
