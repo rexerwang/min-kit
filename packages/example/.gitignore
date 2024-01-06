@@ -10,6 +10,8 @@ node_modules/
 project.config.json
 project.tt.json
 project.private.config.json
+mini.project.json
+.mini-ide
 
 # private key
 .private.key.*

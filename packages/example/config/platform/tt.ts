@@ -27,8 +27,8 @@ export default ((appid) => {
       },
     ],
     ci: {
-      email: '字节小程序邮箱', // FIXME: 字节小程序邮箱
-      password: '字节小程序密码', // FIXME: 字节小程序密码
+      email: 'your-email',
+      password: 'you-password',
     },
   }
 }) satisfies UserConfig.PlatformConfigFn
