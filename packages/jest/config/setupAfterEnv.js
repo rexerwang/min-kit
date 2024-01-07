@@ -22,9 +22,6 @@ jest.doMock('@tarojs/taro', () => {
   return { ...actualApis, ...mockApis }
 })
 
-// disable console
-console.debug = jest.fn()
-
 afterEach(() => {
   jest.resetAllMocks()
 })

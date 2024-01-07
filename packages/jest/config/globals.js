@@ -5,6 +5,10 @@ const globals = {
     onAppRoute() {},
     onAppRouteDone() {},
   },
+  console: {
+    ...console,
+    debug() {},
+  },
 }
 
 for (const [key, value] of Object.entries(globals)) {

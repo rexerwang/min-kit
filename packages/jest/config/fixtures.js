@@ -1,3 +1,7 @@
+/**
+ * weapp platform
+ */
+
 /** canIUse */
 exports.supports = []
 
