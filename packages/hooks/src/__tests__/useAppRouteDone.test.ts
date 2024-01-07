@@ -25,11 +25,11 @@ describe('useAppRouteDone', () => {
 
     await jest.isolateModulesAsync(async () => {
       const { logger } = await import('@min-kit/extends')
-      const errorSpy = jest.spyOn(logger, 'error').mockImplementation(jest.fn())
+      const warnSpy = jest.spyOn(logger, 'warn').mockImplementation(jest.fn())
 
       await import('../useAppRouteDone')
-      expect(errorSpy).toHaveBeenCalledTimes(1)
-      expect(errorSpy.mock.calls[0][1].message).toMatch('Not support wx.onAppRouteDone')
+      expect(warnSpy).toHaveBeenCalledTimes(1)
+      expect(warnSpy.mock.calls[0][1].message).toMatch('Not support wx.onAppRouteDone')
     })
   })
 })

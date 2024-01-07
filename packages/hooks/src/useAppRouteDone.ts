@@ -3,13 +3,17 @@ import { eventCenter } from '@tarojs/taro'
 
 import { createEventListener } from './createEventListener'
 
-if (typeof wx !== 'undefined' && typeof wx.onAppRouteDone === 'function') {
+try {
+  if (typeof wx === 'undefined' || typeof wx.onAppRouteDone !== 'function') {
+    throw new Error('Not support wx.onAppRouteDone')
+  }
+
   wx.onAppRouteDone((res) => {
     eventCenter.trigger('wx.onAppRouteDone', res)
   })
-  logger.debug('#useAppRouteDone', 'registered')
-} else {
-  logger.error('#useAppRouteDone', new Error('Not support wx.onAppRouteDone'))
+  logger.debug('#useAppRouteDone', 'delegated wx.onAppRouteDone')
+} catch (error) {
+  logger.warn('#useAppRouteDone', error)
 }
 
 /**
