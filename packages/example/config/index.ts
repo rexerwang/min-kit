@@ -1,3 +1,5 @@
+import path from 'node:path'
+
 import { defineUserConfig, type IProjectConfig } from '@min-kit/helper/compile'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 
@@ -60,6 +62,20 @@ export default defineUserConfig((merge) => {
       },
       webpackChain(chain) {
         chain.resolve.plugin('tsconfig-paths').use(TsconfigPathsPlugin)
+
+        // transform RootPortal when tt
+        chain.when(process.env.TARO_ENV === 'tt', (config) => {
+          config.module
+            .rule('compile')
+            .test(/\.mjs$/)
+            .include.add(path.dirname(require.resolve('@min-kit/components')))
+            .end()
+            .use('babel')
+            .loader('babel-loader')
+            .options({
+              plugins: [require.resolve('./babel/babel-plugin-transform-root-portal.js')],
+            })
+        })
       },
     },
     logger: {

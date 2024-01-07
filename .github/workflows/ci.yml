@@ -69,7 +69,7 @@ jobs:
   build-example:
     strategy:
       matrix:
-        platform: [weapp, alipay] # skip 'tt', wait for RootPortal import issue to be resolved.
+        platform: [weapp, alipay, tt]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
