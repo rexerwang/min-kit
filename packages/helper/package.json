@@ -32,8 +32,7 @@
   },
   "types": "./dist/taro-env.d.ts",
   "files": [
-    "dist",
-    "types"
+    "dist"
   ],
   "keywords": [
     "min-kit",
