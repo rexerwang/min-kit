@@ -1,3 +1,5 @@
+import type { UnmountPortal } from '../portal'
+
 export namespace IModal {
   export type Props<OwnProps = {}, TOk = any, TCancel = any> = {
     className?: string
@@ -11,7 +13,7 @@ export namespace IModal {
     | { ok: false; detail: TCancel | 'backdrop' | 'unmount' }
 
   export interface Task<TOk = any, TCancel = any> extends Promise<Result<TOk, TCancel>> {
-    unmount(): boolean
+    unmount: UnmountPortal
   }
 
   export interface DrawerProps {

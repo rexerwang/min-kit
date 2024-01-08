@@ -1,11 +1,13 @@
 import { getZDepth } from '@min-kit/shared'
 
-import { mountPortal } from '../portal'
+import { mountPortal, UnmountPortal } from '../portal'
 import Drawer from './drawer'
 import { IModal } from './types'
 
 type WithOpenProps<T> = IModal.ContainerProps & T
 type OpenProps<T> = Omit<WithOpenProps<T>, 'onOk' | 'onCancel'>
+
+const noop: UnmountPortal = Object.assign(() => false, { id: '' })
 
 export function withOpen<
   OwnProps,
@@ -13,31 +15,29 @@ export function withOpen<
   TCancel = any,
   TModalProps extends IModal.Props = IModal.Props<OwnProps, TOk, TCancel>,
 >(displayName: string, Component: React.FC<TModalProps>, defaultProps?: IModal.ContainerProps) {
-  const noop = () => false
-
   return (props = {} as OpenProps<TModalProps>): IModal.Task<TOk, TCancel> => {
-    let doUnmount = noop
+    let unmount = noop
 
     const promise = new Promise<IModal.Result<TOk, TCancel>>((resolve, reject) => {
-      let unmount = noop
+      let unmountPortal = noop
 
       const { position, backdropCloseable, zIndex, duration, offsetX, offsetY, containerClass, ...contentProps } = {
         ...defaultProps,
         ...props,
         onOk: (e) => {
           resolve({ ok: true, detail: e })
-          unmount()
+          unmountPortal()
         },
         onCancel: (e) => {
           resolve({ ok: false, detail: e })
-          unmount()
+          unmountPortal()
         },
       } as WithOpenProps<TModalProps>
 
       const zDepth = zIndex || getZDepth()
 
       try {
-        unmount = mountPortal(
+        unmountPortal = mountPortal(
           () => (
             <Drawer
               onClose={() => contentProps.onCancel?.('backdrop')}
@@ -55,18 +55,21 @@ export function withOpen<
           displayName,
         )
 
-        doUnmount = () => {
-          if (unmount()) {
-            resolve({ ok: false, detail: 'unmount' })
-            return true
-          }
-          return false
-        }
+        unmount = Object.assign(
+          () => {
+            if (unmountPortal()) {
+              resolve({ ok: false, detail: 'unmount' })
+              return true
+            }
+            return false
+          },
+          { id: unmountPortal.id },
+        )
       } catch (error) {
         reject(error)
       }
     })
 
-    return Object.assign(promise, { unmount: doUnmount })
+    return Object.assign(promise, { unmount })
   }
 }

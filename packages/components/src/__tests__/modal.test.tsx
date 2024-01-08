@@ -21,7 +21,7 @@ describe('modal', () => {
 
   let spy: jest.SpyInstance
   beforeEach(() => {
-    spy = jest.spyOn(portals, 'mountPortal').mockImplementation((Component, props) => {
+    spy = jest.spyOn(portals, 'mountPortal').mockImplementation((Component, props): any => {
       const el = document.createElement('root-portal')
       el.classList.add('portal')
       const { unmount } = render(createPortal(<Component {...props} />, el))
