@@ -63,7 +63,7 @@ export default defineUserConfig((merge) => {
       webpackChain(chain) {
         chain.resolve.plugin('tsconfig-paths').use(TsconfigPathsPlugin)
 
-        // transform RootPortal when tt
+        // replace RootPortal in @min-kit/components when tt
         chain.when(process.env.TARO_ENV === 'tt', (config) => {
           config.module
             .rule('compile')
@@ -73,7 +73,7 @@ export default defineUserConfig((merge) => {
             .use('babel')
             .loader('babel-loader')
             .options({
-              plugins: [require.resolve('./babel/babel-plugin-transform-root-portal.js')],
+              plugins: [['@min-kit/helper/compile/babel-plugin-replace-components', { RootPortal: 'View' }]],
             })
         })
       },
