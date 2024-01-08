@@ -14,10 +14,15 @@
       "import": "./dist/compile/index.mjs",
       "require": "./dist/compile/index.cjs"
     },
-    "./compile/plugin-prebuild": {
-      "types": "./dist/compile/plugin-prebuild.d.ts",
-      "import": "./dist/compile/plugin-prebuild.mjs",
-      "require": "./dist/compile/plugin-prebuild.cjs"
+    "./compile/taro-plugin-prebuild": {
+      "types": "./dist/compile/taro-plugin-prebuild.d.ts",
+      "import": "./dist/compile/taro-plugin-prebuild.mjs",
+      "require": "./dist/compile/taro-plugin-prebuild.cjs"
+    },
+    "./compile/babel-plugin-replace-components": {
+      "types": "./dist/compile/babel-plugin-replace-components.d.ts",
+      "import": "./dist/compile/babel-plugin-replace-components.mjs",
+      "require": "./dist/compile/babel-plugin-replace-components.cjs"
     },
     "./runtime": {
       "types": "./dist/runtime/index.d.ts",
@@ -47,11 +52,20 @@
     "test": "jest"
   },
   "peerDependencies": {
+    "@babel/core": ">=7.0.0",
     "@tarojs/cli": ">=3.6",
     "@tarojs/helper": ">=3.6",
     "@tarojs/plugin-mini-ci": ">=3.6",
     "@tarojs/service": ">=3.6",
     "@tarojs/taro": ">=3.6"
+  },
+  "peerDependenciesMeta": {
+    "@babel/core": {
+      "optional": true
+    },
+    "@tarojs/plugin-mini-ci": {
+      "optional": true
+    }
   },
   "dependencies": {
     "autoprefixer": "^10.4.16",
@@ -68,6 +82,8 @@
     "webpack-merge": "^5.10.0"
   },
   "devDependencies": {
-    "@min-kit/jest": "workspace:*"
+    "@babel/core": "^7.23.7",
+    "@min-kit/jest": "workspace:*",
+    "@types/babel__core": "^7.20.5"
   }
 }

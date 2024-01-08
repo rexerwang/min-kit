@@ -7,7 +7,13 @@ const isProd = !process.argv.includes('--dev')
 
 export default defineBuildConfig({
   clean: isProd,
-  entries: ['compile/index', 'compile/plugin-prebuild', 'config/index', 'runtime/index'],
+  entries: [
+    'compile/index',
+    'compile/taro-plugin-prebuild',
+    'compile/babel-plugin-replace-components',
+    'config/index',
+    'runtime/index',
+  ],
   declaration: true,
   rollup: {
     emitCJS: true,

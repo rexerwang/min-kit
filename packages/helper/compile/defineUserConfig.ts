@@ -30,7 +30,7 @@ function defineUserConfig(fn: ConfigFn, options = defaultOptions) {
   const plugins: any[] = [
     options.ci && ['@tarojs/plugin-mini-ci', configService.ci],
     argv.command === 'prebuild' && [
-      require.resolve('@min-kit/helper/compile/plugin-prebuild'),
+      require.resolve('@min-kit/helper/compile/taro-plugin-prebuild'),
       { config: configService.project },
     ],
   ].filter(Boolean)
