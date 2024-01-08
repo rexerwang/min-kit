@@ -49,7 +49,7 @@ export class UserConfigService {
   }
 
   start() {
-    logger.exec(`加载${this.mode}环境配置`)
+    logger.exec(`${this.mode} mode`)
     const { appid, defineConstants } = this.loadModeConfig()
     const { project, ci } = this.loadPlatformConfig(appid)
 
