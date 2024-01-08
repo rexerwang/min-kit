@@ -1,6 +1,6 @@
-export { combineStore } from './combineStore'
 export { createPersistStore } from './createPersistStore'
 export { createStore } from './createStore'
+export { select } from './select'
 export { createJSONStorage } from 'zustand/middleware'
 export { useShallow } from 'zustand/react/shallow'
 export { createStore as createVanillaStore } from 'zustand/vanilla'

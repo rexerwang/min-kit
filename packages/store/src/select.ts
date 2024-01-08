@@ -9,7 +9,7 @@ type StoreAddons<T, P> = {
   apis: P
 }
 
-export function combineStore<
+export function select<
   Store extends UseBoundStore<StoreApi<object>>,
   Hooks extends AnyFns = {},
   Apis extends AnyFns = {},

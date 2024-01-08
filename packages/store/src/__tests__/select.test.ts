@@ -1,6 +1,6 @@
 import { act, renderHook } from '@min-kit/jest'
 
-import { combineStore, createStore } from '../index'
+import { createStore, select } from '../index'
 
 const initialState = {
   title: { enable: false, text: 'Title' },
@@ -19,9 +19,9 @@ const store = createStore(initialState, (set) => ({
   },
 }))
 
-describe('combineStore', () => {
+describe('select', () => {
   it('should generate selectors', () => {
-    const combinedStore = combineStore(store)
+    const combinedStore = select(store)
 
     expect(renderHook(() => combinedStore.title()).result.current).toBe(initialState.title)
     expect(renderHook(() => combinedStore.enableTitle()).result.current).toEqual(expect.any(Function))
@@ -30,7 +30,7 @@ describe('combineStore', () => {
   })
 
   it('should generate selectors with addons', () => {
-    const combinedStore = combineStore(store, {
+    const combinedStore = select(store, {
       hooks: {
         useTitleText() {
           return store((state) => state.title.text)
