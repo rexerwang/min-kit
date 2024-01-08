@@ -1,5 +1,5 @@
 import { logger } from '@min-kit/extends'
-import { combineStore, createStore } from '@min-kit/store'
+import { createStore, select } from '@min-kit/store'
 
 import { getProducts } from './product.service'
 
@@ -33,7 +33,7 @@ const store = createStore(initialState, (set) => ({
   },
 }))
 
-export const productStore = combineStore(store, {
+export const productStore = select(store, {
   apis: {
     getList: store.getState().getList,
   },

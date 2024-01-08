@@ -1,7 +1,7 @@
-export const UsageSnippet = `import { combineStore, createPersistStore } from '@min-kit/store'
+export const UsageSnippet = `import { createPersistStore, select } from '@min-kit/store'
 import { Button, View } from '@tarojs/components'
 
-const store = combineStore(
+const store = select(
   createPersistStore('counter', { count: 1 }, (set) => ({
     increase() {
       set((state) => {
