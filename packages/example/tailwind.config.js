@@ -1,3 +1,3 @@
 module.exports = {
-  presets: [require('@min-kit/helper/config').tailwind],
+  presets: [require('@min-kit/helper/presets').tailwind],
 }

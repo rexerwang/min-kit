@@ -11,7 +11,7 @@ interface PluginOpts {
 }
 
 /**
- * setup postcss for miniapp
+ * setup postcss plugins for miniapp
  */
 export function postcss(opts: PluginOpts = {}) {
   const plugins: AcceptedPlugin[] = []

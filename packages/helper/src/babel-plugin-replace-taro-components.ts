@@ -5,11 +5,10 @@ import * as Babel from '@babel/core'
 export default function plugin(babel: typeof Babel, options: Record<string, string> = {}): Babel.PluginObj {
   const t = babel.types
   const replacement = Object.entries(options)
-  const pluginName = 'babel-plugin-replace-components'
   const source = '@tarojs/components'
 
   return {
-    name: pluginName,
+    name: 'babel-plugin-replace-taro-components',
     visitor: {
       ImportDeclaration(ast) {
         if (ast.node.source.value !== source) return

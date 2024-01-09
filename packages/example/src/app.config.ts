@@ -1,10 +1,10 @@
-import { configChain } from '@min-kit/helper/runtime'
+import { defineAppConfigChain } from '@min-kit/helper/app'
 import { isString } from '@min-kit/shared'
 
 import NAME from './app.name'
 import { Routes } from './app.route'
 
-export default configChain((chain) => {
+export default defineAppConfigChain((chain) => {
   chain
     .entryPagePath(Routes.Index)
     .pages(Object.values(Routes).filter(isString))

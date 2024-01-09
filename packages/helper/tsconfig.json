@@ -1,4 +1,4 @@
 {
   "extends": "../../tsconfig.root.json",
-  "include": ["compile", "config", "runtime", "types"]
+  "include": ["src", "types"]
 }

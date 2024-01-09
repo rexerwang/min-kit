@@ -8,11 +8,11 @@ const isProd = !process.argv.includes('--dev')
 export default defineBuildConfig({
   clean: isProd,
   entries: [
-    'compile/index',
-    'compile/taro-plugin-prebuild',
-    'compile/babel-plugin-replace-components',
-    'config/index',
-    'runtime/index',
+    'src/app',
+    'src/presets',
+    'src/taro',
+    'src/taro-plugin-prebuild',
+    'src/babel-plugin-replace-taro-components',
   ],
   declaration: true,
   rollup: {

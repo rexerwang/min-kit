@@ -1,5 +1,6 @@
-import { Config } from 'tailwindcss'
 import plugin from 'tailwindcss/plugin'
+
+import type { Config } from 'tailwindcss'
 
 /**
  * tailwind preset for miniapp

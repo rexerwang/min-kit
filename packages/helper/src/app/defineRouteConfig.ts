@@ -1,6 +1,7 @@
 function normalizeRoutePath<T extends object>(routeMap: T) {
   return Object.entries(routeMap).reduce((map, [key, route]) => {
-    if (!/^[A-Za-z0-9]+$/.test(key)) throw new Error(`Only letters or numbers are allowed: ${key}`)
+    if (!/^[A-Za-z0-9]+$/.test(key))
+      throw new Error(`Only letters or numbers are allowed as the subPackage key: ${key}`)
 
     if (typeof route === 'string') {
       map[key] = '/' + route
@@ -23,9 +24,22 @@ function normalizeRoutePath<T extends object>(routeMap: T) {
   }, {} as T)
 }
 
+type RouteRecord = Record<string, string | Record<string, string>>
+
+type RouteConfig<T> = {
+  /** the **relative** path routes */
+  Routes: T
+  /** the **absolute** path routes */
+  Pages: T
+}
+
 /**
- * 路由定义
+ * Define route paths. with the nested subPackages (optional)
  *
+ * @param Routes the relative path routes.
+ * If there are subPackages, use the subPackage root (PascalCase) as the key.
+ *
+ * @example
  * ```js
  * defineRouteConfig({
  *   // main package
@@ -38,6 +52,6 @@ function normalizeRoutePath<T extends object>(routeMap: T) {
  * })
  * ```
  */
-export function defineRouteConfig<T extends object>(Routes: T) {
+export function defineRouteConfig<T extends RouteRecord>(Routes: T): RouteConfig<T> {
   return { Routes, Pages: normalizeRoutePath(Routes) }
 }

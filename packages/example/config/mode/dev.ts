@@ -1,4 +1,4 @@
-import type { UserConfig } from '@min-kit/helper/compile'
+import type { UserConfig } from '@min-kit/helper/taro'
 
 export default {
   appid: {

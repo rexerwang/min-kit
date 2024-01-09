@@ -1,9 +1,7 @@
-import ConfigChain from './ConfigChain'
-
-import type { Config } from '@tarojs/taro'
+import ConfigChain from './chain/ConfigChain'
 
 type ConfigEnv = {
-  mode: Mode
+  mode: NodeJS.ProcessEnv['TARO_MODE']
   env: NodeJS.ProcessEnv['NODE_ENV']
 }
 
@@ -13,8 +11,8 @@ type ConfigEnv = {
  * @requires `process.env.TARO_MODE`
  * @requires `process.env.NODE_ENV`
  */
-export function configChain(cb: (chain: ConfigChain, env: ConfigEnv) => void): Config {
+export function defineAppConfigChain(cb: (chain: ConfigChain, env: ConfigEnv) => void): Taro.Config {
   const chain = new ConfigChain()
   cb(chain, { mode: process.env.TARO_MODE, env: process.env.NODE_ENV })
-  return chain.get() as Config
+  return chain.get()
 }

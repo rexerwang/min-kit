@@ -9,30 +9,30 @@
     ".": {
       "types": "./dist/taro-env.d.ts"
     },
-    "./compile": {
-      "types": "./dist/compile/index.d.ts",
-      "import": "./dist/compile/index.mjs",
-      "require": "./dist/compile/index.cjs"
+    "./app": {
+      "types": "./dist/app.d.ts",
+      "import": "./dist/app.mjs",
+      "require": "./dist/app.cjs"
     },
-    "./compile/taro-plugin-prebuild": {
-      "types": "./dist/compile/taro-plugin-prebuild.d.ts",
-      "import": "./dist/compile/taro-plugin-prebuild.mjs",
-      "require": "./dist/compile/taro-plugin-prebuild.cjs"
+    "./presets": {
+      "types": "./dist/presets.d.ts",
+      "import": "./dist/presets.mjs",
+      "require": "./dist/presets.cjs"
     },
-    "./compile/babel-plugin-replace-components": {
-      "types": "./dist/compile/babel-plugin-replace-components.d.ts",
-      "import": "./dist/compile/babel-plugin-replace-components.mjs",
-      "require": "./dist/compile/babel-plugin-replace-components.cjs"
+    "./taro": {
+      "types": "./dist/taro.d.ts",
+      "import": "./dist/taro.mjs",
+      "require": "./dist/taro.cjs"
     },
-    "./runtime": {
-      "types": "./dist/runtime/index.d.ts",
-      "import": "./dist/runtime/index.mjs",
-      "require": "./dist/runtime/index.cjs"
+    "./taro-plugin-prebuild": {
+      "types": "./dist/taro-plugin-prebuild.d.ts",
+      "import": "./dist/taro-plugin-prebuild.mjs",
+      "require": "./dist/taro-plugin-prebuild.cjs"
     },
-    "./config": {
-      "types": "./dist/config/index.d.ts",
-      "import": "./dist/config/index.mjs",
-      "require": "./dist/config/index.cjs"
+    "./babel-plugin-replace-taro-components": {
+      "types": "./dist/babel-plugin-replace-taro-components.d.ts",
+      "import": "./dist/babel-plugin-replace-taro-components.mjs",
+      "require": "./dist/babel-plugin-replace-taro-components.cjs"
     }
   },
   "types": "./dist/taro-env.d.ts",

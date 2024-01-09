@@ -1,12 +1,9 @@
 import merge from 'webpack-merge'
 
-import { argv } from './shared'
+import { argv } from './shared/argv'
 import { UserConfigService } from './UserConfigService'
 
-import type { UserConfigFn } from '@tarojs/cli'
-import type { IProjectConfig } from '@tarojs/taro/types/compile'
-
-type ConfigFn = (...args: Parameters<UserConfigFn>) => IProjectConfig
+import type { IProjectConfig, UserConfigFn } from './types'
 
 type IOptions = {
   ci?: boolean
@@ -14,14 +11,14 @@ type IOptions = {
   imageMinimizer?: boolean
 }
 
-function defineUserConfig(fn: ConfigFn, options: IOptions = {}) {
+export function defineUserConfig(fn: UserConfigFn, options: IOptions = {}) {
   const configService = new UserConfigService(argv.mode, process.env.TARO_ENV)
   configService.start()
 
   const plugins: any[] = [
     options.ci && ['@tarojs/plugin-mini-ci', configService.ci],
     argv.command === 'prebuild' && [
-      require.resolve('@min-kit/helper/compile/taro-plugin-prebuild'),
+      require.resolve('@min-kit/helper/taro-plugin-prebuild'),
       { config: configService.project },
     ],
   ].filter(Boolean)
@@ -93,5 +90,3 @@ function defineUserConfig(fn: ConfigFn, options: IOptions = {}) {
 
   return merge({}, baseConfig, userConfig)
 }
-
-export { defineUserConfig, type IProjectConfig }

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`configChain should set app.config when given \`TARO_ENV\` is weapp 1`] = `
+exports[`app specs defineAppConfigChain should set app.config when given \`TARO_ENV\` is weapp 1`] = `
 {
   "componentFramework": "glass-easel",
   "darkmode": true,

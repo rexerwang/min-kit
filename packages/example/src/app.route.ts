@@ -1,4 +1,4 @@
-import { defineRouteConfig } from '@min-kit/helper/runtime'
+import { defineRouteConfig } from '@min-kit/helper/app'
 
 const { Pages, Routes } = defineRouteConfig({
   Index: 'pages/index/index',

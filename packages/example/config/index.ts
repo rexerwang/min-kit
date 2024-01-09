@@ -1,6 +1,6 @@
 import path from 'node:path'
 
-import { defineUserConfig, type IProjectConfig } from '@min-kit/helper/compile'
+import { defineUserConfig, type IProjectConfig } from '@min-kit/helper/taro'
 import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin'
 
 import devConfig from './dev'

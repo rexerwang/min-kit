@@ -1,3 +1,4 @@
+import type { UserConfigFn as TaroUserConfigFn } from '@tarojs/cli'
 import type {
   AlipayConfig,
   CIOptions,
@@ -6,25 +7,13 @@ import type {
   TTConfig,
   WeappConfig,
 } from '@tarojs/plugin-mini-ci/types/BaseCi'
+import type { IProjectConfig } from '@tarojs/taro/types/compile'
 
-export type AnyObject = Record<string, any>
+type AnyObject = Record<string, any>
 
-export namespace TaroCLI {
-  export type argv = {
-    /** 目标环境 */
-    mode: Mode
-    /** Watch mode */
-    watch?: boolean
-    /** 启用analyzer */
-    analyzer: boolean
-    /** command */
-    command: string
-  } & Record<string, string>
-}
+type UserConfigFn = (...args: Parameters<TaroUserConfigFn>) => IProjectConfig
 
-export type IPluginOptions<T = any> = { config: T }
-
-export namespace UserConfig {
+namespace UserConfig {
   /** 目标环境 */
   export type Mode = 'dev' | 'prod'
 
@@ -47,3 +36,5 @@ export namespace UserConfig {
     ci: CIOptions
   }
 }
+
+export type { AnyObject, IProjectConfig, UserConfig, UserConfigFn }

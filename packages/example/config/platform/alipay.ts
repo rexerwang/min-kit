@@ -1,4 +1,4 @@
-import type { UserConfig } from '@min-kit/helper/compile'
+import type { UserConfig } from '@min-kit/helper/taro'
 
 /** 支付宝小程序配置 */
 export default ((appid) => ({

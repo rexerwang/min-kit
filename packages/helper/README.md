@@ -9,9 +9,31 @@ Plugins & configs of Tarojs for miniapp
 
 ## Features
 
-### 🚀 Enhance compilation
+### 🚀 Enhance compilation configs
 
-⓵ First, add `config/mode` & `config/platform` configs. For example:
+`defineUserConfig` enhances Taro's build configuration for multiple platforms and environments.
+It also integrates popular third-party plugins.
+
+Multi-environment config files are defined in the `config/mode` directory,  
+Multi-platform config files are defined in the `config/platform` directory.
+
+Before compiling, execute `taro prebuild` command to generate the corresponding platform config files (such as `project.config.json`). At the same time, define the environment configuration (such as DefineConstants).
+
+```sh
+# generate configs for weapp platform in dev environment
+pnpm taro prebuild --type weapp --mode dev
+# compile weapp platform in dev environment
+pnpm taro build --type weapp --mode dev
+
+# generate configs for alipay platform in prod environment
+pnpm taro prebuild --type alipay --mode prod
+# compile alipay platform in prod environment
+pnpm taro build --type alipay --mode prod
+```
+
+Steps:
+
+⓵ First, add `config/mode` & `config/platform` config files. For example:
 
 - [packages/example/config/mode](https://github.com/rexerwang/min-kit/tree/main/packages/example/config/mode)
 - [packages/example/config/platform](https://github.com/rexerwang/min-kit/tree/main/packages/example/config/platform)
@@ -21,13 +43,13 @@ Plugins & configs of Tarojs for miniapp
 ```ts
 // config/index.ts
 
-import { defineUserConfig } from '@min-kit/helper/compile'
+import { defineUserConfig, IProjectConfig } from '@min-kit/helper/taro'
 
 import devConfig from './dev'
 import prodConfig from './prod'
 
 export default defineUserConfig((merge, { command, mode }) => {
-  const baseConfig = {
+  const baseConfig: IProjectConfig = {
     // your configs
   }
 
@@ -39,13 +61,13 @@ export default defineUserConfig((merge, { command, mode }) => {
 })
 ```
 
-⓷ Enable to integrate plugins with configs:
+⓷ Enable the integration of third-party plugins via the options of `defineUserConfig`:
 
 ```js
 defineUserConfig(() => your_config, {
   ci: true, // enable ci plugin
-  tailwindcss: true, // enable tailwindcss
-  imageMinimizer: true, // enable image minimizer
+  tailwindcss: true, // enable tailwindcss plugin
+  imageMinimizer: true, // enable image minimizer plugin
 })
 ```
 
@@ -53,26 +75,26 @@ defineUserConfig(() => your_config, {
 
   - need to install deps:
     ```sh
-    pnpm add -D @tarojs/plugin-mini-ci
+      pnpm add -D @tarojs/plugin-mini-ci
     ```
+  - the plugin options need to be defined in `config/platform`
 
-- `tailwindcss` by [weapp-tailwindcss](https://github.com/sonofmagic/weapp-tailwindcss)
+- `tailwindcss` by [weapp-tailwindcss](https://www.npmjs.com/package/weapp-tailwindcss)
 
   - need to install deps:
     ```sh
     pnpm add -D postcss tailwindcss
     ```
-  - with config extends:
-
-  ```js
-  // tailwind.config.js
-  module.exports = {
-    presets: [require('@min-kit/helper/config').tailwind],
-  }
-
-  // postcss.config.js
-  module.exports = require('@min-kit/helper/config').postcss()
-  ```
+  - with config presets:
+    ```js
+    // tailwind.config.js
+    module.exports = {
+      presets: [require('@min-kit/helper/presets').tailwind],
+      // your configs
+    }
+    // postcss.config.js
+    module.exports = require('@min-kit/helper/presets').postcss()
+    ```
 
 - `image-minimizer` by [image-minimizer-webpack-plugin](https://www.npmjs.com/package/image-minimizer-webpack-plugin)
 
@@ -86,14 +108,14 @@ defineUserConfig(() => your_config, {
     pnpm taro build --analyzer
     ```
 
-### 🚀 Enhance configs
+### 🚀 Enhance app configs
 
 #### ✅ define app.route by `defineRouteConfig`
 
 ```ts
 // src/app.route.ts
 
-import { defineRouteConfig } from '@min-kit/helper/runtime'
+import { defineRouteConfig } from '@min-kit/helper/app'
 
 const { Pages, Routes } = defineRouteConfig({
   Home: 'pages/index/index',
@@ -106,24 +128,21 @@ const { Pages, Routes } = defineRouteConfig({
 export { Pages, Routes }
 ```
 
-#### ✅ define app.config by `configChain`
+#### ✅ define app.config by `defineAppConfigChain`
 
 ```ts
 // src/app.config.ts
 
-import { configChain } from '@min-kit/helper/runtime'
+import { defineAppConfigChain } from '@min-kit/helper/app'
 import { isString } from '@min-kit/shared'
 
 import { Routes } from './app.route'
 
-export default configChain((chain, { mode }) => {
-  const isDev = mode === 'dev'
-
+export default defineAppConfigChain((chain, { env }) => {
   chain
     .entryPagePath(Routes.Home)
     .pages(Object.values(Routes).filter(isString))
     .subPackage('pkg-demo')
-    .when(isDev)
     .pages(Object.values(Routes.PkgDemo))
     .end()
     .window({
@@ -132,7 +151,7 @@ export default configChain((chain, { mode }) => {
       navigationBarTextStyle: 'black',
       navigationBarTitleText: 'WeChat',
     })
-    .wechat.debug(isDev)
+    .wechat.debug(env === 'development')
 })
 ```
 
