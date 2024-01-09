@@ -74,7 +74,7 @@ export default defineUserConfig(
               .use('babel')
               .loader('babel-loader')
               .options({
-                plugins: [['@min-kit/helper/compile/babel-plugin-replace-components', { RootPortal: 'View' }]],
+                plugins: [['@min-kit/helper/babel-plugin-replace-taro-components', { RootPortal: 'View' }]],
               })
           })
         },
