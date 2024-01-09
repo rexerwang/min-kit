@@ -63,7 +63,13 @@
     "@babel/core": {
       "optional": true
     },
+    "@tarojs/cli": {
+      "optional": true
+    },
     "@tarojs/plugin-mini-ci": {
+      "optional": true
+    },
+    "@tarojs/service": {
       "optional": true
     }
   },

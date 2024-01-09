@@ -56,6 +56,32 @@
     "react": ">=17",
     "react-dom": ">=17"
   },
+  "peerDependenciesMeta": {
+    "@tarojs/plugin-platform-alipay": {
+      "optional": true
+    },
+    "@tarojs/plugin-platform-h5": {
+      "optional": true
+    },
+    "@tarojs/plugin-platform-jd": {
+      "optional": true
+    },
+    "@tarojs/plugin-platform-qq": {
+      "optional": true
+    },
+    "@tarojs/plugin-platform-swan": {
+      "optional": true
+    },
+    "@tarojs/plugin-platform-tt": {
+      "optional": true
+    },
+    "@tarojs/plugin-platform-weapp": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
   "devDependencies": {
     "@min-kit/helper": "workspace:*",
     "@min-kit/jest": "workspace:^"
