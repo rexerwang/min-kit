@@ -62,7 +62,16 @@ jobs:
         run: pnpm test
 
       - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v3
+        run: |
+          # codecov cli
+          curl -Os https://uploader.codecov.io/latest/linux/codecov
+          chmod +x codecov
+          # upload flags one by one
+          for dir in ./packages/*; do
+            if [ -d "$dir/coverage/" ]; then
+              ./codecov -t ${CODECOV_TOKEN} -F $(basename $dir) -f $dir/coverage/coverage-final.json
+            fi
+          done
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 

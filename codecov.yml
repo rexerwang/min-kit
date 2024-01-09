@@ -1,26 +1,12 @@
-component_management:
-  individual_components:
-    - component_id: components # this is an identifier that should not be changed
-      name: components # this is a display name, and can be changed freely
-      paths:
-        - packages/components/
-    - component_id: extends
-      name: extends
-      paths:
-        - packages/extends/
-    - component_id: helper
-      name: helper
-      paths:
-        - packages/helper/
-    - component_id: hooks
-      name: hooks
-      paths:
-        - packages/hooks/
-    - component_id: shared
-      name: shared
-      paths:
-        - packages/shared/
-    - component_id: store
-      name: store
-      paths:
-        - packages/store/
+comment:
+  layout: 'newheader, diff, flags, files'
+  require_changes: false
+  require_base: false
+  require_head: true
+  show_carryforward_flags: true
+  show_critical_paths: true
+  hide_comment_details: true
+
+flag_management:
+  default_rules:
+    carryforward: true
