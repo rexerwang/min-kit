@@ -1,6 +1,6 @@
 {
   "name": "@min-kit/example",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "private": true,
   "description": "miniapp project template of based on React and Tarojs",
   "author": "rexerwang",
