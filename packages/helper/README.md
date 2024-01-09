@@ -11,12 +11,12 @@ Plugins & configs of Tarojs for miniapp
 
 ### 🚀 Enhance compilation
 
-1️⃣ First, add `config/mode` & `config/platform` configs. For example:
+⓵ First, add `config/mode` & `config/platform` configs. For example:
 
 - [packages/example/config/mode](https://github.com/rexerwang/min-kit/tree/main/packages/example/config/mode)
 - [packages/example/config/platform](https://github.com/rexerwang/min-kit/tree/main/packages/example/config/platform)
 
-2️⃣ Then, replace `defineConfig` with `defineUserConfig` in `config/index.ts`:
+⓶ Then, replace `defineConfig` with `defineUserConfig` in `config/index.ts`:
 
 ```ts
 // config/index.ts
@@ -39,10 +39,29 @@ export default defineUserConfig((merge, { command, mode }) => {
 })
 ```
 
-✅ It will integrate the following plugins as default:
+⓷ Enable to integrate plugins with configs:
+
+```js
+defineUserConfig(() => your_config, {
+  ci: true, // enable ci plugin
+  tailwindcss: true, // enable tailwindcss
+  imageMinimizer: true, // enable image minimizer
+})
+```
+
+- `ci` by [@tarojs/plugin-mini-ci](https://www.npmjs.com/package/@tarojs/plugin-mini-ci)
+
+  - need to install deps:
+    ```sh
+    pnpm add -D @tarojs/plugin-mini-ci
+    ```
 
 - `tailwindcss` by [weapp-tailwindcss](https://github.com/sonofmagic/weapp-tailwindcss)
 
+  - need to install deps:
+    ```sh
+    pnpm add -D postcss tailwindcss
+    ```
   - with config extends:
 
   ```js
@@ -56,17 +75,15 @@ export default defineUserConfig((merge, { command, mode }) => {
   ```
 
 - `image-minimizer` by [image-minimizer-webpack-plugin](https://www.npmjs.com/package/image-minimizer-webpack-plugin)
-  - optimize with [svgo](https://www.npmjs.com/package/svgo)
-  - optimize with [sharp](https://www.npmjs.com/package/sharp)
+
+  - optimize SVG with [svgo](https://www.npmjs.com/package/svgo)
+  - optimize JPEG, PNG, WebP, GIF and AVIF images with [sharp](https://www.npmjs.com/package/sharp)
+
 - `bundle-analyzer` by [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer)
+
   - with command to enable:
     ```sh
     pnpm taro build --analyzer
-    ```
-- `ci` by [@tarojs/plugin-mini-ci](https://www.npmjs.com/package/@tarojs/plugin-mini-ci)
-  - install if enabled:
-    ```sh
-    pnpm add -D @tarojs/plugin-mini-ci
     ```
 
 ### 🚀 Enhance configs

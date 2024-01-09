@@ -9,21 +9,12 @@ import type { IProjectConfig } from '@tarojs/taro/types/compile'
 type ConfigFn = (...args: Parameters<UserConfigFn>) => IProjectConfig
 
 type IOptions = {
-  /** @default true */
   ci?: boolean
-  /** @default true */
   tailwindcss?: boolean
-  /** @default true */
   imageMinimizer?: boolean
 }
 
-const defaultOptions: IOptions = {
-  ci: true,
-  tailwindcss: true,
-  imageMinimizer: true,
-}
-
-function defineUserConfig(fn: ConfigFn, options = defaultOptions) {
+function defineUserConfig(fn: ConfigFn, options: IOptions = {}) {
   const configService = new UserConfigService(argv.mode, process.env.TARO_ENV)
   configService.start()
 
