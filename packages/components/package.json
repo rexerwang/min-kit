@@ -23,6 +23,10 @@
     "dist",
     "styles"
   ],
+  "sideEffects": [
+    "*.css",
+    ".scss"
+  ],
   "keywords": [
     "min-kit",
     "components",

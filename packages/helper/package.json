@@ -39,6 +39,7 @@
   "files": [
     "dist"
   ],
+  "sideEffects": false,
   "keywords": [
     "min-kit",
     "helper",
