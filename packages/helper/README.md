@@ -14,10 +14,14 @@ Plugins & configs of Tarojs for miniapp
 `defineUserConfig` enhances Taro's build configuration for multiple platforms and environments.
 It also integrates popular third-party plugins.
 
-Multi-environment config files are defined in the `config/mode` directory,  
-Multi-platform config files are defined in the `config/platform` directory.
+The multi-environment config files are defined in the `config/mode` dir  
+The multi-platform config files are defined in the `config/platform` dir
 
 Before compiling, execute `taro prebuild` command to generate the corresponding platform config files (such as `project.config.json`). At the same time, define the environment configuration (such as DefineConstants).
+
+<details>
+
+<summary>Usage of <code>taro prebuild</code> command</summary>
 
 ```sh
 # generate configs for weapp platform in dev environment
@@ -31,7 +35,9 @@ pnpm taro prebuild --type alipay --mode prod
 pnpm taro build --type alipay --mode prod
 ```
 
-Steps:
+</details>
+
+#### 🟢 Steps to use `defineUserConfig`
 
 ⓵ First, add `config/mode` & `config/platform` config files. For example:
 
@@ -71,11 +77,14 @@ defineUserConfig(() => your_config, {
 })
 ```
 
+<details>
+<summary>Setup third-party plugins</summary>
+
 - `ci` by [@tarojs/plugin-mini-ci](https://www.npmjs.com/package/@tarojs/plugin-mini-ci)
 
   - need to install deps:
     ```sh
-      pnpm add -D @tarojs/plugin-mini-ci
+    pnpm add -D @tarojs/plugin-mini-ci
     ```
   - the plugin options need to be defined in `config/platform`
 
@@ -108,9 +117,11 @@ defineUserConfig(() => your_config, {
     pnpm taro build --analyzer
     ```
 
+</details>
+
 ### 🚀 Enhance app configs
 
-#### ✅ define app.route by `defineRouteConfig`
+#### 🟢 Define app.route with `defineRouteConfig`
 
 ```ts
 // src/app.route.ts
@@ -128,7 +139,7 @@ const { Pages, Routes } = defineRouteConfig({
 export { Pages, Routes }
 ```
 
-#### ✅ define app.config by `defineAppConfigChain`
+#### 🟢 Define app.config with `defineAppConfigChain`
 
 ```ts
 // src/app.config.ts
