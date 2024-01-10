@@ -1,3 +1,6 @@
 module.exports = require('@min-kit/jest/config')({
-  collectCoverageFrom: ['!src/debounce.ts', '!src/throttle.ts'],
+  collectCoverageFrom: [
+    // Fork from lodash
+    '!src/{debounce,throttle}.ts',
+  ],
 })

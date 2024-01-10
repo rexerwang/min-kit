@@ -11,7 +11,7 @@ const baseConfig = defineJestConfig({
   testEnvironment: '@happy-dom/jest-environment', // 'jsdom'
   testMatch: ['<rootDir>/src/__tests__/**/*.test.ts?(x)'],
   collectCoverageFrom: ['<rootDir>/src/**/*.ts?(x)', '!**/__tests__/**'],
-  coverageReporters: process.env.CI ? ['json'] : ['json', 'lcov', 'text-summary'],
+  coverageReporters: process.env.CI ? ['json'] : ['html', 'text'],
   passWithNoTests: true,
 })
 
