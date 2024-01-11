@@ -1,6 +1,6 @@
 import { copy, go, logger, toast } from '@min-kit/extends'
 import { useQuery } from '@min-kit/hooks'
-import { attempt, qs } from '@min-kit/shared'
+import { attempt, Route } from '@min-kit/shared'
 import { Button, Input, ScrollView, Text, View } from '@tarojs/components'
 import {
   clearStorageSync,
@@ -42,7 +42,7 @@ export default function AppPanel() {
   const [subscribeIds, setSubscribeIds] = useState('')
 
   const getPageStack = () => {
-    const stack = getCurrentPages().map((v) => qs.stringifyUrl({ url: '/' + v.route, query: v.options }))
+    const stack = getCurrentPages().map((v) => Route.generate(v.route ?? '/', v.options))
 
     setPageStack({
       stack,
@@ -98,12 +98,12 @@ export default function AppPanel() {
     // add
     else {
       option.title = '添加'
-      option.placeholderText = 'Key: Type = Value'
+      option.placeholderText = 'Key:Type=Value'
       option.success = ({ content, confirm }) => {
         if (!confirm || !content) return
 
-        const [keyType, value] = (content as string).split('=').map((i) => i.trim())
-        const [key, type] = keyType.split(': ').map((i) => i.trim())
+        const [keyType, value] = (content as string).split('=', 2).map((i) => i.trim())
+        const [key, type] = keyType.split(':').map((i) => i.trim())
 
         setStorageData(key, value, (type || StorageType.String) as StorageType)
         selectKey(key)
