@@ -1,5 +1,6 @@
 /** @type {import('eslint').ESLint.ConfigData} */
 module.exports = {
+  root: true,
   extends: ['taro/react', 'prettier', 'plugin:prettier/recommended'],
   plugins: ['import', 'simple-import-sort', 'prettier'],
   env: {
