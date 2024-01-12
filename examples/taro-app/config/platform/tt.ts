@@ -3,7 +3,7 @@ import type { UserConfig } from '@min-kit/helper/taro'
 /** 抖音小程序配置 */
 export default ((appid) => {
   const config = {
-    projectname: '@min-kit/example',
+    projectname: '@min-kit/taro-app',
     appid,
     setting: {
       urlCheck: false,

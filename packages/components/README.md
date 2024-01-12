@@ -80,4 +80,4 @@ import '@min-kit/components/styles/min-navigation-bar.scss'
 import '@min-kit/components/styles/modal.scss'
 ```
 
-More usage examples 👉 https://github.com/rexerwang/min-kit/tree/main/packages/example
+More usage examples 👉 https://github.com/rexerwang/min-kit/tree/main/examples

@@ -10,7 +10,7 @@ cmd() {
   $*
 }
 
-dir=./packages/example
+dir=./examples/taro-app
 name=$(node -p "require(\"$dir/package.json\").name")
 version=$(node -p "require(\"$dir/package.json\").version")
 

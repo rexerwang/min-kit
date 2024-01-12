@@ -46,5 +46,4 @@ yarn add -D @min-kit/helper
 
 ### Examples
 
-[@min-kit/example](./packages/example) is a example project for miniapp based on `@min-kit` + `Taro` + `React` + `Typescript`,
-which includes usage examples of the `@min-kit/*`.
+- [taro-app](./examples/taro-app): min-kit usage examples

@@ -8,11 +8,11 @@
   "repository": "rexerwang/min-kit",
   "scripts": {
     "build": "pnpm -r --sort run build",
-    "dev": "pnpm build --dev && pnpm --dir=packages/example run dev:weapp",
+    "dev": "pnpm build --dev && pnpm --dir examples/taro-app run dev:weapp",
     "test": "pnpm -r test -- --coverage",
     "lint:tsc": "pnpm -r exec tsc --noEmit",
-    "lint:eslint": "eslint packages/ --fix --ext .ts,tsx",
-    "lint:style": "stylelint --fix \"packages/**/*.{scss,css}\"",
+    "lint:eslint": "eslint ./ --fix --ext .ts,tsx",
+    "lint:style": "stylelint --fix \"{packages,examples}/**/*.{scss,css}\"",
     "format": "prettier --write .",
     "postinstall": "husky install"
   },

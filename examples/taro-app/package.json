@@ -1,8 +1,8 @@
 {
-  "name": "@min-kit/example",
+  "name": "@min-kit/taro-app",
   "version": "0.5.7",
   "private": true,
-  "description": "miniapp project template of based on React and Tarojs",
+  "description": "min-kit examples of taro miniapp project",
   "author": "rexerwang",
   "license": "MIT",
   "repository": "rexerwang/min-kit",

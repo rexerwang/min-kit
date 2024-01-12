@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-path=packages/example/dist/base.wxml
+path=examples/taro-app/dist/base.wxml
 
 # temporarily fix the compilation issue: "Template `tmpl_0_66` not found"
 if [ ! "$(grep "tmpl_0_66" $path)" ]; then

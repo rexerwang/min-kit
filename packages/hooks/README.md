@@ -7,4 +7,4 @@
 
 React Hooks for miniapp
 
-More usage examples 👉 https://github.com/rexerwang/min-kit/tree/main/packages/example
+More usage examples 👉 https://github.com/rexerwang/min-kit/tree/main/examples

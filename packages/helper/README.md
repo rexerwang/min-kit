@@ -41,8 +41,8 @@ pnpm taro build --type alipay --mode prod
 
 ⓵ First, add `config/mode` & `config/platform` config files. For example:
 
-- [packages/example/config/mode](https://github.com/rexerwang/min-kit/tree/main/packages/example/config/mode)
-- [packages/example/config/platform](https://github.com/rexerwang/min-kit/tree/main/packages/example/config/platform)
+- [examples/taro-app/config/mode](https://github.com/rexerwang/min-kit/tree/main/examples/config/mode)
+- [examples/taro-app/config/platform](https://github.com/rexerwang/min-kit/tree/main/examples/config/platform)
 
 ⓶ Then, replace `defineConfig` with `defineUserConfig` in `config/index.ts`:
 
@@ -180,4 +180,4 @@ declare type Mode = 'dev' | 'prod'
 declare type DefineConstants = {}
 ```
 
-More usage examples 👉 https://github.com/rexerwang/min-kit/tree/main/packages/example
+More usage examples 👉 https://github.com/rexerwang/min-kit/tree/main/examples
