@@ -32,8 +32,8 @@ jobs:
 
       - name: Run lint
         run: |
-          pnpm exec eslint packages/ --ext .ts,tsx
-          pnpm exec stylelint "packages/**/*.{scss,css}"
+          pnpm exec eslint ./ --ext .ts,tsx
+          pnpm exec stylelint "{packages,examples}/**/*.{scss,css}"
           pnpm exec prettier --check .
 
   test:
