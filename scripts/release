@@ -4,14 +4,9 @@ set -e
 # check build
 pnpm build
 
-v=${1-patch}
-
-npm version $v
+npm version ${1-patch}
 version=$(node -p 'require("./package.json").version')
 pnpm --parallel -r exec npm version $version
-
-# Use `changelogithub`
-# pnpm exec conventional-changelog -p conventionalcommits -t v -i CHANGELOG.md -s
 
 git add .
 git commit -m "chore(release): v$version"

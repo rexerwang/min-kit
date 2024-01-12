@@ -7,14 +7,14 @@ cmd() {
   $*
 }
 
-# temporarily fix the compilation issue: "Template `tmpl_0_66` not found"
 patch() {
   local target=${1-undefined}
-  local path=examples/$target/dist/base.wxml
 
-  if [ ! "$(grep "tmpl_0_66" $path)" ]; then
-    echo "append template \`tmpl_0_66\` in $path"
-    cat >>$path <<EOF
+  # temporarily fix the compilation issue: "Template `tmpl_0_66` not found"
+  local template=examples/$target/dist/base.wxml
+  if [ ! "$(grep "tmpl_0_66" $template)" ]; then
+    echo "append template \`tmpl_0_66\` in $template"
+    cat >>$template <<EOF
 
 <template name="tmpl_0_66">
   <web-view src="{{i.p0}}" bindmessage="eh" bindload="eh" binderror="eh" style="{{i.st}}" class="{{i.cl}}" bindtap="eh"  id="{{i.uid||i.sid}}" data-sid="{{i.sid}}">
@@ -29,8 +29,8 @@ EOF
 
 release() {
   local target=${1-undefined}
+  local opts="--mode=${2-dev} --type ${3-weapp}"
   local dir=./examples/$target
-  local mode=${2-dev}
   local name=$(node -p "require(\"$dir/package.json\").name")
   local version=$(node -p "require(\"$dir/package.json\").version")
 
@@ -39,18 +39,15 @@ release() {
   export CI_MINI_ROBOT=2
 
   cmd pnpm --dir $dir run clean
-  cmd pnpm --dir $dir exec taro prebuild --type weapp --mode=$mode
-  cmd pnpm --dir $dir exec taro build --type weapp --mode=$mode
+  cmd pnpm --dir $dir exec taro prebuild $opts
+  cmd pnpm --dir $dir exec taro build $opts
   cmd patch $target
-  cmd pnpm --dir $dir exec taro upload --type weapp --mode=$mode
+  cmd pnpm --dir $dir exec taro upload $opts
 }
 
 case $1 in
-release)
+release | patch)
   $1 $2 $3
-  ;;
-patch)
-  $1 $2
   ;;
 *)
   echo "unknown command"
