@@ -1,5 +1,5 @@
 {
-  "name": "@min-kit/taro-app",
+  "name": "app-min-kit",
   "version": "0.5.7",
   "private": true,
   "description": "min-kit examples of taro miniapp project",

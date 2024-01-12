@@ -8,7 +8,7 @@
   "repository": "rexerwang/min-kit",
   "scripts": {
     "build": "pnpm -r --sort run build",
-    "dev": "pnpm build --dev && pnpm --dir examples/taro-app run dev:weapp",
+    "dev": "pnpm build --dev && pnpm --dir examples/app-min-kit run dev:weapp",
     "test": "pnpm -r test -- --coverage",
     "lint:tsc": "pnpm -r exec tsc --noEmit",
     "lint:eslint": "eslint ./ --fix --ext .ts,tsx",

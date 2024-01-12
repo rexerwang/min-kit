@@ -44,6 +44,6 @@ yarn add @min-kit/components @min-kit/extends @min-kit/hooks @min-kit/store @min
 yarn add -D @min-kit/helper
 ```
 
-### Examples
+## Examples
 
-- [taro-app](./examples/taro-app): min-kit usage examples
+- [examples/app-min-kit](./examples/app-min-kit)

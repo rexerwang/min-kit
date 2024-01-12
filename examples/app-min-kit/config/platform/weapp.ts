@@ -5,8 +5,8 @@ export default ((appid) => ({
   project: {
     output: 'project.config.json',
     miniprogramRoot: 'dist',
-    projectname: '@min-kit/taro-app',
-    description: '@min-kit/taro-app',
+    projectname: 'app-min-kit',
+    description: 'app-min-kit',
     appid,
     setting: {
       es6: true, // 预览时需要开启
