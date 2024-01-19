@@ -39,7 +39,7 @@
     "ios >= 8"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.23.7",
+    "@babel/runtime": "^7.23.8",
     "@min-kit/components": "workspace:*",
     "@min-kit/extends": "workspace:*",
     "@min-kit/helper": "workspace:*",
