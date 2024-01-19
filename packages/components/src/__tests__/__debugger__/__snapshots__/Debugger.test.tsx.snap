@@ -104,7 +104,6 @@ exports[`<Debugger /> should render <Debugger /> toMatchSnapshot 1`] = `
         animation="false"
         class="movable-view"
         direction="all"
-        style="transform: translateX(0px) translateY(0px) translateZ(0px) scale(1);"
         x="0"
         y="0"
       >
