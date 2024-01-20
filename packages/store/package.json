@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "immer": "^10.0.3",
-    "zustand": "^4.4.7"
+    "zustand": "^4.5.0"
   },
   "peerDependencies": {
     "@tarojs/taro": ">=3.6",
