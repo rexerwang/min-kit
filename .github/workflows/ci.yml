@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    paths-ignore:
-      - '**/README.md'
 
   pull_request:
     branches:
@@ -15,6 +13,7 @@ permissions: {}
 
 jobs:
   lint:
+    if: ${{ !(startsWith(github.event.head_commit.message, 'chore(release)')) }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -37,6 +36,7 @@ jobs:
           pnpm exec prettier --check .
 
   test:
+    if: ${{ !(startsWith(github.event.head_commit.message, 'chore(release)')) }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -76,6 +76,7 @@ jobs:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   build-example:
+    if: ${{ !(startsWith(github.event.head_commit.message, 'chore(release)')) }}
     strategy:
       matrix:
         platform: [weapp, alipay, tt]
