@@ -5,7 +5,7 @@ import { canIUse, Current, getLogManager, getRealtimeLogManager, getSystemInfoSy
 import { RequestError } from '../request/RequestError'
 
 type LogLevel = 'error' | 'warn' | 'info' | 'debug'
-type Meta = { route?: string; timestamp: number }
+type LogMeta = { name: string; filters: string[]; route?: string; timestamp: number }
 
 export interface LoggerOption {
   reporter?: {
@@ -29,7 +29,7 @@ export interface LoggerOption {
     /**
      * custom reporter
      */
-    custom?(log: { level: LogLevel; filters: string[]; msgs: any[]; meta: Meta }): any
+    custom?(log: { level: LogLevel; messages: any[]; meta: LogMeta }): any
   }
 
   /**
@@ -94,7 +94,9 @@ export class Logger {
   private report(level: LogLevel, msgs: any[], filters: any[]) {
     const reporter = this.option.reporter ?? {}
 
-    const meta = (): Meta => ({
+    const meta = (): LogMeta => ({
+      name: this.name,
+      filters,
       route: Current.router ? Route.generate(Current.router.path, Current.router.params) : undefined,
       timestamp: Date.now(),
     })
@@ -102,43 +104,37 @@ export class Logger {
     const report = () => {
       if (level === 'debug') return
 
-      if (reporter.realtime) {
+      if (reporter.realtime && this.realtimeReporter) {
         attempt(() => {
-          if (this.realtimeReporter) {
-            const messages = [...msgs]
-            Current.page && this.realtimeReporter.in(Current.page)
-            filters.forEach((i) => this.realtimeReporter!.addFilterMsg(i))
-            this.option.meta && messages.push('meta:', meta())
-            this.realtimeReporter![level](...messages)
-          }
+          Current.page && this.realtimeReporter!.in(Current.page)
+          filters.forEach((i) => this.realtimeReporter!.addFilterMsg(i))
+          const messages = this.option.meta ? [meta(), ...msgs] : msgs
+          this.realtimeReporter![level](...messages)
         })
       }
 
-      if (reporter.feedback) {
+      if (reporter.feedback && this.feedbackReporter) {
         attempt(() => {
-          if (this.feedbackReporter) {
-            const messages = [...msgs]
-            this.option.meta && messages.push('meta:', meta())
-            switch (level) {
-              case 'error':
-                this.feedbackReporter.warn({ level, filters }, ...messages)
-                break
+          const messages = this.option.meta ? [meta(), ...msgs] : msgs
+          switch (level) {
+            case 'error':
+              this.feedbackReporter!.warn({ level, filters }, ...messages)
+              break
 
-              case 'warn':
-                this.feedbackReporter.warn({ level, filters }, ...messages)
-                break
+            case 'warn':
+              this.feedbackReporter!.warn({ level, filters }, ...messages)
+              break
 
-              case 'info':
-                this.feedbackReporter.info({ level, filters }, ...messages)
-                break
-            }
+            case 'info':
+              this.feedbackReporter!.info({ level, filters }, ...messages)
+              break
           }
         })
       }
 
       if (isFunction(reporter.custom)) {
         attempt(() => {
-          reporter.custom!({ level, filters, msgs, meta: meta() })
+          reporter.custom!({ level, messages: msgs, meta: meta() })
         })
       }
     }
@@ -162,34 +158,36 @@ export class Logger {
   }
 
   private logging(level: LogLevel, msgs: any[]) {
-    const outputs: any[] = [this.name]
-    const reports: any[] = []
-    const filters: string[] = []
+    const tags: string[] = []
+    const outputs: any[] = []
 
-    msgs.forEach((msg) => {
-      if (isString(msg) && msg.startsWith('#')) {
-        const tag = msg.slice(1)
-        outputs.push(`[${tag}]`)
-        filters.push(tag)
-        reports.push(tag)
+    let hashtag = -1 // start index
+    msgs.forEach((msg, i) => {
+      if (isString(msg) && msg.startsWith('#') && hashtag + 1 === i) {
+        hashtag = i
+        tags.push(msg.slice(1))
       } else if (RequestError.is(msg)) {
         const error = msg.normalize()
         outputs.push(error, 'request:', error.request)
-        reports.push(error, 'request:', error.request)
       } else {
         outputs.push(msg)
-        reports.push(msg)
       }
     })
 
-    this.output(level, outputs)
+    this.output(
+      level,
+      [this.name].concat(
+        tags.map((v) => `[${v}]`),
+        outputs,
+      ),
+    )
 
-    return this.report(level, reports, filters)
+    return this.report(level, outputs, tags)
   }
 
   /**
    * output & report error message.
-   * add filters by hashtags in message ('#filter')
+   * add filters by hashtags in messages head ('#filter')
    *
    * @notice it will report log by reporters at the same time if enabled
    * @usage
@@ -204,7 +202,7 @@ export class Logger {
 
   /**
    * output warn message.
-   * add filters by hashtags in message ('#filter')
+   * add filters by hashtags in messages head ('#filter')
    *
    * @notice report by `logger.warn(...).report()`
    * @usage
@@ -222,7 +220,7 @@ export class Logger {
 
   /**
    * output info message.
-   * add filters by hashtags in message ('#filter')
+   * add filters by hashtags in messages head ('#filter')
    *
    * @notice report by `logger.info(...).report()`
    * @usage
@@ -239,6 +237,7 @@ export class Logger {
 
   /**
    * invoke `console.debug` for stdout
+   * add filters by hashtags in messages head ('#filter')
    */
   debug(...msgs: any[]) {
     this.logging('debug', msgs)

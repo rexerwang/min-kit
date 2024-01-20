@@ -84,27 +84,37 @@ describe('Logger', () => {
       },
     })
 
-    logger[level]('#tag', 'message', { level })?.report()
+    logger[level]('#tag1', '#tag2', 'something', '#hashtag', { foo: 'bar' })?.report()
 
-    expect(consoleSpy[level]).toHaveBeenCalledWith(TIME, NAME, '[tag]', 'message', { level })
+    expect(consoleSpy[level]).toHaveBeenCalledWith(TIME, NAME, '[tag1]', '[tag2]', 'something', '#hashtag', {
+      foo: 'bar',
+    })
 
     if (level === 'debug') {
       expect(customStub).not.toHaveBeenCalled()
     } else {
-      const meta = expect.any(Object)
+      const meta = expect.objectContaining({
+        name: NAME,
+        filters: ['tag1', 'tag2'],
+        route: undefined,
+        timestamp: 0,
+      })
 
       const realtime = realtimeLogManagerStub[level]
-      if (realtime) expect(realtime).toHaveBeenCalledWith('tag', 'message', { level }, 'meta:', meta)
+      if (realtime) {
+        expect(realtime).toHaveBeenCalledWith(meta, 'something', '#hashtag', { foo: 'bar' })
+      }
 
       const feedback = logManagerStub[level]
       if (feedback) {
-        expect(feedback).toHaveBeenCalledWith({ filters: ['tag'], level }, 'tag', 'message', { level }, 'meta:', meta)
+        expect(feedback).toHaveBeenCalledWith({ filters: ['tag1', 'tag2'], level }, meta, 'something', '#hashtag', {
+          foo: 'bar',
+        })
       }
 
       expect(customStub).toHaveBeenCalledWith({
         level,
-        filters: ['tag'],
-        msgs: ['tag', 'message', { level }],
+        messages: ['something', '#hashtag', { foo: 'bar' }],
         meta,
       })
     }
