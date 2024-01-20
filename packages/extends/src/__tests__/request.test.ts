@@ -144,4 +144,10 @@ describe('request', () => {
 
     await expect(http.post('/200')).rejects.toThrowErrorMatchingSnapshot()
   })
+
+  it('RequestError.is', async () => {
+    const { RequestError } = await import('../request')
+    const error = new RequestError('errMsg', {} as any)
+    expect(RequestError.is(error)).toBeTruthy()
+  })
 })

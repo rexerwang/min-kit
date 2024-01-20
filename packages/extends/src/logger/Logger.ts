@@ -2,8 +2,6 @@
 import { attempt, isFunction, isString, Route } from '@min-kit/shared'
 import { canIUse, Current, getLogManager, getRealtimeLogManager, getSystemInfoSync } from '@tarojs/taro'
 
-import { RequestError } from '../request/RequestError'
-
 type LogLevel = 'error' | 'warn' | 'info' | 'debug'
 type LogMeta = { name: string; filters: string[]; route?: string; timestamp: number }
 
@@ -166,9 +164,6 @@ export class Logger {
       if (isString(msg) && msg.startsWith('#') && hashtag + 1 === i) {
         hashtag = i
         tags.push(msg.slice(1))
-      } else if (RequestError.is(msg)) {
-        const error = msg.normalize()
-        outputs.push(error, 'request:', error.request)
       } else {
         outputs.push(msg)
       }

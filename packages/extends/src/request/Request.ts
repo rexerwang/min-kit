@@ -113,7 +113,9 @@ export class Request {
       },
       throw(e) {
         const error = e instanceof RequestError ? e : new RequestError(e, this)
-        console.error(error) // output error directly
+        const request = this.request
+        const response = { statusCode: this.statusCode, header: this.header, data: this.data }
+        console.error(error, { request, response })
         throw error
       },
       async replay() {

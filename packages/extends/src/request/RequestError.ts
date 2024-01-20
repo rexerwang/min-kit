@@ -16,26 +16,6 @@ export class RequestError extends Error {
     this.ctx = ctx
   }
 
-  normalize() {
-    const error = new Error(this.message)
-    error.name = this.name
-    error.stack = this.stack
-
-    const request = {
-      statusCode: this.ctx.statusCode,
-      data: this.ctx.data,
-      header: this.ctx.header,
-      request: {
-        url: this.ctx.request.url,
-        data: this.ctx.request.data,
-        header: this.ctx.request.header,
-        replayed: this.ctx.request.replayed,
-      },
-    }
-
-    return Object.assign(error, { request })
-  }
-
   static is(value: unknown): value is RequestError {
     return value instanceof RequestError
   }

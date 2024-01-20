@@ -120,16 +120,6 @@ describe('Logger', () => {
     }
   })
 
-  it('should output formatted RequestError message', async () => {
-    const { getLogger } = await import('../logger/index')
-    const { RequestError } = await import('../request/RequestError')
-    const error = new RequestError(new Error('test'), { request: {} } as any)
-    getLogger(NAME).error(error)
-
-    const normalized = error.normalize()
-    expect(consoleSpy.error).toHaveBeenCalledWith(TIME, NAME, normalized, 'request:', error.normalize().request)
-  })
-
   it('logger exports', async () => {
     const { logger } = await import('../logger/index')
     const { Logger } = await import('../logger/Logger')
