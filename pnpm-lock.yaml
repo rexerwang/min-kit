@@ -324,8 +324,8 @@ importers:
         specifier: '>=3.6'
         version: 3.6.21(@types/react@18.2.45)(postcss@8.4.33)
       autoprefixer:
-        specifier: ^10.4.16
-        version: 10.4.16(postcss@8.4.33)
+        specifier: ^10.4.17
+        version: 10.4.17(postcss@8.4.33)
       image-minimizer-webpack-plugin:
         specifier: ^4.0.0
         version: 4.0.0(imagemin@8.0.1)(sharp@0.33.2)(svgo@3.2.0)(webpack@5.88.2)
@@ -7885,15 +7885,15 @@ packages:
     resolution: {integrity: sha512-Xcz9l0z7y9yQ9rdDaxlmaI4uJHf/T8g9hOEzJcsEqX2SjCj4J20uK7+ldkDHMbpJDK76wF7xEIgxc/vSlsfw5w==}
     engines: {node: '>=10.12.0'}
 
-  /autoprefixer@10.4.16(postcss@8.4.33):
-    resolution: {integrity: sha512-7vd3UC6xKp0HLfua5IjZlcXvGAGy7cBAXTg2lyQ/8WpNhd6SiZ8Be+xm3FyBSYJx5GKcpRCzBh7RH4/0dnY+uQ==}
+  /autoprefixer@10.4.17(postcss@8.4.33):
+    resolution: {integrity: sha512-/cpVNRLSfhOtcGflT13P2794gVSgmPgTR+erw5ifnMLZb0UnSlkK4tquLmkd3BhA+nLo5tX8Cu0upUsGKvKbmg==}
     engines: {node: ^10 || ^12 || >=14}
     hasBin: true
     peerDependencies:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.22.2
-      caniuse-lite: 1.0.30001570
+      caniuse-lite: 1.0.30001579
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -7905,7 +7905,7 @@ packages:
     hasBin: true
     dependencies:
       browserslist: 4.22.2
-      caniuse-lite: 1.0.30001570
+      caniuse-lite: 1.0.30001579
       normalize-range: 0.1.2
       num2fraction: 1.2.2
       picocolors: 0.2.1
@@ -8888,7 +8888,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001570
+      caniuse-lite: 1.0.30001579
       electron-to-chromium: 1.4.615
       node-releases: 2.0.14
       update-browserslist-db: 1.0.13(browserslist@4.22.2)
@@ -9072,12 +9072,12 @@ packages:
     resolution: {integrity: sha512-bsTwuIg/BZZK/vreVTYYbSWoe2F+71P7K5QGEX+pT250DZbfU1MQ5prOKpPR+LL6uWKK3KMwMCAS74QB3Um1uw==}
     dependencies:
       browserslist: 4.22.2
-      caniuse-lite: 1.0.30001570
+      caniuse-lite: 1.0.30001579
       lodash.memoize: 4.1.2
       lodash.uniq: 4.5.0
 
-  /caniuse-lite@1.0.30001570:
-    resolution: {integrity: sha512-+3e0ASu4sw1SWaoCtvPeyXp+5PsjigkSt8OXZbF9StH5pQWbxEjLAZE3n8Aup5udop1uRiKA7a4utUk/uoSpUw==}
+  /caniuse-lite@1.0.30001579:
+    resolution: {integrity: sha512-u5AUVkixruKHJjw/pj9wISlcMpgFWzSrczLZbrqBSxukQixmg0SJ5sZTpvaFvxU0HoQKd4yoyAogyrAz9pzJnA==}
 
   /capital-case@1.0.4:
     resolution: {integrity: sha512-ds37W8CytHgwnhGGTi88pcPyR15qoNkOpYwmMMfnWqqWgESapLqvDx6huFjQ5vqWSn2Z06173XNA7LtMOeUh1A==}
@@ -14944,7 +14944,7 @@ packages:
       '@babel/traverse': 7.21.4
       '@vue/reactivity': 3.0.5
       acorn: 6.4.2
-      autoprefixer: 10.4.16(postcss@8.4.33)
+      autoprefixer: 10.4.17(postcss@8.4.33)
       babel-code-frame: 6.26.0
       babel-core: 6.26.0
       babel-preset-es2015: 6.24.1
@@ -15036,7 +15036,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      autoprefixer: 10.4.16(postcss@8.4.33)
+      autoprefixer: 10.4.17(postcss@8.4.33)
       citty: 0.1.5
       cssnano: 6.0.3(postcss@8.4.33)
       defu: 6.1.3
