@@ -47,7 +47,7 @@ export class Logger {
   private option: LoggerOption = {
     reporter: {
       realtime: true,
-      feedback: true,
+      feedback: false,
     },
     timestamp: true,
     meta: true,

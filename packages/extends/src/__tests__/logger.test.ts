@@ -41,7 +41,7 @@ describe('Logger', () => {
     const { getLogger } = await import('../logger/index')
     getLogger(NAME)
     expect(consoleSpy.debug).toHaveBeenCalledWith(TIME, NAME, '[Logger]', {
-      reporter: { feedback: true, realtime: true },
+      reporter: { feedback: false, realtime: true },
       timestamp: true,
       meta: true,
     })
