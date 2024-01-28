@@ -1,4 +1,4 @@
-import { useDidShow } from '@tarojs/taro'
+import Taro, { useDidShow } from '@tarojs/taro'
 
 interface LaunchOptions extends Taro.getLaunchOptionsSync.LaunchOptions {
   query: {
