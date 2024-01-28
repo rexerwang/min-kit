@@ -62,30 +62,34 @@ export class Logger {
   }
 
   setOption(option: LoggerOption) {
-    this.option = Object.assign(this.option, option, {
-      reporter: { ...this.option.reporter, ...option.reporter },
-    })
+    const reporter = { ...this.option.reporter, ...option.reporter }
+    Object.assign(this.option, option)
 
     // disable in Devtools
     if (isDevtools) {
-      this.option.reporter!.realtime = false
-      this.option.reporter!.feedback = false
+      reporter.realtime = false
+      reporter.feedback = false
       this.option.timestamp = false
     }
 
-    if (canIUse('getRealtimeLogManager') && this.option.reporter?.realtime) {
+    if (canIUse('getRealtimeLogManager') && reporter.realtime) {
       attempt(() => {
         this.realtimeReporter ||= getRealtimeLogManager()
         this.realtimeReporter.setFilterMsg(this.name)
       })
+    } else {
+      reporter.realtime = false
     }
 
-    if (canIUse('getLogManager') && this.option.reporter?.feedback) {
+    if (canIUse('getLogManager') && reporter.feedback) {
       attempt(() => {
         this.feedbackReporter ||= getLogManager()
       })
+    } else {
+      reporter.feedback = false
     }
 
+    this.option.reporter = reporter
     this.debug('#Logger', this.option)
   }
 
