@@ -90,7 +90,7 @@
     "postcss-rem-to-responsive-pixel": "^6.0.1",
     "sharp": "^0.33.2",
     "svgo": "^3.2.0",
-    "weapp-tailwindcss": "^3.0.7",
+    "weapp-tailwindcss": "^3.0.8",
     "webpack-bundle-analyzer": "^4.10.1",
     "webpack-merge": "^5.10.0"
   },
