@@ -15,6 +15,9 @@ updates:
           - 'postcss-html-transform'
           - 'postcss-plugin-constparse'
           - 'postcss-pxtransform'
+      babel:
+        patterns:
+          - '@babel*'
       typescript-eslint:
         patterns:
           - '@typescript-eslint*'
