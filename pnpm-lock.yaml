@@ -93,8 +93,8 @@ importers:
   examples/app-min-kit:
     dependencies:
       '@babel/runtime':
-        specifier: ^7.23.8
-        version: 7.23.8
+        specifier: ^7.23.9
+        version: 7.23.9
       '@min-kit/components':
         specifier: workspace:*
         version: link:../../packages/components
@@ -2877,8 +2877,8 @@ packages:
     dependencies:
       regenerator-runtime: 0.13.11
 
-  /@babel/runtime@7.23.8:
-    resolution: {integrity: sha512-Y7KbAP984rn1VGMbGqKmBLio9V7y5Je9GvU4rQPCPinCyNfUcToxIXl06d59URp/F3LwinvODxab5N/G6qggkw==}
+  /@babel/runtime@7.23.9:
+    resolution: {integrity: sha512-0CX6F+BI2s9dkUqr08KFrAIZgNFj75rdBU/DjCyYLIaV/quFjkk6T+EJ2LkZHyZTbEV4L5p97mNkUsHl2wLFAw==}
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.1
@@ -4122,7 +4122,7 @@ packages:
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       bmp-js: 0.1.0
@@ -4145,7 +4145,7 @@ packages:
   /@jimp/core@0.9.8:
     resolution: {integrity: sha512-N4GCjcXb0QwR5GBABDK2xQ3cKyaF7LlCYeJEG9mV7G/ynBoRqJe4JA6YKU9Ww9imGkci/4A594nQo8tUIqdcBw==}
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/utils': 0.9.8
       any-base: 1.1.0
       buffer: 5.7.1
@@ -4168,7 +4168,7 @@ packages:
   /@jimp/custom@0.9.8:
     resolution: {integrity: sha512-1UpJjI7fhX02BWLJ/KEqPwkHH60eNkCNeD6hEd+IZdTwLXfZCfFiM5BVlpgiZYZJSsVoRiAL4ne2Q5mCiKPKyw==}
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/core': 0.9.8
       core-js: 3.34.0
 
@@ -4187,7 +4187,7 @@ packages:
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
@@ -4207,7 +4207,7 @@ packages:
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
@@ -4226,7 +4226,7 @@ packages:
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
@@ -4244,7 +4244,7 @@ packages:
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
@@ -4262,7 +4262,7 @@ packages:
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
@@ -4281,7 +4281,7 @@ packages:
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
@@ -4309,7 +4309,7 @@ packages:
       '@jimp/plugin-resize': '>=0.3.5'
       '@jimp/plugin-scale': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/plugin-blit': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/plugin-resize': 0.9.8(@jimp/custom@0.9.8)
@@ -4339,7 +4339,7 @@ packages:
       '@jimp/plugin-resize': '>=0.3.5'
       '@jimp/plugin-scale': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/plugin-crop': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/plugin-resize': 0.9.8(@jimp/custom@0.9.8)
@@ -4360,7 +4360,7 @@ packages:
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
@@ -4378,7 +4378,7 @@ packages:
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
@@ -4396,7 +4396,7 @@ packages:
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
@@ -4414,7 +4414,7 @@ packages:
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
@@ -4435,7 +4435,7 @@ packages:
       '@jimp/custom': '>=0.3.5'
       '@jimp/plugin-rotate': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/plugin-rotate': 0.9.8(@jimp/custom@0.9.8)(@jimp/plugin-blit@0.9.8)(@jimp/plugin-crop@0.9.8)(@jimp/plugin-resize@0.9.8)
       '@jimp/utils': 0.9.8
@@ -4454,7 +4454,7 @@ packages:
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
@@ -4472,7 +4472,7 @@ packages:
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
@@ -4490,7 +4490,7 @@ packages:
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
@@ -4508,7 +4508,7 @@ packages:
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
@@ -4530,7 +4530,7 @@ packages:
       '@jimp/custom': '>=0.3.5'
       '@jimp/plugin-blit': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/plugin-blit': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/utils': 0.9.8
@@ -4550,7 +4550,7 @@ packages:
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
@@ -4577,7 +4577,7 @@ packages:
       '@jimp/plugin-crop': '>=0.3.5'
       '@jimp/plugin-resize': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/plugin-blit': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/plugin-crop': 0.9.8(@jimp/custom@0.9.8)
@@ -4601,7 +4601,7 @@ packages:
       '@jimp/custom': '>=0.3.5'
       '@jimp/plugin-resize': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/plugin-resize': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/utils': 0.9.8
@@ -4626,7 +4626,7 @@ packages:
       '@jimp/plugin-blur': '>=0.3.5'
       '@jimp/plugin-resize': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/plugin-blur': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/plugin-resize': 0.9.8(@jimp/custom@0.9.8)
@@ -4652,7 +4652,7 @@ packages:
       '@jimp/plugin-color': '>=0.8.0'
       '@jimp/plugin-resize': '>=0.8.0'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/plugin-color': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/plugin-resize': 0.9.8(@jimp/custom@0.9.8)
@@ -4693,7 +4693,7 @@ packages:
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/plugin-blit': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/plugin-blur': 0.9.8(@jimp/custom@0.9.8)
@@ -4733,7 +4733,7 @@ packages:
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/utils': 0.9.8
       core-js: 3.34.0
@@ -4752,7 +4752,7 @@ packages:
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       core-js: 3.34.0
       utif: 2.0.1
@@ -4775,7 +4775,7 @@ packages:
     peerDependencies:
       '@jimp/custom': '>=0.3.5'
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/bmp': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/custom': 0.9.8
       '@jimp/gif': 0.9.8(@jimp/custom@0.9.8)
@@ -4793,7 +4793,7 @@ packages:
   /@jimp/utils@0.9.8:
     resolution: {integrity: sha512-UK0Fu0eevQlpRXq5ff4o/71HJlpX9wJMddJjMYg9vUqCCl8ZnumRAljfShHFhGyO+Vc9IzN6dd8Y5JZZTp1KOw==}
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       core-js: 3.34.0
 
   /@jridgewell/gen-mapping@0.3.3:
@@ -5206,7 +5206,7 @@ packages:
   /@tarojs/api@3.6.20:
     resolution: {integrity: sha512-LJLYthePWUsq+Xy7IqUKv29BI1is1K861oagGVoQW6xYyLnvQx4zwU4FwlttvkA0iOtSGKf9q/KdTmheeeVrJQ==}
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@tarojs/runtime': 3.6.20
       '@tarojs/shared': 3.6.20
     dev: false
@@ -5214,7 +5214,7 @@ packages:
   /@tarojs/api@3.6.21:
     resolution: {integrity: sha512-40t4287p3g1eTglRGGz0Z5cPQyrRSaDQrLdVy1YMsJ6ORBHH+YAulVOcAVxDdFB7TE3XewK93RcKKIHbbNmqxw==}
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@tarojs/runtime': 3.6.21
       '@tarojs/shared': 3.6.21
     dev: false
@@ -5222,7 +5222,7 @@ packages:
   /@tarojs/api@3.6.23:
     resolution: {integrity: sha512-lY6+S5P3rVMM7wmsQ1XEtE5o7haS/08G3Haz4EJrg7hmg3IKrC/ju4hypEq+wd4vfPY6hC3AlqMm1zcOyjuDZg==}
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@tarojs/runtime': 3.6.23(@tarojs/shared@3.6.23)
       '@tarojs/shared': 3.6.23
 
@@ -5444,7 +5444,7 @@ packages:
   /@tarojs/components-react@3.6.20(@types/react@18.2.45)(postcss@8.4.34)(react@18.2.0):
     resolution: {integrity: sha512-9UO1y7ADuv1NH6W8Hc6asJyCfxbK2ri6wvPQABgTbgb3+QTfg2CSTkTeobKiXf4dzb1S7vesQfoMHUdbp44Exw==}
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@tarojs/components': 3.6.20(@types/react@18.2.45)(postcss@8.4.34)(react@18.2.0)
       '@tarojs/taro': 3.6.20(@types/react@18.2.45)(postcss@8.4.34)
       classnames: 2.5.1
@@ -5465,7 +5465,7 @@ packages:
   /@tarojs/components-react@3.6.23(@tarojs/helper@3.6.23)(@tarojs/runtime@3.6.23)(@types/react@18.2.45)(postcss@8.4.34):
     resolution: {integrity: sha512-lXkubKnefMmZMcHBI9qh9grVRBGQmWfRM6t7PXc9oUJ00X12QU7LMl3Iypr6OEYEN/IzZCVI7v3gSL0lSs7/5w==}
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@tarojs/components': 3.6.23(@tarojs/helper@3.6.23)(@tarojs/runtime@3.6.23)(@tarojs/shared@3.6.23)(@types/react@18.2.45)(postcss@8.4.34)(react@18.2.0)
       '@tarojs/taro': 3.6.23(@tarojs/helper@3.6.23)(@tarojs/runtime@3.6.23)(@types/react@18.2.45)(postcss@8.4.34)
       classnames: 2.5.1
@@ -5557,7 +5557,7 @@ packages:
       '@babel/preset-env': 7.23.8(@babel/core@7.23.7)
       '@babel/preset-typescript': 7.23.3(@babel/core@7.23.7)
       '@babel/register': 7.23.7(@babel/core@7.23.7)
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@babel/traverse': 7.23.7
       '@swc/core': 1.3.96
       '@swc/register': 0.1.10(@swc/core@1.3.96)
@@ -5592,7 +5592,7 @@ packages:
       '@babel/preset-env': 7.23.8(@babel/core@7.23.7)
       '@babel/preset-typescript': 7.23.3(@babel/core@7.23.7)
       '@babel/register': 7.23.7(@babel/core@7.23.7)
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@babel/traverse': 7.23.7
       '@swc/core': 1.3.96
       '@swc/register': 0.1.10(@swc/core@1.3.96)
@@ -5627,7 +5627,7 @@ packages:
       '@babel/preset-env': 7.23.8(@babel/core@7.23.7)
       '@babel/preset-typescript': 7.23.3(@babel/core@7.23.7)
       '@babel/register': 7.23.7(@babel/core@7.23.7)
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@babel/traverse': 7.23.7
       '@swc/core': 1.3.96
       '@swc/register': 0.1.10(@swc/core@1.3.96)
@@ -6428,7 +6428,7 @@ packages:
   /@tarojs/test-utils-dom@0.1.1(@babel/core@7.23.7):
     resolution: {integrity: sha512-IbX/fhfxYZT1sZjFi3i9pGLypUa86I1/HW134BLsn2ByEID3MON1Zay9uT7qAFPQsfGuek/VbjjbyFfrGajULA==}
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       babel-jest: 29.7.0(@babel/core@7.23.7)
       pretty-format: 29.7.0
     transitivePeerDependencies:
@@ -6449,7 +6449,7 @@ packages:
       react: ^18.0.0
       react-dom: ^18.0.0
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@tarojs/components': 3.6.23(@tarojs/helper@3.6.23)(@tarojs/runtime@3.6.23)(@tarojs/shared@3.6.23)(@types/react@18.2.45)(postcss@8.4.34)(react@18.2.0)
       '@tarojs/helper': 3.6.23
       '@tarojs/plugin-framework-react': 3.6.23(@pmmmwh/react-refresh-webpack-plugin@0.5.11)(@tarojs/runtime@3.6.23)(@tarojs/shared@3.6.23)(@tarojs/taro@3.6.23)(react-refresh@0.11.0)(react@18.2.0)
@@ -6471,7 +6471,7 @@ packages:
   /@tarojs/test-utils-shared@0.1.1(@babel/core@7.23.7):
     resolution: {integrity: sha512-DnBFzVFrunaR8B80amqwfIAcYVp6kLEXlwC6nY2vfN3JeuMvUI6IOcKq1NqjapuNulI6hwfUKI4Drsz7GZS+cw==}
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       babel-jest: 29.7.0(@babel/core@7.23.7)
       pretty-format: 29.7.0
     transitivePeerDependencies:
@@ -6659,7 +6659,7 @@ packages:
     engines: {node: '>=14'}
     dependencies:
       '@babel/code-frame': 7.23.5
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@types/aria-query': 5.0.4
       aria-query: 5.1.3
       chalk: 4.1.2
@@ -6687,7 +6687,7 @@ packages:
         optional: true
     dependencies:
       '@adobe/css-tools': 4.3.2
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@types/jest': 29.5.11
       aria-query: 5.1.3
       chalk: 3.0.0
@@ -6705,7 +6705,7 @@ packages:
       react: ^18.0.0
       react-dom: ^18.0.0
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@testing-library/dom': 9.3.3
       '@types/react-dom': 18.2.18
       react: 18.2.0
@@ -8691,7 +8691,7 @@ packages:
       '@babel/preset-env': 7.23.8(@babel/core@7.23.7)
       '@babel/preset-react': 7.23.3(@babel/core@7.23.7)
       '@babel/preset-typescript': 7.23.3(@babel/core@7.23.7)
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@babel/runtime-corejs3': 7.23.6
       '@tarojs/helper': 3.6.23
       babel-plugin-dynamic-import-node: 2.3.3
@@ -12511,7 +12511,7 @@ packages:
   /history@5.3.0:
     resolution: {integrity: sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==}
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
 
   /hls.js@1.4.14:
     resolution: {integrity: sha512-UppQjyvPVclg+6t2KY/Rv03h0+bA5u6zwqVoz4LAC/L0fgYmIaCD7ZCrwe8WI1Gv01be1XL0QFsRbSdIHV/Wbw==}
@@ -13889,7 +13889,7 @@ packages:
   /jimp@0.9.8:
     resolution: {integrity: sha512-DHN4apKMwLIvD/TKO9tFfPuankNuVK98vCwHm/Jv9z5cJnrd38xhi+4I7IAGmDU3jIDlrEVhzTkFH1Ymv5yTQQ==}
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
       '@jimp/custom': 0.9.8
       '@jimp/plugins': 0.9.8(@jimp/custom@0.9.8)
       '@jimp/types': 0.9.8(@jimp/custom@0.9.8)
@@ -17149,7 +17149,7 @@ packages:
   /regenerator-transform@0.15.2:
     resolution: {integrity: sha512-hfMp2BoF0qOk3uc5V20ALGDS2ddjQaLrdl7xrGXvAIow7qeWRM2VA2HuCHkUKk9slq3VwEwLNK3DFBqDfPGYtg==}
     dependencies:
-      '@babel/runtime': 7.23.8
+      '@babel/runtime': 7.23.9
 
   /regex-parser@2.2.11:
     resolution: {integrity: sha512-jbD/FT0+9MBU2XAZluI7w2OBs1RBi6p9M83nkoZayQXXU9e8Robt69FcZc7wU4eJD/YFTjn1JdCk3rbMJajz8Q==}
