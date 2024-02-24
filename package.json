@@ -14,7 +14,7 @@
     "lint:eslint": "eslint ./ --fix --ext .ts,tsx",
     "lint:style": "stylelint --fix \"{packages,examples}/**/*.{scss,css}\"",
     "format": "prettier --write .",
-    "postinstall": "husky install"
+    "postinstall": "husky"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
