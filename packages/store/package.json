@@ -32,8 +32,8 @@
     "test": "jest"
   },
   "dependencies": {
-    "immer": "^10.0.3",
-    "zustand": "^4.5.0"
+    "immer": "^10.0.4",
+    "zustand": "^4.5.2"
   },
   "peerDependencies": {
     "@tarojs/taro": ">=3.6",
