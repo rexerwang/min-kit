@@ -83,7 +83,7 @@
     }
   },
   "dependencies": {
-    "autoprefixer": "^10.4.17",
+    "autoprefixer": "^10.4.19",
     "image-minimizer-webpack-plugin": "^4.0.0",
     "imagemin": "^8.0.1",
     "minimist": "^1.2.8",
