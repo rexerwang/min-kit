@@ -95,7 +95,7 @@
     "webpack-merge": "^5.10.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.7",
+    "@babel/core": "^7.24.8",
     "@min-kit/jest": "workspace:*",
     "@types/babel__core": "^7.20.5",
     "postcss": "^8.4.38",
