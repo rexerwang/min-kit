@@ -14,6 +14,6 @@
     "@happy-dom/jest-environment": "^14.7.1",
     "@tarojs/test-utils-react": "^0.1.1",
     "@testing-library/jest-dom": "^6.4.8",
-    "@testing-library/react": "^15.0.6"
+    "@testing-library/react": "^16.0.0"
   }
 }
