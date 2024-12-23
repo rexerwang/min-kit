@@ -392,8 +392,8 @@ importers:
   packages/jest:
     devDependencies:
       '@happy-dom/jest-environment':
-        specifier: ^14.7.1
-        version: 14.7.1
+        specifier: ^15.11.7
+        version: 15.11.7
       '@tarojs/test-utils-react':
         specifier: ^0.1.1
         version: 0.1.1(@babel/core@7.23.7)(@tarojs/components@3.6.26(@tarojs/helper@3.6.26)(@tarojs/runtime@3.6.26(@tarojs/shared@3.6.26))(@tarojs/shared@3.6.26)(@types/react@18.2.45)(postcss@8.4.38)(react@18.2.0))(@tarojs/helper@3.6.26)(@tarojs/plugin-framework-react@3.6.25(@tarojs/runtime@3.6.26(@tarojs/shared@3.6.26))(@tarojs/shared@3.6.26)(@tarojs/taro@3.6.26(@tarojs/helper@3.6.26)(@tarojs/runtime@3.6.26(@tarojs/shared@3.6.26))(@types/react@18.2.45)(postcss@8.4.38))(react@18.2.0))(@tarojs/plugin-platform-h5@3.6.26(@tarojs/helper@3.6.26)(@tarojs/taro@3.6.26(@tarojs/helper@3.6.26)(@tarojs/runtime@3.6.26(@tarojs/shared@3.6.26))(@types/react@18.2.45)(postcss@8.4.38))(@types/react@18.2.45)(postcss@8.4.38)(react@18.2.0))(@tarojs/react@3.6.25(@tarojs/runtime@3.6.26(@tarojs/shared@3.6.26))(@tarojs/shared@3.6.26)(react@18.2.0))(@tarojs/runtime@3.6.26(@tarojs/shared@3.6.26))(@tarojs/shared@3.6.26)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -2598,9 +2598,9 @@ packages:
   '@hapi/topo@5.1.0':
     resolution: {integrity: sha512-foQZKJig7Ob0BMAYBfcJk8d77QtOe7Wo4ox7ff1lQYoNNAb6jwcY1ncdoy2e9wQZzvNy7ODZCYJkK8kzmcAnAg==}
 
-  '@happy-dom/jest-environment@14.7.1':
-    resolution: {integrity: sha512-3NLo26yihZU1PVjKmvxODrlkCWKRn+nN4eu+wEGcuIMzlYoJQWaOa0gFgEEO6dmTPRYfaucRRypJZr3AOceyBg==}
-    engines: {node: '>=16.0.0'}
+  '@happy-dom/jest-environment@15.11.7':
+    resolution: {integrity: sha512-za6+Hrlcei6HYW/JmY6+kmYsOBslanyV/Gd6W4OWxxpvTEiy57vjVp4SvARN60mHFcEVY+EA24WbDJfIgdnGog==}
+    engines: {node: '>=18.0.0'}
 
   '@humanwhocodes/config-array@0.11.13':
     resolution: {integrity: sha512-JSBDMiDKSzQVngfRjOdFXgFfklaXI4K9nLF49Auh21lmBWRLIK3+xTErTWD4KU54pb6coM6ESE7Awz/FNU3zgQ==}
@@ -4132,9 +4132,6 @@ packages:
 
   '@types/node@20.11.30':
     resolution: {integrity: sha512-dHM6ZxwlmuZaRmUPfv1p+KrdD1Dci04FbdEm/9wEMouFqxYoFl5aMkt0VMAUtYRQDyYvD41WJLukhq/ha3YuTw==}
-
-  '@types/node@22.10.2':
-    resolution: {integrity: sha512-Xxr6BBRCAOQixvonOye19wnzyDiUtTeqldOOmj3CkeblonbccA12PFwlufvRdrpjXxqnmUaeiU5EOA+7s5diUQ==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -7184,9 +7181,9 @@ packages:
   handle-thing@2.0.1:
     resolution: {integrity: sha512-9Qn4yBxelxoh2Ow62nP+Ka/kMnOXRi8BXnRaUwezLNhqelnN49xKz4F/dPP8OYLxLxq6JDtZb2i9XznUQbNPTg==}
 
-  happy-dom@14.7.1:
-    resolution: {integrity: sha512-v60Q0evZ4clvMcrAh5/F8EdxDdfHdFrtffz/CNe10jKD+nFweZVxM91tW+UyY2L4AtpgIaXdZ7TQmiO1pfcwbg==}
-    engines: {node: '>=16.0.0'}
+  happy-dom@15.11.7:
+    resolution: {integrity: sha512-KyrFvnl+J9US63TEzwoiJOQzZBJY7KgBushJA8X61DMbNsH+2ONkDuLDnCnwUiPTF42tLoEmrPyoqbenVA5zrg==}
+    engines: {node: '>=18.0.0'}
 
   har-schema@2.0.0:
     resolution: {integrity: sha512-Oqluz6zhGX8cyRaTQlFMPw80bSJVG2x/cFb8ZPhUILGgHka9SsokCCOQgpveePerqidZOrT14ipqfJb7ILcW5Q==}
@@ -11135,9 +11132,6 @@ packages:
 
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
-
-  undici-types@6.20.0:
-    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
   unescape-js@1.1.4:
     resolution: {integrity: sha512-42SD8NOQEhdYntEiUQdYq/1V/YHwr1HLwlHuTJB5InVVdOSbgI6xu8jK5q65yIzuFCfczzyDF/7hbGzVbyCw0g==}
@@ -15325,12 +15319,12 @@ snapshots:
     dependencies:
       '@hapi/hoek': 9.3.0
 
-  '@happy-dom/jest-environment@14.7.1':
+  '@happy-dom/jest-environment@15.11.7':
     dependencies:
       '@jest/environment': 29.7.0
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      happy-dom: 14.7.1
+      happy-dom: 15.11.7
       jest-mock: 29.7.0
       jest-util: 29.7.0
 
@@ -15607,7 +15601,7 @@ snapshots:
     dependencies:
       '@types/istanbul-lib-coverage': 2.0.6
       '@types/istanbul-reports': 3.0.4
-      '@types/node': 18.19.3
+      '@types/node': 20.11.30
       '@types/yargs': 15.0.19
       chalk: 4.1.2
 
@@ -17633,7 +17627,7 @@ snapshots:
   '@types/body-parser@1.19.5':
     dependencies:
       '@types/connect': 3.4.38
-      '@types/node': 18.19.3
+      '@types/node': 20.11.30
 
   '@types/bonjour@3.5.13':
     dependencies:
@@ -17646,11 +17640,11 @@ snapshots:
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 18.19.3
+      '@types/node': 20.11.30
 
   '@types/conventional-commits-parser@5.0.1':
     dependencies:
-      '@types/node': 20.10.5
+      '@types/node': 20.11.30
 
   '@types/debug@4.1.12':
     dependencies:
@@ -17670,7 +17664,7 @@ snapshots:
 
   '@types/express-serve-static-core@4.17.41':
     dependencies:
-      '@types/node': 18.19.3
+      '@types/node': 20.11.30
       '@types/qs': 6.9.10
       '@types/range-parser': 1.2.7
       '@types/send': 0.17.4
@@ -17684,16 +17678,16 @@ snapshots:
 
   '@types/fs-extra@8.1.5':
     dependencies:
-      '@types/node': 18.19.3
+      '@types/node': 20.11.30
 
   '@types/glob@7.2.0':
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 18.19.3
+      '@types/node': 20.11.30
 
   '@types/graceful-fs@4.1.9':
     dependencies:
-      '@types/node': 20.10.5
+      '@types/node': 20.11.30
 
   '@types/html-minifier-terser@6.1.0': {}
 
@@ -17701,7 +17695,7 @@ snapshots:
 
   '@types/http-proxy@1.17.14':
     dependencies:
-      '@types/node': 18.19.3
+      '@types/node': 20.11.30
 
   '@types/istanbul-lib-coverage@2.0.6': {}
 
@@ -17724,7 +17718,7 @@ snapshots:
 
   '@types/keyv@3.1.4':
     dependencies:
-      '@types/node': 18.19.3
+      '@types/node': 20.11.30
 
   '@types/lodash.debounce@4.0.9':
     dependencies:
@@ -17746,7 +17740,7 @@ snapshots:
 
   '@types/node-forge@1.3.10':
     dependencies:
-      '@types/node': 18.19.3
+      '@types/node': 20.11.30
 
   '@types/node@16.9.1': {}
 
@@ -17761,10 +17755,6 @@ snapshots:
   '@types/node@20.11.30':
     dependencies:
       undici-types: 5.26.5
-
-  '@types/node@22.10.2':
-    dependencies:
-      undici-types: 6.20.0
 
   '@types/normalize-package-data@2.4.4': {}
 
@@ -17790,7 +17780,7 @@ snapshots:
 
   '@types/responselike@1.0.3':
     dependencies:
-      '@types/node': 18.19.3
+      '@types/node': 20.11.30
 
   '@types/retry@0.12.0': {}
 
@@ -17805,7 +17795,7 @@ snapshots:
   '@types/send@0.17.4':
     dependencies:
       '@types/mime': 1.3.5
-      '@types/node': 18.19.3
+      '@types/node': 20.11.30
 
   '@types/serve-index@1.9.4':
     dependencies:
@@ -21767,7 +21757,7 @@ snapshots:
 
   handle-thing@2.0.1: {}
 
-  happy-dom@14.7.1:
+  happy-dom@15.11.7:
     dependencies:
       entities: 4.5.0
       webidl-conversions: 7.0.0
@@ -22485,7 +22475,7 @@ snapshots:
       '@jest/expect': 29.7.0
       '@jest/test-result': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 20.10.5
+      '@types/node': 20.11.30
       chalk: 4.1.2
       co: 4.6.0
       dedent: 1.5.1
@@ -22608,7 +22598,7 @@ snapshots:
       '@jest/environment': 29.7.0
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 20.10.5
+      '@types/node': 20.11.30
       jest-mock: 29.7.0
       jest-util: 29.7.0
 
@@ -22618,7 +22608,7 @@ snapshots:
     dependencies:
       '@jest/types': 29.6.3
       '@types/graceful-fs': 4.1.9
-      '@types/node': 22.10.2
+      '@types/node': 20.11.30
       anymatch: 3.1.3
       fb-watchman: 2.0.2
       graceful-fs: 4.2.11
@@ -22644,7 +22634,7 @@ snapshots:
 
   jest-message-util@29.7.0:
     dependencies:
-      '@babel/code-frame': 7.24.2
+      '@babel/code-frame': 7.26.2
       '@jest/types': 29.6.3
       '@types/stack-utils': 2.0.3
       chalk: 4.1.2
@@ -22800,7 +22790,7 @@ snapshots:
 
   jest-worker@29.7.0:
     dependencies:
-      '@types/node': 22.10.2
+      '@types/node': 20.11.30
       jest-util: 29.7.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
@@ -25886,7 +25876,7 @@ snapshots:
       css-select: 4.3.0
       css-tree: 1.1.3
       csso: 4.2.0
-      picocolors: 1.0.0
+      picocolors: 1.1.1
       stable: 0.1.8
 
   svgo@3.3.2:
@@ -26301,8 +26291,6 @@ snapshots:
       through: 2.3.8
 
   undici-types@5.26.5: {}
-
-  undici-types@6.20.0: {}
 
   unescape-js@1.1.4:
     dependencies:
